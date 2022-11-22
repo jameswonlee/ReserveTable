@@ -20,7 +20,8 @@ favorites = db.Table(
         db.Integer,
         db.ForeignKey("restaurants.id"),
         primary_key=True
-    )
+    ),
+    # extend_exisiting=True,
 )
 
 class Restaurant(db.Model):
@@ -46,6 +47,11 @@ class Restaurant(db.Model):
     description = db.Column(db.String(2000), nullable=False)
     preview_img = db.Column(db.String(2000), nullable=False)
 
+    reservations = db.relationship("Reservation", back_populates="restaurant")
+    reviews = db.relationship("Review", back_populates="restaurant")
+
+    users = db.relationship("User", secondary=favorites, back_populates="restaurants")
+
 
 class Reservation(db.Model):
     __tablename__ = "reservations"
@@ -57,6 +63,9 @@ class Reservation(db.Model):
     time = db.Column(db.Time, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)
 
+    restaurant = db.relationship("Restaurant", back_populates="reservations")
+    user = db.relationship("User", back_populates="reservations")
+
 
 class Review(db.Model):
     __tablename__ = "reviews"
@@ -66,5 +75,8 @@ class Review(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     review = db.Column(db.String(2000), nullable=True)
     rating = db.Column(db.Integer, nullable=False)
+
+    restaurant = db.relationship("Restaurant", back_populates="reviews")
+    user = db.relationship("User", back_populates="reviews")
 
 
