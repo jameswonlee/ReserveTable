@@ -6,6 +6,23 @@ from sqlalchemy.orm import relationship
 
 Base=declarative_base()
 
+favorites = db.Table(
+    "favorites",
+    db.Model.metadata,
+    db.Column(
+        "user_id",
+        db.Integer,
+        db.ForeignKey("users.id"),
+        primary_key=True
+    ),
+    db.Column(
+        "restaurant_id",
+        db.Integer,
+        db.ForeignKey("restaurants.id"),
+        primary_key=True
+    )
+)
+
 class Restaurant(db.Model):
     __tablename__ = "restaurants"
 
@@ -13,7 +30,6 @@ class Restaurant(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     restaurant_name = db.Column(db.String(255), nullable=False)
     neighborhood = db.Column(db.String(255), nullable=False)
     cuisine = db.Column(db.String(255), nullable=False)
@@ -30,5 +46,25 @@ class Restaurant(db.Model):
     description = db.Column(db.String(2000), nullable=False)
     preview_img = db.Column(db.String(2000), nullable=False)
 
+
+class Reservation(db.Model):
+    __tablename__ = "reservations"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
+    date = db.Column(db.Date, nullable=False)
+    time = db.Column(db.Time, nullable=False)
+    party_size = db.Column(db.Integer, nullable=False)
+
+
+class Review(db.Model):
+    __tablename__ = "reviews"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
+    review = db.Column(db.String(2000), nullable=True)
+    rating = db.Column(db.Integer, nullable=False)
 
 
