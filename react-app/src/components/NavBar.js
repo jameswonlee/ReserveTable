@@ -9,7 +9,7 @@ const NavBar = () => {
       <ul>
         <li>
           <NavLink exact to="/" className="nav-link">
-            <img src={logo} className="logo" width="200px;" height="40px;">
+            <img src={logo} className="logo" width="150px;" height="30px;">
             </img>
           </NavLink>
         </li>
