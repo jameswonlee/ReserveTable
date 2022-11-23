@@ -7,21 +7,25 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <div className="nav-bar">
-      <div>
-        <NavLink to="/" exact={true} className="nav-link">
-          <img src={logo} className="logo"></img>
-        </NavLink>
+    <>
+      <div className="above-nav">
+          
       </div>
-      <div>
-        <NavLink to='/login' exact={true} activeClassName='active'>
-          <img src={profileButton} className="profile-button"></img>
-        </NavLink>
-        {/* <div>
+      <div className="nav-bar">
+        <div>
+          <NavLink to="/" exact={true} className="nav-link">
+            <img src={logo} className="logo"></img>
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to='/login' exact={true} activeClassName='active'>
+            <img src={profileButton} className="profile-button"></img>
+          </NavLink>
+          {/* <div>
           <LogoutButton />
         </div> */}
-      </div>
-      {/* <div>
+        </div>
+        {/* <div>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
           </NavLink>
@@ -32,7 +36,8 @@ const NavBar = () => {
           </NavLink>
         </div> */}
 
-    </div>
+      </div>
+    </>
   );
 }
 
