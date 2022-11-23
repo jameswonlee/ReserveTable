@@ -15,4 +15,4 @@
 
 
 <!-- Markdown Links and Icons -->
-[reservetable-logo]: ./assets/logo.png
+[reservetable-logo]: ./react-app/src/images/logo.png
