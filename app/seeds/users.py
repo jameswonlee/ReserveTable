@@ -75,7 +75,7 @@ def undo_restaurants():
 def seed_reservations():
     user2 = Reservation(
         user_id=2, restaurant_id=1, date=datetime.date(2022,12,10),
-        #  time=datetime.time(17, 30), 
+         time=datetime.time(17, 30), 
          party_size=2
     )
 
@@ -107,7 +107,7 @@ def seed_reviews():
         rating=5
     )
 
-    db.session.add_all([review1])
+    db.session.add_all([review1, review2])
     db.session.commit()
 
 

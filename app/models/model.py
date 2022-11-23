@@ -21,7 +21,6 @@ favorites = db.Table(
         db.ForeignKey("restaurants.id"),
         primary_key=True
     ),
-    # extend_exisiting=True,
 )
 
 
@@ -87,10 +86,9 @@ class Reservation(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    restaurant_id = db.Column(db.Integer, db.ForeignKey(
-        "restaurants.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     date = db.Column(db.Date, nullable=False)
-    # time = db.Column(db.Time)
+    time = db.Column(db.Time, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
@@ -102,7 +100,7 @@ class Reservation(db.Model):
             'user_id': self.user_id,
             'restaurant_id': self.restaurant_id,
             'date': self.date,
-            # 'time': self.time,
+            'time': self.time,
             'party_size': self.party_size
         }
 
@@ -118,8 +116,7 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    restaurant_id = db.Column(db.Integer, db.ForeignKey(
-        "restaurants.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     review = db.Column(db.String(2000), nullable=True)
     rating = db.Column(db.Integer, nullable=False)
 
@@ -132,7 +129,8 @@ class Review(db.Model):
             'user_id': self.user_id,
             'restaurant_id': self.restaurant_id,
             'review': self.review,
-            'rating': self.rating
+            'rating': self.rating,
+            'user': self.user.to_dict()
         }
 
     def __repr__(self):

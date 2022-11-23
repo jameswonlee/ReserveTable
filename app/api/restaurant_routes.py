@@ -2,7 +2,8 @@ from flask import Blueprint, render_template, url_for, redirect, request, jsonif
 from flask_login import current_user, login_user, logout_user, login_required
 from sqlalchemy.ext.declarative import declarative_base
 from ..models import Restaurant, Reservation, Review, favorites, db
-from ..forms import ReservationForm
+from ..forms import ReservationForm, ReviewForm
+
 
 Base=declarative_base()
 
@@ -27,17 +28,21 @@ def all_restaurants():
 
 # Create new reservation
 @restaurant_routes.route("/<int:restaurant_id>/reservations", methods=["POST"])
+@login_required
 def create_reservation(restaurant_id):
     reservation_form = ReservationForm()
     reservation_form['csrf_token'].data = request.cookies['csrf_token']
 
-    if reservation_form.validate_on_submit():
+    if reservation_form.validate_on_submit:
         reservation_data = reservation_form.data
+        print('reservation_data!!!!!!!!!!!!!!!', reservation_data)
 
         new_reservation_data = Reservation()
         reservation_form.populate_obj(new_reservation_data)
 
         restaurant = Restaurant.query.get(restaurant_id)
+        print('time#############', reservation_data["time"])
+        # print('date@@@@@@@@@@@@@@', reservation_data["date"])
 
         new_reservation = Reservation(
             user_id=current_user.id, 
@@ -52,5 +57,50 @@ def create_reservation(restaurant_id):
         new_reservation_obj = new_reservation.to_dict()
         return new_reservation_obj, 201
     return { "Error": "Validation Error" }, 401
+
+
+# View all restaurant reviews - Need to return number of reviews for each user
+@restaurant_routes.route("/<int:restaurant_id>/reviews", methods=["GET"])
+def restaurant_reviews(restaurant_id):
+    reviews = Review.query.filter(Review.restaurant_id == restaurant_id).all()
+
+    if reviews:
+        response = []
+        for review in reviews:
+            review_obj = review.to_dict()
+            response.append(review_obj)
+        return response, 200
+    return { "Error": "No reviews found" }, 404
+
+
+# Create new review for restaurant
+@restaurant_routes.route("/<int:restaurant_id>/reviews", methods=["POST"])
+@login_required
+def new_review(restaurant_id):
+    review_form = ReviewForm()
+    review_form['csrf_token'].data = request.cookies['csrf_token']
+
+    if review_form.validate_on_submit():
+        review_data = review_form.data
+
+        new_review_data = Review()
+        review_form.populate_obj(new_review_data)
+
+        new_review = Review(
+            user_id=current_user.id, 
+            restaurant_id=restaurant_id, 
+            review = review_data["review"],
+            rating = review_data["rating"]
+        )
+
+        db.session.add(new_review)
+        db.session.commit()
+        new_review_obj = new_review.to_dict()
+        return new_review_obj, 201
+    return { "Error": "Validation Error" }, 401
+
+
+
+
 
 
