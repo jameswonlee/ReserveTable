@@ -31,13 +31,16 @@ def update_reservation(reservation_id):
         data = edit_reservation_form.data
 
         reservation = Reservation.query.get(reservation_id)
-        reservation.date = data["date"]
-        # reservation.time = data["time"]
-        reservation.party_size = data["party_size"]
-        db.session.commit()
-        
-        new_reservation = reservation.to_dict()
-        return new_reservation, 201
+
+        if reservation:
+            reservation.date = data["date"]
+            # reservation.time = data["time"]
+            reservation.party_size = data["party_size"]
+            db.session.commit()
+            
+            new_reservation = reservation.to_dict()
+            return new_reservation, 201
+        return { "Error": "Reservation not found" }, 404
     return { "Error": "Validation Error" }, 400
 
 
@@ -50,7 +53,7 @@ def delete_reservation(reservation_id):
     if reservation:
         db.session.delete(reservation)
         db.session.commit()
-        return { "Message": "Reservation sucessfully deleted" }, 200
+        return { "Message": "Reservation successfully deleted" }, 200
     return { "Error": "Reservation not found" }, 404
 
 

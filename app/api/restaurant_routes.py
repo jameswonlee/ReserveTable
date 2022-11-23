@@ -35,11 +35,14 @@ def create_reservation(restaurant_id):
 
     if reservation_form.validate_on_submit:
         reservation_data = reservation_form.data
+        print('reservation_data!!!!!!!!!!!!!!!', reservation_data)
 
         new_reservation_data = Reservation()
         reservation_form.populate_obj(new_reservation_data)
 
         restaurant = Restaurant.query.get(restaurant_id)
+        print('time#############', reservation_data["time"])
+        # print('date@@@@@@@@@@@@@@', reservation_data["date"])
 
         new_reservation = Reservation(
             user_id=current_user.id, 
