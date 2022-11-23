@@ -1,0 +1,14 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 150px;
+    height: 30px;
+}
+
+.profile-button {
+    width: 40px;
+}
