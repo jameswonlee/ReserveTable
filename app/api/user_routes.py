@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import User
+from app.models import User, Reservation, Restaurant, Review, favorites, db
 
 user_routes = Blueprint('users', __name__)
 
@@ -24,3 +24,13 @@ def user(id):
     """
     user = User.query.get(id)
     return user.to_dict()
+
+
+
+# View all user reservations
+@user_routes.route("/<int:user_id>/reservations", methods=["GET"])
+def user_reservations(user_id):
+    user_reservations = Reservation.query.get(user_id)
+    if user_reservations:
+        return user_reservations.to_dict(), 200
+    return { "Error": "No reservations not found" }, 404
