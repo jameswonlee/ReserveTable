@@ -4,6 +4,7 @@ from app.models import User
 
 user_routes = Blueprint('users', __name__)
 
+# ***************************************** User Routes ************************************ #
 
 @user_routes.route('/')
 @login_required

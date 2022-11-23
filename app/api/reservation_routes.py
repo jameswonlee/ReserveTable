@@ -10,34 +10,20 @@ reservation_routes = Blueprint("reservation_routes", __name__, url_prefix="/api/
 
 # ********************************** Reservation Routes ********************************* #
 
-# Create new reservation
-@reservation_routes.route("/<int:restaurant_id>", methods=["POST"])
-def create_reservation(restaurant_id):
-    reservation_form = ReservationForm()
-    reservation_form['csrf_token'].data = request.cookies['csrf_token']
+# View all user reservations
+@reservation_routes.route("/<int:user_id>", methods=["GET"])
+def user_reservations(user_id):
+    user_reservations = Reservation.query.get(user_id)
+    if user_reservations:
+        # for reservation in reservations:
+        #     reservation_obj = reservation.to_dict()
+        #     response.append(reservation_obj)
+        return user_reservations.to_dict(), 200
+    return { "Error": "No reservations not found" }, 404
 
-    if reservation_form.validate_on_submit():
-        reservation_data = reservation_form.data
 
-        new_reservation_data = Reservation()
-        reservation_form.populate_obj(new_reservation_data)
+# 
 
-        restaurant = Restaurant.query.get(restaurant_id)
-
-        new_reservation = Reservation(
-            user_id=current_user.id, 
-            restaurant_id=restaurant.id, 
-            date=reservation_data["date"],
-            time=reservation_data["time"],
-            party_size=reservation_data["party_size"]
-        )
-
-        db.session.add(new_reservation)
-        db.session.commit()
-
-        new_reservation_obj = new_reservation.to_dict()
-        return new_reservation_obj, 201
-    return { "Error": "Validation Error" }, 401
 
 
 

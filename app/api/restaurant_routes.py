@@ -11,6 +11,20 @@ restaurant_routes = Blueprint("restaurant_routes", __name__, url_prefix="/api/re
 
 # **************************** Restaurant Routes ******************************* #
 
+# View all restaurants
+@restaurant_routes.route("/", methods=["GET"])
+def all_restaurants():
+    all_restaurants = Restaurant.query.all()
+    if all_restaurants:
+        response = []
+        for restaurant in all_restaurants:
+            restaurant_obj = restaurant.to_dict()
+            response.append(restaurant_obj)
+        return { "Restaurants": response }, 200
+    return { "Error": "No restaurants found" } , 404
+
+
+
 # Create new reservation
 @restaurant_routes.route("/<int:restaurant_id>/reservations", methods=["POST"])
 def create_reservation(restaurant_id):
@@ -35,10 +49,8 @@ def create_reservation(restaurant_id):
 
         db.session.add(new_reservation)
         db.session.commit()
-
         new_reservation_obj = new_reservation.to_dict()
         return new_reservation_obj, 201
     return { "Error": "Validation Error" }, 401
 
 
-#

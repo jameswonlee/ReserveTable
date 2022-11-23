@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
 
-Base=declarative_base()
+Base = declarative_base()
 
 favorites = db.Table(
     "favorites",
@@ -23,6 +23,7 @@ favorites = db.Table(
     ),
     # extend_exisiting=True,
 )
+
 
 class Restaurant(db.Model):
     __tablename__ = "restaurants"
@@ -49,17 +50,36 @@ class Restaurant(db.Model):
     reservations = db.relationship("Reservation", back_populates="restaurant")
     reviews = db.relationship("Review", back_populates="restaurant")
 
-    users = db.relationship("User", secondary=favorites, back_populates="restaurants")
+    users = db.relationship("User", secondary=favorites,
+                            back_populates="restaurants")
 
     def to_dict(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
-            'restaurant_id': self.restaurant_id,
-            'date': self.date,
-            'time': self.time,
-            'party_size': self.party_size
+            'restaurant_name': self.restaurant_name,
+            'neighborhood': self.neighborhood,
+            'cuisines': self.cuisines,
+            'cost': self. cost,
+            'operation_hours': self.operation_hours,
+            'dining_style': self.dining_style,
+            'dress_code': self.dress_code,
+            'parking_details': self.parking_details,
+            'payment_options': self.payment_options,
+            'cross_street': self.cross_street,
+            'phone': self.phone,
+            'executive_chef': self.executive_chef,
+            'description': self.description,
+            'preview_img': self.preview_img
         }
+
+    def __repr__(self):
+        return f'''<Restaurant, id={self.id}, restaurant_name={self.restaurant_name}, 
+        neighborhood={self.neighborhood}, cuisines={self.cuisines}, cost={self. cost},
+        operation_hours={self.operation_hours}, dining_style={self.dining_style},
+        dress_code={self.dress_code}, parking_details={self.parking_details},
+        payment_options={self.payment_options}, cross_street={self.cross_street},
+        phone={self.phone}, executive_chef={self.executive_chef},
+        description={self.description}, preview_img={self.preview_img} >'''
 
 
 class Reservation(db.Model):
@@ -67,9 +87,10 @@ class Reservation(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey(
+        "restaurants.id"), nullable=False)
     date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.Time)
+    # time = db.Column(db.Time)
     party_size = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
@@ -81,15 +102,15 @@ class Reservation(db.Model):
             'user_id': self.user_id,
             'restaurant_id': self.restaurant_id,
             'date': self.date,
-            'time': self.time,
+            # 'time': self.time,
             'party_size': self.party_size
         }
 
     def __repr__(self):
         return f'''<Reservation, id={self.id}, user_id={self.user_id}, 
-        restaruant_id={self.restaurant_id}, date={self.date}, time={self.time}, 
+        restaruant_id={self.restaurant_id}, date={self.date}, 
+        # time= {self.time}, 
         party_size={self.party_size}>'''
-
 
 
 class Review(db.Model):
@@ -97,11 +118,24 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey(
+        "restaurants.id"), nullable=False)
     review = db.Column(db.String(2000), nullable=True)
     rating = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reviews")
     user = db.relationship("User", back_populates="reviews")
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'restaurant_id': self.restaurant_id,
+            'review': self.review,
+            'rating': self.rating
+        }
 
+    def __repr__(self):
+        return f'''<Review, id={self.id}, user_id={self.user_id}, 
+        restaruant_id={self.restaurant_id}, review={self.review},
+        rating={self.rating}>'''
