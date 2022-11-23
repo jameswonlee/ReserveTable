@@ -1,0 +1,12 @@
+.restaurant-card-container {
+    text-decoration: none;
+}
+
+.preview-image {
+    height: 150px;
+    width: 275px;
+}
+
+.restaurant-preview-details {
+    color: black
+}

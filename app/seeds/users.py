@@ -43,11 +43,11 @@ def seed_restaurants():
         description="""Designated the Los Angeles Times Readers' Choice 'Best Sushi Restaurant' in Southern California, and one of OpenTable's 50 Hottest Restaurants in the U.S.,” 
         Katsuya holds true to be held as a superb Los Angeles Japanese cuisine experience. Featuring the dynamic pairing of Master Sushi Chef Katsuya Uechi and design impresario Philippe Starck, 
         Katsuya is truly a feast for the senses. With specialty cocktails, unique rolls and spectacular sushi and sashimi platters, Chef Uechi skillfully translates Japanese flavors to the American palate.""",
-        preview_img="https://resizer.otstatic.com/v2/photos/xlarge/1/23676507.jpg"
+        preview_img="https://img.ctykit.com/cdn/ca-dtla/images/tr:w-1800/katsuya2.jpg"
     )
 
     spago = Restaurant(
-        restaurant_name="Spago", neighborhood="Beverly Hills", cuisines="Contemporary American, Californian, Grill",
+        restaurant_name="Spago - Beverly Hills", neighborhood="Beverly Hills", cuisines="Contemporary American, Californian, Grill",
         cost=4, operation_hours="Dinner Tue-Thu, Sun 5pm-9:45pm, Fri, Sat 5pm-10pm", dining_style="Fine Dining", dress_code="Business Casual",
         parking_details="Valet parking is available for $15.", payment_options="AMEX, Diners Club, Discover, JCB, MasterCard, Visa",
         cross_street="Wilshire and Canon", phone="(310) 385-0880", executive_chef="Ari Rosenson/ Wolfgang Puck", description="""Spago Beverly Hills, Wolfgang Pucks legendary, flagship restaurant, continues to set the standard for cuisine,
