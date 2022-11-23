@@ -51,6 +51,16 @@ class Restaurant(db.Model):
 
     users = db.relationship("User", secondary=favorites, back_populates="restaurants")
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'restaurant_id': self.restaurant_id,
+            'date': self.date,
+            'time': self.time,
+            'party_size': self.party_size
+        }
+
 
 class Reservation(db.Model):
     __tablename__ = "reservations"
@@ -59,11 +69,27 @@ class Reservation(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.Time, nullable=False)
+    time = db.Column(db.Time)
     party_size = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
     user = db.relationship("User", back_populates="reservations")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'restaurant_id': self.restaurant_id,
+            'date': self.date,
+            'time': self.time,
+            'party_size': self.party_size
+        }
+
+    def __repr__(self):
+        return f'''<Reservation, id={self.id}, user_id={self.user_id}, 
+        restaruant_id={self.restaurant_id}, date={self.date}, time={self.time}, 
+        party_size={self.party_size}>'''
+
 
 
 class Review(db.Model):
