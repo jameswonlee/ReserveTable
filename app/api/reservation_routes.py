@@ -19,7 +19,10 @@ def user_reservations(user_id):
         #     reservation_obj = reservation.to_dict()
         #     response.append(reservation_obj)
         return user_reservations.to_dict(), 200
-    return { "Error": "Reservations not found" }, 404
+    return { "Error": "No reservations not found" }, 404
+
+
+# 
 
 
 
