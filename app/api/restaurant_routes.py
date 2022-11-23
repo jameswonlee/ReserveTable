@@ -25,6 +25,15 @@ def all_restaurants():
     return { "Error": "No restaurants found" } , 404
 
 
+# View one restaurant
+@restaurant_routes.route("/<int:restaurant_id>", methods=["GET"])
+def one_restaurant(restaurant_id):
+    restaurant = Restaurant.query.get(restaurant_id)
+    if restaurant:
+        return restaurant.to_dict(), 200
+    return { "Error": "No restaurant found" } , 404
+
+
 
 # Create new reservation
 @restaurant_routes.route("/<int:restaurant_id>/reservations", methods=["POST"])
@@ -100,9 +109,3 @@ def new_review(restaurant_id):
         new_review_obj = new_review.to_dict()
         return new_review_obj, 201
     return { "Error": "Validation Error" }, 401
-
-
-
-
-
-
