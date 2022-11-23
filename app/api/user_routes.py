@@ -26,7 +26,6 @@ def user(id):
     return user.to_dict()
 
 
-
 # View all user reservations
 @user_routes.route("/<int:user_id>/reservations", methods=["GET"])
 @login_required
@@ -35,3 +34,18 @@ def user_reservations(user_id):
     if user_reservations:
         return user_reservations.to_dict(), 200
     return { "Error": "No reservations not found" }, 404
+
+
+# View all user reviews
+@user_routes.route("/<int:user_id>/reviews", methods=["GET"])
+@login_required
+def user_reviews(user_id):
+    user_reviews = Review.query.filter(Review.user_id == user_id).all()
+
+    if user_reviews:
+        response = []
+        for review in user_reviews:
+            review_obj = review.to_dict()
+            response.append(review_obj)
+        return response, 200
+    return { "Error": "No reviews found" }, 404
