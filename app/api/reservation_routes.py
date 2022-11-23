@@ -12,14 +12,13 @@ reservation_routes = Blueprint("reservation_routes", __name__, url_prefix="/api/
 
 # View all user reservations
 @reservation_routes.route("/<int:user_id>", methods=["GET"])
-def user_reservations():
-    reservations = Reservation.query.all()
-    response = []
-    if reservations:
-        for reservation in reservations:
-            reservation_obj = reservation.to_dict()
-            response.append(reservation_obj)
-        return { "Reservations": response }, 200
+def user_reservations(user_id):
+    user_reservations = Reservation.query.get(user_id)
+    if user_reservations:
+        # for reservation in reservations:
+        #     reservation_obj = reservation.to_dict()
+        #     response.append(reservation_obj)
+        return user_reservations.to_dict(), 200
     return { "Error": "Reservations not found" }, 404
 
 

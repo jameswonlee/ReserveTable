@@ -90,7 +90,7 @@ class Reservation(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey(
         "restaurants.id"), nullable=False)
     date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.Time)
+    # time = db.Column(db.Time)
     party_size = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
@@ -102,13 +102,14 @@ class Reservation(db.Model):
             'user_id': self.user_id,
             'restaurant_id': self.restaurant_id,
             'date': self.date,
-            'time': self.time,
+            # 'time': self.time,
             'party_size': self.party_size
         }
 
     def __repr__(self):
         return f'''<Reservation, id={self.id}, user_id={self.user_id}, 
-        restaruant_id={self.restaurant_id}, date={self.date}, time={self.time}, 
+        restaruant_id={self.restaurant_id}, date={self.date}, 
+        # time= {self.time}, 
         party_size={self.party_size}>'''
 
 
