@@ -107,7 +107,7 @@ def seed_reviews():
         rating=5
     )
 
-    db.session.add_all([review1])
+    db.session.add_all([review1, review2])
     db.session.commit()
 
 

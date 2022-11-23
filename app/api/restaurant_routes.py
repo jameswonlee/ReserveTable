@@ -55,3 +55,16 @@ def create_reservation(restaurant_id):
     return { "Error": "Validation Error" }, 401
 
 
+# View all restaurant reviews - Need to return number of reviews for each user
+@restaurant_routes.route("/<int:restaurant_id>/reviews", methods=["GET"])
+def restaurant_reviews(restaurant_id):
+    reviews = Review.query.filter(Review.restaurant_id == restaurant_id).all()
+
+    if reviews:
+        response = []
+        for review in reviews:
+            review_obj = review.to_dict()
+            response.append(review_obj)
+        return response, 200
+    return { "Error": "No reviews found" }, 404
+

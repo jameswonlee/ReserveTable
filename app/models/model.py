@@ -131,7 +131,8 @@ class Review(db.Model):
             'user_id': self.user_id,
             'restaurant_id': self.restaurant_id,
             'review': self.review,
-            'rating': self.rating
+            'rating': self.rating,
+            'user': self.user.to_dict()
         }
 
     def __repr__(self):
