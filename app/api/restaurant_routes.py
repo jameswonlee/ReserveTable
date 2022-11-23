@@ -41,21 +41,23 @@ def create_reservation(restaurant_id):
         reservation_form.populate_obj(new_reservation_data)
 
         restaurant = Restaurant.query.get(restaurant_id)
-        print('time#############', reservation_data["time"])
-        # print('date@@@@@@@@@@@@@@', reservation_data["date"])
+        if restaurant:
+            print('time#############', reservation_data["time"])
+            # print('date@@@@@@@@@@@@@@', reservation_data["date"])
 
-        new_reservation = Reservation(
-            user_id=current_user.id, 
-            restaurant_id=restaurant.id, 
-            date=reservation_data["date"],
-            time=reservation_data["time"],
-            party_size=reservation_data["party_size"]
-        )
+            new_reservation = Reservation(
+                user_id=current_user.id, 
+                restaurant_id=restaurant.id, 
+                date=reservation_data["date"],
+                time=reservation_data["time"],
+                party_size=reservation_data["party_size"]
+            )
 
-        db.session.add(new_reservation)
-        db.session.commit()
-        new_reservation_obj = new_reservation.to_dict()
-        return new_reservation_obj, 201
+            db.session.add(new_reservation)
+            db.session.commit()
+            new_reservation_obj = new_reservation.to_dict()
+            return new_reservation_obj, 201
+        return { "Error": "Restaurant not found" }, 404
     return { "Error": "Validation Error" }, 401
 
 
