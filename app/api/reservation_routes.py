@@ -30,7 +30,6 @@ def update_reservation(reservation_id):
     if edit_reservation_form.validate_on_submit():
         data = edit_reservation_form.data
 
-        
         reservation = Reservation.query.get(reservation_id)
         reservation.date = data["date"]
         # reservation.time = data["time"]
@@ -40,6 +39,20 @@ def update_reservation(reservation_id):
         new_reservation = reservation.to_dict()
         return new_reservation, 201
     return { "Error": "Validation Error" }, 400
+
+
+# Delete reservation
+@reservation_routes.route("/<int:reservation_id>", methods=["DELETE"])
+@login_required
+def delete_reservation(reservation_id):
+    reservation = Reservation.query.get(reservation_id)
+
+    if reservation:
+        db.session.delete(reservation)
+        db.session.commit()
+        return { "Message": "Reservation sucessfully deleted" }, 200
+    return { "Error": "Reservation not found" }, 404
+
 
 
 
