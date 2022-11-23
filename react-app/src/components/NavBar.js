@@ -3,14 +3,15 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import logo from '../images/logo.png'
 import profileButton from '../images/profile-button.png'
+import aboveNav from '../images/above-nav.png'
 import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <>
-      <div className="above-nav">
-          
-      </div>
+    <div className="navigation">
+        <div className="above-nav">
+          <img src={aboveNav} className="above-nav-img"></img>
+        </div>
       <div className="nav-bar">
         <div>
           <NavLink to="/" exact={true} className="nav-link">
@@ -35,9 +36,8 @@ const NavBar = () => {
             Users
           </NavLink>
         </div> */}
-
       </div>
-    </>
+    </div>
   );
 }
 

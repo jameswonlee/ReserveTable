@@ -18,7 +18,17 @@
 }
 
 .above-nav {
-    height: 30px;
-    background-color: rgb(241, 240, 240);
+    height: 35px;
+    background-color: rgb(241, 242, 244);
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+
+.above-nav-img {
+    height: 30px;
+    width: 350px;
+    margin-right: 20px;
 }
