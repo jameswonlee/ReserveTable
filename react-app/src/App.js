@@ -7,10 +7,10 @@ import NavBar from './components/NavBar';
 import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
 
-import SignUpForm from './components/auth/SignUpForm';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+// import SignUpForm from './components/auth/SignUpForm';
+// import ProtectedRoute from './components/auth/ProtectedRoute';
+// import UsersList from './components/UsersList';
+// import User from './components/User';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
