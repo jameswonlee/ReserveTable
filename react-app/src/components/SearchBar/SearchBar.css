@@ -1,0 +1,12 @@
+.search-bar {
+    height: 250px;
+    background-color: rgb(26, 40, 80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    color: white;
+    font-weight: 500;
+}

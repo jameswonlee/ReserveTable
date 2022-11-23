@@ -17,9 +17,9 @@ const NavBar = () => {
         <NavLink to='/login' exact={true} activeClassName='active'>
           <img src={profileButton} className="profile-button"></img>
         </NavLink>
-        <div>
+        {/* <div>
           <LogoutButton />
-        </div>
+        </div> */}
       </div>
       {/* <div>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
