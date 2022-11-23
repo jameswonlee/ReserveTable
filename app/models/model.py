@@ -21,7 +21,6 @@ favorites = db.Table(
         db.ForeignKey("restaurants.id"),
         primary_key=True
     ),
-    # extend_exisiting=True,
 )
 
 
@@ -90,7 +89,7 @@ class Reservation(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey(
         "restaurants.id"), nullable=False)
     date = db.Column(db.Date, nullable=False)
-    # time = db.Column(db.Time)
+    # time = db.Column(db.Time, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")

@@ -12,11 +12,35 @@ reservation_routes = Blueprint("reservation_routes", __name__, url_prefix="/api/
 
 # View reservation details
 @reservation_routes.route("/<int:reservation_id>", methods=["GET"])
+@login_required
 def reservation_details(reservation_id):
     reservation = Reservation.query.get(reservation_id)
     if reservation:
         return reservation.to_dict(), 200
     return { "Error": "No reservations found" }, 404
+
+
+# Update reservation
+@reservation_routes.route("/<int:reservation_id>", methods=["PUT"])
+@login_required
+def update_reservation(reservation_id):
+    edit_reservation_form = ReservationForm()
+    edit_reservation_form['csrf_token'].data = request.cookies['csrf_token']
+
+    if edit_reservation_form.validate_on_submit():
+        data = edit_reservation_form.data
+
+        
+        reservation = Reservation.query.get(reservation_id)
+        reservation.date = data["date"]
+        # reservation.time = data["time"]
+        reservation.party_size = data["party_size"]
+        db.session.commit()
+        
+        new_reservation = reservation.to_dict()
+        return new_reservation, 201
+    return { "Error": "Validation Error" }, 400
+
 
 
 

@@ -29,6 +29,7 @@ def user(id):
 
 # View all user reservations
 @user_routes.route("/<int:user_id>/reservations", methods=["GET"])
+@login_required
 def user_reservations(user_id):
     user_reservations = Reservation.query.get(user_id)
     if user_reservations:
