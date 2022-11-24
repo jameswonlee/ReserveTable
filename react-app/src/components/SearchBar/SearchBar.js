@@ -13,9 +13,8 @@ function SearchBar() {
     return (
         <div className="search-bar">
             <div className="heading">
-                Find your table for any occasion
+                <h1>Find your table for any occasion</h1>
             </div>
-
         </div>
     )
 }
