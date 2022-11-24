@@ -74,13 +74,12 @@ def undo_restaurants():
 
 def seed_reservations():
     user2 = Reservation(
-        user_id=2, restaurant_id=1, date=datetime.datetime(2022,12,10, 17, 30),
-        #  time=datetime.time(17, 30), 
+        user_id=2, restaurant_id=1, reservation_time=datetime.datetime(2022,12,10,17,30),
         party_size=2
     )
 
     user = Reservation(
-        user_id=2, restaurant_id=2, date=datetime.datetime(2022,12,24,18,00),
+        user_id=2, restaurant_id=2, reservation_time=datetime.datetime(2022,12,24,18,00),
         party_size=3
     )
 

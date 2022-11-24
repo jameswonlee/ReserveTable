@@ -30,9 +30,14 @@ def user(id):
 @user_routes.route("/<int:user_id>/reservations", methods=["GET"])
 @login_required
 def user_reservations(user_id):
-    user_reservations = Reservation.query.get(user_id)
+    user_reservations = Reservation.query.filter(Reservation.user_id == user_id).all()
+
     if user_reservations:
-        return user_reservations.to_dict(), 200
+        response = []
+        for reservation in user_reservations:
+            reservation_obj = reservation.to_dict()
+            response.append(reservation_obj)
+        return { "Reservations": response }, 200
     return { "Error": "No reservations not found" }, 404
 
 
