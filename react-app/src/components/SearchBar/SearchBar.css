@@ -1,5 +1,5 @@
 .search-bar {
-    height: 250px;
+    height: 300px;
     background-color: rgb(26, 40, 80);
     display: flex;
     justify-content: center;
@@ -8,5 +8,6 @@
 
 .heading {
     color: white;
-    font-weight: 500;
+    font-size: xx-large;
+    margin-bottom: 80px;
 }
