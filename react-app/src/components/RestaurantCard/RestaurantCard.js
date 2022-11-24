@@ -15,8 +15,11 @@ function RestaurantCard({ restaurant }) {
                 <img className="preview-image" src={restaurant.preview_img} />
             </div>
             <div className="restaurant-preview-details">
-                <p>{restaurant.name}</p>
-                <p>{restaurant.reviews.length} reviews</p>
+                <h3 className="restaurant-card-name dark-font">{restaurant.name}</h3>
+                {
+                    restaurant.reviews &&
+                    <p>{restaurant.reviews.length} reviews</p>
+                }
                 <p>{restaurant.cuisines.split(',')[0]}</p>
                 <div className="booked-num">
                     <div className="booking-symbol-container">

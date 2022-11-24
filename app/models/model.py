@@ -42,8 +42,9 @@ class Restaurant(db.Model):
     payment_options = db.Column(db.String(2000), nullable=False)
     cross_street = db.Column(db.String(255), nullable=False)
     phone = db.Column(db.String(255), nullable=False)
-    executive_chef = db.Column(db.String(255), nullable=False)
+    executive_chef = db.Column(db.String(255), nullable=True)
     description = db.Column(db.String(2000), nullable=False)
+    website = db.Column(db.String(2000), nullable=False)
     preview_img = db.Column(db.String(2000), nullable=False)
 
     reservations = db.relationship("Reservation", back_populates="restaurant")

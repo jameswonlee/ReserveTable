@@ -3,12 +3,13 @@
     border-color: rgb(216, 217, 219);
     border-style: solid;
     margin: 10px;
+    width: 280px;
 
 }
 
 .preview-image {
     height: 150px;
-    width: 275px;
+    width: 100%;
 }
 
 .restaurant-preview-details {
@@ -24,11 +25,15 @@
 
 .booking-symbol-container {
     margin-right: 5px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .booked-num {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.restaurant-card-name {
+    font-size: x-large;
 }
