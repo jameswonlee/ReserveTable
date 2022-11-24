@@ -35,6 +35,10 @@
     padding-bottom: 6px;
 }
 
+.notifications-button:hover {
+    cursor: text;
+}
+
 .line-break {
     height: 50px;
     width: 50px;
@@ -47,6 +51,10 @@
     padding-right: 30px;
 }
 
+.search-button:hover {
+    cursor: text;
+}
+
 .above-nav {
     height: 33px;
     background-color: rgb(241, 242, 244);
@@ -56,14 +64,21 @@
     justify-content: end;
 }
 
-
 .above-nav-img {
     height: 30px;
     width: 350px;
     margin-right: 20px;
 }
 
+.above-nav-img:hover {
+    cursor: text;
+}
+
 .location-button {
     height: 48px;
     width: 90px;
+}
+
+.location-button:hover {
+    cursor:not-allowed
 }

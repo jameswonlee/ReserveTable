@@ -1,5 +1,9 @@
 .restaurant-card-container {
     text-decoration: none;
+    border-color: rgb(216, 217, 219);
+    border-style: solid;
+    margin: 10px;
+
 }
 
 .preview-image {
@@ -8,5 +12,23 @@
 }
 
 .restaurant-preview-details {
-    color: black
+    /* change font color! */
+    color: black;
+    margin-left: 5px;
+}
+
+.booking-symbol {
+    height: 15px;
+    width: 20px;
+}
+
+.booking-symbol-container {
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.booked-num {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

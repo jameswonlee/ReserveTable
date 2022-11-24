@@ -36,7 +36,7 @@ def undo_users():
 
 def seed_restaurants():
     katsuya = Restaurant(
-        name="Katsuya", neighborhood="Hollywood", cuisines="Japanese Sushi", cost=3,
+        name="Katsuya - Hollywood", neighborhood="Hollywood", cuisines="Japanese Sushi", cost=3,
         operation_hours="Mon-Thu 5pm-10pm Fri, Sat 5pm-11pm Sun 4:30pm-10pm", dining_style="Casual Elegant",
         dress_code="Smart Casual", parking_details="For your convenience we offer valet in front of the venue as well as limited street parking on Hollywood Blvd and Vine St.",
         payment_options="AMEX, Discover, MasterCard, Visa", cross_street="Hollywood Blvd and Vine St", phone="(323) 871-8777", executive_chef="Katsuya Uechi",
@@ -103,16 +103,31 @@ def undo_reservations():
 
 def seed_reviews():
     review1 = Review(
-        user_id=2, restaurant_id=1, review="Amazing fresh food with a cool vibe great music with a DJ. Service is top notch nothing goes unnoticed. Highly recommend for a delicious meal.",
+        user_id=2, restaurant_id=1, review="""Amazing fresh food with a cool vibe great music with a DJ. 
+        Service is top notch nothing goes unnoticed. Highly recommend for a delicious meal.""",
         rating=5
+    )
+
+    review11 = Review(
+        user_id=3, restaurant_id=1, review="A little loud. Otherwise it was a great experience.",
+        rating=3
     )
 
     review2 = Review(
-        user_id=2, restaurant_id=2, review="Was fortunate enough to get a seat by the fireplace in the courtyard as requested as usual. The hosts, the wait staff, everyone is exceptional every time. And I eat there frequently. I have yet to have a less than perfect meal there and I've been going since 1994 at the old location. Miss seeing Mr Puck as much as used to be around but understandably, he's a busy gentleman. Shout out to Maria, love to walk in and see your smile.",
-        rating=5
+        user_id=2, restaurant_id=2, review="""Was fortunate enough to get a seat by the fireplace in the 
+        courtyard as requested as usual. The hosts, the wait staff, everyone is exceptional every time. 
+        And I eat there frequently. I have yet to have a less than perfect meal there and I've been going 
+        since 1994 at the old location. Miss seeing Mr Puck as much as used to be around but understandably, 
+        he's a busy gentleman. Shout out to Maria, love to walk in and see your smile.""", rating=5
     )
 
-    db.session.add_all([review1, review2])
+    review22 = Review(
+        user_id=3, restaurant_id=2, review="""Excellent service and food. Only thing I would change is the
+        temperature in the restaurant. It felt a bit chilly like a window was open. Otherwise, staff, service, 
+        food, drinks, was stellar!""", rating=4
+    )
+
+    db.session.add_all([review1, review11, review2, review22])
     db.session.commit()
 
 

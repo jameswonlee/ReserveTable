@@ -68,7 +68,9 @@ class Restaurant(db.Model):
             'phone': self.phone,
             'executive_chef': self.executive_chef,
             'description': self.description,
-            'preview_img': self.preview_img
+            'preview_img': self.preview_img,
+            'reviews': [review.to_dict() for review in self.reviews] if self.reviews else None,
+            'total_num_reservations': len(self.reservations)
         }
 
     def __repr__(self):

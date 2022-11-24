@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf";
 
 
-/* ------------------------------------- Action Types -------------------------------- */
+/* ------------------------------------- Action Types ---------------------------------- */
 
 const LOAD_ALL_RESERVATIONS = '/reservations/LOAD_ALL_RESERVATIONS'
 const LOAD_RESERVATION = '/reservations/LOAD_RESERVATION'
@@ -10,7 +10,7 @@ const UPDATE_RESERVATION = '/reservations/UPDATE_RESERVATION'
 const DELETE_RESERVATION = '/reservations/DELETE_RESERVATION'
 
 
-/* ------------------------------------ Action Creators ------------------------------- */
+/* ------------------------------------ Action Creators --------------------------------- */
 
 const loadAllReservations = (reservations) => {
     return {
@@ -48,7 +48,7 @@ const removeReservation = (reservation) => {
 }
 
 
-/* ---------------------------------- Thunk Action Creators ---------------------- */
+/* ---------------------------------- Thunk Action Creators ---------------------------- */
 
 
 export const getAllReservations = (userId) => async (dispatch) => {
@@ -112,7 +112,7 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
 }
 
 
-/* -------------------------------- Reducer ---------------------------- */
+/* -------------------------------------- Reducer --------------------------------------- */
 
 const initialState = {};
 
@@ -126,5 +126,29 @@ const reservationsReducer = (state = initialState, action) => {
             })
             newState = { ...state, ...newReservations };
             return newState;
+
+        case LOAD_RESERVATION:
+            let newReservation = {};
+            newReservation[action.reservation.id] = action.reservation;
+            newState = { ...state, ...newReservation };
+            return newState;
+
+        case ADD_RESERVATION:
+            
+        case UPDATE_RESERVATION:
+            newState = { ...state };
+            newState[action.reservation.id] = action.reservation;
+            return newState
+
+        case DELETE_RESERVATION:
+            newState = { ...state };
+            delete newState[action.reservation.id];
+            return newState;
+
+        default:
+            return state;
     }
 }
+
+
+export default reservationsReducer;

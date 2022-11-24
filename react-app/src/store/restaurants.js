@@ -54,9 +54,9 @@ const initialState = {};
 const restaurantsReducer = (state = initialState, action) => {
     let newState = {};
     switch (action.type) {
+
         case LOAD_ALL_RESTAURANTS:
             let newRestaurants = {};
-            // console.log('action.restaurants', action.restaurants)
             action.restaurants.Restaurants.forEach(restaurant => {
                 newRestaurants[restaurant.id] = restaurant
             })
