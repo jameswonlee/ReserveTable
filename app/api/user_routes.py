@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from flask_login import login_required
 from app.models import User, Reservation, Restaurant, Review, favorites, db
 
-user_routes = Blueprint('users', __name__)
+user_routes = Blueprint('users', __name__, url_prefix="/api/users")
 
 # ***************************************** User Routes ************************************ #
 

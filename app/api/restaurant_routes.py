@@ -51,14 +51,14 @@ def create_reservation(restaurant_id):
 
         restaurant = Restaurant.query.get(restaurant_id)
         if restaurant:
-            print('time#############', reservation_data["time"])
+            # print('time#############', reservation_data["time"])
             # print('date@@@@@@@@@@@@@@', reservation_data["date"])
 
             new_reservation = Reservation(
                 user_id=current_user.id, 
                 restaurant_id=restaurant.id, 
                 date=reservation_data["date"],
-                time=reservation_data["time"],
+                # time=reservation_data["time"],
                 party_size=reservation_data["party_size"]
             )
 
