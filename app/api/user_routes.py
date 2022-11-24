@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from flask_login import login_required
 from app.models import User, Reservation, Restaurant, Review, favorites, db
 
-user_routes = Blueprint('users', __name__)
+user_routes = Blueprint('users', __name__, url_prefix="/api/users")
 
 # ***************************************** User Routes ************************************ #
 
@@ -30,10 +30,15 @@ def user(id):
 @user_routes.route("/<int:user_id>/reservations", methods=["GET"])
 @login_required
 def user_reservations(user_id):
-    user_reservations = Reservation.query.get(user_id)
+    user_reservations = Reservation.query.filter(Reservation.user_id == user_id).all()
+
     if user_reservations:
-        return user_reservations.to_dict(), 200
-    return { "Error": "No reservations not found" }, 404
+        response = []
+        for reservation in user_reservations:
+            reservation_obj = reservation.to_dict()
+            response.append(reservation_obj)
+        return { "Reservations": response }, 200
+    return { "Error": "No user/reservations found" }, 404
 
 
 # View all user reviews
@@ -48,4 +53,4 @@ def user_reviews(user_id):
             review_obj = review.to_dict()
             response.append(review_obj)
         return response, 200
-    return { "Error": "No reviews found" }, 404
+    return { "Error": "No user/reviews found" }, 404

@@ -33,8 +33,7 @@ def update_reservation(reservation_id):
         reservation = Reservation.query.get(reservation_id)
 
         if reservation:
-            reservation.date = data["date"]
-            # reservation.time = data["time"]
+            reservation.reservation_time = data["reservation_time"]
             reservation.party_size = data["party_size"]
             db.session.commit()
             

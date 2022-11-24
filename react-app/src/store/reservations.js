@@ -1,0 +1,154 @@
+import { csrfFetch } from "./csrf";
+
+
+/* ------------------------------------- Action Types ---------------------------------- */
+
+const LOAD_ALL_RESERVATIONS = '/reservations/LOAD_ALL_RESERVATIONS'
+const LOAD_RESERVATION = '/reservations/LOAD_RESERVATION'
+const ADD_RESERVATION = '/reservations/ADD_RESERVATION'
+const UPDATE_RESERVATION = '/reservations/UPDATE_RESERVATION'
+const DELETE_RESERVATION = '/reservations/DELETE_RESERVATION'
+
+
+/* ------------------------------------ Action Creators --------------------------------- */
+
+const loadAllReservations = (reservations) => {
+    return {
+        type: LOAD_ALL_RESERVATIONS,
+        reservations: reservations
+    }
+}
+
+const loadOneReservation = (reservation) => {
+    return {
+        type: LOAD_RESERVATION,
+        reservation: reservation
+    }
+}
+
+const addReservation = (reservation) => {
+    return {
+        type: ADD_RESERVATION,
+        reservation: reservation
+    }
+}
+
+const updateReservation = (reservation) => {
+    return {
+        type: UPDATE_RESERVATION,
+        reservation: reservation
+    }
+}
+
+const removeReservation = (reservation) => {
+    return {
+        type: DELETE_RESERVATION,
+        reservation: reservation
+    }
+}
+
+
+/* ---------------------------------- Thunk Action Creators ---------------------------- */
+
+
+export const getAllReservations = (userId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/users/${userId}/reservations`);
+
+    if (response.ok) {
+        const reservations = await response.json();
+        dispatch(loadAllReservations(reservations));
+        return reservations
+    }
+}
+
+export const getOneReservation = (reservationId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reservations/${reservationId}`);
+
+    if (response.ok) {
+        const reservation = await response.json();
+        dispatch(loadOneReservation(reservation));
+        return reservation
+    }
+}
+
+export const createReservation = (newReservationData, restaurantId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/restaurants/${restaurantId}/reservations`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newReservationData)
+    })
+
+    if (response.ok) {
+        const newReservation= await response.json();
+        dispatch(addReservation(newReservation));
+        return newReservation;
+    }
+}
+
+export const changeReservation = (updatedReservationData, reservationId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reservations/${reservationId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedReservationData) 
+    })
+
+    if (response.ok) {
+        const updatedReservation = response.json()
+        dispatch(updateReservation(updatedReservation));
+        return updatedReservation
+    }
+}
+
+export const deleteReservation = (reservationId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reservations/${reservationId}`, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        const message = await response.json();
+        dispatch(removeReservation(reservationId));
+        return message;
+    }
+}
+
+
+/* -------------------------------------- Reducer --------------------------------------- */
+
+const initialState = {};
+
+const reservationsReducer = (state = initialState, action) => {
+    let newState = {};
+    switch (action.type) {
+        case LOAD_ALL_RESERVATIONS:
+            let newReservations = {};
+            action.reservations.Reservations.forEach(reservation => {
+                newReservations[action.reservations.id] = reservation
+            })
+            newState = { ...state, ...newReservations };
+            return newState;
+
+        case LOAD_RESERVATION:
+            let newReservation = {};
+            newReservation[action.reservation.id] = action.reservation;
+            newState = { ...state, ...newReservation };
+            return newState;
+
+        case ADD_RESERVATION:
+            
+        case UPDATE_RESERVATION:
+            newState = { ...state };
+            newState[action.reservation.id] = action.reservation;
+            return newState
+
+        case DELETE_RESERVATION:
+            newState = { ...state };
+            delete newState[action.reservation.id];
+            return newState;
+
+        default:
+            return state;
+    }
+}
+
+
+export default reservationsReducer;

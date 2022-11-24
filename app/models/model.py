@@ -31,7 +31,7 @@ class Restaurant(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    restaurant_name = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(255), nullable=False)
     neighborhood = db.Column(db.String(255), nullable=False)
     cuisines = db.Column(db.String(255), nullable=False)
     cost = db.Column(db.Integer, nullable=False)
@@ -42,8 +42,9 @@ class Restaurant(db.Model):
     payment_options = db.Column(db.String(2000), nullable=False)
     cross_street = db.Column(db.String(255), nullable=False)
     phone = db.Column(db.String(255), nullable=False)
-    executive_chef = db.Column(db.String(255), nullable=False)
+    executive_chef = db.Column(db.String(255), nullable=True)
     description = db.Column(db.String(2000), nullable=False)
+    website = db.Column(db.String(2000), nullable=False)
     preview_img = db.Column(db.String(2000), nullable=False)
 
     reservations = db.relationship("Reservation", back_populates="restaurant")
@@ -55,7 +56,7 @@ class Restaurant(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'restaurant_name': self.restaurant_name,
+            'name': self.name,
             'neighborhood': self.neighborhood,
             'cuisines': self.cuisines,
             'cost': self. cost,
@@ -68,11 +69,13 @@ class Restaurant(db.Model):
             'phone': self.phone,
             'executive_chef': self.executive_chef,
             'description': self.description,
-            'preview_img': self.preview_img
+            'preview_img': self.preview_img,
+            'reviews': [review.to_dict() for review in self.reviews] if self.reviews else None,
+            'total_num_reservations': len(self.reservations)
         }
 
     def __repr__(self):
-        return f'''<Restaurant, id={self.id}, restaurant_name={self.restaurant_name}, 
+        return f'''<Restaurant, id={self.id}, name={self.name}, 
         neighborhood={self.neighborhood}, cuisines={self.cuisines}, cost={self. cost},
         operation_hours={self.operation_hours}, dining_style={self.dining_style},
         dress_code={self.dress_code}, parking_details={self.parking_details},
@@ -87,8 +90,7 @@ class Reservation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
-    date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.Time, nullable=False)
+    reservation_time = db.Column(db.DateTime, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
@@ -99,15 +101,15 @@ class Reservation(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'restaurant_id': self.restaurant_id,
-            'date': self.date,
-            'time': self.time,
-            'party_size': self.party_size
+            'reservation_time': self.reservation_time,
+            'party_size': self.party_size,
+            'restaurant': self.restaurant.to_dict(),
+            'user': self.user.to_dict()
         }
 
     def __repr__(self):
         return f'''<Reservation, id={self.id}, user_id={self.user_id}, 
-        restaruant_id={self.restaurant_id}, date={self.date}, 
-        # time= {self.time}, 
+        restaruant_id={self.restaurant_id}, reservation_time={self.reservation_time}, 
         party_size={self.party_size}>'''
 
 

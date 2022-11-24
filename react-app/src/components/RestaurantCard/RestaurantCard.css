@@ -1,12 +1,39 @@
 .restaurant-card-container {
     text-decoration: none;
+    border-color: rgb(216, 217, 219);
+    border-style: solid;
+    margin: 10px;
+    width: 280px;
+
 }
 
 .preview-image {
     height: 150px;
-    width: 275px;
+    width: 100%;
 }
 
 .restaurant-preview-details {
-    color: black
+    /* change font color! */
+    color: black;
+    margin-left: 5px;
+}
+
+.booking-symbol {
+    height: 15px;
+    width: 20px;
+}
+
+.booking-symbol-container {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.booked-num {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.restaurant-card-name {
+    font-size: x-large;
 }

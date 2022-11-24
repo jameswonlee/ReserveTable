@@ -41,30 +41,27 @@ def one_restaurant(restaurant_id):
 def create_reservation(restaurant_id):
     reservation_form = ReservationForm()
     reservation_form['csrf_token'].data = request.cookies['csrf_token']
-
-    if reservation_form.validate_on_submit:
+    
+    if reservation_form.validate_on_submit():
         reservation_data = reservation_form.data
-        print('reservation_data!!!!!!!!!!!!!!!', reservation_data)
 
         new_reservation_data = Reservation()
         reservation_form.populate_obj(new_reservation_data)
 
         restaurant = Restaurant.query.get(restaurant_id)
-        if restaurant:
-            print('time#############', reservation_data["time"])
-            # print('date@@@@@@@@@@@@@@', reservation_data["date"])
 
+        if restaurant:
             new_reservation = Reservation(
                 user_id=current_user.id, 
                 restaurant_id=restaurant.id, 
-                date=reservation_data["date"],
-                time=reservation_data["time"],
+                reservation_time=reservation_data["reservation_time"],
                 party_size=reservation_data["party_size"]
             )
 
             db.session.add(new_reservation)
             db.session.commit()
             new_reservation_obj = new_reservation.to_dict()
+            
             return new_reservation_obj, 201
         return { "Error": "Restaurant not found" }, 404
     return { "Error": "Validation Error" }, 401
