@@ -31,7 +31,7 @@ class Restaurant(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    restaurant_name = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(255), nullable=False)
     neighborhood = db.Column(db.String(255), nullable=False)
     cuisines = db.Column(db.String(255), nullable=False)
     cost = db.Column(db.Integer, nullable=False)
@@ -55,7 +55,7 @@ class Restaurant(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'restaurant_name': self.restaurant_name,
+            'name': self.name,
             'neighborhood': self.neighborhood,
             'cuisines': self.cuisines,
             'cost': self. cost,
@@ -72,7 +72,7 @@ class Restaurant(db.Model):
         }
 
     def __repr__(self):
-        return f'''<Restaurant, id={self.id}, restaurant_name={self.restaurant_name}, 
+        return f'''<Restaurant, id={self.id}, name={self.name}, 
         neighborhood={self.neighborhood}, cuisines={self.cuisines}, cost={self. cost},
         operation_hours={self.operation_hours}, dining_style={self.dining_style},
         dress_code={self.dress_code}, parking_details={self.parking_details},
@@ -100,7 +100,8 @@ class Reservation(db.Model):
             'restaurant_id': self.restaurant_id,
             'reservation_time': self.reservation_time,
             'party_size': self.party_size,
-            'restaurant': self.restaurant.to_dict()
+            'restaurant': self.restaurant.to_dict(),
+            'user': self.user.to_dict()
         }
 
     def __repr__(self):

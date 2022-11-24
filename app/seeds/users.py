@@ -36,7 +36,7 @@ def undo_users():
 
 def seed_restaurants():
     katsuya = Restaurant(
-        restaurant_name="Katsuya", neighborhood="Hollywood", cuisines="Japanese Sushi", cost=3,
+        name="Katsuya", neighborhood="Hollywood", cuisines="Japanese Sushi", cost=3,
         operation_hours="Mon-Thu 5pm-10pm Fri, Sat 5pm-11pm Sun 4:30pm-10pm", dining_style="Casual Elegant",
         dress_code="Smart Casual", parking_details="For your convenience we offer valet in front of the venue as well as limited street parking on Hollywood Blvd and Vine St.",
         payment_options="AMEX, Discover, MasterCard, Visa", cross_street="Hollywood Blvd and Vine St", phone="(323) 871-8777", executive_chef="Katsuya Uechi",
@@ -47,11 +47,11 @@ def seed_restaurants():
     )
 
     spago = Restaurant(
-        restaurant_name="Spago - Beverly Hills", neighborhood="Beverly Hills", cuisines="Contemporary American, Californian, Grill",
+        name="Spago - Beverly Hills", neighborhood="Beverly Hills", cuisines="Contemporary American, Californian, Grill",
         cost=4, operation_hours="Dinner Tue-Thu, Sun 5pm-9:45pm, Fri, Sat 5pm-10pm", dining_style="Fine Dining", dress_code="Business Casual",
         parking_details="Valet parking is available for $15.", payment_options="AMEX, Diners Club, Discover, JCB, MasterCard, Visa",
         cross_street="Wilshire and Canon", phone="(310) 385-0880", executive_chef="Ari Rosenson/ Wolfgang Puck", description="""Spago Beverly Hills, Wolfgang Pucks legendary, flagship restaurant, continues to set the standard for cuisine,
-         service and style, and is consistently recognized as the ultimate in fine dining. Spago presents a completely new menu and design. The master chef has re-invented the entire menu with his signature farm to table philosophy. Puck, 
+         service and style, and is consistently recognized as the ultimate in fine dining. Spago presents a completely new menu and design. The master chef has re-invented the entire menu with his signature farm to table philosophy. Puck,
          along with Partner and Executive Chef Ari Rosenson, creates imaginative seasonal menus showcasing the best of California's produce and products. Spago's new design from Waldo Fernandez complements the food with its clean and simple aesthetic, 
          incorporating natural elements to add an organic feel. Spago is the recipient of the AAA Four Diamond Award and received two stars in The Michelin Guide-Los Angeles edition in 2009 and 2010.""",
         preview_img="https://resizer.otstatic.com/v2/photos/wide-huge/1/24982293.jpg"

@@ -42,7 +42,7 @@ def create_reservation(restaurant_id):
     reservation_form = ReservationForm()
     reservation_form['csrf_token'].data = request.cookies['csrf_token']
     
-    if reservation_form.validate_on_submit:
+    if reservation_form.validate_on_submit():
         reservation_data = reservation_form.data
 
         new_reservation_data = Reservation()

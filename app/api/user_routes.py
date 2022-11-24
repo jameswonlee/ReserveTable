@@ -38,7 +38,7 @@ def user_reservations(user_id):
             reservation_obj = reservation.to_dict()
             response.append(reservation_obj)
         return { "Reservations": response }, 200
-    return { "Error": "No reservations not found" }, 404
+    return { "Error": "No user/reservations found" }, 404
 
 
 # View all user reviews
@@ -53,4 +53,4 @@ def user_reviews(user_id):
             review_obj = review.to_dict()
             response.append(review_obj)
         return response, 200
-    return { "Error": "No reviews found" }, 404
+    return { "Error": "No user/reviews found" }, 404
