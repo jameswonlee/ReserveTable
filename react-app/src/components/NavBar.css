@@ -78,7 +78,7 @@
 .location-button {
     height: 34px;
     width: 150px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .location-line-break {
@@ -100,4 +100,8 @@
 .under-nav-image {
     height: 40px;
     margin-left: 12px;
+}
+
+.under-nav-image:hover {
+    cursor: text;
 }
