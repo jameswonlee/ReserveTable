@@ -3,6 +3,7 @@
     border-color: rgb(216, 217, 219);
     border-style: solid;
     margin: 10px;
+    height: 390px;
     width: 280px;
 
 }
@@ -12,11 +13,14 @@
     width: 100%;
 }
 
-.restaurant-preview-details {
-    /* change font color! */
-    color: black;
+.restaurant-preview-details-container {
     margin-left: 5px;
+    color: black
 }
+
+/* .restaurant-preview-details {
+
+} */
 
 .booking-symbol {
     height: 15px;
@@ -36,4 +40,5 @@
 
 .restaurant-card-name {
     font-size: x-large;
+    border: none;
 }

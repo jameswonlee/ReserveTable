@@ -21,7 +21,7 @@ function RestaurantProfile() {
         return sum / reviewCount
     }
 
-    const restaurantRating = averageRating();
+    const restaurantRating = averageRating().toFixed(1);
 
 
 
