@@ -19,15 +19,22 @@
     padding-right: 15px;
 }
 
-.profile-button {
+.profile-button-icon {
     width: 50px;
     height: 50px;
+}
+
+.profile-button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }
 
 .upcoming-reservations-button {
     height: 47px;
     width: 47px;
     padding-bottom: 4px;
+    margin-right: 5px;
 }
 
 .notifications-button {
@@ -45,14 +52,27 @@
     width: 50px;
 }
 
-.search-button {
+.logged-in-search-button {
     height: 30px;
     width: 30px;
     padding-bottom: 4px;
     padding-right: 30px;
 }
 
-.search-button:hover {
+.logged-in-search-button:hover {
+    cursor: text;
+}
+
+.logged-out-search-button {
+    height: 30px;
+    width: 30px;
+    /* padding-bottom: 4px; */
+    padding-right: 30px;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+
+.logged-out-search-button:hover {
     cursor: text;
 }
 
@@ -76,7 +96,7 @@
 }
 
 .location-button {
-    height: 34px;
+    height: 33px;
     width: 150px;
     margin-bottom: 6px;
 }
@@ -105,3 +125,27 @@
 .under-nav-image:hover {
     cursor: text;
 }
+
+.sign-in-button {
+    height: 30px;
+    width: 100px;
+}
+
+.sign-up-button {
+    height: 30px;
+    width: 100px;
+}
+
+.sign-in-menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .profile-drop-down-container {
+    position: absolute;
+    background-color: white;
+    margin-top: 20px;
+    padding-right: 200px;
+} */

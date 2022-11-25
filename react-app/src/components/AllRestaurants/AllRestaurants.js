@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllRestaurants } from '../../store/restaurants'
 import RestaurantCard from '../RestaurantCard/RestaurantCard'
-import getCurrentLocation from '../../images/get-current-location.png'
+import getCurrentLocation from '../../icons/current-location-arrow.ico'
 import './AllRestaurants.css'
 
 
@@ -19,7 +19,8 @@ function DisplayAllRestaurants() {
         <div className="all-restaurants-container">
             <div className="above-restaurant-cards">
                 <div className="verify-city">It looks like you're in West Hollywood. Not correct? </div>
-                <div><img src={getCurrentLocation} className="get-current-location" /></div>
+                <div><img src={getCurrentLocation} className="current-location-arrow" /></div>
+                <div className="get-current-location">Get current location</div>
             </div>
             <div className="card-wrapper">
                 <div className="restaurant-cards">

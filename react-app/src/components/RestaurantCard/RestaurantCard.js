@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import bookingSymbol from '../../images/booking-symbol.png'
+import bookingSymbol from '../../icons/booking-symbol.ico'
 import './RestaurantCard.css'
 
 
@@ -25,18 +25,25 @@ function RestaurantCard({ restaurant }) {
             <div className="preview-image-container">
                 <img className="preview-image" src={restaurant.preview_img} />
             </div>
-            <div className="restaurant-preview-details-container">
-                <h3 className="restaurant-card-name dark-font">{restaurant.name}</h3>
+            <div className="restaurant-name-and-details-container">
+                <div>
+                    <h2 className="restaurant-card-name dark-font">{restaurant.name}</h2>
+                </div>
                 <div className="restaurant-preview-details">
-                    {
-                        restaurant.reviews &&
-                        <p>{averageRating().toFixed(1)}</p>
-                    }
-                    {
-                        restaurant.reviews &&
-                        <p>{restaurant.reviews.length} reviews</p>
-                    }
-                    <p>{restaurant.cuisines.split(',')[0]}</p>
+                    <div className="preview-stars-reviews">
+                        {restaurant.reviews &&
+                            <span>{averageRating().toFixed(1)}</span>}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {restaurant.reviews &&
+                            <span>{restaurant.reviews.length} reviews</span>}
+                    </div>
+                    <div className="preview-cuisine-cost-neighborhood">
+                        <span>{restaurant.cuisines.split(',')[0]} </span>
+                        &nbsp;&#x2022;&nbsp;
+                        <span> $$$$$ </span>
+                        &nbsp;&#x2022;&nbsp;
+                        <span> {restaurant.neighborhood}</span>
+                    </div>
                     <div className="booked-num">
                         <div className="booking-symbol-container">
                             <img src={bookingSymbol} className="booking-symbol" />
@@ -47,8 +54,7 @@ function RestaurantCard({ restaurant }) {
                                 <p>Booked {restaurant.total_num_reservations} time today</p>
                                 :
                                 <p>Booked {restaurant.total_num_reservations} times today</p>
-                            )
-                        }
+                            )}
                     </div>
                 </div>
             </div>

@@ -3,21 +3,21 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SearchBar from './components/SearchBar/SearchBar'
-import NavBar from './components/NavBar';
+import NavBar from './components/Navigation/NavBar';
 import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
 
-// import SignUpForm from './components/auth/SignUpForm';
-// import ProtectedRoute from './components/auth/ProtectedRoute';
-// import UsersList from './components/UsersList';
-// import User from './components/User';
+import SignUpForm from './components/auth/SignUpForm';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import UsersList from './components/UsersList';
+import User from './components/User';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -29,15 +29,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar loaded={loaded} />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
-        {/* <Route path='/sign-up' exact={true}>
+        <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
+        {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >

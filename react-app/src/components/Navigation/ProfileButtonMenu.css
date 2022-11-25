@@ -1,0 +1,45 @@
+.profile-drop-down-menu {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    height: 350px;
+    width: 400px;
+    position: absolute;
+    background-color: white;
+    margin-top: 12px;
+    margin-left: -340px;
+    border-style: solid;
+    border-color: rgb(235, 235, 235);
+}
+
+.profile-drop-down-top {
+    height: 50%;
+    border-bottom: solid;
+    border-color: rgb(240, 239, 239);
+}
+
+.profile-drop-down-bottom {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.profile-button {
+    background-color: none;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgb(64, 63, 63);
+    padding-left: 20px;
+}
+
+.greeting {
+    font-size: 1.25rem;
+    font-weight: bolder;
+    margin-top: 22px;
+    margin-left: 22px;
+    color: rgb(68, 66, 66);
+}
