@@ -13,9 +13,10 @@
 }
 
 .logo {
-    width: 240px;
+    width: 225px;
     height: 45px;
-    padding-left: 20px;
+    margin-left: 27px;
+    padding-right: 15px;
 }
 
 .profile-button {
@@ -75,10 +76,29 @@
 }
 
 .location-button {
-    height: 48px;
-    width: 90px;
+    height: 34px;
+    width: 150px;
+    margin-bottom: 4px;
+}
+
+.location-line-break {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 45px;
 }
 
 .location-button:hover {
     cursor:not-allowed
+}
+
+.under-nav {
+    height: 40px;
+    border-top: solid;
+    border-color: rgb(235, 235, 235);
+    margin-bottom: 1px;
+}
+
+.under-nav-image {
+    height: 40px;
+    margin-left: 12px;
 }

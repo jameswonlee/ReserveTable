@@ -4,11 +4,13 @@ import LogoutButton from './auth/LogoutButton';
 import logo from '../images/logo.png'
 import profileButton from '../images/profile-button.png'
 import aboveNav from '../images/above-nav.png'
-import locationButton from '../images/location-button.png'
+import locationButton from '../images/location-button-la.png'
 import upcomingReservations from '../images/upcoming-reservations-button.png'
 import notifications from '../images/notifications.png'
 import lineBreak from '../images/line-break.png'
 import magnifyingGlass from '../images/search-button.png'
+import locationLineBreak from '../images/location-line-break.png'
+import navCity from '../images/home-us-la.png'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -22,6 +24,7 @@ const NavBar = () => {
           <NavLink to="/" exact={true} className="nav-link">
             <img src={logo} className="logo"></img>
           </NavLink>
+          <img src={locationLineBreak} className="location-line-break" />
             <img src={locationButton} className="location-button" />
         </div>
         <div className="nav-bar-menu-items">
@@ -46,6 +49,9 @@ const NavBar = () => {
             Users
           </NavLink>
         </div> */}
+      </div>
+      <div className="under-nav">
+        <img src={navCity} className="under-nav-image"/>
       </div>
     </div>
   );
