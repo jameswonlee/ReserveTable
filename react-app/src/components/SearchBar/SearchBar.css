@@ -1,13 +1,13 @@
 .search-bar {
-    height: 300px;
-    background-color: rgb(26, 40, 80);
+    height: 250px;
+    background-color: rgb(40, 51, 90);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.heading {
+.search-bar-heading {
     color: white;
     font-size: xx-large;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }

@@ -7,7 +7,7 @@ function SearchBar() {
 
     return (
         <div className="search-bar">
-            <div className="heading">
+            <div className="search-bar-heading">
                 <h1>Find your table for any occasion</h1>
             </div>
         </div>
