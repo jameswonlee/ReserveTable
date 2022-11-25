@@ -1,6 +1,9 @@
-// constants
+/* ------------------------------ Action Types -------------------------- */
+
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
+
+/* ---------------------------- Action Creators -------------------------- */
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -11,7 +14,8 @@ const removeUser = () => ({
   type: REMOVE_USER,
 })
 
-const initialState = { user: null };
+/* ---------------------------- Thunk Action Creators ----------------------- */
+
 
 export const authenticate = () => async (dispatch) => {
   const response = await fetch('/api/auth/', {
@@ -19,6 +23,7 @@ export const authenticate = () => async (dispatch) => {
       'Content-Type': 'application/json'
     }
   });
+
   if (response.ok) {
     const data = await response.json();
     if (data.errors) {
@@ -41,7 +46,6 @@ export const login = (email, password) => async (dispatch) => {
     })
   });
   
-  
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -54,8 +58,8 @@ export const login = (email, password) => async (dispatch) => {
   } else {
     return ['An error occurred. Please try again.']
   }
-
 }
+
 
 export const logout = () => async (dispatch) => {
   const response = await fetch('/api/auth/logout', {
@@ -70,7 +74,7 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (username, email, password) => async (dispatch) => {
+export const signUp = (username, email, firstName, lastName, password) => async (dispatch) => {
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
@@ -79,6 +83,8 @@ export const signUp = (username, email, password) => async (dispatch) => {
     body: JSON.stringify({
       username,
       email,
+      first_name: firstName,
+      last_name: lastName,
       password,
     }),
   });
@@ -96,6 +102,11 @@ export const signUp = (username, email, password) => async (dispatch) => {
     return ['An error occurred. Please try again.']
   }
 }
+
+/* -------------------------------- Reducer ---------------------------- */
+
+const initialState = { user: null };
+
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {

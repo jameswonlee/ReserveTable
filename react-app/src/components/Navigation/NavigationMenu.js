@@ -25,6 +25,7 @@ function NavigationMenu() {
         if (showSignInModal) return;
         setShowSignInModal(true)
     }
+    console.log(showSignInModal)
 
     const openSignUp = () => {
         if (showSignUpModal) return;
@@ -62,9 +63,7 @@ function NavigationMenu() {
                         <img src={lineBreak} className="line-break" />
                         <img src={magnifyingGlass} className="logged-in-search-button" />
                     </div>
-
                     :
-
                     <div className="sign-in-menu-items">
                         <div>
                             <button className="sign-up-button" onClick={openSignUp}>
@@ -93,7 +92,7 @@ function NavigationMenu() {
                     </div>
             }
             {showMenu &&
-                <ProfileButtonMenu />
+                <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
             }
         </div>
     )

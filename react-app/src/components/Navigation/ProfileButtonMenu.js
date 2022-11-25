@@ -7,7 +7,7 @@ import './ProfileButtonMenu.css'
 
 
 
-function ProfileButtonMenu() {
+function ProfileButtonMenu({ setShowSignInModal }) {
     const sessionUser = useSelector(state => state.session.user)
 
     useEffect(() => {
@@ -27,7 +27,7 @@ function ProfileButtonMenu() {
                 <div><button className="profile-button gray">My Profile</button></div>
                 <div><button className="profile-button gray">My Dining History</button></div>
                 <div><button className="profile-button gray">My Saved Restaurants</button></div>
-                <div><LogoutButton /></div>
+                <div><LogoutButton setShowSignInModal={setShowSignInModal} /></div>
             </div>
         </div>
     )
