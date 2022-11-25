@@ -3,9 +3,17 @@
     border-color: rgb(216, 217, 219);
     border-style: solid;
     margin: 10px;
-    height: 390px;
+    height: 350px;
     width: 276px;
 
+}
+
+.restaurant-preview-details {
+    font-weight: 400;
+    font: rgb(45, 51, 63);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .preview-image {
@@ -36,27 +44,22 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: large;
+    font-size: 1.1rem;
 }
 
 .preview-stars-reviews {
     font-weight: 400;
-    font-size: large;
+    font-size: 1.1rem;
 }
 
 .preview-cuisine-cost-neighborhood {
     font-weight: 300;
-    font-size: medium;
+    font-size: .950rem;
     font: bold;
-    color: rgb(6, 7, 8)
-
+    color: rgb(6, 7, 8);
 }
 
 /* .restaurant-card-name {
 
 } */
 
-.restaurant-preview-details {
-    font-weight: 400;
-    font: rgb(45, 51, 63)
-}

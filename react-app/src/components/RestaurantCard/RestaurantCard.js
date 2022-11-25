@@ -26,22 +26,24 @@ function RestaurantCard({ restaurant }) {
                 <img className="preview-image" src={restaurant.preview_img} />
             </div>
             <div className="restaurant-name-and-details-container">
-                <h2 className="restaurant-card-name dark-font">{restaurant.name}</h2>
+                <div>
+                    <h2 className="restaurant-card-name dark-font">{restaurant.name}</h2>
+                </div>
                 <div className="restaurant-preview-details">
-                    <p className="preview-stars-reviews">
+                    <div className="preview-stars-reviews">
                         {restaurant.reviews &&
                             <span>{averageRating().toFixed(1)}</span>}
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {restaurant.reviews &&
                             <span>{restaurant.reviews.length} reviews</span>}
-                    </p>
-                    <p className="preview-cuisine-cost-neighborhood">
+                    </div>
+                    <div className="preview-cuisine-cost-neighborhood">
                         <span>{restaurant.cuisines.split(',')[0]} </span>
                         &nbsp;&#x2022;&nbsp;
                         <span> $$$$$ </span>
                         &nbsp;&#x2022;&nbsp;
                         <span> {restaurant.neighborhood}</span>
-                    </p>
+                    </div>
                     <div className="booked-num">
                         <div className="booking-symbol-container">
                             <img src={bookingSymbol} className="booking-symbol" />
@@ -52,8 +54,7 @@ function RestaurantCard({ restaurant }) {
                                 <p>Booked {restaurant.total_num_reservations} time today</p>
                                 :
                                 <p>Booked {restaurant.total_num_reservations} times today</p>
-                            )
-                        }
+                            )}
                     </div>
                 </div>
             </div>
