@@ -136,13 +136,23 @@ def seed_restaurants():
         preview_img="https://resizer.otstatic.com/v2/photos/wide-huge/3/47226789.jpg"
     )
 
+    seventy_one_above = Restaurant(
+        name="71Above", neighborhood="Downtown", cuisines="Contemporary American", cost=5, operation_hours="Dinner Mon-Thu, Sun 5:00 pm-9:15 pm Fri, Sat 5:00 pm-10:00 pm", dining_style="Fine Dining", dress_code="Business Casual",
+        parking_details="Self parking is available in the building parking structure at 633 West Hope Place. The cost of Parking is $10 with validation for the first 3 hours, with prevailing rates thereafter.", payment_options="AMEX, Discover, JCB, MasterCard, Visa",
+        cross_street="5th & Flower", phone="(213) 712-2683", executive_chef="Javier Lopez", description="""71Above is a Prix-Fixe menu restaurant for dinner only. We kindly ask all dining room guests to participate in the coursed menu. Please be aware, any seating requests are noted, 
+        but not guaranteed. WINDOW TABLES ARE NOT GUARANTEED. All reservations require a credit card to hold the reservation but will not be charged unless there is a late cancellation or no show for the reservation. 
+        \n Offering elevated modern American cuisine by Chef Javier Lopez, 71Above boasts breathtaking ocean views from Malibu to Laguna Hills, along with spectacular views of Los Angeles and the surrounding mountain ranges. The Restaurant and Skylounge have a Smart Casual dress code. Jackets are not required however, 
+        no hats, athletic wear, shorts or flip-flops are allowed. Reservations are held for 15 minutes.
+        \n Valet is available at 633 W. 5th Street or Self parking is available under the building at 633 W. Hope Place. $15 for 3 hours.""", website="http://71above.com/", preview_img="https://resizer.otstatic.com/v2/photos/wide-huge/3/27168071.jpg"
+    )
 
 
 
 
 
 
-    db.session.add_all([spago, katsuya, lawrys, little_door, granville, catch, bacari, mortons, yardbird])
+
+    db.session.add_all([spago, katsuya, lawrys, little_door, granville, catch, bacari, mortons, yardbird, seventy_one_above])
     db.session.commit()
 
 
