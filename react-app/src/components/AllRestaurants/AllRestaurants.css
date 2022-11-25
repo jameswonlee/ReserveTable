@@ -14,8 +14,8 @@
 .above-restaurant-cards {
     margin-left: 10px;
     margin-bottom: 20px;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-bottom: solid;
     border-color: rgb(241, 242, 244);
     display: flex;
@@ -25,15 +25,21 @@
 
 .verify-city {
     margin-left: 5px;
-    margin-bottom: 4px;
     font-size: large;
 }
 
-.get-current-location {
-    height: 30px;
+.current-location-arrow {
+    height: 25px;
     margin-left: 10px;
+    margin-right: 5px;
 }
 
-.get-current-location:hover {
+.current-location-arrow:hover {
     cursor: text;
 }
+
+.get-current-location {
+    color: rgb(218, 54, 68);
+    font-size: large;
+}
+

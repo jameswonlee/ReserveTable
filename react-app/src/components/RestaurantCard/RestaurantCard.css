@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.restaurant-preview-details-container {
+.restaurant-name-and-details-container {
     margin-left: 5px;
     color: black
 }
@@ -29,16 +29,34 @@
 
 .booking-symbol-container {
     margin-right: 5px;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .booked-num {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: large;
 }
 
-.restaurant-card-name {
-    font-size: x-large;
-    border: none;
+.preview-stars-reviews {
+    font-weight: 400;
+    font-size: large;
+}
+
+.preview-cuisine-cost-neighborhood {
+    font-weight: 300;
+    font-size: medium;
+    font: bold;
+    color: rgb(6, 7, 8)
+
+}
+
+/* .restaurant-card-name {
+
+} */
+
+.restaurant-preview-details {
+    font-weight: 400;
+    font: rgb(45, 51, 63)
 }

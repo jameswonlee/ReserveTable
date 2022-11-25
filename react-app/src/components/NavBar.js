@@ -1,16 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
-import logo from '../images/logo.png'
-import profileButton from '../images/profile-button.png'
-import aboveNav from '../images/above-nav.png'
-import locationButton from '../images/location-button-la.png'
-import upcomingReservations from '../images/upcoming-reservations-button.png'
-import notifications from '../images/notifications.png'
-import lineBreak from '../images/line-break.png'
-import magnifyingGlass from '../images/search-button.png'
-import locationLineBreak from '../images/location-line-break.png'
-import navCity from '../images/home-us-la.png'
+import logo from '../icons/logo.png'
+import profileButton from '../icons/profile-button.ico'
+import aboveNav from '../icons/above-nav.png'
+import locationButton from '../icons/location-button-la.ico'
+import upcomingReservations from '../icons/upcoming-reservations-button.ico'
+import notifications from '../icons/notifications.ico'
+import lineBreak from '../icons/line-break.png'
+import magnifyingGlass from '../icons/search-button.ico'
+import locationLineBreak from '../icons/location-line-break.png'
+import navCity from '../icons/home-us-la.png'
 import './NavBar.css'
 
 const NavBar = () => {
