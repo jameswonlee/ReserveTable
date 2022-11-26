@@ -134,6 +134,9 @@ const reservationsReducer = (state = initialState, action) => {
             return newState;
 
         case ADD_RESERVATION:
+            newState = { ...state };
+            newState[action.reservation.id] = action.reservation;
+            return newState
             
         case UPDATE_RESERVATION:
             newState = { ...state };

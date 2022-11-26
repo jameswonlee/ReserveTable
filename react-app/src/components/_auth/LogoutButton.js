@@ -8,7 +8,7 @@ const LogoutButton = ({ setShowSignInModal }) => {
   const onLogout = async (e) => {
     await dispatch(logout());
     // Is this necessary??? If not - delete
-    await setShowSignInModal(false);
+    // await setShowSignInModal(false);
   };
 
   return <button className="profile-drop-logout-button" onClick={onLogout}>Sign out</button>;

@@ -17,6 +17,14 @@
     border: rgb(201, 201, 201);
 }
 
+.sign-up-button:hover {
+    cursor: pointer;
+}
+
+.sign-in-button:hover {
+    cursor: pointer;
+}
+
 .sign-in-button {
     height: 47px;
     width: 100px;

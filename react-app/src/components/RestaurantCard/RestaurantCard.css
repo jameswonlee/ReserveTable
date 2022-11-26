@@ -1,4 +1,4 @@
-.restaurant-card-container {
+.restaurant-nav-card-container {
     text-decoration: none;
     border-color: rgb(216, 217, 219);
     border-style: solid;
@@ -7,7 +7,10 @@
     width: 276px;
     display: flex;
     flex-direction: column;
+}
 
+.restaurant-card-container {
+    height: 100%;
 }
 
 .restaurant-preview-details {
@@ -81,7 +84,6 @@
 
 .restaurant-card-lower {
     display: flex;
-
 }
 
 .preview-num-reviews {

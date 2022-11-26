@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import bookingSymbol from '../../icons/booking-symbol.ico'
 import './RestaurantCard.css'
 
@@ -16,10 +16,8 @@ function RestaurantCard({ restaurant }) {
         return sum / reviews.length
     }
 
-    // const star = <i class="fa-sharp fa-solid fa-star"></i>
- 
     return (
-        <NavLink to={`/restaurants/${restaurant.id}`} className="restaurant-card-container">
+        <NavLink to={`/restaurants/${restaurant.id}`} className="restaurant-nav-card-container">
             <div className="restaurant-card-upper">
                 <div className="preview-image-container">
                     <img className="preview-image" src={restaurant.preview_img} />
@@ -58,15 +56,15 @@ function RestaurantCard({ restaurant }) {
                     <div className="preview-cuisine-cost-neighborhood">
                         <span>{restaurant.cuisines.split(',')[0]} </span>
                         &nbsp;&#x2022;&nbsp;
-                        {restaurant.cost == 1 && <span className="dark-gray-dollar">$<span className="light-gray-dollar">$$$$</span></span>}
-                        {restaurant.cost == 2 && <span className="dark-gray-dollar">$$<span className="light-gray-dollar">$$$</span></span>}
-                        {restaurant.cost == 3 && <span className="dark-gray-dollar">$$$<span className="light-gray-dollar">$$</span></span>}
-                        {restaurant.cost == 4 && <span className="dark-gray-dollar">$$$$<span className="light-gray-dollar">$</span></span>}
-                        {restaurant.cost == 5 && <span className="dark-gray-dollar">$$$$$</span>}
-                        
-                        
-                        
-                       
+                        {restaurant.cost === 1 && <span className="dark-gray-dollar">$<span className="light-gray-dollar">$$$$</span></span>}
+                        {restaurant.cost === 2 && <span className="dark-gray-dollar">$$<span className="light-gray-dollar">$$$</span></span>}
+                        {restaurant.cost === 3 && <span className="dark-gray-dollar">$$$<span className="light-gray-dollar">$$</span></span>}
+                        {restaurant.cost === 4 && <span className="dark-gray-dollar">$$$$<span className="light-gray-dollar">$</span></span>}
+                        {restaurant.cost === 5 && <span className="dark-gray-dollar">$$$$$</span>}
+
+
+
+
                         &nbsp;&#x2022;&nbsp;
                         <span> {restaurant.neighborhood}</span>
                     </div>

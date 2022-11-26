@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import LogoutButton from "../auth/LogoutButton";
+import LogoutButton from "../_auth/LogoutButton";
 
 import './ProfileButtonMenu.css'
 
