@@ -58,8 +58,10 @@ function NavigationMenu() {
                     <div className="nav-bar-menu-items">
                         <button className="profile-button" onClick={openMenu}>
                             <img src={profileButton} className="profile-button-icon" />
+                            {showMenu && (
+                                <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
+                            )}
                         </button>
-
                         <img src={upcomingReservations} className="upcoming-reservations-button" />
                         <img src={notifications} className="notifications-button" />
                         <img src={lineBreak} className="line-break" />
@@ -67,16 +69,14 @@ function NavigationMenu() {
                     </div>
                     :
                     <div className="sign-in-menu-items">
-                        {/* <div className="sign-up-button-container"> */}
-                            <button className="sign-up-button" onClick={openSignUp}>
-                                Sign up
-                                {showSignUpModal && (
-                                    <Modal onClose={() => setShowSignUpModal(false)}>
-                                        <SignUpForm />
-                                    </Modal>
-                                )}
-                            </button>
-                        {/* </div> */}
+                        <button className="sign-up-button" onClick={openSignUp}>
+                            Sign up
+                            {showSignUpModal && (
+                                <Modal onClose={() => setShowSignUpModal(false)}>
+                                    <SignUpForm />
+                                </Modal>
+                            )}
+                        </button>
                         <div>
                             <button className="sign-in-button" onClick={openSignIn}>
                                 Sign in
@@ -91,10 +91,8 @@ function NavigationMenu() {
                             <img src={magnifyingGlass} className="logged-out-search-button" />
                         </div>
 
+
                     </div>
-            }
-            {showMenu &&
-                <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
             }
         </div>
     )

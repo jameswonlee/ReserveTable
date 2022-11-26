@@ -11,7 +11,7 @@ const LogoutButton = ({ setShowSignInModal }) => {
     await setShowSignInModal(false);
   };
 
-  return <button className="profile-button logout" onClick={onLogout}>Sign out</button>;
+  return <button className="profile-drop-logout-button" onClick={onLogout}>Sign out</button>;
 };
 
 export default LogoutButton;

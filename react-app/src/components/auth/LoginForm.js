@@ -2,19 +2,36 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import './LoginForm.css';
 
-const LoginForm = ({ setShowSignInModal }) => {
-  const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const LoginForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [validationErrors, setValidationErrors] = useState('');
+  const [errors, setErrors] = useState([]);
+
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
-    if (data) {
-      setErrors(data);
+    const errors = [];
+
+    if (!email) errors.push("Please enter your email address");
+    if (!password) errors.push("Please enter your password");
+
+    setValidationErrors(errors);
+
+    if (!errors.length) {
+      const data = await dispatch(login(email, password));
+      if (data) {
+        const backendErrors = [];
+        data.forEach(error => {
+          let arr = error.split(': ');
+          backendErrors.push(arr[1])
+        })
+        setErrors(backendErrors);
+      }
     }
   };
 
@@ -31,8 +48,12 @@ const LoginForm = ({ setShowSignInModal }) => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <form onSubmit={onLogin} className="login-form">
       <div>
+        {validationErrors.length > 0 &&
+        validationErrors.map(error => (
+          <div key={error}>{error}</div>
+        ))}
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}

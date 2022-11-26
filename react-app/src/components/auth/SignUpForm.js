@@ -34,12 +34,12 @@ const SignUpForm = () => {
       if (password === repeatPassword) {
         const data = await dispatch(signUp(username, email, firstName, lastName, password));
         if (data) {
-          const errors = [];
+          const backendErrors = [];
           data.forEach(error => {
             let arr = error.split(': ');
-            errors.push(arr[1])
+            backendErrors.push(arr[1])
           })
-          setErrors(errors)
+          setErrors(backendErrors)
         }
       } else {
         errors.push("Please double check your confirm password.")
