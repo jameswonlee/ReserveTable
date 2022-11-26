@@ -1,3 +1,32 @@
-.sign-in-button .sign-up-button {
-    
+.navigation-menu {
+    margin-right: 6px;
 }
+
+.sign-in-menu-items {
+    height: 60px;
+}
+
+.sign-up-button {
+    height: 47px;
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: rgb(37, 127, 158);
+    font-size: 1.17rem;
+    color: rgb(235, 235, 235);
+    border: rgb(201, 201, 201);
+}
+
+.sign-in-button {
+    height: 47px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 1.17rem;
+    color: rgb(99, 98, 98);
+    background-color: white;
+    border: solid;
+    border-width: thin;
+    border-color: rgb(195, 194, 194);
+    box-shadow: none;
+}
+

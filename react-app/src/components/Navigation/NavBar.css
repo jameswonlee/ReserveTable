@@ -126,16 +126,6 @@
     cursor: text;
 }
 
-.sign-in-button {
-    height: 30px;
-    width: 100px;
-}
-
-.sign-up-button {
-    height: 30px;
-    width: 100px;
-}
-
 .sign-in-menu-items {
     display: flex;
     flex-direction: row;

@@ -8,7 +8,6 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
-  const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -16,11 +15,10 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [validationErrors, setValidationErrors] = useState('');
-
+  const [errors, setErrors] = useState([]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
-
     const errors = [];
 
     if (!username) errors.push("Please select a username");
@@ -36,10 +34,15 @@ const SignUpForm = () => {
       if (password === repeatPassword) {
         const data = await dispatch(signUp(username, email, firstName, lastName, password));
         if (data) {
-          setErrors(data)
+          const errors = [];
+          data.forEach(error => {
+            let arr = error.split(': ');
+            errors.push(arr[1])
+          })
+          setErrors(errors)
         }
       } else {
-        errors.push("Please double check your confirm password")
+        errors.push("Please double check your confirm password.")
       }
     }
   };
@@ -77,11 +80,11 @@ const SignUpForm = () => {
       <div>
         {validationErrors.length > 0 &&
           validationErrors.map(error =>
-            <li key={error}>{error}</li>
+            <div key={error}>{error}</div>
           )}
-        {/* {errors.map((error, ind) => (
+        {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
-        ))} */}
+        ))}
       </div>
       <div>
         <label>Username</label>

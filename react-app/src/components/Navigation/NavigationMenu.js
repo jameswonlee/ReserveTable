@@ -12,6 +12,8 @@ import lineBreak from '../../icons/line-break.png';
 import magnifyingGlass from '../../icons/search-button.ico';
 import ProfileButtonMenu from './ProfileButtonMenu';
 
+import './NavigationMenu.css'
+
 
 function NavigationMenu() {
     const sessionUser = useSelector(state => state.session.user);
@@ -25,7 +27,7 @@ function NavigationMenu() {
         if (showSignInModal) return;
         setShowSignInModal(true)
     }
-    console.log(showSignInModal)
+    // console.log(showSignInModal)
 
     const openSignUp = () => {
         if (showSignUpModal) return;
@@ -65,7 +67,7 @@ function NavigationMenu() {
                     </div>
                     :
                     <div className="sign-in-menu-items">
-                        <div>
+                        {/* <div className="sign-up-button-container"> */}
                             <button className="sign-up-button" onClick={openSignUp}>
                                 Sign up
                                 {showSignUpModal && (
@@ -74,7 +76,7 @@ function NavigationMenu() {
                                     </Modal>
                                 )}
                             </button>
-                        </div>
+                        {/* </div> */}
                         <div>
                             <button className="sign-in-button" onClick={openSignIn}>
                                 Sign in
