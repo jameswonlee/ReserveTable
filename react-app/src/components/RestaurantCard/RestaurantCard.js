@@ -7,17 +7,20 @@ import './RestaurantCard.css'
 function RestaurantCard({ restaurant }) {
     const reviews = restaurant.reviews
 
-    let reviewCount;
-
     const averageRating = () => {
         let sum = 0;
         for (let i = 0; i < reviews.length; i++) {
             let review = reviews[i];
             sum += review.rating
         }
-        reviewCount = reviews.length
-        return sum / reviewCount
+        return sum / reviews.length
     }
+
+    // const restaurantRating = averageRating().toFixed(1);
+
+    // const stars1 = "★"
+    // const stars2 = "★"
+
 
 
     return (
@@ -31,8 +34,28 @@ function RestaurantCard({ restaurant }) {
                 </div>
                 <div className="restaurant-preview-details">
                     <div className="preview-stars-reviews">
-                        {restaurant.reviews &&
-                            <span>{averageRating().toFixed(1)}</span>}
+                        {restaurant.reviews
+                            ?
+                            <span>{averageRating().toFixed(1) >= 0.1 &&
+                                averageRating().toFixed(1) < 1.5 &&
+                                <span className="red-star">★<span className="gray-star">★★★★</span></span>}
+                                {averageRating().toFixed(1) >= 1.5 &&
+                                    averageRating().toFixed(1) < 2.5 &&
+                                    <span className="red-star">★★<span className="gray-star">★★★</span></span>}
+                                {averageRating().toFixed(1) >= 2.5 &&
+                                    averageRating().toFixed(1) < 3.5 &&
+                                    <span className="red-star">★★★<span className="gray-star">★★</span></span>}
+                                {averageRating().toFixed(1) >= 3.5 &&
+                                    averageRating().toFixed(1) < 4.5 &&
+                                    <span className="red-star">★★★★<span className="gray-star">★</span></span>}
+                                {averageRating().toFixed(1) >= 4.5 &&
+                                    <span className="red-star">★★★★★</span>}
+                            </span>
+                            :
+                            <span className="gray-star">★★★★<span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
+                            </span>
+                        }
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {restaurant.reviews &&
                             <span>{restaurant.reviews.length} reviews</span>}
