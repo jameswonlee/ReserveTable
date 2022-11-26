@@ -82,6 +82,10 @@
     font-size: x-large;
 }
 
+.card-star {
+    font-size: 1rem;
+}
+
 .restaurant-card-lower {
     display: flex;
 }

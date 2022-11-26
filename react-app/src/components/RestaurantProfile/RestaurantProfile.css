@@ -1,6 +1,6 @@
 .restaurant-profile-image {
     width: 100%;
-    height: 700px;
+    height: 460px;
     /* object-fit: cover; */
 }
 
@@ -17,15 +17,16 @@
 .restaurant-profile-upper {
     border: solid;
     border-color: rgb(138, 4, 27);
+    object-fit: cover;
 }
 .restaurant-profile-lower {
     height: 1500px;
+    background-color: lightblue;
 }
 
 .restaurant-profile-details-container {
     width: 100%;
     height: 100%;
-    background-color: rgb(92, 92, 245);
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -36,14 +37,14 @@
 .restaurant-profile-left {
     border: solid;
     border-color: yellow;
-    width: 800px;
+    width: 650px;
     margin-right: 50px;
 }
 
 .restaurant-profile-right {
     border: solid;
     border-color: yellow;
-    width: 400px;
+    width: 350px;
 }
 
 .make-a-reservation-container {
@@ -62,24 +63,28 @@
     border: solid;
     border-color: rgb(21, 21, 20);
     position: sticky;
-    width: 800px;
+    width: 650px;
     height: 40px;
-    margin-left: -449px;
+    margin-left: -400px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* position: fixed; */
+    position: sticky;
+    z-index: 2;
+    color: rgb(111, 115, 123);
+    font-size: 0.85rem;
+    font-weight: 400;
 }
 
 .reservations-component {
-    width: 400px;
+    width: 350px;
     height: 450px;
     /* position: fixed; */
     position: absolute;
     border: solid;
     border-color: blue;
-    margin-right: -858px;
+    margin-right: -705px;
 }
 
 .restaurant-reviews-container {
@@ -89,14 +94,36 @@
 }
 
 .restaurant-profile-name {
-    border: solid;
-    border-color: white;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d333f;
+    /* Do I need this?? */
+    line-height: 3.5rem;
     border-bottom: solid;
-    border-color: gray;
+    border-color: rgb(216, 217, 219);
 }
 
-.additional-info-container {
-
+.restaurant-profile-general-info {
+    border: solid;
+    border-color: blue;
+    height: 40px;
 }
 
+.profile-star {
+    font-size: 1.2rem;
+}
+
+.restaurant-profile-general-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.space-to-left1 {
+    margin-left: 3px;
+}
+
+.space-to-left2 {
+    margin-left: 15px;
+}
