@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
+import LoginForm from './components/_auth/LoginForm';
 import SearchBar from './components/SearchBar/SearchBar'
 import NavBar from './components/Navigation/NavBar';
 import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
+import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile';
 
-import SignUpForm from './components/auth/SignUpForm';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+import SignUpForm from './components/_auth/SignUpForm';
+// import ProtectedRoute from './components/_auth/ProtectedRoute';
+// import UsersList from './components/UsersList';
+// import User from './components/User';
+
+import './index.css';
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -28,6 +33,7 @@ function App() {
   }
 
   return (
+  <>
     <BrowserRouter>
       <NavBar loaded={loaded} />
       <Switch>
@@ -47,8 +53,18 @@ function App() {
           <SearchBar />
           <DisplayAllRestaurants />
         </Route>
+        <Route path='/restaurants/:restaurantId'>
+          <RestaurantProfile />
+        </Route>
       </Switch>
     </BrowserRouter>
+    <footer>
+        <div className="footer-container">    
+
+
+        </div>
+    </footer>
+  </>
   );
 }
 

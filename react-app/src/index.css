@@ -1,7 +1,6 @@
 /* TODO Add site wide styles */
 
 * {
-    font-family: 'Montserrat', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -10,10 +9,7 @@ dark-font {
 
 }
 
-/* medium-font {
-
-} */
-
-/* light-font {
-
-} */
+.footer-container {
+    background-color: rgb(45, 51, 63);
+    height: 700px;
+}

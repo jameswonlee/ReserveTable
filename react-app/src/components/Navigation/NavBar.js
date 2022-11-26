@@ -8,7 +8,7 @@ import locationButton from '../../icons/location-button-la.ico';
 import locationLineBreak from '../../icons/location-line-break.png';
 import navCity from '../../icons/home-us-la.png';
 import './NavBar.css';
-import LogoutButton from '../auth/LogoutButton';
+import LogoutButton from '../_auth/LogoutButton';
 
 
 const NavBar = ({ loaded }) => {
@@ -27,8 +27,8 @@ const NavBar = ({ loaded }) => {
           <img src={locationButton} className="location-button" />
         </div>
         {/* <div className="navigation-menu-container"> */}
-          {loaded &&
-            <NavigationMenu />}
+        {loaded &&
+          <NavigationMenu />}
         {/* </div> */}
       </div>
       <div className="under-nav">

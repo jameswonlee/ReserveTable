@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
-import LoginForm from '../auth/LoginForm';
-import SignUpForm from '../auth/SignUpForm';
-import LogoutButton from '../auth/LogoutButton';
+import LoginForm from '../_auth/LoginForm';
+import SignUpForm from '../_auth/SignUpForm';
+import LogoutButton from '../_auth/LogoutButton';
 
 import profileButton from '../../icons/profile-button.ico';
 import upcomingReservations from '../../icons/upcoming-reservations-button.ico';
@@ -27,7 +27,7 @@ function NavigationMenu() {
         if (showSignInModal) return;
         setShowSignInModal(true)
     }
-    // console.log(showSignInModal)
+    console.log(showSignInModal)
 
     const openSignUp = () => {
         if (showSignUpModal) return;
@@ -46,6 +46,8 @@ function NavigationMenu() {
     useEffect(() => {
         if (!showMenu) return;
         document.addEventListener('click', closeMenu);
+        setShowSignInModal(false);
+        setShowSignUpModal(false);
         return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
 
@@ -90,8 +92,6 @@ function NavigationMenu() {
                         <div>
                             <img src={magnifyingGlass} className="logged-out-search-button" />
                         </div>
-
-
                     </div>
             }
         </div>
