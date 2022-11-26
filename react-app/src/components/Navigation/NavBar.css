@@ -49,7 +49,9 @@
 
 .line-break {
     height: 50px;
-    width: 50px;
+    width: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .logged-in-search-button {
@@ -126,16 +128,6 @@
     cursor: text;
 }
 
-.sign-in-button {
-    height: 30px;
-    width: 100px;
-}
-
-.sign-up-button {
-    height: 30px;
-    width: 100px;
-}
-
 .sign-in-menu-items {
     display: flex;
     flex-direction: row;
@@ -143,9 +135,3 @@
     justify-content: center;
 }
 
-/* .profile-drop-down-container {
-    position: absolute;
-    background-color: white;
-    margin-top: 20px;
-    padding-right: 200px;
-} */

@@ -1,39 +1,50 @@
 .profile-drop-down-menu {
-    margin-left: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
     background-color: white;
     height: 350px;
     width: 400px;
     position: absolute;
     background-color: white;
     margin-top: 12px;
-    margin-left: -340px;
+    margin-left: -356px;
     border-style: solid;
     border-color: rgb(235, 235, 235);
 }
 
 .profile-drop-down-top {
     height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     border-bottom: solid;
     border-color: rgb(240, 239, 239);
 }
 
 .profile-drop-down-bottom {
     height: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-evenly;
 }
 
 
-.profile-button {
-    background-color: none;
-    font-size: 1.3rem;
+.profile-drop-button {
+    background-color: white;
+    border: none;
+    font-size: 1.4rem;
     font-weight: 300;
-    color: rgb(64, 63, 63);
+    color: rgb(35, 35, 35);
     padding-left: 20px;
+}
+
+.profile-drop-bottom > div:hover {
+    background-color: gray;
 }
 
 .greeting {
@@ -42,4 +53,13 @@
     margin-top: 22px;
     margin-left: 22px;
     color: rgb(68, 66, 66);
+}
+
+.learn-about-points {
+    margin-left: 22px;
+    margin-bottom: 20px;
+}
+
+.points-graph {
+    margin-left: 22px;
 }

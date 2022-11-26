@@ -26,10 +26,10 @@ const NavBar = ({ loaded }) => {
           <img src={locationLineBreak} className="location-line-break" />
           <img src={locationButton} className="location-button" />
         </div>
-        <div>
+        {/* <div className="navigation-menu-container"> */}
           {loaded &&
             <NavigationMenu />}
-        </div>
+        {/* </div> */}
       </div>
       <div className="under-nav">
         <img src={navCity} className="under-nav-image" />

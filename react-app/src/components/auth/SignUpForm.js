@@ -2,22 +2,47 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignUpForm.css'
 
 const SignUpForm = () => {
-  const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [validationErrors, setValidationErrors] = useState('');
+  const [errors, setErrors] = useState([]);
+
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
-      if (data) {
-        setErrors(data)
+    const errors = [];
+
+    if (!username) errors.push("Please select a username");
+    if (!email) errors.push("Please enter your email address");
+    if (!firstName) errors.push("Please enter your first name");
+    if (!lastName) errors.push("Please enter your last name");
+    if (!password) errors.push("Please select a password");
+    if (!repeatPassword) errors.push("Please confirm your password");
+
+    setValidationErrors(errors);
+
+    if (!errors.length) {
+      if (password === repeatPassword) {
+        const data = await dispatch(signUp(username, email, firstName, lastName, password));
+        if (data) {
+          const backendErrors = [];
+          data.forEach(error => {
+            let arr = error.split(': ');
+            backendErrors.push(arr[1])
+          })
+          setErrors(backendErrors)
+        }
+      } else {
+        errors.push("Please double check your confirm password.")
       }
     }
   };
@@ -28,6 +53,14 @@ const SignUpForm = () => {
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
+  };
+
+  const updateFirstName = (e) => {
+    setFirstName(e.target.value);
+  };
+
+  const updateLastName = (e) => {
+    setLastName(e.target.value);
   };
 
   const updatePassword = (e) => {
@@ -43,14 +76,18 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <form onSubmit={onSignUp} className="sign-up-form">
       <div>
+        {validationErrors.length > 0 &&
+          validationErrors.map(error =>
+            <div key={error}>{error}</div>
+          )}
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
       <div>
-        <label>User Name</label>
+        <label>Username</label>
         <input
           type='text'
           name='username'
@@ -65,6 +102,24 @@ const SignUpForm = () => {
           name='email'
           onChange={updateEmail}
           value={email}
+        ></input>
+      </div>
+      <div>
+        <label>First name</label>
+        <input
+          type='text'
+          name='first_name'
+          onChange={updateFirstName}
+          value={firstName}
+        ></input>
+      </div>
+      <div>
+        <label>Last name</label>
+        <input
+          type='text'
+          name='last_name'
+          onChange={updateLastName}
+          value={lastName}
         ></input>
       </div>
       <div>
@@ -83,7 +138,7 @@ const SignUpForm = () => {
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
-          required={true}
+          // required={true}
         ></input>
       </div>
       <button type='submit'>Sign Up</button>

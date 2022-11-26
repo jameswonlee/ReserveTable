@@ -12,6 +12,8 @@ import lineBreak from '../../icons/line-break.png';
 import magnifyingGlass from '../../icons/search-button.ico';
 import ProfileButtonMenu from './ProfileButtonMenu';
 
+import './NavigationMenu.css'
+
 
 function NavigationMenu() {
     const sessionUser = useSelector(state => state.session.user);
@@ -25,6 +27,7 @@ function NavigationMenu() {
         if (showSignInModal) return;
         setShowSignInModal(true)
     }
+    // console.log(showSignInModal)
 
     const openSignUp = () => {
         if (showSignUpModal) return;
@@ -55,27 +58,25 @@ function NavigationMenu() {
                     <div className="nav-bar-menu-items">
                         <button className="profile-button" onClick={openMenu}>
                             <img src={profileButton} className="profile-button-icon" />
+                            {showMenu && (
+                                <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
+                            )}
                         </button>
-
                         <img src={upcomingReservations} className="upcoming-reservations-button" />
                         <img src={notifications} className="notifications-button" />
                         <img src={lineBreak} className="line-break" />
                         <img src={magnifyingGlass} className="logged-in-search-button" />
                     </div>
-
                     :
-
                     <div className="sign-in-menu-items">
-                        <div>
-                            <button className="sign-up-button" onClick={openSignUp}>
-                                Sign up
-                                {showSignUpModal && (
-                                    <Modal onClose={() => setShowSignUpModal(false)}>
-                                        <SignUpForm />
-                                    </Modal>
-                                )}
-                            </button>
-                        </div>
+                        <button className="sign-up-button" onClick={openSignUp}>
+                            Sign up
+                            {showSignUpModal && (
+                                <Modal onClose={() => setShowSignUpModal(false)}>
+                                    <SignUpForm />
+                                </Modal>
+                            )}
+                        </button>
                         <div>
                             <button className="sign-in-button" onClick={openSignIn}>
                                 Sign in
@@ -90,10 +91,8 @@ function NavigationMenu() {
                             <img src={magnifyingGlass} className="logged-out-search-button" />
                         </div>
 
+
                     </div>
-            }
-            {showMenu &&
-                <ProfileButtonMenu />
             }
         </div>
     )
