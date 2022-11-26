@@ -21,23 +21,16 @@ function RestaurantProfile() {
 
     if (!restaurant) return null;
 
-    const reviews = restaurant.reviews.map(({ review }) => {
-        return review
-    })
+    const reviews = restaurant.reviews
 
-    // const reviewCount = restaurant.reviews.length
-
-    // const averageRating = () => {
-    //     let sum = 0;
-    //     for (let i = 0; i < reviews.length; i++) {
-    //         let review = reviews[i];
-    //         sum += review.rating
-    //     }
-    //     return sum / reviewCount
-    // }
-
-    // const restaurantRating = averageRating().toFixed(1);
-
+    const averageRating = () => {
+        let sum = 0;
+        for (let i = 0; i < reviews.length; i++) {
+            let review = reviews[i];
+            sum += review.rating
+        }
+        return sum / reviews.length;
+    }
 
 
 
@@ -62,6 +55,7 @@ function RestaurantProfile() {
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div className="restaurant-profile-lower">
@@ -72,26 +66,56 @@ function RestaurantProfile() {
                             <h1>{restaurant.name}</h1>
                         </div>
                         <div>
-                            <p>{restaurant.description}</p>
+
                         </div>
                         <div className="restaurant-profile-general-info">
+                            <div className="space-to-left1">
+                                {restaurant.reviews
+                                    ?
+                                    <span>{averageRating().toFixed(1) >= 0.1 &&
+                                        averageRating().toFixed(1) < 1.5 &&
+                                        <span className="red-star profile-star">★<span className="gray-star profile-star">★★★★</span></span>}
+                                        {averageRating().toFixed(1) >= 1.5 &&
+                                            averageRating().toFixed(1) < 2.5 &&
+                                            <span className="red-star profile-star">★★<span className="gray-star profile-star">★★★</span></span>}
+                                        {averageRating().toFixed(1) >= 2.5 &&
+                                            averageRating().toFixed(1) < 3.5 &&
+                                            <span className="red-star profile-star">★★★<span className="gray-star profile-star">★★</span></span>}
+                                        {averageRating().toFixed(1) >= 3.5 &&
+                                            averageRating().toFixed(1) < 4.5 &&
+                                            <span className="red-star profile-star">★★★★<span className="gray-star profile-star">★</span></span>}
+                                        {averageRating().toFixed(1) >= 4.5 &&
+                                            <span className="red-star profile-star">★★★★★</span>}
+                                    </span>
+                                    :
+                                    <span className="gray-star profile-star">★★★★<span className="profile-num-reviews">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
+                                    </span>
+                                }
+                            </div>
+                            <div className="space-to-left2">
+                                {reviews.length} reviews
+                            </div>
+                            <div className="space-to-left2">
+                                {restaurant.cost}
+                            </div>
+                            <div className="space-to-left2">
+                                {restaurant.cuisines}
+                            </div>
+
 
                         </div>
                         <div className="restaurant-profile-description">
-
+                            <p>{restaurant.description}</p>
                         </div>
                         <div className="restaurant-reviews-container">
                             <h2>REVIEWS</h2>
-                            <div>{reviews.map(review => (
-                                <div key={review.id}>{review}</div>
-                            ))}</div>
-                            <Reviews />
+                            <Reviews restaurant={restaurant} />
                         </div>
                     </div>
 
 
                     <div className="restaurant-profile-right">
-                        <h2>Restaurant Profile Right Side</h2>
                         <div className="additional-info-container">
 
                             <h1>Additional Info</h1>

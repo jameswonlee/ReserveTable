@@ -31,21 +31,21 @@ function RestaurantCard({ restaurant }) {
                             ?
                             <span>{averageRating().toFixed(1) >= 0.1 &&
                                 averageRating().toFixed(1) < 1.5 &&
-                                <span className="red-star">★<span className="gray-star">★★★★</span></span>}
+                                <span className="red-star card-star">★<span className="gray-star card-star">★★★★</span></span>}
                                 {averageRating().toFixed(1) >= 1.5 &&
                                     averageRating().toFixed(1) < 2.5 &&
-                                    <span className="red-star">★★<span className="gray-star">★★★</span></span>}
+                                    <span className="red-star card-star">★★<span className="gray-star card-star">★★★</span></span>}
                                 {averageRating().toFixed(1) >= 2.5 &&
                                     averageRating().toFixed(1) < 3.5 &&
-                                    <span className="red-star">★★★<span className="gray-star">★★</span></span>}
+                                    <span className="red-star card-star">★★★<span className="gray-star card-star">★★</span></span>}
                                 {averageRating().toFixed(1) >= 3.5 &&
                                     averageRating().toFixed(1) < 4.5 &&
-                                    <span className="red-star">★★★★<span className="gray-star">★</span></span>}
+                                    <span className="red-star card-star">★★★★<span className="gray-star card-star">★</span></span>}
                                 {averageRating().toFixed(1) >= 4.5 &&
-                                    <span className="red-star">★★★★★</span>}
+                                    <span className="red-star card-star">★★★★★</span>}
                             </span>
                             :
-                            <span className="gray-star">★★★★<span className="preview-num-reviews">
+                            <span className="gray-star card-star">★★★★<span className="preview-num-reviews">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
                             </span>
                         }
