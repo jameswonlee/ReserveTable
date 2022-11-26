@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar/SearchBar'
 import NavBar from './components/Navigation/NavBar';
 import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
+import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile';
 
 import SignUpForm from './components/_auth/SignUpForm';
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
@@ -13,6 +14,8 @@ import SignUpForm from './components/_auth/SignUpForm';
 // import User from './components/User';
 
 import './index.css';
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -49,6 +52,9 @@ function App() {
         <Route path='/' exact={true} >
           <SearchBar />
           <DisplayAllRestaurants />
+        </Route>
+        <Route path='/restaurants/:restaurantId'>
+          <RestaurantProfile />
         </Route>
       </Switch>
     </BrowserRouter>
