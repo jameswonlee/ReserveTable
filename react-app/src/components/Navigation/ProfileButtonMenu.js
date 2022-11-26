@@ -30,6 +30,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                 <div><LogoutButton setShowSignInModal={setShowSignInModal} /></div>
             </div>
         </div>
+
     )
 }
 
