@@ -16,23 +16,18 @@ function RestaurantCard({ restaurant }) {
         return sum / reviews.length
     }
 
-    // const restaurantRating = averageRating().toFixed(1);
-
-    // const stars1 = "★"
-    // const stars2 = "★"
-
-
-
+    // const star = <i class="fa-sharp fa-solid fa-star"></i>
+ 
     return (
         <NavLink to={`/restaurants/${restaurant.id}`} className="restaurant-card-container">
-            <div className="preview-image-container">
-                <img className="preview-image" src={restaurant.preview_img} />
-            </div>
-            <div className="restaurant-name-and-details-container">
-                <div>
-                    <h2 className="restaurant-card-name dark-font">{restaurant.name}</h2>
+            <div className="restaurant-card-upper">
+                <div className="preview-image-container">
+                    <img className="preview-image" src={restaurant.preview_img} />
                 </div>
-                <div className="restaurant-preview-details">
+            </div>
+            <div className="restaurant-card-lower">
+                <div className="restaurant-name-and-details-container">
+                    <div className="restaurant-card-name dark-font">{restaurant.name}</div>
                     <div className="preview-stars-reviews">
                         {restaurant.reviews
                             ?
@@ -52,18 +47,22 @@ function RestaurantCard({ restaurant }) {
                                     <span className="red-star">★★★★★</span>}
                             </span>
                             :
-                            <span className="gray-star">★★★★<span>
+                            <span className="gray-star">★★★★<span className="preview-num-reviews">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
                             </span>
                         }
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {restaurant.reviews &&
-                            <span>{restaurant.reviews.length} reviews</span>}
+                            <span className="preview-num-reviews">{restaurant.reviews.length} reviews</span>}
                     </div>
                     <div className="preview-cuisine-cost-neighborhood">
                         <span>{restaurant.cuisines.split(',')[0]} </span>
                         &nbsp;&#x2022;&nbsp;
-                        <span> $$$$$ </span>
+                        {restaurant.cost === 5 && <span>$$$$$</span>}
+                        {restaurant.cost === 4 && <span>$$$$</span>}
+                        {restaurant.cost === 3 && <span>$$$</span>}
+                        {restaurant.cost === 2 && <span>$$</span>}
+                        {restaurant.cost === 1 && <span>$</span>}
                         &nbsp;&#x2022;&nbsp;
                         <span> {restaurant.neighborhood}</span>
                     </div>

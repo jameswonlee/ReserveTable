@@ -23,7 +23,11 @@
 
 .restaurant-name-and-details-container {
     margin-left: 5px;
-    color: black
+    color: black;
+    display: flex;
+    flex-direction: column;
+    /* align-items:flex-start; */
+    /* justify-content:space-around; */
 }
 
 /* .restaurant-preview-details {
@@ -59,15 +63,28 @@
     color: rgb(6, 7, 8);
 }
 
-/* .restaurant-card-name {
-
-} */
+.restaurant-card-name {
+    font-size: 1.45rem;
+    font-weight: 600;
+}
 
 .red-star {
     color: rgb(218, 54, 68);
+    height: 50px;
+    font-size: x-large;
 }
 
 .gray-star {
     color: rgb(225, 225, 225);
+    font-size: x-large;
 }
 
+.restaurant-card-lower {
+    /* height: 200px; */
+}
+
+.preview-num-reviews {
+    color: rgb(45, 51, 63);
+    font-size: 1.2rem;
+    padding-top: -5px;
+}
