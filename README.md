@@ -17,4 +17,4 @@
 
 
 <!-- Markdown Links and Icons -->
-[reservetable-logo]: ./react-app/src/images/logo.png
+[reservetable-logo]: ./react-app/src/icons/logo.png

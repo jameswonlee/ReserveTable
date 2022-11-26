@@ -58,11 +58,15 @@ function RestaurantCard({ restaurant }) {
                     <div className="preview-cuisine-cost-neighborhood">
                         <span>{restaurant.cuisines.split(',')[0]} </span>
                         &nbsp;&#x2022;&nbsp;
-                        {restaurant.cost === 5 && <span>$$$$$</span>}
-                        {restaurant.cost === 4 && <span>$$$$</span>}
-                        {restaurant.cost === 3 && <span>$$$</span>}
-                        {restaurant.cost === 2 && <span>$$</span>}
-                        {restaurant.cost === 1 && <span>$</span>}
+                        {restaurant.cost == 1 && <span className="dark-gray-dollar">$<span className="light-gray-dollar">$$$$</span></span>}
+                        {restaurant.cost == 2 && <span className="dark-gray-dollar">$$<span className="light-gray-dollar">$$$</span></span>}
+                        {restaurant.cost == 3 && <span className="dark-gray-dollar">$$$<span className="light-gray-dollar">$$</span></span>}
+                        {restaurant.cost == 4 && <span className="dark-gray-dollar">$$$$<span className="light-gray-dollar">$</span></span>}
+                        {restaurant.cost == 5 && <span className="dark-gray-dollar">$$$$$</span>}
+                        
+                        
+                        
+                       
                         &nbsp;&#x2022;&nbsp;
                         <span> {restaurant.neighborhood}</span>
                     </div>

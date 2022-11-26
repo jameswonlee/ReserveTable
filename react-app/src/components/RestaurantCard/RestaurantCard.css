@@ -5,6 +5,8 @@
     margin: 10px;
     height: 350px;
     width: 276px;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -57,10 +59,8 @@
 }
 
 .preview-cuisine-cost-neighborhood {
-    font-weight: 300;
-    font-size: .950rem;
-    font: bold;
-    color: rgb(6, 7, 8);
+    font-weight: 400;
+    font-size: .99rem;
 }
 
 .restaurant-card-name {
@@ -80,11 +80,20 @@
 }
 
 .restaurant-card-lower {
-    /* height: 200px; */
+    display: flex;
+
 }
 
 .preview-num-reviews {
     color: rgb(45, 51, 63);
     font-size: 1.2rem;
     padding-top: -5px;
+}
+
+.dark-gray-dollar {
+    color: rgb(45, 51, 53);
+}
+
+.light-gray-dollar {
+    color: rgb(204, 204, 204);
 }
