@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 import bookingSymbol from '../../icons/booking-symbol.ico'
 import './RestaurantCard.css'
 
@@ -76,6 +75,25 @@ function RestaurantCard({ restaurant }) {
                                     :
                                     <p>Booked {restaurant.total_num_reservations} times today</p>
                                 )}
+                        </div>
+                    </div>
+                    <div className="preview-time-buttons-continer">
+                        <div className="preview-time-buttons-div">
+                            <div>
+                                <button className="preview-time-buttons">
+                                    6:00 PM
+                                </button>
+                            </div>
+                            <div>
+                                <button className="preview-time-buttons">
+                                    6:30 PM
+                                </button>
+                            </div>
+                            <div>
+                                <button className="preview-time-buttons">
+                                    7:00 PM
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

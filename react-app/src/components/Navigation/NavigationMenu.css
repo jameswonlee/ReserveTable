@@ -2,27 +2,52 @@
     margin-right: 6px;
 }
 
+.nav-bar-menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .sign-in-menu-items {
     height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-button-icon {
     height: 39px;
     width: 38px;
     margin-top: 4px;
-    margin-right: -2px;
+    margin-right: 3px;
 }
 
 .profile-button {
     border: none;
     background-color: white;
     cursor: pointer;
+    margin-right: 15px;
+    height: 48px;
+    width: 40px;
 }
 
-.upcoming-reservations-button {
+.upcoming-reservations-menu-button {
+    border: none;
+    background-color: white;
+    height: 30px;
+    width: 35px;
+    margin-bottom: 3px;
+}
+
+.upcoming-reservations-menu-button:hover {
+    cursor: pointer;
+}
+
+.upcoming-reservations-button-icon {
     height: 31px;
     width: 36px;
-    margin-right: 5px;
+    margin-left: -14px;
 }
 
 .notifications-button {

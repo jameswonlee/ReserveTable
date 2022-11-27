@@ -163,18 +163,58 @@ def undo_restaurants():
 # *********************************** Reservations *************************************** #
 
 def seed_reservations():
-    user2 = Reservation(
+    user = Reservation(
         user_id=2, restaurant_id=1, reservation_time=datetime.datetime(2022,12,10,17,30),
         party_size=2
     )
 
-    user = Reservation(
+    user2 = Reservation(
         user_id=2, restaurant_id=2, reservation_time=datetime.datetime(2022,12,24,18,00),
         party_size=3
     )
 
+    user3 = Reservation(
+        user_id=3, restaurant_id=3, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=4
+    )
 
-    db.session.add_all([user2, user])
+    user4 = Reservation(
+        user_id=3, restaurant_id=4, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+    user5 = Reservation(
+        user_id=4, restaurant_id=5, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+    user6 = Reservation(
+        user_id=5, restaurant_id=6, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+    user7 = Reservation(
+        user_id=6, restaurant_id=7, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+    user8 = Reservation(
+        user_id=2, restaurant_id=8, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+    user9 = Reservation(
+        user_id=3, restaurant_id=9, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+    user10 = Reservation(
+        user_id=4, restaurant_id=2, reservation_time=datetime.datetime(2022,12,24,18,00),
+        party_size=3
+    )
+
+
+    db.session.add_all([user, user2, user3, user4, user5, user6, user7, user8, user9, user10])
     db.session.commit()
 
 
