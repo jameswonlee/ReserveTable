@@ -10,6 +10,7 @@
     height: 39px;
     width: 38px;
     margin-top: 4px;
+    margin-right: -2px;
 }
 
 .profile-button {
@@ -19,14 +20,14 @@
 }
 
 .upcoming-reservations-button {
-    height: 30px;
-    width: 35px;
+    height: 31px;
+    width: 36px;
     margin-right: 5px;
 }
 
 .notifications-button {
-    height: 30px;
-    width: 30px;
+    height: 29px;
+    width: 29px;
 }
 
 .notifications-button:hover {
@@ -81,7 +82,7 @@
     background-color: white;
     border: solid;
     border-width: thin;
-    border-color: rgb(236, 234, 234);
+    border-color: rgb(224, 222, 222);
     box-shadow: none;
 }
 

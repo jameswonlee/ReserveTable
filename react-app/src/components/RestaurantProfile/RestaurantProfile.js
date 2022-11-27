@@ -41,7 +41,7 @@ function RestaurantProfile() {
         <div className="restaurant-profile-main-container">
 
             <div className="restaurant-profile-upper">
-                <div clasName="restaurant-profile-image-container">
+                <div className="restaurant-profile-image-container">
                     <img src={restaurant.preview_img} className="restaurant-profile-image" />
                     <div className="overflow-into-image">
                         <div className="restaurant-profile-details-tabs">

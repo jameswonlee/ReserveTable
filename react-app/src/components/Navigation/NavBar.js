@@ -26,10 +26,8 @@ const NavBar = ({ loaded }) => {
           <img src={locationLineBreak} className="location-line-break" />
           <img src={locationButton} className="location-button" />
         </div>
-        {/* <div className="navigation-menu-container"> */}
         {loaded &&
           <NavigationMenu />}
-        {/* </div> */}
       </div>
       <div className="under-nav">
         <img src={navCity} className="under-nav-image" />
@@ -40,9 +38,6 @@ const NavBar = ({ loaded }) => {
 
 export default NavBar;
 
-{/* <div>
-            <LogoutButton />
-          </div> */}
 
 {/* <div>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
