@@ -120,7 +120,7 @@ def seed_restaurants():
     )
 
     mortons = Restaurant(
-        name="Morton's The Steakhouse - Los Angeles", neighborhood="Downtown", cuisines="Steakhouse, American, Seafood", cost=5, operation_hours="Mon-Thu, Sun 4:00 pm-9:00 pm Fri, Sat 5:00 pm-10:00 pm", dining_style="Fine Dining",
+        name="Morton's The Steakhouse - Los Angeles", neighborhood="Downtown", cuisines="Steakhouse, American, Seafood", cost=4, operation_hours="Mon-Thu, Sun 4:00 pm-9:00 pm Fri, Sat 5:00 pm-10:00 pm", dining_style="Fine Dining",
         dress_code="Business Casual", parking_details="None", payment_options="AMEX, Diners Club, Discover, MasterCard, Visa", cross_street="7th", phone="(213) 553-4566", description="""What began in Chicago in 1978 is now one of the most award-winning steakhouses around. 
         For over 30 years, Morton's The Steakhouse has been on a mission to provide "The Best Steak… Anywhere." Focusing on quality, consistency and genuine hospitality, Morton's seeks to provide not only memorable cuisine, but a memorable experience. With fresh, succulent 
         seafood and famed USDA prime-aged steak, it's no surprise that Morton's has thrilled diners all over the world. For a glimpse of a higher standard of steakhouse, come see the legendary Morton's experience for yourself.""", website="http://www.mortons.com/losangeles/",
@@ -137,7 +137,7 @@ def seed_restaurants():
     )
 
     seventy_one_above = Restaurant(
-        name="71Above", neighborhood="Downtown", cuisines="Contemporary American", cost=5, operation_hours="Dinner Mon-Thu, Sun 5:00 pm-9:15 pm Fri, Sat 5:00 pm-10:00 pm", dining_style="Fine Dining", dress_code="Business Casual",
+        name="71Above", neighborhood="Downtown", cuisines="Contemporary American", cost=4, operation_hours="Dinner Mon-Thu, Sun 5:00 pm-9:15 pm Fri, Sat 5:00 pm-10:00 pm", dining_style="Fine Dining", dress_code="Business Casual",
         parking_details="Self parking is available in the building parking structure at 633 West Hope Place. The cost of Parking is $10 with validation for the first 3 hours, with prevailing rates thereafter.", payment_options="AMEX, Discover, JCB, MasterCard, Visa",
         cross_street="5th & Flower", phone="(213) 712-2683", executive_chef="Javier Lopez", description="""71Above is a Prix-Fixe menu restaurant for dinner only. We kindly ask all dining room guests to participate in the coursed menu. Please be aware, any seating requests are noted, 
         but not guaranteed. WINDOW TABLES ARE NOT GUARANTEED. All reservations require a credit card to hold the reservation but will not be charged unless there is a late cancellation or no show for the reservation. 

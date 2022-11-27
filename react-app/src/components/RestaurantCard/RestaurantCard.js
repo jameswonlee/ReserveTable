@@ -30,18 +30,18 @@ function RestaurantCard({ restaurant }) {
                         {restaurant.reviews
                             ?
                             <span>{averageRating().toFixed(1) >= 0.1 &&
-                                averageRating().toFixed(1) < 1.5 &&
+                                averageRating().toFixed(1) < 1.9 &&
                                 <span className="red-star card-star">★<span className="gray-star card-star">★★★★</span></span>}
-                                {averageRating().toFixed(1) >= 1.5 &&
-                                    averageRating().toFixed(1) < 2.5 &&
+                                {averageRating().toFixed(1) >= 1.9 &&
+                                    averageRating().toFixed(1) < 2.9 &&
                                     <span className="red-star card-star">★★<span className="gray-star card-star">★★★</span></span>}
-                                {averageRating().toFixed(1) >= 2.5 &&
-                                    averageRating().toFixed(1) < 3.5 &&
+                                {averageRating().toFixed(1) >= 2.9 &&
+                                    averageRating().toFixed(1) < 3.9 &&
                                     <span className="red-star card-star">★★★<span className="gray-star card-star">★★</span></span>}
-                                {averageRating().toFixed(1) >= 3.5 &&
-                                    averageRating().toFixed(1) < 4.5 &&
+                                {averageRating().toFixed(1) >= 3.9 &&
+                                    averageRating().toFixed(1) < 4.9 &&
                                     <span className="red-star card-star">★★★★<span className="gray-star card-star">★</span></span>}
-                                {averageRating().toFixed(1) >= 4.5 &&
+                                {averageRating().toFixed(1) >= 4.9 &&
                                     <span className="red-star card-star">★★★★★</span>}
                             </span>
                             :
@@ -56,14 +56,10 @@ function RestaurantCard({ restaurant }) {
                     <div className="preview-cuisine-cost-neighborhood">
                         <span>{restaurant.cuisines.split(',')[0]} </span>
                         &nbsp;&#x2022;&nbsp;
-                        {restaurant.cost === 1 && <span className="dark-gray-dollar">$<span className="light-gray-dollar">$$$$</span></span>}
-                        {restaurant.cost === 2 && <span className="dark-gray-dollar">$$<span className="light-gray-dollar">$$$</span></span>}
-                        {restaurant.cost === 3 && <span className="dark-gray-dollar">$$$<span className="light-gray-dollar">$$</span></span>}
-                        {restaurant.cost === 4 && <span className="dark-gray-dollar">$$$$<span className="light-gray-dollar">$</span></span>}
-                        {restaurant.cost === 5 && <span className="dark-gray-dollar">$$$$$</span>}
-
-
-
+                        {restaurant.cost === 1 && <span className="dark-gray-dollar">$<span className="light-gray-dollar">$$$</span></span>}
+                        {restaurant.cost === 2 && <span className="dark-gray-dollar">$$<span className="light-gray-dollar">$$</span></span>}
+                        {restaurant.cost === 3 && <span className="dark-gray-dollar">$$$<span className="light-gray-dollar">$</span></span>}
+                        {restaurant.cost === 4 && <span className="dark-gray-dollar">$$$$</span>}
 
                         &nbsp;&#x2022;&nbsp;
                         <span> {restaurant.neighborhood}</span>

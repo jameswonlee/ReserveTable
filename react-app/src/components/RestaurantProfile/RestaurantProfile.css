@@ -21,7 +21,7 @@
 }
 .restaurant-profile-lower {
     height: 1500px;
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 .restaurant-profile-details-container {
@@ -68,7 +68,7 @@
     margin-left: -400px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     position: sticky;
     z-index: 2;
@@ -97,6 +97,7 @@
     font-size: 1.8rem;
     font-weight: 700;
     color: #2d333f;
+    margin-left: 6px;
     /* Do I need this?? */
     line-height: 3.5rem;
     border-bottom: solid;
@@ -106,24 +107,144 @@
 .restaurant-profile-general-info {
     border: solid;
     border-color: blue;
-    height: 40px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .profile-star {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
-.restaurant-profile-general-info {
+.restaurant-profile-general-info-top {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    font-size: 0.9rem;
 }
 
-.space-to-left1 {
-    margin-left: 3px;
+.restaurant-profile-general-info-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 
-.space-to-left2 {
+
+/* Spacing */
+.space-to-left-11 {
+    margin-left: 7px;
+}
+
+.space-to-left-12 {
+    margin-left: 23px;
+}
+
+.space-to-left-21 {
+    margin-left: 7px;
+}
+
+.profile-avg-rating-num {
+    margin-left: 2px;
+}
+
+.space-to-left-22 {
     margin-left: 15px;
+}
+
+.space-to-left-23 {
+    margin-left: 7px;
+}
+
+.space-to-left-24 {
+    margin-left: 9px;
+}
+
+
+
+/* Icons */
+.profile-reviews-icon {
+    height: 20px;
+}
+
+.profile-cost-icon {
+    height: 19px;
+}
+
+.profile-cuisine-icon {
+    height: 23px;
+}
+
+.reviews-icon-div {
+    margin-top: 6px;
+    margin-right: 2px;
+}
+
+.cost-icon-div {
+    margin-right: 2px;
+    margin-top: 4px;
+}
+
+.cost-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cuisine-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cuisine-icon-div {
+    margin-right: 4px;
+    margin-top: 2px;
+}
+
+.top-tags1 {
+    font-weight: 600;
+    color:rgb(45, 51, 63)
+}
+
+.top-tags2 {
+    height: 24px;
+    width: 80px;
+    text-align: center;
+    border: solid;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    border-color:rgb(216, 217, 219)
+}
+
+.top-tags3 {
+    height: 25px;
+    width: 130px;
+    text-align: center;
+    border: solid;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    border-color:rgb(216, 217, 219)
+
+}
+
+.top-tags4 {
+    height: 25px;
+    width: 120px;
+    text-align: center;
+    border: solid;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    border-color:rgb(216, 217, 219)
+
 }
