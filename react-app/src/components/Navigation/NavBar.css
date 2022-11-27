@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
 }
 
 .nav-bar-menu-items {
@@ -13,84 +12,27 @@
 }
 
 .logo {
-    width: 225px;
-    height: 45px;
+    width: 170px;
+    height: 34px;
     margin-left: 27px;
-    padding-right: 15px;
+    padding-right: 8px;
+    margin-top: 5px;
 }
 
-.profile-button-icon {
-    width: 50px;
-    height: 50px;
-}
 
-.profile-button {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-}
-
-.upcoming-reservations-button {
-    height: 47px;
-    width: 47px;
-    padding-bottom: 4px;
-    margin-right: 5px;
-}
-
-.notifications-button {
-    height: 44px;
-    width: 44px;
-    padding-bottom: 6px;
-}
-
-.notifications-button:hover {
-    cursor: text;
-}
-
-.line-break {
-    height: 50px;
-    width: 30px;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.logged-in-search-button {
-    height: 30px;
-    width: 30px;
-    padding-bottom: 4px;
-    padding-right: 30px;
-}
-
-.logged-in-search-button:hover {
-    cursor: text;
-}
-
-.logged-out-search-button {
-    height: 30px;
-    width: 30px;
-    /* padding-bottom: 4px; */
-    padding-right: 30px;
-    padding-left: 20px;
-    padding-top: 4px;
-}
-
-.logged-out-search-button:hover {
-    cursor: text;
-}
 
 .above-nav {
-    height: 33px;
+    height: 28px;
     background-color: rgb(241, 242, 244);
-    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: end;
 }
 
 .above-nav-img {
-    height: 30px;
-    width: 350px;
-    margin-right: 20px;
+    height: 26px;
+    width: 285px;
+    margin-right: 10px;
 }
 
 .above-nav-img:hover {
@@ -98,14 +40,14 @@
 }
 
 .location-button {
-    height: 33px;
-    width: 150px;
-    margin-bottom: 6px;
+    height: 26px;
+    width: 125px;
+    margin-bottom: 3px;
 }
 
 .location-line-break {
-    margin-right: 15px;
-    height: 50px;
+    margin-right: 13px;
+    height: 30px;
 }
 
 .location-button:hover {
@@ -113,14 +55,14 @@
 }
 
 .under-nav {
-    height: 40px;
+    height: 35px;
     border-top: solid;
     border-color: rgb(235, 235, 235);
     margin-bottom: 1px;
 }
 
 .under-nav-image {
-    height: 40px;
+    height: 33px;
     margin-left: 12px;
 }
 

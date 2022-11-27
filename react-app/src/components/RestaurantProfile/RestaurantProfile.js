@@ -77,21 +77,22 @@ function RestaurantProfile() {
                                         ?
                                         <span>{averageRating().toFixed(1) >= 0.1 &&
                                             averageRating().toFixed(1) < 1.9 &&
-                                            <span className="red-star card-star">★<span className="gray-star card-star">★★★★</span></span>}
+                                            <span className="red-star card-star">★ <span className="gray-star card-star">★ ★ ★ ★</span></span>}
                                             {averageRating().toFixed(1) >= 1.9 &&
                                                 averageRating().toFixed(1) < 2.9 &&
-                                                <span className="red-star card-star">★★<span className="gray-star card-star">★★★</span></span>}
+                                                <span className="red-star card-star">★ ★ <span className="gray-star card-star">★ ★ ★</span></span>}
                                             {averageRating().toFixed(1) >= 2.9 &&
                                                 averageRating().toFixed(1) < 3.9 &&
-                                                <span className="red-star card-star">★★★<span className="gray-star card-star">★★</span></span>}
+                                                <span className="red-star card-star">★ ★ ★ <span className="gray-star card-star">★ ★</span></span>}
                                             {averageRating().toFixed(1) >= 3.9 &&
                                                 averageRating().toFixed(1) < 4.9 &&
-                                                <span className="red-star card-star">★★★★<span className="gray-star card-star">★</span></span>}
+                                                <span className="red-star card-star">★ ★ ★ ★ <span className="gray-star card-star">★</span></span>}
                                             {averageRating().toFixed(1) >= 4.9 &&
-                                                <span className="red-star card-star">★★★★★</span>}
+                                                <span className="red-star card-star">★ ★ ★ ★ ★ </span>}
+                                                <span className="space-to-left-25">{averageRating().toFixed(1)}</span>
                                         </span>
                                         :
-                                        <span className="gray-star card-star">★★★★<span className="preview-num-reviews">
+                                        <span className="gray-star card-star">★ ★ ★ ★ ★<span className="preview-num-reviews">
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
                                         </span>
                                     }

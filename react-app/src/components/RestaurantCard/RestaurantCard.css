@@ -2,9 +2,9 @@
     text-decoration: none;
     border-color: rgb(216, 217, 219);
     border-style: solid;
-    margin: 10px;
-    height: 350px;
-    width: 276px;
+    margin: 7px;
+    height: 308px;
+    width: 235px;
     display: flex;
     flex-direction: column;
 }
@@ -41,7 +41,7 @@
 
 .booking-symbol {
     height: 15px;
-    width: 20px;
+    width: 19px;
 }
 
 .booking-symbol-container {
@@ -53,21 +53,20 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 0.87rem;
 }
 
 .preview-stars-reviews {
     font-weight: 400;
-    font-size: 1.1rem;
 }
 
 .preview-cuisine-cost-neighborhood {
-    font-weight: 400;
-    font-size: .99rem;
+    font-weight: 300;
+    font-size: .82rem;
 }
 
 .restaurant-card-name {
-    font-size: 1.45rem;
+    font-size: 1.08rem;
     font-weight: 600;
 }
 
@@ -92,14 +91,16 @@
 
 .preview-num-reviews {
     color: rgb(45, 51, 63);
-    font-size: 1.2rem;
+    font-size: 0.88rem;
     padding-top: -5px;
 }
 
 .dark-gray-dollar {
-    color: rgb(45, 51, 53);
+    color: rgb(51, 46, 46);
+    font-weight: 400;
 }
 
 .light-gray-dollar {
-    color: rgb(204, 204, 204);
+    color: rgb(191, 189, 189);
+    font-weight: 400;
 }

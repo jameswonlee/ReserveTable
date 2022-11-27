@@ -31,21 +31,21 @@ function RestaurantCard({ restaurant }) {
                             ?
                             <span>{averageRating().toFixed(1) >= 0.1 &&
                                 averageRating().toFixed(1) < 1.9 &&
-                                <span className="red-star card-star">★<span className="gray-star card-star">★★★★</span></span>}
+                                <span className="red-star card-star">★<span className="gray-star card-star"> ★ ★ ★ ★</span></span>}
                                 {averageRating().toFixed(1) >= 1.9 &&
                                     averageRating().toFixed(1) < 2.9 &&
-                                    <span className="red-star card-star">★★<span className="gray-star card-star">★★★</span></span>}
+                                    <span className="red-star card-star">★ ★ <span className="gray-star card-star">★ ★ ★</span></span>}
                                 {averageRating().toFixed(1) >= 2.9 &&
                                     averageRating().toFixed(1) < 3.9 &&
-                                    <span className="red-star card-star">★★★<span className="gray-star card-star">★★</span></span>}
+                                    <span className="red-star card-star">★ ★ ★ <span className="gray-star card-star">★ ★</span></span>}
                                 {averageRating().toFixed(1) >= 3.9 &&
                                     averageRating().toFixed(1) < 4.9 &&
-                                    <span className="red-star card-star">★★★★<span className="gray-star card-star">★</span></span>}
+                                    <span className="red-star card-star">★ ★ ★ ★ <span className="gray-star card-star">★</span></span>}
                                 {averageRating().toFixed(1) >= 4.9 &&
-                                    <span className="red-star card-star">★★★★★</span>}
+                                    <span className="red-star card-star">★ ★ ★ ★ ★</span>}
                             </span>
                             :
-                            <span className="gray-star card-star">★★★★<span className="preview-num-reviews">
+                            <span className="gray-star card-star">★ ★ ★ ★ ★<span className="preview-num-reviews">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
                             </span>
                         }
@@ -54,7 +54,7 @@ function RestaurantCard({ restaurant }) {
                             <span className="preview-num-reviews">{restaurant.reviews.length} reviews</span>}
                     </div>
                     <div className="preview-cuisine-cost-neighborhood">
-                        <span>{restaurant.cuisines.split(',')[0]} </span>
+                        <span className="">{restaurant.cuisines.split(',')[0]} </span>
                         &nbsp;&#x2022;&nbsp;
                         {restaurant.cost === 1 && <span className="dark-gray-dollar">$<span className="light-gray-dollar">$$$</span></span>}
                         {restaurant.cost === 2 && <span className="dark-gray-dollar">$$<span className="light-gray-dollar">$$</span></span>}
@@ -68,13 +68,15 @@ function RestaurantCard({ restaurant }) {
                         <div className="booking-symbol-container">
                             <img src={bookingSymbol} className="booking-symbol" />
                         </div>
-                        {restaurant.total_num_reservations !== 0 &&
-                            (restaurant.total_num_reservations === 1
-                                ?
-                                <p>Booked {restaurant.total_num_reservations} time today</p>
-                                :
-                                <p>Booked {restaurant.total_num_reservations} times today</p>
-                            )}
+                        <div>
+                            {restaurant.total_num_reservations !== 0 &&
+                                (restaurant.total_num_reservations === 1
+                                    ?
+                                    <p>Booked {restaurant.total_num_reservations} time today</p>
+                                    :
+                                    <p>Booked {restaurant.total_num_reservations} times today</p>
+                                )}
+                        </div>
                     </div>
                 </div>
             </div>

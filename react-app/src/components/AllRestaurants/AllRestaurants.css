@@ -6,18 +6,18 @@
 
 .all-restaurants-container {
     /* max-width: 1500px; */
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 7%;
+    margin-right: 6%;
    
 }
 
 .above-restaurant-cards {
     margin-left: 10px;
     margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-bottom: solid;
-    border-color: rgb(241, 242, 244);
+    border-color: rgb(232, 233, 234);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,11 +25,11 @@
 
 .verify-city {
     margin-left: 5px;
-    font-size: large;
+    font-size: 0.84rem;
 }
 
 .current-location-arrow {
-    height: 25px;
+    height: 20px;
     margin-left: 10px;
     margin-right: 5px;
 }
@@ -40,6 +40,6 @@
 
 .get-current-location {
     color: rgb(218, 54, 68);
-    font-size: large;
+    font-size: 0.86rem;
 }
 
