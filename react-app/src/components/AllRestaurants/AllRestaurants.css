@@ -1,18 +1,23 @@
-.restaurant-cards {
+.all-restaurants-container {    
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+    flex-direction: column;
+    justify-content: center;
 
-.all-restaurants-container {
     /* max-width: 1500px; */
-    margin-left: 7%;
-    margin-right: 6%;
+    /* margin-left: 7.5%; */
+    /* margin-right: 6%; */
    
 }
 
+.all-restaurants-outer-container {
+    max-width: 1500px;
+
+}
+
+
 .above-restaurant-cards {
-    margin-left: 10px;
+    margin-left: 126px;
+    margin-right: 126px;
     margin-bottom: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -21,11 +26,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    color:rgb(45, 51, 63);
 }
 
 .verify-city {
-    margin-left: 5px;
     font-size: 0.84rem;
+    display: flex;
 }
 
 .current-location-arrow {
@@ -41,5 +47,12 @@
 .get-current-location {
     color: rgb(218, 54, 68);
     font-size: 0.86rem;
+}
+
+.restaurant-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 

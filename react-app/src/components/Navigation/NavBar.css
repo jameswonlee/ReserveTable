@@ -5,12 +5,6 @@
     align-items: center;
 }
 
-.nav-bar-menu-items {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
 .logo {
     width: 170px;
     height: 34px;
@@ -18,8 +12,6 @@
     padding-right: 8px;
     margin-top: 5px;
 }
-
-
 
 .above-nav {
     height: 28px;
@@ -70,10 +62,5 @@
     cursor: text;
 }
 
-.sign-in-menu-items {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+
 

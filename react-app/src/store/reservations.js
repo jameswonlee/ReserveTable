@@ -3,8 +3,8 @@ import { csrfFetch } from "./csrf";
 
 /* ------------------------------------- Action Types ---------------------------------- */
 
-const LOAD_ALL_RESERVATIONS = '/reservations/LOAD_ALL_RESERVATIONS'
-const LOAD_RESERVATION = '/reservations/LOAD_RESERVATION'
+const LOAD_ALL_USER_RESERVATIONS = '/reservations/LOAD_ALL_USER_RESERVATIONS'
+const LOAD_ONE_RESERVATION = '/reservations/LOAD_ONE_RESERVATION'
 const ADD_RESERVATION = '/reservations/ADD_RESERVATION'
 const UPDATE_RESERVATION = '/reservations/UPDATE_RESERVATION'
 const DELETE_RESERVATION = '/reservations/DELETE_RESERVATION'
@@ -12,16 +12,16 @@ const DELETE_RESERVATION = '/reservations/DELETE_RESERVATION'
 
 /* ------------------------------------ Action Creators --------------------------------- */
 
-const loadAllReservations = (reservations) => {
+const loadAllUserReservations = (reservations) => {
     return {
-        type: LOAD_ALL_RESERVATIONS,
+        type: LOAD_ALL_USER_RESERVATIONS,
         reservations: reservations
     }
 }
 
 const loadOneReservation = (reservation) => {
     return {
-        type: LOAD_RESERVATION,
+        type: LOAD_ONE_RESERVATION,
         reservation: reservation
     }
 }
@@ -51,12 +51,12 @@ const removeReservation = (reservation) => {
 /* ---------------------------------- Thunk Action Creators ---------------------------- */
 
 
-export const getAllReservations = (userId) => async (dispatch) => {
+export const getAllUserReservations = (userId) => async (dispatch) => {
     const response = await csrfFetch(`/api/users/${userId}/reservations`);
 
     if (response.ok) {
         const reservations = await response.json();
-        dispatch(loadAllReservations(reservations));
+        dispatch(loadAllUserReservations(reservations));
         return reservations
     }
 }
@@ -79,7 +79,7 @@ export const createReservation = (newReservationData, restaurantId) => async (di
     })
 
     if (response.ok) {
-        const newReservation= await response.json();
+        const newReservation = await response.json();
         dispatch(addReservation(newReservation));
         return newReservation;
     }
@@ -89,7 +89,7 @@ export const changeReservation = (updatedReservationData, reservationId) => asyn
     const response = await csrfFetch(`/api/reservations/${reservationId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedReservationData) 
+        body: JSON.stringify(updatedReservationData)
     })
 
     if (response.ok) {
@@ -119,15 +119,13 @@ const initialState = {};
 const reservationsReducer = (state = initialState, action) => {
     let newState = {};
     switch (action.type) {
-        case LOAD_ALL_RESERVATIONS:
-            let newReservations = {};
+        case LOAD_ALL_USER_RESERVATIONS:
             action.reservations.Reservations.forEach(reservation => {
-                newReservations[action.reservations.id] = reservation
+                newState[reservation.id] = reservation
             })
-            newState = { ...state, ...newReservations };
             return newState;
 
-        case LOAD_RESERVATION:
+        case LOAD_ONE_RESERVATION:
             let newReservation = {};
             newReservation[action.reservation.id] = action.reservation;
             newState = { ...state, ...newReservation };
@@ -137,7 +135,7 @@ const reservationsReducer = (state = initialState, action) => {
             newState = { ...state };
             newState[action.reservation.id] = action.reservation;
             return newState
-            
+
         case UPDATE_RESERVATION:
             newState = { ...state };
             newState[action.reservation.id] = action.reservation;

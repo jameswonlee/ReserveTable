@@ -213,9 +213,11 @@
 }
 
 .top-tags2 {
-    height: 24px;
+    height: 25px;
     width: 80px;
     text-align: center;
+    background-color: red;
+    line-height: 22px;
     border: solid;
     border-radius: 30px;
     font-size: 0.9rem;
