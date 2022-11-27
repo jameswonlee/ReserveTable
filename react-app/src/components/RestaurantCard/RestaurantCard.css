@@ -3,7 +3,7 @@
     border-color: rgb(216, 217, 219);
     border-style: solid;
     margin: 7px;
-    height: 311px;
+    height: 308px;
     width: 235px;
     display: flex;
     flex-direction: column;
@@ -96,9 +96,11 @@
 }
 
 .dark-gray-dollar {
-    color: rgb(45, 51, 53);
+    color: rgb(51, 46, 46);
+    font-weight: 400;
 }
 
 .light-gray-dollar {
-    color: rgb(204, 204, 204);
+    color: rgb(191, 189, 189);
+    font-weight: 400;
 }
