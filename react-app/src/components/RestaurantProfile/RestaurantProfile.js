@@ -89,6 +89,7 @@ function RestaurantProfile() {
                                                 <span className="red-star card-star">★★★★<span className="gray-star card-star">★</span></span>}
                                             {averageRating().toFixed(1) >= 4.9 &&
                                                 <span className="red-star card-star">★★★★★</span>}
+                                                <span className="space-to-left-25">{averageRating().toFixed(1)}</span>
                                         </span>
                                         :
                                         <span className="gray-star card-star">★★★★<span className="preview-num-reviews">

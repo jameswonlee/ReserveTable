@@ -6,14 +6,60 @@
     height: 60px;
 }
 
-.sign-up-button {
-    height: 47px;
-    width: 100px;
+.profile-button-icon {
+    height: 39px;
+    width: 38px;
+    margin-top: 4px;
+}
+
+.profile-button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.upcoming-reservations-button {
+    height: 30px;
+    width: 35px;
+    margin-right: 5px;
+}
+
+.notifications-button {
+    height: 30px;
+    width: 30px;
+}
+
+.notifications-button:hover {
+    cursor: text;
+}
+
+.line-break {
+    height: 36px;
+    width: 17px;
     margin-right: 10px;
-    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.logged-in-search-button {
+    height: 23px;
+    width: 24px;
+    padding-right: 17px;
+    margin-top: 2px;
+}
+
+.logged-in-search-button:hover {
+    cursor: text;
+}
+
+.sign-up-button {
+    height: 35px;
+    width: 76px;
+    margin-right: 8px;
+    border-radius: 3px;
     background-color: rgb(37, 127, 158);
-    font-size: 1.17rem;
-    color: rgb(235, 235, 235);
+    font-size: .9rem;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
     border: rgb(201, 201, 201);
 }
 
@@ -26,15 +72,27 @@
 }
 
 .sign-in-button {
-    height: 47px;
-    width: 100px;
-    border-radius: 5px;
-    font-size: 1.17rem;
-    color: rgb(99, 98, 98);
+    height: 35px;
+    width: 76px;
+    border-radius: 3px;
+    font-size: .9rem;
+    font-weight: 300;
+    color: rgb(16, 16, 16);
     background-color: white;
     border: solid;
     border-width: thin;
-    border-color: rgb(195, 194, 194);
+    border-color: rgb(236, 234, 234);
     box-shadow: none;
 }
 
+.logged-out-search-button {
+    height: 23px;
+    width: 23px;
+    padding-right: 15px;
+    padding-left: 18px;
+    padding-top: 4px;
+}
+
+.logged-out-search-button:hover {
+    cursor: text;
+}
