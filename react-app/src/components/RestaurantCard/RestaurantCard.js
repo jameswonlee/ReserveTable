@@ -69,7 +69,7 @@ function RestaurantCard({ restaurant }) {
                             <img src={bookingSymbol} className="booking-symbol" />
                         </div>
                         <div>
-                            {restaurant.total_num_reservations !== 0 &&
+                            {restaurant.total_num_reservations > 0 &&
                                 (restaurant.total_num_reservations === 1
                                     ?
                                     <p>Booked {restaurant.total_num_reservations} time today</p>
