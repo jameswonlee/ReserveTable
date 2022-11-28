@@ -11,7 +11,7 @@ function ReservationConfirmation() {
     const { reservationId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const allReservations = useSelector(state => Object.values(state.reservations));
-    const reservation = allReservations.filter(reservation => reservation.id == reservationId)[0];
+    const reservation = allReservations.filter(reservation => reservation.id === +reservationId)[0];
     console.log('reservation', reservation)
 
     useEffect(() => {

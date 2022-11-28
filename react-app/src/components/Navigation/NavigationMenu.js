@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
 import SignUpForm from '../_auth/SignUpForm';
 import profileButton from '../../icons/profile-button.ico';
 import upcomingReservations from '../../icons/upcoming-reservations-button.ico';
-import notifications from '../../icons/notifications.ico';
+import notifications from '../../icons/notification-icon.ico';
 import lineBreak from '../../icons/line-break.png';
 import magnifyingGlass from '../../icons/search-button.ico';
 import ProfileButtonMenu from './ProfileButtonMenu';
 import UpcomingReservationsMenu from '../Reservations/UpcomingReservationsMenu';
+import upcomingReservationsNotification from '../../icons/upcoming-reservation-w-notification.ico';
 import './NavigationMenu.css'
+import { getAllUserReservations } from '../../store/reservations';
 
 
 function NavigationMenu() {
+    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    const reservations = useSelector(state => state.reservations);
 
     const [showSignInModal, setShowSignInModal] = useState(false);
     const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -65,6 +69,10 @@ function NavigationMenu() {
         return () => document.removeEventListener('click', closeReservationsMenu);
     }, [showReservationsMenu]);
 
+    useEffect(() => {
+        dispatch(getAllUserReservations(sessionUser.id));
+    }, [])
+
     return (
         <div className="navigation-menu">
             {
@@ -78,12 +86,17 @@ function NavigationMenu() {
                             )}
                         </button>
                         <button className="upcoming-reservations-menu-button" onClick={openReservationsMenu}>
-                            <img src={upcomingReservations} className="upcoming-reservations-button-icon" />
+                            {reservations
+                                ?
+                                <img src={upcomingReservationsNotification} className="upcoming-reservations-notification-icon" />
+                                :
+                                <img src={upcomingReservations} className="upcoming-reservations-icon" />
+                            }
                             {showReservationsMenu && (
                                 <UpcomingReservationsMenu />
                             )}
                         </button>
-                        <img src={notifications} className="notifications-button" />
+                        <img src={notifications} className="notifications-icon" />
                         <img src={lineBreak} className="line-break" />
                         <img src={magnifyingGlass} className="logged-in-search-button" />
                     </div>

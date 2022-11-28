@@ -2,6 +2,8 @@ from .db import db, environment, SCHEMA
 from .user import User
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from datetime import datetime
+
 
 
 Base = declarative_base()
@@ -92,6 +94,8 @@ class Reservation(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     reservation_time = db.Column(db.DateTime, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
+
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
     user = db.relationship("User", back_populates="reservations")
@@ -121,6 +125,8 @@ class Review(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     review = db.Column(db.String(2000), nullable=True)
     rating = db.Column(db.Integer, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
+
 
     restaurant = db.relationship("Restaurant", back_populates="reviews")
     user = db.relationship("User", back_populates="reviews")
