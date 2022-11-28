@@ -15,9 +15,9 @@ function Reviews({ restaurant }) {
 
     // console.log('allReviews', allReviews)
 
-    // useEffect(() => {
-    //     dispatch(getAllRestaurantReviews(restaurant.id));
-    // }, [])
+    useEffect(() => {
+        dispatch(getAllRestaurantReviews(restaurant.id));
+    }, [])
 
 
 

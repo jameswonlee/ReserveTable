@@ -4,7 +4,7 @@ import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
 import SignUpForm from '../_auth/SignUpForm';
 import profileButton from '../../icons/profile-button.ico';
-import upcomingReservations from '../../icons/upcoming-reservations-button.ico';
+import upcomingReservations from '../../icons/upcoming-reservations-icon.ico';
 import notifications from '../../icons/notification-icon.ico';
 import lineBreak from '../../icons/line-break.png';
 import magnifyingGlass from '../../icons/search-button.ico';
@@ -30,7 +30,7 @@ function NavigationMenu() {
         if (showSignInModal) return;
         setShowSignInModal(true)
     }
-    console.log(showSignInModal)
+    // console.log(showSignInModal)
 
     const openSignUp = () => {
         if (showSignUpModal) return;
@@ -61,17 +61,19 @@ function NavigationMenu() {
         setShowSignUpModal(false);
         return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
-
+    
     useEffect(() => {
         if (!showReservationsMenu) return;
-
+        
         document.addEventListener('click', closeReservationsMenu);
         return () => document.removeEventListener('click', closeReservationsMenu);
     }, [showReservationsMenu]);
-
+    
     useEffect(() => {
-        dispatch(getAllUserReservations(sessionUser.id));
-    }, [])
+        dispatch(getAllUserReservations(sessionUser?.id));
+    }, [sessionUser])
+    
+
 
     return (
         <div className="navigation-menu">

@@ -55,11 +55,6 @@ function Reservations() {
                         )}
                 </div>
                 <div>
-                    {/* <input
-                        type="select"
-                        onChange={e => setPartySize(e.target.value)}
-                        placeholder="Party Size"
-                    /> */}
                     <label>
                         <select value={partySize} onChange={e => setPartySize(e.target.value)}>
                             {/* <option value="0">0 People</option> */}
