@@ -125,7 +125,7 @@ class Review(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     review = db.Column(db.String(2000), nullable=True)
     rating = db.Column(db.Integer, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
+    # created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
 
 
     restaurant = db.relationship("Restaurant", back_populates="reviews")
