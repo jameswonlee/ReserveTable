@@ -94,7 +94,7 @@ class Reservation(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     reservation_time = db.Column(db.DateTime, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
+    # created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
 
 
     restaurant = db.relationship("Restaurant", back_populates="reservations")
