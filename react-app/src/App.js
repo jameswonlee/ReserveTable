@@ -57,7 +57,7 @@ function App() {
           <Route path='/restaurants/:restaurantId'>
             <RestaurantProfile />
           </Route>
-          <Route path='/reservations/:reservationId'>
+          <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />
           </Route>
         </Switch>

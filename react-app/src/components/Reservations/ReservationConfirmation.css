@@ -1,0 +1,35 @@
+.reservation-details-outer-container {
+    height: 1000px;
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    background-color: gray;
+    justify-content:center;
+
+}
+
+.reservation-confirmation-details-left {
+    width: 600px;
+    background-color: yellow;
+    border: solid;
+    height: 800px;
+    /* margin-left: 50px; */
+}
+
+.reservation-confirmation-details-right {
+    background-color: lightblue;
+    border: solid;
+    width: 330px;
+    height: 200px;
+    margin-left: 100px;
+}
+
+.user-info-dining-history-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-info-details-container {
+    height: 200px;
+}

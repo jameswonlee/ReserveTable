@@ -13,9 +13,11 @@ function UpcomingReservationsMenu() {
     const sessionUser = useSelector(state => state.session.user);
     const userReservationsObj = useSelector(state => state.reservations);
     const userReservations = Object.values(userReservationsObj);
-    const nextReservation = userReservations[0]
+    const nextReservation = userReservations[1]
 
     console.log('userReservations', userReservations)
+
+    console.log('nextReservation', nextReservation)
 
 
     useEffect(() => {
