@@ -1,6 +1,6 @@
 .cancel-reservation-modal-container {
-    height: 250px;
-    width: 400px;
+    height: 225px;
+    width: 425px;
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
@@ -10,12 +10,12 @@
 .cancellation-heading {
     font-size: 1.4rem;
     font-weight: 600;
-    margin-top: -10px;
+    margin-top: 15px;
 }
 
 .cancel-reservation-modal-time {
     margin-left: -15px;
-    margin-top: -50px;
+    margin-top: -35px;
 }
 
 .reservation-cancellation-person-icon {
@@ -30,8 +30,10 @@
 }
 
 .cancel-reservation-restaurant-name {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 10px;
+
 }
 
 .cancel-reservation-modal-buttons {
@@ -42,10 +44,42 @@
     margin-right: 10px;
 }
 
-.cancel-reservation-restaurant-name {
-    margin-bottom: 10px;
-}
-
 .reservation-cancellation-upcoming-reservations-icon {
     margin-bottom: -10px;
+}
+
+.reservation-cancel-modal-cancel-button {
+    height: 35px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(218, 54, 68);
+    color: white;
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.reservation-cancel-modal-cancel-button:hover {
+    cursor: pointer;
+}
+
+.reservation-cancel-modal-nevermind-button {
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: rgb(218, 54, 68);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 9px;
+}
+
+.cancel-reservation-modal-x {
+    height: 16px;
+    width: 16px;
+    margin-left: 437px;
+    margin-bottom: -5px;
+}
+
+.cancel-reservation-modal-x:hover {
+    cursor: pointer;
 }
