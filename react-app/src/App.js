@@ -7,6 +7,7 @@ import NavBar from './components/Navigation/NavBar';
 import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
 import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile';
+import ReservationConfirmation from './components/Reservations/ReservationConfirmation';
 
 import SignUpForm from './components/_auth/SignUpForm';
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
@@ -33,38 +34,41 @@ function App() {
   }
 
   return (
-  <>
-    <BrowserRouter>
-      <NavBar loaded={loaded} />
-      <Switch>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        {/* <ProtectedRoute path='/users' exact={true} >
+    <>
+      <BrowserRouter>
+        <NavBar loaded={loaded} />
+        <Switch>
+          <Route path='/login' exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path='/sign-up' exact={true}>
+            <SignUpForm />
+          </Route>
+          <Route path='/' exact={true} >
+            <SearchBar />
+            <DisplayAllRestaurants />
+          </Route>
+          {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute> */}
-        <Route path='/' exact={true} >
-          <SearchBar />
-          <DisplayAllRestaurants />
-        </Route>
-        <Route path='/restaurants/:restaurantId'>
-          <RestaurantProfile />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-    <footer>
-        <div className="footer-container">    
+          <Route path='/restaurants/:restaurantId'>
+            <RestaurantProfile />
+          </Route>
+          <Route path='/reservations/:reservationId'>
+            <ReservationConfirmation />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      <footer>
+        <div className="footer-container">
 
 
         </div>
-    </footer>
-  </>
+      </footer>
+    </>
   );
 }
 

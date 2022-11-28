@@ -1,0 +1,22 @@
+.upcoming-reservations-menu-container {
+    position: absolute;
+    background-color: white;
+    height: 300px;
+    width: 340px;
+    display: flex;
+    margin-left: -325px;
+    margin-top: 15px;
+    border: solid;
+    border-color: rgb(235, 235, 235);
+    border-radius: 2px;
+}
+
+.next-reservation-details-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.upcoming-restaurant-icon {
+    height: 35px;
+}

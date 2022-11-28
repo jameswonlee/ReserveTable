@@ -216,11 +216,11 @@
     height: 25px;
     width: 80px;
     text-align: center;
-    background-color: red;
-    line-height: 22px;
+    line-height: 24px;
     border: solid;
     border-radius: 30px;
     font-size: 0.9rem;
+    font-weight: 500;
     border-color:rgb(216, 217, 219)
 }
 
@@ -228,9 +228,11 @@
     height: 25px;
     width: 130px;
     text-align: center;
+    line-height: 24px;
     border: solid;
     border-radius: 30px;
     font-size: 0.9rem;
+    font-weight: 500;
     border-color:rgb(216, 217, 219)
 
 }
@@ -239,9 +241,11 @@
     height: 25px;
     width: 120px;
     text-align: center;
+    line-height: 24px;
     border: solid;
     border-radius: 30px;
     font-size: 0.9rem;
+    font-weight: 500;
     border-color:rgb(216, 217, 219)
 
 }
