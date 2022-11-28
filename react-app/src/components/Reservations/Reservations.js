@@ -6,7 +6,6 @@ import { createReservation } from '../../store/reservations';
 import './UpcomingReservationsMenu.css';
 
 
-
 function Reservations() {
     const { restaurantId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
@@ -14,7 +13,7 @@ function Reservations() {
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
-    const [partySize, setPartySize] = useState('');
+    const [partySize, setPartySize] = useState(0);
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitHandler = async (e) => {
@@ -25,7 +24,7 @@ function Reservations() {
         console.log('time', time);
         console.log('date', date);
 
-        if (!partySize) errors.push("Please indicate your party size");
+        if (!partySize) errors.push("Please tell us how many are in your party");
         if (!date) errors.push("Please select a date");
         if (!time) errors.push("Please select a time");
 
@@ -56,11 +55,28 @@ function Reservations() {
                         )}
                 </div>
                 <div>
-                    <input
+                    {/* <input
                         type="select"
                         onChange={e => setPartySize(e.target.value)}
                         placeholder="Party Size"
-                    />
+                    /> */}
+                    <label>
+                        <select value={partySize} onChange={e => setPartySize(e.target.value)}>
+                            {/* <option value="0">0 People</option> */}
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7 People</option>
+                            <option value="8">8 People</option>
+                            <option value="9">9 People</option>
+                            <option value="10">10 People</option>
+                            <option value="11">11 People</option>
+                            <option value="12">12 People</option>
+                        </select>
+                    </label>
                 </div>
                 <div>
                     <input

@@ -10,12 +10,14 @@ import { getAllRestaurantReviews } from "../../store/reviews";
 
 function Reviews({ restaurant }) {
     const dispatch = useDispatch();
-    const allReviews = useSelector(state => Object.values(state.reviews));
+    const allReviews = restaurant.reviews;
+    // const allReviews = useSelector(state => Object.values(state.reviews));
 
     // console.log('allReviews', allReviews)
-    useEffect(() => {
-        dispatch(getAllRestaurantReviews(restaurant.id));
-    })
+
+    // useEffect(() => {
+    //     dispatch(getAllRestaurantReviews(restaurant.id));
+    // }, [])
 
 
 
