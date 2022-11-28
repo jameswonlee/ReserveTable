@@ -18,9 +18,10 @@
 
 .profile-button-icon {
     height: 39px;
-    width: 38px;
+    width: 39px;
     margin-top: 4px;
-    margin-right: 3px;
+    margin-right: 5px;
+    margin-left: -2px;
 }
 
 .profile-button {
@@ -40,19 +41,31 @@
     margin-bottom: 3px;
 }
 
+
 .upcoming-reservations-menu-button:hover {
     cursor: pointer;
 }
 
-.upcoming-reservations-button-icon {
+.upcoming-reservations-icon {
     height: 31px;
     width: 36px;
-    margin-left: -14px;
+    margin-left: -19px;
+    margin-top: 0.5px;
 }
 
-.notifications-button {
-    height: 29px;
-    width: 29px;
+.upcoming-reservations-notification-icon {
+    height: 26px;
+    width: 26px;
+    margin-left: -16px;
+    margin-top: 1px;
+}
+
+.notifications-icon {
+    height: 22px;
+    width: 20px;
+    margin-right: 4px;
+    margin-left: 1px;
+    margin-top: 1px;
 }
 
 .notifications-button:hover {

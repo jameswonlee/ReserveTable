@@ -9,9 +9,10 @@
     flex-direction: column;
 }
 
-.restaurant-card-container {
+/* .restaurant-card-container {
     height: 100%;
-}
+} */
+
 
 .restaurant-preview-details {
     font-weight: 400;
@@ -27,13 +28,14 @@
 }
 
 .restaurant-name-and-details-container {
-    margin-left: 5px;
+    margin-left: 7px;
     color: black;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     justify-content:space-around;
     height: 150px;
+    margin-top: 5px;
 }
 
 
@@ -52,10 +54,12 @@
     flex-direction: row;
     align-items: center;
     font-size: 0.87rem;
+    margin-top: -5px;
 }
 
 .preview-stars-reviews {
     font-weight: 400;
+    margin-top: 2px;
 }
 
 .preview-cuisine-cost-neighborhood {
@@ -64,10 +68,8 @@
     overflow: hidden;
     width: 220px;
     height: 19px;
-    margin-top: 4px;
+    margin-top: 3px;
 }
-
-
 
 .restaurant-card-name {
     font-size: 1.08rem;
@@ -124,6 +126,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-left: -3px;
-    margin-bottom: 5px;
+    margin-left: -4.5px;
+    margin-bottom: 8px;
 }
