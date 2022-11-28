@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
 
+import './UpcomingReservationsMenu.css';
+
 
 
 function Reservations() {
@@ -34,7 +36,7 @@ function Reservations() {
                 user_id: sessionUser.id,
                 restaurant_id: restaurantId,
                 party_size: partySize,
-                // reservation_time: "2024-01-21 17:30:00"
+                reservation_time: "2024-01-21 17:30:00"
             }
             await dispatch(createReservation(newReservationData, restaurantId))
 

@@ -13,20 +13,14 @@ dark-font {
     height: 700px;
 }
 
-@media screen and
-    (min-width:1600px) {
-        body {
-        /* background-color: red; */
-        /* margin-left: 100px; */
-        /* margin-right: 100px; */
+@media screen and (min-width:1600px) {
+    body {
         width: 1600px;
         margin: 0 auto;
-        color: rgb(254, 254, 254);
         /* background-color: rgb(241, 242, 244); */
     }
 
-    #root {
+    /* #root {
         background-color: white;
-    }
+    } */
 }
-
