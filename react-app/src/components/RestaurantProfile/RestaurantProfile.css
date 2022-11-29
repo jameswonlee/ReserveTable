@@ -34,8 +34,10 @@
 
 .restaurant-profile-right {
     border: solid;
-    border-color: yellow;
+    border-color: green;
     width: 350px;
+    height: 800px;
+    margin-top: 300px;
 }
 
 .make-a-reservation-container {
@@ -70,7 +72,7 @@
 
 .reservations-component {
     width: 350px;
-    height: 450px;
+    height: 320px;
     /* position: fixed; */
     position: absolute;
     border: solid;
@@ -85,7 +87,7 @@
 }
 
 .restaurant-profile-name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #2d333f;
     margin-left: 6px;

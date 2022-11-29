@@ -1,13 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { createReview } from "../../store/reviews";
-import './AddReview.css';
+import { editReview } from '../../store/reviews';
 
+import './UpdateReviewForm.css';
 
-
-
-function AddReviewForm({ restaurant, setShowModal }) {
+function UpdateReviewForm({ restaurant, setShowModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
@@ -32,14 +30,12 @@ function AddReviewForm({ restaurant, setShowModal }) {
                 rating: rating
             };
 
-            await dispatch(createReview(reviewData, restaurant.id));
-            alert("Review successfully added");
+            await dispatch(editReview(reviewData, restaurant.id));
+            alert("Review successfully updated");
             setShowModal(false);
             history.push(`/restaurants/${restaurant.id}`);
         }
     }
-
-
 
     return (
         <div className="add-review-form-outer-container">
@@ -86,9 +82,13 @@ function AddReviewForm({ restaurant, setShowModal }) {
                 </form>
             </div>
         </div>
+
+
+
+
     )
 }
 
 
 
-export default AddReviewForm;
+export default UpdateReviewForm;

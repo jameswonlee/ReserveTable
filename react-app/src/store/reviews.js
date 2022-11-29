@@ -26,11 +26,10 @@ const loadAllUserReviews = (reviews) => {
     }
 }
 
-const addReview = (review, sessionUser) => {
+const addReview = (review) => {
     return {
         type: ADD_REVIEW,
-        review: review,
-        user: sessionUser
+        review: review
     }
 }
 
@@ -72,7 +71,7 @@ export const getUserReviews = (userId) => async (dispatch) => {
     }
 }
 
-export const createReview = (reviewData, restaurantId, sessionUser) => async (dispatch) => {
+export const createReview = (reviewData, restaurantId) => async (dispatch) => {
     const response = await csrfFetch(`/api/restaurants/${restaurantId}/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -81,7 +80,7 @@ export const createReview = (reviewData, restaurantId, sessionUser) => async (di
 
     if (response.ok) {
         const newReview = await response.json();
-        dispatch(addReview(newReview, sessionUser));
+        dispatch(addReview(newReview));
         return newReview;
     }
 }

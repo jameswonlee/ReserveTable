@@ -14,7 +14,11 @@ const LogoutButton = ({ setShowSignInModal }) => {
     history.push('/')
   };
 
-  return <button className="profile-drop-logout-button" onClick={onLogout}>Sign out</button>;
+  return (
+      <div className="profile-drop-logout-button" onClick={onLogout}>
+        Sign out
+      </div>
+  )
 };
 
 export default LogoutButton;
