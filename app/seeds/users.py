@@ -23,8 +23,17 @@ def seed_users():
     jane = User(
         username='janelee', email='jane@gmail.com', password='password', first_name='Jane', last_name='Lee'
     )
+    susan = User(
+        username='susanware', email='susan@gmail.com', password='password', first_name='Susan', last_name='Ware',
+    )
+    mike = User(
+        username='mikeware', email='mike@gmail.com', password='password', first_name='Mike', last_name='Ware'
+    )
+    brent = User(
+        username='brentware', email='brent@gmail.com', password='password', first_name='Brent', last_name='Ware'
+    )
 
-    db.session.add_all([demo, james, kyle, jessica, john, jane])
+    db.session.add_all([demo, james, kyle, jessica, john, jane, susan, mike, brent])
     db.session.commit()
 
 
@@ -271,6 +280,36 @@ def seed_reviews():
         a restaurant that is consistently excellent. Thank you, guys!""", rating=5
     )
 
+    review3_3 = Review(
+        user_id=4, restaurant_id=3, review="Wonderful Tradition for our family. Always consistent in every way!",
+        rating=5
+    )
+
+    review3_4 = Review(
+        user_id=5, restaurant_id=3, review="""Excellent as always. Have been dining here for over 40 years and it's 
+        still as great and consistent as it was back then.""", rating=5
+    )
+
+    review3_5 = Review(
+        user_id=6, restaurant_id=3, review="""Service was a little slow however, the service staff was pleasant and 
+        attentive. Food was phenomenal and the raspberry cake was delicious.""", rating=4
+    )
+
+    review3_6 = Review(
+        user_id=7, restaurant_id=3, review="""Had a great time and the food / service was outstanding. Was a bit disappointed 
+        that the 2 BDays I had noted on invite and mentioned to server were not recognized.""", rating=4
+    )
+
+    review3_7 = Review(
+        user_id=8, restaurant_id=3, review="Beautiful ambiance, amazing service and delicious food!", rating=5
+    )
+
+    review3_8 = Review(
+        user_id=9, restaurant_id=3, review="Fantastic service and exceptional food, always a treat to dine at Lawry's Beverly Hills!!!",
+        rating=5
+    )
+
+
     review4_1 = Review(
         user_id=4, restaurant_id=4, review="""We have been going to Little Door for quite some time. It had been a 
         number of years since out last visit. Still a great 'go to' place for a celebration or a romantic night out. 
@@ -352,9 +391,13 @@ def seed_reviews():
         delicious. Also valet... Quick and efficient.""", rating=5
     )
 
-    db.session.add_all([review1_1, review1_2, review2_1, review2_2, review3_1, review3_2, review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review7_1, review7_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2])
+    db.session.add_all([review1_1, review1_2, review2_1, review2_2, review3_1, review3_2, review3_3, review3_4, review3_5, review3_6, review3_7, review3_8,
+        review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review7_1, review7_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2])
+
     db.session.commit()
 
+    # review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review7_1, review7_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2
+# , review3_4, review3_5, review3_6, review3_7, review3_8
 
 def undo_reviews():
     if environment == "production":

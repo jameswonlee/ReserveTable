@@ -61,18 +61,20 @@ function NavigationMenu() {
         setShowSignUpModal(false);
         return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
-    
+
     useEffect(() => {
         if (!showReservationsMenu) return;
-        
+
         document.addEventListener('click', closeReservationsMenu);
         return () => document.removeEventListener('click', closeReservationsMenu);
     }, [showReservationsMenu]);
-    
+
     useEffect(() => {
-        dispatch(getAllUserReservations(sessionUser?.id));
+        if (sessionUser) {
+            dispatch(getAllUserReservations(sessionUser.id));
+        }
     }, [sessionUser])
-    
+
 
 
     return (
@@ -83,21 +85,21 @@ function NavigationMenu() {
                     <div className="nav-bar-menu-items">
                         <button className="profile-button" onClick={openMenu}>
                             <img src={profileButton} className="profile-button-icon" />
-                            {showMenu && (
-                                <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
-                            )}
                         </button>
+                        {showMenu && (
+                            <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
+                        )}
                         <button className="upcoming-reservations-menu-button" onClick={openReservationsMenu}>
-                            {reservations
+                            {Object.keys(reservations).length > 0
                                 ?
                                 <img src={upcomingReservationsNotification} className="upcoming-reservations-notification-icon" />
                                 :
                                 <img src={upcomingReservations} className="upcoming-reservations-icon" />
                             }
+                        </button>
                             {showReservationsMenu && (
                                 <UpcomingReservationsMenu />
                             )}
-                        </button>
                         <img src={notifications} className="notifications-icon" />
                         <img src={lineBreak} className="line-break" />
                         <img src={magnifyingGlass} className="logged-in-search-button" />

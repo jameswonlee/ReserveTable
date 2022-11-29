@@ -39,7 +39,6 @@ function RestaurantProfile() {
 
     return (
         <div className="restaurant-profile-main-container">
-
             <div className="restaurant-profile-upper">
                 <div className="restaurant-profile-image-container">
                     <img src={restaurant.preview_img} className="restaurant-profile-image" />
@@ -89,7 +88,7 @@ function RestaurantProfile() {
                                                 <span className="red-star card-star">★ ★ ★ ★ <span className="gray-star card-star">★</span></span>}
                                             {averageRating().toFixed(1) >= 4.9 &&
                                                 <span className="red-star card-star">★ ★ ★ ★ ★ </span>}
-                                                <span className="space-to-left-25">{averageRating().toFixed(1)}</span>
+                                            <span className="space-to-left-25">{averageRating().toFixed(1)}</span>
                                         </span>
                                         :
                                         <span className="gray-star card-star">★ ★ ★ ★ ★<span className="preview-num-reviews">
@@ -128,19 +127,19 @@ function RestaurantProfile() {
                                 </div>
                             </div>
                             <div className="restaurant-profile-general-info-bottom">
-                            <div className="space-to-left-23 top-tags1">
-                                Top Tags:
+                                <div className="space-to-left-23 top-tags1">
+                                    Top Tags:
+                                </div>
+                                <div className="space-to-left-24 top-tags2">
+                                    Hot Spot
+                                </div>
+                                <div className="space-to-left-24 top-tags3">
+                                    Special Occasion
+                                </div>
+                                <div className="space-to-left-24 top-tags4">
+                                    Fit For Foodies
+                                </div>
                             </div>
-                            <div className="space-to-left-24 top-tags2">
-                                Hot Spot
-                            </div>
-                            <div className="space-to-left-24 top-tags3">
-                                Special Occasion
-                            </div>
-                            <div className="space-to-left-24 top-tags4">
-                                Fit For Foodies
-                            </div>
-                        </div>
 
                         </div>
                         <div className="restaurant-profile-description">
@@ -150,17 +149,13 @@ function RestaurantProfile() {
                             <h2>REVIEWS</h2>
                             <Reviews restaurant={restaurant} />
                         </div>
-                       
                     </div>
-
-
                     <div className="restaurant-profile-right">
                         <div className="additional-info-container">
 
-                            <AdditionalInfo />
+                            <AdditionalInfo restaurant={restaurant} />
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

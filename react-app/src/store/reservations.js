@@ -40,10 +40,10 @@ const updateReservation = (reservation) => {
     }
 }
 
-const removeReservation = (reservation) => {
+const removeReservation = (reservationId) => {
     return {
         type: DELETE_RESERVATION,
-        reservation: reservation
+        reservationId: reservationId
     }
 }
 
@@ -52,13 +52,17 @@ const removeReservation = (reservation) => {
 
 
 export const getAllUserReservations = (userId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/reservations`);
+    try {
+        const response = await csrfFetch(`/api/users/${userId}/reservations`);
+    
+        if (response.ok) {
+            const reservations = await response.json();
+            dispatch(loadAllUserReservations(reservations));
+            return reservations
+        }
 
+    } catch (e) {
 
-    if (response.ok) {
-        const reservations = await response.json();
-        dispatch(loadAllUserReservations(reservations));
-        return reservations
     }
 }
 
@@ -145,7 +149,7 @@ const reservationsReducer = (state = initialState, action) => {
 
         case DELETE_RESERVATION:
             newState = { ...state };
-            delete newState[action.reservation.id];
+            delete newState[action.reservationId];
             return newState;
 
         default:
