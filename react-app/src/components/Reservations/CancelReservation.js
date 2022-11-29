@@ -7,8 +7,6 @@ import x from '../../icons/x-icon.ico';
 import './CancelReservation.css';
 
 
-
-
 function CancelReservation({ reservation, setShowModal }) {
     const dispatch = useDispatch();
     const history = useHistory();

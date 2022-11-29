@@ -13,7 +13,7 @@ function Reservations() {
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
-    const [partySize, setPartySize] = useState(0);
+    const [partySize, setPartySize] = useState(1);
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitHandler = async (e) => {
@@ -57,7 +57,6 @@ function Reservations() {
                 <div>
                     <label>
                         <select value={partySize} onChange={e => setPartySize(e.target.value)}>
-                            {/* <option value="0">0 People</option> */}
                             <option value="1">1 Person</option>
                             <option value="2">2 People</option>
                             <option value="3">3 People</option>
@@ -86,6 +85,9 @@ function Reservations() {
                         type="time"
                         onChange={e => setTime(e.target.value)}
                         value={time}
+                        step="1800"
+                        min="17:00"
+                        max="22:00"
                         placeholder="Time" />
                 </div>
                 <div>

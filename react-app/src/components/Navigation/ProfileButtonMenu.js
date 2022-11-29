@@ -27,7 +27,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                 <div className="profile-drop-button">My Profile</div>
                 <div className="profile-drop-button">My Dining History</div>
                 <div className="profile-drop-button">My Saved Restaurants</div>
-                <div className="profile-log-out-button" ><LogoutButton setShowSignInModal={setShowSignInModal} /></div>
+                <div className="profile-log-out-button"><LogoutButton setShowSignInModal={setShowSignInModal} /></div>
             </div>
         </div>
 

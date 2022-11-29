@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllRestaurantReviews } from "../../store/reviews";
 
+import './Reviews.css';
+
 
 
 
@@ -13,7 +15,7 @@ function Reviews({ restaurant }) {
     const allReviews = restaurant.reviews;
     // const allReviews = useSelector(state => Object.values(state.reviews));
 
-    // console.log('allReviews', allReviews)
+    console.log('allReviews', allReviews)
 
     useEffect(() => {
         dispatch(getAllRestaurantReviews(restaurant.id));
@@ -25,7 +27,18 @@ function Reviews({ restaurant }) {
         <div>
             <div>
                 {allReviews.map(review => (
-                    <div key={review.id}>{review.review}</div>
+                <div className="reviews-container">
+                        <div className="review-container-left">
+                            <div>
+                                REVIEWER NAME
+                            </div>
+                        </div>
+                        <div className="review-container-right">
+                            <div key={review.id} className="review">
+                                {review.review}
+                            </div>
+                        </div>
+                    </div>
                 ))}
             </div>
 

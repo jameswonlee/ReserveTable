@@ -14,24 +14,14 @@ function UpcomingReservationsMenu() {
     const userReservationsObj = useSelector(state => state.reservations);
     const userReservations = Object.values(userReservationsObj);
     const nextReservation = userReservations[0];
-
-    console.log('sessionUser', sessionUser);
-
-    // console.log('userReservations', userReservations)
-
-    // console.log('nextReservation', nextReservation)
   
-
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser.id));
     }, [sessionUser])
 
-    if (!nextReservation) return null;
-
     const handleSubmit = () => {
         history.push(`/reservations/${nextReservation.id}`)
     }
-
 
     return (
         <div className="upcoming-reservations-menu-container">
@@ -40,7 +30,7 @@ function UpcomingReservationsMenu() {
                     Upcoming Reservations
                 </div>
                 <div>
-                    {userReservations
+                    {nextReservation
                         ?
                         <div className="next-reservation-details-container">
                             <div>
@@ -60,7 +50,7 @@ function UpcomingReservationsMenu() {
                             <div>Cancel</div>
                         </div>
                         :
-                        <div></div>
+                        <div>NO UPCOMING RESERVATIONS</div>
                     }
                     <div>View all reservations</div>
                 </div>
