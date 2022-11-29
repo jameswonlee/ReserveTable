@@ -10,11 +10,10 @@ import './CancelReservation.css';
 function CancelReservation({ reservation, setShowModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
-    // console.log('reservation', reservation);
 
     const deleteReservationHandler = () => {
         dispatch(deleteReservation(reservation.id));
-        alert("Reservation successfully delete");
+        alert("Reservation canceled");
         history.push(`/`)
     }
 
