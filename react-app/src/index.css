@@ -24,3 +24,7 @@ dark-font {
         background-color: white;
     } */
 }
+
+body {
+    max-width: 1600px;
+}

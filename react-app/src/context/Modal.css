@@ -22,7 +22,13 @@
     position: absolute;
     background-color:white;
     padding: 1em;
-    border-radius: 1em;
+    /* border-radius: 1em; */
+    border-radius: 4px;
     max-height: 80vh;
     overflow-y: auto;
+  }
+
+  .reservation-cancellation-upcoming-reservations-icon {
+    height: 30px;
+    margin-top: 5px;
   }

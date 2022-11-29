@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getAllUserReservations } from "../../store/reservations";
-import upcomingRestaurantIcon from './icons/upcoming-reservation-logo.ico';
+import upcomingRestaurantIcon from '../../icons/upcoming-reservation-logo.ico';
 import './UpcomingReservationsMenu.css';
 
 
@@ -13,16 +13,18 @@ function UpcomingReservationsMenu() {
     const sessionUser = useSelector(state => state.session.user);
     const userReservationsObj = useSelector(state => state.reservations);
     const userReservations = Object.values(userReservationsObj);
-    const nextReservation = userReservations[1]
+    const nextReservation = userReservations[0];
 
-    console.log('userReservations', userReservations)
+    console.log('sessionUser', sessionUser);
 
-    console.log('nextReservation', nextReservation)
+    // console.log('userReservations', userReservations)
 
+    // console.log('nextReservation', nextReservation)
+  
 
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser.id));
-    }, [])
+    }, [sessionUser])
 
     if (!nextReservation) return null;
 

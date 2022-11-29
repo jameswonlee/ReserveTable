@@ -1,24 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { Modal } from "../../context/Modal";
 import { getAllUserReservations } from "../../store/reservations";
+import CancelReservation from "./CancelReservation";
+import lineBreak from '../../icons/button-line-break.ico';
 import './ReservationConfirmation.css';
 
 
 
 function ReservationConfirmation() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { reservationId } = useParams();
+
     const sessionUser = useSelector(state => state.session.user);
     const allReservations = useSelector(state => Object.values(state.reservations));
     const reservation = allReservations.filter(reservation => reservation.id === +reservationId)[0];
-    console.log('reservation', reservation)
+
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(true);
+    }
 
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser.id))
     }, [])
 
     if (!reservation) return null;
+
+    const routeToModifyPage = () => {
+        history.push(`/reservations/${reservationId}/modify`)
+    }
 
 
     return (
@@ -47,15 +61,20 @@ function ReservationConfirmation() {
                     </div>
                     <div className="modify-cancel-add-to-calendar-buttons">
                         <span>
-                            <button>Modify</button>
-                            <img />
-                            <button>Cancel</button>
-                            <img />
+                            <button onClick={routeToModifyPage}>Modify</button>
+                            <img src={lineBreak} className="edit-reservation-line-break"/>
+                            <button onClick={openModal}>Cancel</button>
+                            <img src={lineBreak} className="edit-reservation-line-break"/>
                             <button>Add to calendar</button>
                         </span>
                     </div>
                 </div>
             </div>
+            {showModal &&
+                <Modal onClose={() => setShowModal(false)}>
+                    <CancelReservation reservation={reservation} setShowModal={setShowModal}/>
+                </Modal>
+            }
 
             <div className="reservation-confirmation-details-right">
                 <div className="user-info-details-container">

@@ -55,7 +55,7 @@ def seed_restaurants():
         description="""Designated the Los Angeles Times Readers' Choice 'Best Sushi Restaurant' in Southern California, and one of OpenTable's 50 Hottest Restaurants in the U.S.,” 
         Katsuya holds true to be held as a superb Los Angeles Japanese cuisine experience. Featuring the dynamic pairing of Master Sushi Chef Katsuya Uechi and design impresario 
         Philippe Starck, Katsuya is truly a feast for the senses. With specialty cocktails, unique rolls and spectacular sushi and sashimi platters, Chef Uechi skillfully translates 
-        Japanese flavors to the American palate.""", website="http://www.katsuyarestaurant.com/", preview_img="https://img.ctykit.com/cdn/ca-dtla/images/tr:w-1800/katsuya2.jpg"
+        Japanese flavors to the American palate.""", website="http://www.katsuyarestaurant.com/", preview_img="https://resizer.otstatic.com/v2/photos/wide-huge/3/47613890.jpg"
     )
 
     spago = Restaurant(

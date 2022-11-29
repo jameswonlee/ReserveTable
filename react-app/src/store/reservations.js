@@ -54,6 +54,7 @@ const removeReservation = (reservation) => {
 export const getAllUserReservations = (userId) => async (dispatch) => {
     const response = await csrfFetch(`/api/users/${userId}/reservations`);
 
+
     if (response.ok) {
         const reservations = await response.json();
         dispatch(loadAllUserReservations(reservations));
@@ -79,7 +80,7 @@ export const createReservation = (newReservationData, restaurantId) => async (di
     })
 
     if (response.ok) {
-        const newReservation = await response.json();
+        const newReservation= await response.json();
         dispatch(addReservation(newReservation));
         return newReservation;
     }
@@ -89,7 +90,7 @@ export const changeReservation = (updatedReservationData, reservationId) => asyn
     const response = await csrfFetch(`/api/reservations/${reservationId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedReservationData)
+        body: JSON.stringify(updatedReservationData) 
     })
 
     if (response.ok) {
@@ -120,6 +121,7 @@ const reservationsReducer = (state = initialState, action) => {
     let newState = {};
     switch (action.type) {
         case LOAD_ALL_USER_RESERVATIONS:
+            newState = { ...state }
             action.reservations.Reservations.forEach(reservation => {
                 newState[reservation.id] = reservation
             })
@@ -135,7 +137,7 @@ const reservationsReducer = (state = initialState, action) => {
             newState = { ...state };
             newState[action.reservation.id] = action.reservation;
             return newState
-
+            
         case UPDATE_RESERVATION:
             newState = { ...state };
             newState[action.reservation.id] = action.reservation;

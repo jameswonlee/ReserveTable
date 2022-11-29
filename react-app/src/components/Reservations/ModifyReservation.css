@@ -1,0 +1,56 @@
+.modify-reservation-container {
+    border: solid;
+    border-color: red;
+    display: flex;
+    flex-direction: column;
+    margin-left: 260px;
+    height: 500px;
+    width: 640px;
+}
+
+.modify-reservation-header {
+    border: solid;
+    border-color: blue;
+}
+
+.modify-reservation-preview-image {
+    border: solid;
+    border-color: yellow;
+    height: 60px;
+    width: 70px;
+}
+
+.modify-reservation-reservation-time {
+    border: solid;
+    border-color: green;
+}
+
+.modify-reservation-name-time {
+    display: flex;
+    flex-direction: column;
+}
+
+.modify-reservation-image-and-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.modify-reservation-top {
+    border-bottom: solid;
+}
+
+.modify-reservation-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.modify-reservation-person-icon {
+    height: 23px;
+    width: 20px;
+}
+
+.modify-reservation-upcoming-reservations-icon {
+    height: 30px;
+    width: 35px;
+}

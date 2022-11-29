@@ -65,9 +65,14 @@ function RestaurantCard({ restaurant }) {
                     </div>
                     <div className="booked-num">
                         <div className="booking-symbol-container">
-                            <img src={bookingSymbol} className="booking-symbol" />
+                            {restaurant.total_num_reservations > 0 &&
+                                <img src={bookingSymbol} className="booking-symbol" />
+                            }
                         </div>
                         <div>
+                            {!restaurant.total_num_reservations &&
+                                <div className="restaurant-card-total-bookings-zero"></div>
+                            }
                             {restaurant.total_num_reservations > 0 &&
                                 (restaurant.total_num_reservations === 1
                                     ?

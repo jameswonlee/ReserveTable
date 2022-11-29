@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
+    # created_at = db.Column(db.DateTime, nullable=False, index=False, default=datetime.utcnow)
 
     reviews = db.relationship("Review", back_populates="user")
     reservations = db.relationship("Reservation", back_populates="user")
@@ -42,5 +42,6 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'first_name': self.first_name,
             'last_name': self.last_name,
+            # 'reservations': self.reservations
             # 'reviews': len(self.reviews)
         }

@@ -8,6 +8,7 @@ import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
 import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile';
 import ReservationConfirmation from './components/Reservations/ReservationConfirmation';
+import ModifyReservation from './components/Reservations/ModifyReservation';
 
 import SignUpForm from './components/_auth/SignUpForm';
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />
+          </Route>
+          <Route exact path='/reservations/:reservationId/modify'>
+            <ModifyReservation />
           </Route>
         </Switch>
       </BrowserRouter>
