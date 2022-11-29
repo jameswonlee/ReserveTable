@@ -21,46 +21,44 @@ function CancelReservation({ reservation, setShowModal }) {
     }
 
     return (
-        <>
-            <div>
-                <img src={x} className="cancel-reservation-modal-x" onClick={() => setShowModal(false)} />
-                <div className="cancel-reservation-modal-container">
-                    <div className="cancellation-heading">
-                        Are you sure you want to cancel this reservation?
-                    </div>
-                    <div className="cancel-reservation-restaurant-name">
-                        {reservation.restaurant.name}
-                    </div>
-                    <div className="cancel-reservation-modal-time">
-                        <span>
-                            <span className="reservation-cancellation-person-icon-container">
-                                <img src={personIcon} className="reservation-cancellation-person-icon" />
-                            </span>
-                            <span>
-                                {reservation.party_size} (Standard seating)
-                            </span>
-                            <span>
-                                <img src={upcomingReservationsIcon} className="reservation-cancellation-upcoming-reservations-icon" />
-                            </span>
-                            <span>
-                                {reservation.reservation_time}
-                            </span>
-
-                        </span>
-                    </div>
+        <div>
+            <img src={x} className="cancel-reservation-modal-x" onClick={() => setShowModal(false)} />
+            <div className="cancel-reservation-modal-container">
+                <div className="cancellation-heading">
+                    Are you sure you want to cancel this reservation?
                 </div>
-                <div className="cancel-reservation-modal-buttons">
+                <div className="cancel-reservation-restaurant-name">
+                    {reservation.restaurant.name}
+                </div>
+                <div className="cancel-reservation-modal-time">
                     <span>
-                        <button onClick={() => setShowModal(false)} className="reservation-cancel-modal-nevermind-button">
-                            Nevermind
-                        </button>
-                        <button onClick={deleteReservationHandler} className="reservation-cancel-modal-cancel-button">
-                            Confirm cancellation
-                        </button>
+                        <span className="reservation-cancellation-person-icon-container">
+                            <img src={personIcon} className="reservation-cancellation-person-icon" />
+                        </span>
+                        <span>
+                            {reservation.party_size} (Standard seating)
+                        </span>
+                        <span>
+                            <img src={upcomingReservationsIcon} className="reservation-cancellation-upcoming-reservations-icon" />
+                        </span>
+                        <span>
+                            {reservation.reservation_time}
+                        </span>
+
                     </span>
                 </div>
             </div>
-        </>
+            <div className="cancel-reservation-modal-buttons">
+                <span>
+                    <button onClick={() => setShowModal(false)} className="reservation-cancel-modal-nevermind-button">
+                        Nevermind
+                    </button>
+                    <button onClick={deleteReservationHandler} className="reservation-cancel-modal-cancel-button">
+                        Confirm cancellation
+                    </button>
+                </span>
+            </div>
+        </div>
     )
 }
 

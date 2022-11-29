@@ -129,3 +129,7 @@
     margin-left: -4.5px;
     margin-bottom: 8px;
 }
+
+.restaurant-card-total-bookings-zero {
+    height: 45px;
+}
