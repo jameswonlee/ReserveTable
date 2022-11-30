@@ -27,9 +27,12 @@
     color: white;
     border: none;
     border-radius: 5px;
-
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+.delete-review-delete-button:hover {
+    cursor: pointer;
 }
 
 .delete-review-nevermind-button {
