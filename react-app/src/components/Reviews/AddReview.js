@@ -3,11 +3,12 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createReview } from "../../store/reviews";
 import './AddReview.css';
+import { getOneRestaurant } from "../../store/restaurants";
 
 
 
 
-function AddReviewForm({ restaurant, setShowModal }) {
+function AddReviewForm({ restaurant, setShowAddModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
@@ -34,7 +35,8 @@ function AddReviewForm({ restaurant, setShowModal }) {
 
             await dispatch(createReview(reviewData, restaurant.id));
             alert("Review successfully added");
-            setShowModal(false);
+            await dispatch(getOneRestaurant(restaurant.id));
+            setShowAddModal(false);
             history.push(`/restaurants/${restaurant.id}`);
         }
     }

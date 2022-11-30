@@ -4,21 +4,24 @@ import { useHistory } from "react-router-dom";
 import { editReview } from '../../store/reviews';
 
 import './UpdateReviewForm.css';
+import { getOneRestaurant } from "../../store/restaurants";
 
-function UpdateReviewForm({ restaurant, setShowModal }) {
+function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
 
-    const [review, setReview] = useState('');
-    const [rating, setRating] = useState('');
-    const [validationErrors, setValidationErrors] = useState([]);
+    console.log('review', review)
 
+    const [reviewText, setReviewText] = useState(review.review);
+    const [rating, setRating] = useState(review.rating);
+    const [validationErrors, setValidationErrors] = useState([]);
+    console.log('reviewText', reviewText)
     const submitHandler = async (e) => {
         e.preventDefault();
         const errors = [];
 
-        if (!review) errors.push("Please tell us about your experience");
+        if (!reviewText) errors.push("Please tell us about your experience");
         if (!rating) errors.push("Please rate your experience");
 
         setValidationErrors(errors);
@@ -26,13 +29,14 @@ function UpdateReviewForm({ restaurant, setShowModal }) {
         if (!errors.length) {
 
             const reviewData = {
-                review: review,
+                review: reviewText,
                 rating: rating
             };
 
-            await dispatch(editReview(reviewData, restaurant.id));
+            await dispatch(editReview(reviewData, review.id));
             alert("Review successfully updated");
-            setShowModal(false);
+            await dispatch(getOneRestaurant(restaurant.id));
+            setShowUpdateModal(false);
             history.push(`/restaurants/${restaurant.id}`);
         }
     }
@@ -53,9 +57,9 @@ function UpdateReviewForm({ restaurant, setShowModal }) {
                             type="text"
                             onChange={e => {
                                 setValidationErrors([]);
-                                setReview(e.target.value)
+                                setReviewText(e.target.value)
                             }}
-                            value={review}
+                            value={reviewText}
                             placeholder="Review"
                             className="review-text-input" />
                         <div>

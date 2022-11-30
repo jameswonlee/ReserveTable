@@ -7,11 +7,15 @@
     width: 235px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 0;
 }
 
-/* .restaurant-card-container {
-    height: 100%;
-} */
+.restaurant-nav-card-container:hover {
+    top: -6px;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;   
+}
 
 
 .restaurant-preview-details {

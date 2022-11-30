@@ -2,8 +2,14 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
-
 import './UpcomingReservationsMenu.css';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+dayjs.extend(utc);
+
+
+
 
 
 function Reservations() {
@@ -33,7 +39,7 @@ function Reservations() {
                 user_id: sessionUser.id,
                 restaurant_id: restaurantId,
                 party_size: partySize,
-                reservation_time: "2024-01-21 17:30:00"
+                reservation_time: dayjs(`${date} ${time}`).utc().format("YYYY-MM-DD HH:mm:ss")
             }
             const newReservation = await dispatch(createReservation(reservationData, restaurantId));
             window.alert('Reservation successfully created!');

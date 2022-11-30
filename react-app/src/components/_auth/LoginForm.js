@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import './LoginForm.css';
 
-const LoginForm = () => {
+const LoginForm = ({ setShowSignInModal }) => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -31,6 +31,8 @@ const LoginForm = () => {
           backendErrors.push(arr[1])
         })
         setErrors(backendErrors);
+      } else {
+        setShowSignInModal(false);
       }
     }
   };

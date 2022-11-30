@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './SignUpForm.css'
 
-const SignUpForm = () => {
+const SignUpForm = ({ setShowSignUpModal }) => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -40,11 +40,14 @@ const SignUpForm = () => {
             backendErrors.push(arr[1])
           })
           setErrors(backendErrors)
+        } else {
+          setShowSignUpModal(false)
         }
       } else {
         errors.push("Please double check your confirm password.")
       }
     }
+
   };
 
   const updateUsername = (e) => {

@@ -1,0 +1,102 @@
+/* additional information containers */
+.cross-street-container {
+    display: flex;
+    flex-direction: row;;
+}
+
+.neighborhood-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.operation-hours-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.cuisines-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.dining-style-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.dress-code-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.parking-details-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.payment-options-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.website-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.phone-number-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* additional info icons */
+.cross-street-icon {
+    height: 25px;
+    width: 27px;
+}
+
+.neighborhood-icon {
+    height: 25px;
+    width: 27px;
+}
+
+.operation-hours-icon {
+    height: 25px;
+    width: 28px;
+}
+
+.cuisines-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.dining-style-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.dress-code-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.parking-details-icon {
+    height: 22px;
+    width: 25px;
+}
+
+.payment-options-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.website-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.phone-number-icon {
+    height: 25px;
+    width: 25px;
+}
+

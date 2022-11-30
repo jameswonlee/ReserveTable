@@ -67,7 +67,6 @@ function RestaurantProfile() {
                             <h1>{restaurant.name}</h1>
                         </div>
                         <div>
-
                         </div>
                         <div className="restaurant-profile-general-info">
                             <div className="restaurant-profile-general-info-top">

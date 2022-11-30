@@ -5,6 +5,7 @@ import { Modal } from '../../context/Modal';
 import AddReviewForm from "./AddReview";
 import UpdateReviewForm from "./UpdateReviewForm";
 import DeleteReview from "./DeleteReview";
+import dayjs from 'dayjs';
 import './Reviews.css';
 
 
@@ -12,6 +13,7 @@ function Reviews({ restaurant }) {
     const dispatch = useDispatch();
     const allReviews = restaurant.reviews;
     const sessionUser = useSelector(state => state.session.user);
+    const userReservations = useSelector(state => Object.values(state.reservations));
 
     const [showAddModal, setShowAddModal] = useState(false);
     const [showUpdateModal, setShowUpdateModal] = useState(false);
@@ -35,12 +37,26 @@ function Reviews({ restaurant }) {
 
     if (!sessionUser) return null;
 
+
+    const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
+
+    // dayjs().isBefore(dayjs('2011-01-01'))
+
+    const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
+    const hasPreviousReview = allReviews.some(review => review.user_id === sessionUser.id);
+    const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
+
+    console.log('currRSVP', currRestaurantReservations);
+    console.log('allReviews', allReviews)
+   
     return (
         <div>
             <div>
-                <button onClick={openAddReviewModal}>
-                    Leave a review
-                </button>
+                {shouldShowReviewButton &&
+                    <button onClick={openAddReviewModal}>
+                        Leave a review
+                    </button>
+                }
                 {showAddModal && (
                     <Modal onClose={() => setShowAddModal(false)}>
                         <AddReviewForm setShowAddModal={setShowAddModal} restaurant={restaurant} />
@@ -49,7 +65,7 @@ function Reviews({ restaurant }) {
             </div>
             <div>
                 {allReviews.map(review => (
-                    <div className="reviews-container">
+                    <div key={review.id} className="reviews-container">
                         <div className="review-container-left">
                             <div>
                                 <div>
@@ -60,7 +76,7 @@ function Reviews({ restaurant }) {
                                         Update your review
                                     </button>
                                 }
-                                 {review.user_id === sessionUser.id &&
+                                {review.user_id === sessionUser.id &&
                                     <button onClick={openDeleteReviewModal}>
                                         Delete your review
                                     </button>
@@ -68,12 +84,12 @@ function Reviews({ restaurant }) {
                             </div>
                             {showUpdateModal && (
                                 <Modal onClose={() => setShowUpdateModal(false)}>
-                                    <UpdateReviewForm setShowUpdateModal={setShowUpdateModal} restaurant={restaurant} />
+                                    <UpdateReviewForm setShowUpdateModal={setShowUpdateModal} review={review} restaurant={restaurant} />
                                 </Modal>
                             )}
                             {showDeleteModal && (
                                 <Modal onClose={() => setShowDeleteModal(false)}>
-                                    <DeleteReview setShowDeleteModal={setShowDeleteModal}/>
+                                    <DeleteReview setShowDeleteModal={setShowDeleteModal} review={review} />
                                 </Modal>
                             )}
                         </div>
