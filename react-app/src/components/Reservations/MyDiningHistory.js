@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import dayjs from 'dayjs';
 import reservationConfirmedIcon from '../../icons/reservation-confirmed-icon.ico';
@@ -11,6 +12,7 @@ import { getAllUserReservations } from '../../store/reservations';
 
 function MyDiningHistory() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const allReservations = useSelector(state => Object.values(state.reservations));
     const futureReservations = allReservations.filter(reservation => dayjs().isBefore(reservation.reservation_time));
@@ -19,6 +21,10 @@ function MyDiningHistory() {
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser.id));
     }, [allReservations])
+
+    const routeToReservationConfirmation = (reservationId) => {
+        // history.push(`/reservations/${reservationId}`)
+    }
 
     return (
         <div className="dining-dashboard-outer-container">
@@ -50,7 +56,7 @@ function MyDiningHistory() {
                             ?
                             futureReservations.map(reservation => (
                                 <div className="dining-dashboard-upcoming-border">
-                                    <div className="dining-dashboard-upcoming-reservations-details-container">
+                                    <div className="dining-dashboard-upcoming-reservations-details-container" onClick={routeToReservationConfirmation(reservation.id)}>
                                         <div>
                                             <img src={reservation.restaurant.preview_img} className="dining-dashboard-restaurant-img" />
                                         </div>
