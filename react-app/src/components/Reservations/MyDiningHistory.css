@@ -72,21 +72,26 @@
 .reservation-confirmed-icon {
     height: 25px;
     width: 25px;
+    margin-top: 3px;
+    margin-bottom: -6px;
 }
 
 .dining-dashboard-person-icon {
-    height: 25px;
-    width: 25px;
+    height: 22px;
+    width: 22px;
+    margin-bottom: -5px;
 }
 
 .dining-dashboard-reservation-completed-icon {
-    height: 29px;
-    width: 29px;
+    height: 20px;
+    width: 25px;
+    /* margin-bottom: -9px; */
 }
 
 .dining-dashboard-upcoming-reservations-icon {
-    height: 29px;
-    width: 29px;
+    height: 32px;
+    width: 35px;
+    margin-bottom: -10px;
 }
 
 .dining-dashboard-upcoming-reservations-details-container {
@@ -140,7 +145,7 @@
 
 .dining-dashboard-upcoming-border {
     border: solid;
-    border-color: rgb(192, 191, 191);
+    border-color: rgb(227, 227, 227);
     height: 160px;
     width: 650px;
     margin-left: 20px;
@@ -162,9 +167,59 @@
 
 .dining-dashboard-past-header {
     margin-left: 20px;
+    font-size: 0.75rem;
+    color: rgb(37, 37, 37)
 }
 
 
 .dining-dashboard-future-header {
     margin-left: 20px;
+    font-size: 0.75rem;
+    color: rgb(37, 37, 37)
+
+}
+
+.dining-dashboard-future-restaurant-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.dining-dashboard-past-restaurant-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.dining-dashboard-reservation-confirmed-text {
+    font-size: 1rem;
+}
+
+.dining-dashboard-reservation-completed-align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dining-dashboard-div-align {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+    align-items: center;
+}
+
+.dining-dashboard-party-size-text {
+    font-size: 1.1rem;
+    color: gray;
+    font-weight: 400;
+}
+
+.dining-dashboard-reservation-time-text {
+    font-size: 1.05rem;
+    color: rgb(44, 44, 44);
+    font-weight: 300;
+}
+
+.dining-dashboard-reservation-time-align {
+    margin-top: 4px;
 }

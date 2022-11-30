@@ -54,7 +54,7 @@ function UpcomingReservationsMenu() {
                             </span>
                         </div>
                         <div>Cancel</div>
-                        <div onClick={clickHandler}>View all reservations</div>
+                        <div onClick={clickHandler} className="upcoming-view-all-reservations">View all reservations</div>
                     </div>
                     :
                     <div>You have no upcoming reservations</div>

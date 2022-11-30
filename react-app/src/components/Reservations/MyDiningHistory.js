@@ -16,13 +16,9 @@ function MyDiningHistory() {
     const futureReservations = allReservations.filter(reservation => dayjs().isBefore(reservation.reservation_time));
     const pastReservations = allReservations.filter(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()));
 
-
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser.id));
     }, [allReservations])
-
-
-
 
     return (
         <div className="dining-dashboard-outer-container">
@@ -66,22 +62,23 @@ function MyDiningHistory() {
                                                 <div>
                                                     <span>
                                                         <img src={reservationConfirmedIcon} className="reservation-confirmed-icon" />
+                                                        &nbsp;&nbsp;&nbsp;
                                                         <span className="dining-dashboard-reservation-confirmed-text">
                                                             Reservation confirmed
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <div>
+                                                <div className="dining-dashboard-div-align">
                                                     <span>
                                                         <img src={personIcon} className="dining-dashboard-person-icon" />
                                                         &nbsp;&nbsp;
-                                                        <span>
+                                                        <span className="dining-dashboard-party-size-text">
                                                             {reservation.party_size}
                                                         </span>
                                                         &nbsp;&nbsp;&nbsp;
                                                         <img src={upcomingReservationsIcon} className="dining-dashboard-upcoming-reservations-icon" />
-                                                        &nbsp;&nbsp;
-                                                        <span>
+                                                        &nbsp;
+                                                        <span className="dining-dashboard-reservation-time-text">
                                                             {dayjs(reservation.reservation_time).format("ddd, MMMM DD, h:m a")}
                                                         </span>
                                                     </span>
@@ -115,24 +112,25 @@ function MyDiningHistory() {
                                                     {reservation.restaurant.name}
                                                 </div>
                                                 <div>
-                                                    <span>
+                                                    <span className="dining-dashboard-reservation-completed-align">
                                                         <img src={reservationCompletedIcon} className="dining-dashboard-reservation-completed-icon" />
-                                                        <span className="dining-dashboard-reservation-confirmed-text">
+                                                        &nbsp;&nbsp;&nbsp;
+                                                        <span className="dining-dashboard-reservation-completed-text">
                                                             Reservation completed
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <div>
+                                                <div className="dining-dashboard-reservation-time-align">
                                                     <span>
                                                         <img src={personIcon} className="dining-dashboard-person-icon" />
                                                         &nbsp;&nbsp;
-                                                        <span>
+                                                        <span className="dining-dashboard-party-size-text">
                                                             {reservation.party_size}
                                                         </span>
                                                         &nbsp;&nbsp;&nbsp;
                                                         <img src={upcomingReservationsIcon} className="dining-dashboard-upcoming-reservations-icon" />
-                                                        &nbsp;&nbsp;
-                                                        <span>
+                                                        &nbsp;
+                                                        <span className="dining-dashboard-reservation-time-text">
                                                             {dayjs(reservation.reservation_time).format("ddd, MMMM DD, h:m a")}
                                                         </span>
                                                     </span>
