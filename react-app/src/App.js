@@ -16,6 +16,7 @@ import SignUpForm from './components/_auth/SignUpForm';
 // import User from './components/User';
 
 import './index.css';
+import MyDiningHistory from './components/Reservations/MyDiningHistory';
 
 
 
@@ -63,6 +64,9 @@ function App() {
           </Route>
           <Route exact path='/reservations/:reservationId/modify'>
             <ModifyReservation />
+          </Route>
+          <Route exact path='/users/:userId/dining-dashboard'>
+            <MyDiningHistory />
           </Route>
         </Switch>
       </BrowserRouter>

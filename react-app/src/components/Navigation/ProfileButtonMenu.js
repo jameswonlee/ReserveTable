@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import LogoutButton from "../_auth/LogoutButton";
 import pointsGraph from '../../icons/points-graph.ico'
 
@@ -7,15 +8,12 @@ import './ProfileButtonMenu.css'
 
 
 function ProfileButtonMenu({ setShowSignInModal }) {
+    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user)
 
-    // useEffect(() => {
-
-    // }, [sessionUser])
-
-    // if (!sessionUser) {
-    //     return null;
-    // }
+    const clickHandler = () => {
+        history.push(`/users/${sessionUser.id}/dining-dashboard`)
+    }
 
     return (
         <div className="profile-drop-down-menu">
@@ -50,7 +48,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                 <div className="profile-drop-button">
                     <span className="spacing-down">My Profile</span>
                 </div>
-                <div className="profile-drop-button">
+                <div className="profile-drop-button my-dining-history" onClick={clickHandler}>
                     <span className="spacing-down">My Dining History</span>
                 </div>
                 <div className="profile-drop-button">

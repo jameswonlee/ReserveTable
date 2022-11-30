@@ -26,6 +26,9 @@ function UpcomingReservationsMenu() {
 
     const handleSubmit = () => {
         history.push(`/reservations/${nextReservation.id}`)
+    };
+    const clickHandler = () => {
+        history.push(`/users/${sessionUser.id}/dining-dashboard`);
     }
 
     return (
@@ -51,7 +54,7 @@ function UpcomingReservationsMenu() {
                             </span>
                         </div>
                         <div>Cancel</div>
-                        <div>View all reservations</div>
+                        <div onClick={clickHandler}>View all reservations</div>
                     </div>
                     :
                     <div>You have no upcoming reservations</div>
