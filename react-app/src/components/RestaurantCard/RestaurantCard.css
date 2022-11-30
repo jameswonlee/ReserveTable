@@ -14,11 +14,9 @@
 .restaurant-nav-card-container:hover {
     top: -6px;
     transition: all .4s ease-in-out;
-    box-shadow: 4px 2px rgb(239, 239, 239)
+    box-shadow: 4px 2px rgb(229, 228, 228)
     /* -webkit-transition: all .4s ease;    */
 }
-
-
 
 .restaurant-preview-details {
     font-weight: 400;

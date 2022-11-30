@@ -81,13 +81,12 @@ function ModifyReservation() {
                     <div className="modify-reservation-restaurant-name">
                         <span>
                             <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" />
-                        {reservationTime}
                         </span>
                         
                     </div>
                     <div className="modify-reservation-reservation-time">
-                        <span>{reservation.reservation_time}
-                            <span> [Time]
+                        <span>{dayjs(reservation.reservation_time).format("ddd, MMMM DD")} IMG {dayjs(reservation.reservation_time).format("h:m a")}
+                            <span>
                                 <span>
                                     <img src={personIcon} className="modify-reservation-person-icon" />
                                     {reservation.party_size} people (Standard seating)

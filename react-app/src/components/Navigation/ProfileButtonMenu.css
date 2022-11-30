@@ -135,3 +135,7 @@
     width: 310px;
     margin-left: -6px;
 }
+
+.my-dining-history:hover {
+    cursor: pointer;
+}

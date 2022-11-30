@@ -51,7 +51,8 @@ const LoginForm = ({ setShowSignInModal }) => {
 
   return (
     <form onSubmit={onLogin} className="login-form">
-      <div>
+      <h1>Welcome to ReserveTable!</h1>
+      <div className="sign-in-form-error-messages">
         {validationErrors.length > 0 &&
         validationErrors.map(error => (
           <div key={error}>{error}</div>
@@ -61,7 +62,7 @@ const LoginForm = ({ setShowSignInModal }) => {
         ))}
       </div>
       <div>
-        <label htmlFor='email'>Email</label>
+        {/* <label htmlFor='email'>Email</label> */}
         <input
           name='email'
           type='text'
@@ -71,7 +72,7 @@ const LoginForm = ({ setShowSignInModal }) => {
         />
       </div>
       <div>
-        <label htmlFor='password'>Password</label>
+        {/* <label htmlFor='password'>Password</label> */}
         <input
           name='password'
           type='password'
@@ -79,7 +80,7 @@ const LoginForm = ({ setShowSignInModal }) => {
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
+        <button type='submit' className="sign-in-form-button">Login</button>
       </div>
     </form>
   );
