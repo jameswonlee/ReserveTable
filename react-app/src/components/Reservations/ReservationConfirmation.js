@@ -5,6 +5,7 @@ import { Modal } from "../../context/Modal";
 import { getAllUserReservations } from "../../store/reservations";
 import CancelReservation from "./CancelReservation";
 import lineBreak from '../../icons/button-line-break.ico';
+import dayjs from 'dayjs';
 import './ReservationConfirmation.css';
 
 
@@ -56,7 +57,7 @@ function ReservationConfirmation() {
                             <img className="standars-seating-icon"/>
                             <div>{reservation.party_size} (Standard seating)</div>
                             <img className="reservation-details-date-time"/>
-                            <div>{reservation.reservation_time.split(':00 GMT')}</div>
+                            <div>{dayjs(reservation?.reservation_time).format("ddd, MMMM DD h:m a")}</div>
                         </span>
                     </div>
                     <div className="modify-cancel-add-to-calendar-buttons">
