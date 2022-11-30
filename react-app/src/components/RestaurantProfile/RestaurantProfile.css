@@ -1,14 +1,19 @@
 .restaurant-profile-image {
     width: 100%;
     height: 460px;
-    /* object-fit: cover; */
+    object-fit: cover;
 }
+
+/* .restaurant-profile-image-container {
+    line-height: 0;
+} */
 
 
 .restaurant-profile-upper {
     border: solid;
     border-color: rgb(138, 4, 27);
     object-fit: cover;
+    height: 460px;
 }
 .restaurant-profile-lower {
     height: 1500px;
@@ -37,7 +42,7 @@
     border-color: green;
     width: 350px;
     height: 800px;
-    margin-top: 300px;
+    margin-top: 350px;
 }
 
 .make-a-reservation-container {

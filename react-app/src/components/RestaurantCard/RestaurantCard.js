@@ -10,9 +10,9 @@ function RestaurantCard({ restaurant }) {
         let sum = 0;
         for (let i = 0; i < reviews.length; i++) {
             let review = reviews[i];
-            sum += review.rating
+            sum += review.rating;
         }
-        return sum / reviews.length
+        return sum / reviews.length;
     }
 
     return (
