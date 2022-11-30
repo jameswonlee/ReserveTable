@@ -8,6 +8,7 @@ import parkingDetailsIcon from './icons/parking-details-icon.ico';
 import paymentOptionsIcon from './icons/payment-options-icon.ico';
 import websiteIcon from './icons/website-icon.ico';
 import phoneNumberIcon from './icons/phone-number-icon.ico';
+import executiveChefIcon from './icons/executive-chef-icon.ico';
 import './AdditionalInfo.css';
 
 
@@ -98,19 +99,6 @@ function AdditionalInfo({ restaurant }) {
                         </div>
                     </div>
                 </div>
-                <div className="parking-details-container">
-                    <div className="parking-details-left">
-                        <img src={parkingDetailsIcon} className="parking-details-icon" />
-                    </div>
-                    <div className="parking-details-right">
-                        <div className="parking-details-label">
-                            Parking details
-                        </div>
-                        <div className="parking-details">
-                            {restaurant.parking_details}
-                        </div>
-                    </div>
-                </div>
             </div>
             <div className="payment-options-container">
                 <div className="payment-options-left">
@@ -125,6 +113,21 @@ function AdditionalInfo({ restaurant }) {
                     </div>
                 </div>
             </div>
+            {restaurant.executive_chef &&
+                <div className="executive-chef-container">
+                    <div className="executive-chef-left">
+                        <img src={executiveChefIcon} className="executive-chef-icon" />
+                    </div>
+                    <div className="executive-chef-right">
+                        <div className="executive-chef-label">
+                            Executive chef
+                        </div>
+                        <div className="executive-chef-details">
+                            {restaurant.executive_chef}
+                        </div>
+                    </div>
+                </div>
+            }
             <div className="website-container">
                 <div className="website-left">
                     <img src={websiteIcon} className="website-icon" />
