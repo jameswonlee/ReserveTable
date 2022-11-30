@@ -20,3 +20,8 @@
 .upcoming-restaurant-icon {
     height: 35px;
 }
+
+.upcoming-reservations-false-container {
+    margin-bottom: -400px;
+    height: 100px;
+}

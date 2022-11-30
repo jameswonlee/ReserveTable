@@ -19,15 +19,15 @@ function ModifyReservation() {
     const sessionUser = useSelector(state => state.session.user)
     const reservationsData = useSelector(state => Object.values(state.reservations));
     const reservation = reservationsData.filter(reservation => reservation.id == reservationId)[0];
-    const reservationTime = dayjs(reservation?.reservation_time)
+    const reservationTime = dayjs(reservation?.reservation_time).format("ddd, MMMM DD h:m a");
 
     const previousDate = new Date(reservation?.reservation_time);
 
-    const modifyDate = previousDate.getFullYear().toString().padStart(4, '0') + '-' +
-        (previousDate.getMonth() + 1).toString().padStart(2, '0') + '-' + previousDate.getDate().toString().padStart(2, '0');
+    const modifyDate = dayjs(reservation?.reservation_time).format("YYYY-MM-DD");
+    const modifyTime= dayjs(reservation?.reservation_time).format("HH:mm")
 
     const [date, setDate] = useState(modifyDate);
-    const [time, setTime] = useState(`${previousDate.getHours().toString().padStart(2, '0')}:${previousDate.getMinutes().toString().padStart(2, '0')}`);
+    const [time, setTime] = useState(modifyTime);
     const [partySize, setPartySize] = useState(reservation?.party_size);
     const [validationErrors, setValidationErrors] = useState([]);
 
@@ -57,8 +57,15 @@ function ModifyReservation() {
     }
 
     useEffect(() => {
-        dispatch(getAllUserReservations(sessionUser.id))
+        dispatch(getAllUserReservations(sessionUser?.id))
     }, [sessionUser])
+
+
+    useEffect(() => {
+        setDate(modifyDate);
+        setTime(modifyTime);
+        setPartySize(reservation?.party_size);
+    }, [reservation])
 
     if (!reservation) return null;
 
@@ -74,7 +81,7 @@ function ModifyReservation() {
                     <div className="modify-reservation-restaurant-name">
                         <span>
                             <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" />
-                        {reservation.restaurant.name}
+                        {reservationTime}
                         </span>
                         
                     </div>

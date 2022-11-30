@@ -86,7 +86,7 @@ export const createReview = (reviewData, restaurantId) => async (dispatch) => {
 }
 
 export const editReview = (reviewData, reviewId) => async (dispatch) => {
-    const response = await csrfFetch(`/reviews/${reviewId}`, {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reviewData)
@@ -100,7 +100,7 @@ export const editReview = (reviewData, reviewId) => async (dispatch) => {
 }
 
 export const deleteReview = (reviewId) => async (dispatch) => {
-    const response = await csrfFetch(`/reviews/${reviewId}`, {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
 
@@ -124,7 +124,7 @@ const reviewsReducer = (state = initialState, action) => {
                 newState[review1.id] = review1
             })
             return newState;
-         
+
         case LOAD_ALL_USER_REVIEWS:
             newState = { ...state }
             action.reviews.forEach(review => {

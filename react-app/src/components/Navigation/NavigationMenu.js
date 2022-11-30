@@ -57,8 +57,8 @@ function NavigationMenu() {
     useEffect(() => {
         if (!showMenu) return;
         document.addEventListener('click', closeMenu);
-        setShowSignInModal(false);
-        setShowSignUpModal(false);
+        // setShowSignInModal(false);
+        // setShowSignUpModal(false);
         return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
 
@@ -74,6 +74,8 @@ function NavigationMenu() {
             dispatch(getAllUserReservations(sessionUser.id));
         }
     }, [sessionUser])
+
+    console.log('showSignUpModal', showSignUpModal);
 
 
 
@@ -110,7 +112,7 @@ function NavigationMenu() {
                             Sign up
                             {showSignUpModal && (
                                 <Modal onClose={() => setShowSignUpModal(false)}>
-                                    <SignUpForm />
+                                    <SignUpForm setShowSignUpModal={setShowSignUpModal} />
                                 </Modal>
                             )}
                         </button>

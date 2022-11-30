@@ -1,15 +1,22 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
-
 import './UpcomingReservationsMenu.css';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+dayjs.extend(utc);
+
+
+
 
 
 function Reservations() {
     const { restaurantId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -21,9 +28,6 @@ function Reservations() {
         setValidationErrors([]);
         const errors = [];
 
-        console.log('time', time);
-        console.log('date', date);
-
         if (!partySize) errors.push("Please tell us how many are in your party");
         if (!date) errors.push("Please select a date");
         if (!time) errors.push("Please select a time");
@@ -31,14 +35,15 @@ function Reservations() {
         setValidationErrors(errors);
 
         if (!errors.length) {
-            const newReservationData = {
+            const reservationData = {
                 user_id: sessionUser.id,
                 restaurant_id: restaurantId,
                 party_size: partySize,
-                reservation_time: "2024-01-21 17:30:00"
+                reservation_time: dayjs(`${date} ${time}`).utc().format("YYYY-MM-DD HH:mm:ss")
             }
-            await dispatch(createReservation(newReservationData, restaurantId))
-
+            const newReservation = await dispatch(createReservation(reservationData, restaurantId));
+            window.alert('Reservation successfully created!');
+            history.push(`/reservations/${newReservation.id}`);
         }
     }
 

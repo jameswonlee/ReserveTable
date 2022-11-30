@@ -1,0 +1,47 @@
+.delete-review-modal-container {
+    height: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-review-heading {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.delete-review-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.delete-review-delete-button {
+    height: 30px;
+    width: 100px;
+    margin-left: -120px;
+    background-color: rgb(218, 54, 68);
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.delete-review-nevermind-button {
+    height: 30px;
+    width: 100px;
+    margin-right: -120px;
+    color: rgb(218, 54, 68);
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+}
+
