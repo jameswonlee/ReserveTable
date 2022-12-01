@@ -16,8 +16,8 @@ function Reviews({ restaurant }) {
     const userReservations = useSelector(state => Object.values(state.reservations));
 
     const [showAddModal, setShowAddModal] = useState(false);
-    const [showUpdateModal, setShowUpdateModal] = useState(false);
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [showUpdateModal, setShowUpdateModal] = useState({ showModal: false, reviewId: 0 });
+    const [showDeleteModal, setShowDeleteModal] = useState({ showModal: false, reviewId: 0 });
 
     useEffect(() => {
         dispatch(getAllRestaurantReviews(restaurant.id));
@@ -27,12 +27,12 @@ function Reviews({ restaurant }) {
         setShowAddModal(true);
     }
 
-    const openUpdateReviewModal = () => {
-        setShowUpdateModal(true);
+    const openUpdateReviewModal = (review) => {
+        setShowUpdateModal({ showModal: true, reviewId: review.id});
     }
 
-    const openDeleteReviewModal = () => {
-        setShowDeleteModal(true)
+    const openDeleteReviewModal = (review) => {
+        setShowDeleteModal({ showModal: true, reviewId: review.id})
     }
 
     if (!sessionUser) return null;
@@ -72,23 +72,23 @@ function Reviews({ restaurant }) {
                                     REVIEWER NAME
                                 </div>
                                 {review.user_id === sessionUser.id &&
-                                    <button onClick={openUpdateReviewModal}>
+                                    <button onClick={() => openUpdateReviewModal(review)}>
                                         Update your review
                                     </button>
                                 }
                                 {review.user_id === sessionUser.id &&
-                                    <button onClick={openDeleteReviewModal}>
+                                    <button onClick={() => openDeleteReviewModal(review)}>
                                         Delete your review
                                     </button>
                                 }
                             </div>
-                            {showUpdateModal && (
-                                <Modal onClose={() => setShowUpdateModal(false)}>
+                            {showUpdateModal.showModal && showUpdateModal.reviewId === review.id && (
+                                <Modal onClose={() => setShowUpdateModal({ showModal: false, reviewId: 0})}>
                                     <UpdateReviewForm setShowUpdateModal={setShowUpdateModal} review={review} restaurant={restaurant} />
                                 </Modal>
                             )}
-                            {showDeleteModal && (
-                                <Modal onClose={() => setShowDeleteModal(false)}>
+                            {showDeleteModal.showModal && showDeleteModal.reviewId === review.id && (
+                                <Modal onClose={() => setShowDeleteModal({ showModal: false, reviewId: 0 })}>
                                     <DeleteReview setShowDeleteModal={setShowDeleteModal} review={review} />
                                 </Modal>
                             )}

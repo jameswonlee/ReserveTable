@@ -99,7 +99,7 @@ export const changeReservation = (updatedReservationData, reservationId) => asyn
     })
 
     if (response.ok) {
-        const updatedReservation = response.json()
+        const updatedReservation = await response.json()
         dispatch(updateReservation(updatedReservation));
         return updatedReservation
     }

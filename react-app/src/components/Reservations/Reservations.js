@@ -30,6 +30,7 @@ function Reservations() {
 
         if (!partySize) errors.push("Please tell us how many are in your party");
         if (!date) errors.push("Please select a date");
+        if (dayjs(date).isBefore(dayjs())) errors.push("Please select a future date")
         if (!time) errors.push("Please select a time");
 
         setValidationErrors(errors);

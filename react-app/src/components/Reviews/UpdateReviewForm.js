@@ -37,7 +37,7 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
             await dispatch(editReview(reviewData, review.id));
             alert("Review successfully updated");
             await dispatch(getOneRestaurant(restaurant.id));
-            setShowUpdateModal(false);
+            setShowUpdateModal({ showModal: false, reviewId: 0});
             history.push(`/restaurants/${restaurant.id}`);
         }
     }
@@ -54,7 +54,7 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                             <li key={error}>{error}</li>
                         )}
                     <div className="review-inputs">
-                        <input
+                        <textarea
                             type="text"
                             onChange={e => {
                                 setValidationErrors([]);

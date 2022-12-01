@@ -37,6 +37,7 @@ function ModifyReservation() {
         const errors = [];
 
         if (!date) errors.push("Please select a new date");
+        // if (dayjs(time).isBefore(dayjs(time))) errors.push("Please select a future date");
         if (!time) errors.push("Please select a new time");
         if (!partySize) errors.push("Please select your party size");
 
@@ -67,6 +68,11 @@ function ModifyReservation() {
         setPartySize(reservation?.party_size);
     }, [reservation])
 
+    if (!sessionUser) {
+        history.replace(`/`);
+        return null;
+    };
+
     if (!reservation) return null;
 
 
@@ -85,7 +91,7 @@ function ModifyReservation() {
                         
                     </div>
                     <div className="modify-reservation-reservation-time">
-                        <span>{dayjs(reservation.reservation_time).format("ddd, MMM D")} IMG {dayjs(reservation.reservation_time).format("h:mm a")}
+                        <span>{dayjs(reservation.reservation_time).format("ddd, MMM D")} IMG {dayjs(reservation.reservation_time).format("h:mm A")}
                             <span>
                                 <span>
                                     <img src={personIcon} className="modify-reservation-person-icon" />

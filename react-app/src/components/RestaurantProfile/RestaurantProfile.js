@@ -56,7 +56,6 @@ function RestaurantProfile() {
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div className="restaurant-profile-lower">
