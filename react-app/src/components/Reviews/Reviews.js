@@ -28,27 +28,22 @@ function Reviews({ restaurant }) {
     }
 
     const openUpdateReviewModal = (review) => {
-        setShowUpdateModal({ showModal: true, reviewId: review.id});
+        setShowUpdateModal({ showModal: true, reviewId: review.id });
     }
 
     const openDeleteReviewModal = (review) => {
-        setShowDeleteModal({ showModal: true, reviewId: review.id})
+        setShowDeleteModal({ showModal: true, reviewId: review.id })
     }
 
     if (!sessionUser) return null;
 
 
     const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
-
-    // dayjs().isBefore(dayjs('2011-01-01'))
-
     const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
     const hasPreviousReview = allReviews.some(review => review.user_id === sessionUser.id);
     const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
 
-    console.log('currRSVP', currRestaurantReservations);
-    console.log('allReviews', allReviews)
-   
+
     return (
         <div>
             <div>
@@ -67,23 +62,29 @@ function Reviews({ restaurant }) {
                 {allReviews.map(review => (
                     <div key={review.id} className="reviews-container">
                         <div className="review-container-left">
-                            <div>
-                                <div>
-                                    REVIEWER NAME
+                            <div className="reviewer-initials-and-options">
+                                <div className="reviewer-initals-container">
+                                    <div className="reviewer-initials-circle">
+                                    <div className="revier-initials">{review.user.first_name.slice(0, 1).toUpperCase()}{review.user.last_name.slice(0, 1).toUpperCase()}</div>
+                                    </div>
                                 </div>
-                                {review.user_id === sessionUser.id &&
-                                    <button onClick={() => openUpdateReviewModal(review)}>
-                                        Update your review
-                                    </button>
-                                }
-                                {review.user_id === sessionUser.id &&
-                                    <button onClick={() => openDeleteReviewModal(review)}>
-                                        Delete your review
-                                    </button>
-                                }
+                                <div>
+                                    {review.user_id === sessionUser.id &&
+                                        <button onClick={() => openUpdateReviewModal(review)}>
+                                            Update your review
+                                        </button>
+                                    }
+                                </div>
+                                <div>
+                                    {review.user_id === sessionUser.id &&
+                                        <button onClick={() => openDeleteReviewModal(review)}>
+                                            Delete your review
+                                        </button>
+                                    }
+                                </div>
                             </div>
                             {showUpdateModal.showModal && showUpdateModal.reviewId === review.id && (
-                                <Modal onClose={() => setShowUpdateModal({ showModal: false, reviewId: 0})}>
+                                <Modal onClose={() => setShowUpdateModal({ showModal: false, reviewId: 0 })}>
                                     <UpdateReviewForm setShowUpdateModal={setShowUpdateModal} review={review} restaurant={restaurant} />
                                 </Modal>
                             )}

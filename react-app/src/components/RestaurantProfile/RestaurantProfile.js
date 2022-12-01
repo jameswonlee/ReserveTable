@@ -45,7 +45,7 @@ function RestaurantProfile() {
                     <div className="overflow-into-image">
                         <div className="restaurant-profile-details-tabs">
                             <div className="space-to-left-11">Overview</div>
-                            <div className="space-to-left-12">Experiences</div>
+                            {/* <div className="space-to-left-12">Experiences</div> */}
                             <div className="space-to-left-12">Popular dishes</div>
                             <div className="space-to-left-12">Photos</div>
                             <div className="space-to-left-12">Menu</div>
@@ -138,13 +138,12 @@ function RestaurantProfile() {
                                     Fit For Foodies
                                 </div>
                             </div>
-
                         </div>
                         <div className="restaurant-profile-description">
                             <p>{restaurant.description}</p>
                         </div>
                         <div className="restaurant-reviews-container">
-                            <h2>REVIEWS</h2>
+                            <h2>What {reviews.length} people are saying</h2>
                             <Reviews restaurant={restaurant} />
                         </div>
                     </div>

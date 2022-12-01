@@ -73,9 +73,10 @@
 }
 
 .dining-dashboard-points-container {
-    height: 390px;
+    height: 380px;
     background-color: white;
     margin-left: -24px;
+    z-index: 1;
 }
 
 .dining-dashboard-points-text-container {
