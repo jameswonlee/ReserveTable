@@ -65,7 +65,7 @@ function Reviews({ restaurant }) {
                             <div className="reviewer-initials-and-options">
                                 <div className="reviewer-initals-container">
                                     <div className="reviewer-initials-circle">
-                                    <div className="revier-initials">{review.user.first_name.slice(0, 1)}{review.user.last_name.slice(0, 1)}</div>
+                                    <div className="revier-initials">{review.user.first_name.slice(0, 1).toUpperCase()}{review.user.last_name.slice(0, 1).toUpperCase()}</div>
                                     </div>
                                 </div>
                                 <div>
