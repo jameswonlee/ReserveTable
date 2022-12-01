@@ -105,11 +105,12 @@
 }
 
 .restaurant-reviews-container {
-    border: solid;
-    border-color: white;
-    height: 400px;
+    border-bottom: solid;
+    border-color: rgb(216, 214, 214);
+    height: 50px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 40px;
 }
 
 .restaurant-profile-name {
