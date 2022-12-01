@@ -57,7 +57,7 @@ function ReservationConfirmation() {
                             <img className="standars-seating-icon"/>
                             <div>{reservation.party_size} (Standard seating)</div>
                             <img className="reservation-details-date-time"/>
-                            <div>{dayjs(reservation?.reservation_time).format("ddd, MMMM DD h:m a")}</div>
+                            <div>{dayjs(reservation?.reservation_time).format("ddd, MMM D, h:mm a")}</div>
                         </span>
                     </div>
                     <div className="modify-cancel-add-to-calendar-buttons">
