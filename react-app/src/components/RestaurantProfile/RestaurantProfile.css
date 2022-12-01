@@ -5,10 +5,6 @@
     /* z-index: 0; */
 }
 
-/* .restaurant-profile-image-container {
-    line-height: 0;
-} */
-
 .overflow-into-image {
     display: flex;
     flex-direction: row;
@@ -93,11 +89,11 @@
 }
 
 .reservations-component {
-    width: 350px;
-    height: 320px;
+    width: 320px;
+    height: 335px;
     /* position: fixed; */
     position: absolute;
-
+    margin-top: -10px;
     margin-right: -705px;
     background-color: white;
     border-radius: 4px;
@@ -156,7 +152,7 @@
 }
 
 .additional-info-container {
-    margin-top: -50px;
+    margin-top: -20px;
 }
 
 /* Spacing */
