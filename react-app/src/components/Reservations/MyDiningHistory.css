@@ -73,7 +73,7 @@
 }
 
 .dining-dashboard-points-container {
-    height: 360px;
+    height: 390px;
     background-color: white;
     margin-left: -24px;
 }
@@ -163,16 +163,16 @@
 
 .dining-dashboard-points-reward-text {
     border-bottom: solid;
-    margin-left: 23px;
-    margin-right: 28px;
-    margin-top: 15px;
-    margin-bottom: 20x;
     border-color: rgb(226, 225, 225);
 }
 
 .dining-dashboard-points-text-space-below {
     margin-bottom: 15px;
     font-size: 1.05rem;
+    margin-left: 23px;
+    margin-right: 28px;
+    margin-bottom: 20x;
+    margin-top: 15px;
 }
 
 .dining-dashboard-upcoming-reservations-container {

@@ -102,8 +102,10 @@ function MyDiningHistory() {
                             <div className="dining-dashboard-points-text-space-below">You are only 1,000 points away from a $20 reward!</div>
                         </div>
 
-                        <div className="dining-dashboard-learn-more-rewards-text">
-                            Learn more about ReserveTable Rewards
+                        <div className="dining-dashboard-learn-more-rewards-container">
+                            <div className="dining-dashboard-learn-more-rewards-text">
+                                Learn more about ReserveTable Rewards
+                            </div>
                         </div>
                     </div>
                     <div className="dining-dashboard-upcoming-reservations-container">
