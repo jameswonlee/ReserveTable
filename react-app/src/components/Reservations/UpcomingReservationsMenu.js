@@ -41,11 +41,12 @@ function UpcomingReservationsMenu() {
                         </div>
                         <div>
                             <span>
-                                <img src={upcomingRestaurantIcon} className="upcoming-restaurant-icon" /><span>{nextReservation.restaurant.name}</span>
+                                <img src={upcomingRestaurantIcon} className="upcoming-restaurant-icon" /><span>{nextReservation.restaurant?.name}</span>
                             </span>
                         </div>
                         <div>Table for {nextReservation.party_size} people</div>
-                        <div>{dayjs(nextReservation.reservation_time).format("ddd, MMMM DD h:m a")}</div>
+                        <div>{dayjs(nextReservation.reservation_time).format("h:mm a")}</div>
+                        <div>{dayjs(nextReservation.reservation_time).format("MMM D, YYYY")}</div>
                         <div>
                             <span>
                                 <button onClick={handleSubmit}>View</button>

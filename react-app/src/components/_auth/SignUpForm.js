@@ -23,6 +23,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
 
     if (!username) errors.push("Please select a username");
     if (!email) errors.push("Please enter your email address");
+    if (email.includes("@") !== true) errors.push("Please provide a valid email address")
+
     if (!firstName) errors.push("Please enter your first name");
     if (!lastName) errors.push("Please enter your last name");
     if (!password) errors.push("Please select a password");
@@ -47,7 +49,6 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         errors.push("Please double check your confirm password.")
       }
     }
-
   };
 
   const updateUsername = (e) => {
