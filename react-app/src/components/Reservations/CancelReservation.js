@@ -4,6 +4,7 @@ import upcomingReservationsIcon from '../../icons/upcoming-reservations-icon.ico
 import { deleteReservation } from '../../store/reservations';
 import personIcon from '../../icons/person-icon.ico';
 import x from '../../icons/x-icon.ico';
+import dayjs from 'dayjs';
 import './CancelReservation.css';
 
 
@@ -39,9 +40,8 @@ function CancelReservation({ reservation, setShowModal }) {
                             <img src={upcomingReservationsIcon} className="reservation-cancellation-upcoming-reservations-icon" />
                         </span>
                         <span>
-                            {reservation.reservation_time}
+                            {dayjs(reservation.reservation_time).format("ddd, MMM D, h:mm A")}
                         </span>
-
                     </span>
                 </div>
             </div>

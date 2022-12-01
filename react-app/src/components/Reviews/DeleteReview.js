@@ -15,7 +15,7 @@ function DeleteReview({ setShowDeleteModal, review }) {
         await dispatch(deleteReview(review.id));
         await dispatch(getOneRestaurant(review.restaurant_id));
         alert("Review successfully deleted");
-        setShowDeleteModal(false);
+        setShowDeleteModal({ showModal: false, reviewId: 0 });
     }
 
 
