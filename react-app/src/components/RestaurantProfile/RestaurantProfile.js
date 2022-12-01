@@ -149,7 +149,6 @@ function RestaurantProfile() {
                     </div>
                     <div className="restaurant-profile-right">
                         <div className="additional-info-container">
-
                             <AdditionalInfo restaurant={restaurant} />
                         </div>
                     </div>

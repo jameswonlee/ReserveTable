@@ -65,7 +65,7 @@
 }
 
 .restaurant-profile-right {
-    border: solid;
+    /* border: solid; */
     border-color: green;
     width: 350px;
     height: 800px;
@@ -105,11 +105,12 @@
 }
 
 .restaurant-reviews-container {
-    border: solid;
-    border-color: white;
-    height: 400px;
+    border-bottom: solid;
+    border-color: rgb(216, 214, 214);
+    height: 50px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 40px;
 }
 
 .restaurant-profile-name {
@@ -152,9 +153,11 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
 }
 
+.additional-info-container {
+    margin-top: -50px;
+}
 
 /* Spacing */
 .space-to-left-11 {

@@ -42,7 +42,7 @@ function AdditionalInfo({ restaurant }) {
                         <div className="neighborhood-label">
                             Neighborhood
                         </div>
-                        <div className="cross-street-details">
+                        <div className="neighborhood-details">
                             {restaurant.neighborhood}
                         </div>
                     </div>
@@ -99,61 +99,77 @@ function AdditionalInfo({ restaurant }) {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="payment-options-container">
-                <div className="payment-options-left">
-                    <img src={paymentOptionsIcon} className="payment-options-icon" />
-                </div>
-                <div className="payment-options-right">
-                    <div className="payment-options-label">
-                        Payment options
+                <div className="parking-details-container">
+                    <div className="parking-details-left">
+                        <img src={parkingDetailsIcon} className="parking-details-icon" />
                     </div>
-                    <div className="payment-options-details">
-                        {restaurant.payment_options}
-                    </div>
-                </div>
-            </div>
-            {restaurant.executive_chef &&
-                <div className="executive-chef-container">
-                    <div className="executive-chef-left">
-                        <img src={executiveChefIcon} className="executive-chef-icon" />
-                    </div>
-                    <div className="executive-chef-right">
-                        <div className="executive-chef-label">
-                            Executive chef
+                    <div className="parking-details-right">
+                        <div className="parking-details-label">
+                            Parking details
                         </div>
-                        <div className="executive-chef-details">
-                            {restaurant.executive_chef}
+                        <div className="parking-details">
+                            {restaurant.parking_details}
                         </div>
                     </div>
                 </div>
-            }
-            <div className="website-container">
-                <div className="website-left">
-                    <img src={websiteIcon} className="website-icon" />
-                </div>
-                <div className="website-right">
-                    <div className="website-label">
-                        Parking details
+                <div className="payment-options-container">
+                    <div className="payment-options-left">
+                        <img src={paymentOptionsIcon} className="payment-options-icon" />
                     </div>
-                    <div className="website-details">
-                        {restaurant.website}
+                    <div className="payment-options-right">
+                        <div className="payment-options-label">
+                            Payment options
+                        </div>
+                        <div className="payment-options-details">
+                            {restaurant.payment_options}
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    {restaurant.executive_chef &&
+                        <div className="executive-chef-container">
+                            <div className="executive-chef-left">
+                                <img src={executiveChefIcon} className="executive-chef-icon" />
+                            </div>
+                            <div className="executive-chef-right">
+                                <div className="executive-chef-label">
+                                    Executive chef
+                                </div>
+                                <div className="executive-chef-details">
+                                    {restaurant.executive_chef}
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div className="website-container">
+                    <div className="website-left">
+                        <img src={websiteIcon} className="website-icon" />
+                    </div>
+                    <div className="website-right">
+                        <div className="website-label">
+                            Website
+                        </div>
+                        <div className="website-details">
+                            {restaurant.website}
+                        </div>
+                    </div>
+                </div>
+                <div className="phone-number-container">
+                    <div className="phone-number-left">
+                        <img src={phoneNumberIcon} className="phone-number-icon" />
+                    </div>
+                    <div className="phone-number-right">
+                        <div className="phone-number-label">
+                            Phone number
+                        </div>
+                        <div className="phone-number-details">
+                            {restaurant.phone}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="phone-number-container">
-                <div className="phone-number-left">
-                    <img src={phoneNumberIcon} className="phone-number-icon" />
-                </div>
-                <div className="phone-number-right">
-                    <div className="phone-number-label">
-                        Phone number
-                    </div>
-                    <div className="phoner-number-details">
-                        {restaurant.phone}
-                    </div>
-                </div>
-            </div>
+
 
 
         </div>

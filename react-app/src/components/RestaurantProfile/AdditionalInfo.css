@@ -1,7 +1,31 @@
+.additional-information-container {
+    font-size: 0.9rem;
+}
+
+.additional-information-header {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(28, 28, 28);
+}
+
+.additional-information > div {
+    margin-top: 17px;
+}
+
+
 /* additional information containers */
 .cross-street-container {
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
+}
+
+.cross-street-right {
+    margin-left: 4px;
+}
+
+.cross-street-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
 }
 
 .neighborhood-container {
@@ -9,9 +33,27 @@
     flex-direction: row;
 }
 
+.neighborhood-right {
+    margin-left: 4px;
+}
+
+.neighborhood-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+}
+
 .operation-hours-container {
     display: flex;
     flex-direction: row;
+}
+
+.operation-hours-right {
+    margin-left: 4px;
+}
+
+.operation-hours-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
 }
 
 .cuisines-container {
@@ -19,9 +61,27 @@
     flex-direction: row;
 }
 
+.cuisines-right {
+    margin-left: 4px;
+}
+
+.cuisines-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+}
+
 .dining-style-container {
     display: flex;
     flex-direction: row;
+}
+
+.dining-style-right {
+    margin-left: 4px;
+}
+
+.dining-style-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
 }
 
 .dress-code-container {
@@ -29,9 +89,27 @@
     flex-direction: row;
 }
 
+.dress-code-right {
+    margin-left: 4px;
+}
+
+.dress-code-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+}
+
 .parking-details-container {
     display: flex;
     flex-direction: row;
+}
+
+.parking-details-right {
+    margin-left: 4px;
+}
+
+.parking-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
 }
 
 .payment-options-container {
@@ -39,9 +117,27 @@
     flex-direction: row;
 }
 
+.payment-options-right {
+    margin-left: 4px;
+}
+
+.payment-options-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+}
+
 .website-container {
     display: flex;
     flex-direction: row;
+}
+
+.website-right {
+    margin-left: 4px;
+}
+
+.website-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
 }
 
 .phone-number-container {
@@ -49,9 +145,27 @@
     flex-direction: row;
 }
 
+.phone-number-right {
+    margin-left: 4px;
+}
+
+.phone-number-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+}
+
 .executive-chef-container {
     display: flex;
     flex-direction: row;
+}
+
+.executive-chef-right {
+    margin-left: 4px;
+}
+
+.executive-chef-details {
+    font-weight: 300;
+    color: rgb(10, 10, 10);
 }
 
 /* additional info icons */

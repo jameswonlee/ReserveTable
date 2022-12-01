@@ -22,7 +22,7 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
         const errors = [];
 
         if (!review) errors.push("Please tell us about your experience");
-        if (review.length > 20) errors.push("Review can not exceed 2000 characters");
+        if (review.length > 300) errors.push("Review can not exceed 300 characters");
         if (!rating) errors.push("Please rate your experience");
 
         setValidationErrors(errors);

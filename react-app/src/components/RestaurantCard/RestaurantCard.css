@@ -70,16 +70,23 @@
     font-weight: 300;
     font-size: .82rem;
     overflow: hidden;
-    width: 220px;
-    height: 19px;
-    margin-top: 3px;
+    /* width: 220px; */
+    /* height: 19px; */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-top: 6px;
 }
 
 .restaurant-card-name {
     font-size: 1.08rem;
     font-weight: 600;
-    height: 23px;
+    height: 25px;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .red-star {
@@ -137,3 +144,5 @@
 .restaurant-card-total-bookings-zero {
     height: 45px;
 }
+
+
