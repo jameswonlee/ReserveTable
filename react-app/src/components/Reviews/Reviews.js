@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllRestaurantReviews } from "../../store/reviews";
+import reviewsReducer, { getAllRestaurantReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
 import AddReviewForm from "./AddReview";
 import UpdateReviewForm from "./UpdateReviewForm";
@@ -65,8 +65,10 @@ function Reviews({ restaurant }) {
                             <div className="reviewer-initials-and-options">
                                 <div className="reviewer-initals-container">
                                     <div className="reviewer-initials-circle">
-                                    <div className="revier-initials">{review.user.first_name.slice(0, 1).toUpperCase()}{review.user.last_name.slice(0, 1).toUpperCase()}</div>
+                                    <div className="reviewer-initials">{review.user.first_name.slice(0, 1).toUpperCase()}{review.user.last_name.slice(0, 1).toUpperCase()}</div>
                                     </div>
+                                    <div className="reviewer-name">{review.user.first_name}{review.user.last_name.slice(0,1)}</div>
+
                                 </div>
                                 <div>
                                     {review.user_id === sessionUser.id &&

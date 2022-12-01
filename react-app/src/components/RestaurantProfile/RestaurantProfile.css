@@ -65,7 +65,7 @@
 }
 
 .restaurant-profile-right {
-    border: solid;
+    /* border: solid; */
     border-color: green;
     width: 350px;
     height: 800px;
@@ -152,9 +152,11 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
 }
 
+.additional-info-container {
+    margin-top: -50px;
+}
 
 /* Spacing */
 .space-to-left-11 {
