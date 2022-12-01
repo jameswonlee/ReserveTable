@@ -164,13 +164,15 @@
 .dining-dashboard-points-reward-text {
     border-bottom: solid;
     border-color: rgb(226, 225, 225);
+    margin-right: 40px;
+    margin-left: 22px;
 }
 
 .dining-dashboard-points-text-space-below {
     margin-bottom: 15px;
     font-size: 1.05rem;
-    margin-left: 23px;
     margin-right: 28px;
+    margin-left: 2px;
     margin-bottom: 20x;
     margin-top: 15px;
 }
