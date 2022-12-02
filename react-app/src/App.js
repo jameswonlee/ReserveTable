@@ -9,19 +9,20 @@ import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
 import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile';
 import ReservationConfirmation from './components/Reservations/ReservationConfirmation';
 import ModifyReservation from './components/Reservations/ModifyReservation';
-
+import Reservations from './components/Reservations/Reservations';
 import SignUpForm from './components/_auth/SignUpForm';
+import MyDiningHistory from './components/Reservations/MyDiningHistory';
+
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
 
 import './index.css';
-import MyDiningHistory from './components/Reservations/MyDiningHistory';
-
 
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [userReservationTime, setUserReservationTime] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,7 +49,7 @@ function App() {
           </Route>
           <Route path='/' exact={true} >
             <SearchBar />
-            <DisplayAllRestaurants />
+            <DisplayAllRestaurants setUserReservationTime={setUserReservationTime}/>
           </Route>
           {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -57,7 +58,7 @@ function App() {
           <User />
         </ProtectedRoute> */}
           <Route path='/restaurants/:restaurantId'>
-            <RestaurantProfile />
+            <RestaurantProfile userReservationTime={userReservationTime}/>
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />

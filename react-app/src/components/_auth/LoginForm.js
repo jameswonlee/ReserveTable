@@ -37,6 +37,12 @@ const LoginForm = ({ setShowSignInModal }) => {
     }
   };
 
+  const demoUserLogin = async (e) => {
+    e.preventDefault();
+    await dispatch(login('demo@aa.io', 'password'));
+    setShowSignInModal(false);
+  }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -54,9 +60,9 @@ const LoginForm = ({ setShowSignInModal }) => {
       <h1>Welcome to ReserveTable!</h1>
       <div className="sign-in-form-error-messages">
         {validationErrors.length > 0 &&
-        validationErrors.map(error => (
-          <div key={error}>{error}</div>
-        ))}
+          validationErrors.map(error => (
+            <div key={error}>{error}</div>
+          ))}
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
@@ -80,7 +86,10 @@ const LoginForm = ({ setShowSignInModal }) => {
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit' className="sign-in-form-button">Login</button>
+        <button type='submit' className="sign-in-form-button1">Login</button>
+      </div>
+      <div>
+        <button onClick={demoUserLogin} className="sign-in-form-button2">Demo User</button>
       </div>
     </form>
   );

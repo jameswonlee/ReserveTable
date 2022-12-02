@@ -37,7 +37,7 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
             await dispatch(editReview(reviewData, review.id));
             alert("Review successfully updated");
             await dispatch(getOneRestaurant(restaurant.id));
-            setShowUpdateModal({ showModal: false, reviewId: 0});
+            setShowUpdateModal({ showModal: false, reviewId: 0 });
             history.push(`/restaurants/${restaurant.id}`);
         }
     }
@@ -54,15 +54,17 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                             <li key={error}>{error}</li>
                         )}
                     <div className="review-inputs">
-                        <textarea
-                            type="text"
-                            onChange={e => {
-                                setValidationErrors([]);
-                                setReviewText(e.target.value)
-                            }}
-                            value={reviewText}
-                            placeholder="Review"
-                            className="review-text-input" />
+                        <div>
+                            <textarea
+                                type="text"
+                                onChange={e => {
+                                    setValidationErrors([]);
+                                    setReviewText(e.target.value)
+                                }}
+                                value={reviewText}
+                                placeholder="Review"
+                                className="review-text-input" />
+                        </div>
                         <div>
                             <input
                                 type="number"
@@ -77,11 +79,11 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                                 className="rating-input" />
                         </div>
                         <div className="review-submit-button-container">
-                        <button
-                            disabled={!!validationErrors.length}
-                            className="submit-review-button">
-                            Submit Review
-                        </button>
+                            <button
+                                disabled={!!validationErrors.length}
+                                className="submit-review-button">
+                                Submit Review
+                            </button>
                         </div>
                     </div>
                 </form>

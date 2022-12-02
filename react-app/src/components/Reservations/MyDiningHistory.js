@@ -54,8 +54,6 @@ function MyDiningHistory() {
                     0 points
                 </div>
             </div>
-
-
             <div className="dining-dashboard-container">
                 <div className="dining-dashboard-left">
                     <div className="dining-dashboard-menu-options">
@@ -66,7 +64,6 @@ function MyDiningHistory() {
                         <div className="dining-dashboard-space-to-top not-first-item">Payment Methods</div>
                     </div>
                 </div>
-
                 <div className="dining-dashboard-right">
                     <div className="dining-dashboard-points-container">
                         <div className="dining-dashboard-points-text-container">

@@ -30,7 +30,6 @@ function NavigationMenu() {
         if (showSignInModal) return;
         setShowSignInModal(true)
     }
-    // console.log(showSignInModal)
 
     const openSignUp = () => {
         if (showSignUpModal) return;
@@ -74,8 +73,6 @@ function NavigationMenu() {
             dispatch(getAllUserReservations(sessionUser.id));
         }
     }, [sessionUser])
-
-    console.log('showSignUpModal', showSignUpModal);
 
 
 

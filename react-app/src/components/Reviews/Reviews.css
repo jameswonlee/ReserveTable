@@ -9,6 +9,10 @@
     justify-content: space-around;
 }
 
+/* .reviews-outer-container {
+    max-height: 500px;
+} */
+
 .review-container-left {
     /* border: solid; */
     /* border-color: green; */
@@ -74,4 +78,46 @@
     font-size: 1rem;
     font-weight: 400;
     color: rgb(88, 88, 88);
+}
+
+.update-review-button {
+    height: 20px;
+    width: 80px;
+    font-size: 0.7rem;
+    border: none;
+    background-color: rgb(218, 54, 68);
+    color: white;
+    border-radius: 4px;
+}
+
+.update-review-button:hover {
+    cursor: pointer;
+}
+
+.delete-review-button {
+    height: 20px;
+    width: 80px;
+    font-size: 0.7rem;
+    border: none;
+    background-color: rgb(218, 54, 68);
+    color: white;
+    border-radius: 4px;
+}
+
+.delete-review-button:hover {
+    cursor: pointer;
+}
+
+.leave-review-button {
+    margin-top: 10px;
+    height: 20px;
+    font-size: 0.8rem;
+    border: none;
+    background-color: rgb(218, 54, 68);
+    color: white;
+    border-radius: 4px;
+}
+
+.leave-review-button:hover {
+    cursor: pointer;
 }

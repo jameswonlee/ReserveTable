@@ -5,8 +5,8 @@ import { signUp } from '../../store/session';
 import './SignUpForm.css'
 
 const SignUpForm = ({ setShowSignUpModal }) => {
-  const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user);
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -22,11 +22,13 @@ const SignUpForm = ({ setShowSignUpModal }) => {
     const errors = [];
 
     if (!username) errors.push("Please select a username");
+    if (username.length > 20) errors.push("Please select a username less than 20 characters");
     if (!email) errors.push("Please enter your email address");
-    if (email.includes("@") !== true) errors.push("Please provide a valid email address")
-
+    if (email.includes("@") !== true) errors.push("Please provide a valid email address");
     if (!firstName) errors.push("Please enter your first name");
+    if (firstName.length > 20) errors.push("First name must be less than 20 characters");
     if (!lastName) errors.push("Please enter your last name");
+    if (lastName.length > 20) errors.push("Last name must be less than 20 characters");
     if (!password) errors.push("Please select a password");
     if (!repeatPassword) errors.push("Please confirm your password");
 

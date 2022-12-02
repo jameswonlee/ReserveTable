@@ -5,15 +5,12 @@
     /* z-index: 0; */
 }
 
-/* .restaurant-profile-image-container {
-    line-height: 0;
-} */
-
 .overflow-into-image {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-top: -45px;
+    margin-left: 2.5px;
     /* z-index: 3; */
     position: sticky;
 }
@@ -21,7 +18,7 @@
 .restaurant-profile-details-tabs {
     background-color: white;
     border-bottom: solid;
-    border-color: rgb(189, 189, 189);
+    border-color: rgb(227, 227, 227);
     /* border-radius: 5px; */
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -58,8 +55,8 @@
 }
 
 .restaurant-profile-left {
-    border: solid;
-    border-color: yellow;
+    /* border: solid; */
+    /* border-color: yellow; */
     width: 650px;
     margin-right: 50px;
 }
@@ -85,7 +82,6 @@
     justify-content: flex-start;
     align-items: center;
     position: sticky;
-    /* z-index: 2; */
     color: rgb(111, 115, 123);
     font-size: 0.85rem;
     font-weight: 400;
@@ -93,15 +89,15 @@
 }
 
 .reservations-component {
-    width: 350px;
-    height: 320px;
+    width: 320px;
+    height: 340px;
     /* position: fixed; */
     position: absolute;
-
+    margin-top: -10.5px;
     margin-right: -705px;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 1px 1px 5px rgb(223, 223, 223)
+    box-shadow: 1px 1px 5px rgb(202, 202, 202)
 }
 
 .restaurant-reviews-container {
@@ -156,16 +152,25 @@
 }
 
 .additional-info-container {
-    margin-top: -50px;
+    margin-top: -20px;
 }
 
 /* Spacing */
 .space-to-left-11 {
     margin-left: 20px;
+    color: rgb(192, 2, 2);
+}
+
+.space-to-left-11:hover{
+    color: rgb(192, 2, 2);
 }
 
 .space-to-left-12 {
     margin-left: 35px;
+}
+
+.space-to-left-12:hover {
+    color: rgb(192, 2, 2);
 }
 
 .space-to-left-21 {
