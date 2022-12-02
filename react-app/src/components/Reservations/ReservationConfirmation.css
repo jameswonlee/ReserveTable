@@ -109,6 +109,10 @@
     font-size: 1rem;
 }
 
+.reservation-confirm-buttons:hover {
+    cursor: pointer;
+}
+
 .reservation-confirm-space-to-left {
     margin-left: -6px;
     margin-top: -2px;
