@@ -2,7 +2,6 @@
     height: 1000px;
     display: flex;
     flex-direction: row;
-    /* border: solid; */
     background-color: rgb(241, 242, 244);
 }
 
@@ -10,6 +9,7 @@
     width: 640px;
     background-color: white;
     border: solid;
+    border-color: rgb(230, 230, 230);
     height: 800px;
     margin-left: 270px;
     margin-top: 30px;
@@ -18,8 +18,7 @@
 }
 
 .reservation-confirmation-details-right {
-    background-color: lightblue;
-    border: solid;
+    background-color: white;
     width: 300px;
     height: 200px;
     margin-left: 30px;
@@ -118,17 +117,60 @@
     margin-top: -2px;
 }
 
-/* .reservation-confirmation-details-right {
-    display: flex;
-} */
+.reservation-confirmation-details-right {
+    height: 175px;
+    width: 300px;
+}
 
 .user-info-details-container {
     display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.reservation-confirm-location-icon {
+    height: 25px;
+    width: 25px;
 }
 
 .reservation-confirm-user-person-icon {
     height: 25px;
     width: 24px;
+    margin-top: 2px;
+}
+
+.reservation-confirmation-person-name {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.reservation-confirm-person-name-text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: -2px;
+    margin-left: 4px;
+}
+
+.reservation-confirm-joined-in-date {
+    font-size: 1rem;
+    margin-left: 53px;
+    margin-top: 1px;
+    color: rgb(88, 87, 87);
+}
+
+.reservation-confirm-location-icon-city {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.reservation-confirm-city-text {
+    font-size: 1.05rem;
+    color: rgb(88, 87, 87);
+    margin-left: 5px;
 }
 
 
