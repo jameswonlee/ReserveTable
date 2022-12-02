@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
 import './CancelReservation.css';
 
 
-function CancelReservation({ reservation, setShowModal }) {
+function CancelReservation({ reservation, setShowCancelModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -20,7 +20,7 @@ function CancelReservation({ reservation, setShowModal }) {
 
     return (
         <div>
-            <img src={x} className="cancel-reservation-modal-x" onClick={() => setShowModal(false)} />
+            <img src={x} className="cancel-reservation-modal-x" onClick={() => setShowCancelModal(false)} />
             <div className="cancel-reservation-modal-container">
                 <div className="cancellation-heading">
                     Are you sure you want to cancel this reservation?
@@ -47,7 +47,7 @@ function CancelReservation({ reservation, setShowModal }) {
             </div>
             <div className="cancel-reservation-modal-buttons">
                 <span>
-                    <button onClick={() => setShowModal(false)} className="reservation-cancel-modal-nevermind-button">
+                    <button onClick={() => setShowCancelModal(false)} className="reservation-cancel-modal-nevermind-button">
                         Nevermind
                     </button>
                     <button onClick={deleteReservationHandler} className="reservation-cancel-modal-cancel-button">

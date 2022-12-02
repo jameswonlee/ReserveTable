@@ -2,26 +2,28 @@
     height: 1000px;
     display: flex;
     flex-direction: row;
-    border: solid;
-    background-color: gray;
-    justify-content:center;
-
+    /* border: solid; */
+    background-color: rgb(241, 242, 244);
 }
 
 .reservation-confirmation-details-left {
-    width: 600px;
-    background-color: yellow;
+    width: 640px;
+    background-color: white;
     border: solid;
     height: 800px;
-    /* margin-left: 50px; */
+    margin-left: 270px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
 }
 
 .reservation-confirmation-details-right {
     background-color: lightblue;
     border: solid;
-    width: 330px;
+    width: 300px;
     height: 200px;
-    margin-left: 100px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 .user-info-dining-history-outer-container {
@@ -37,3 +39,92 @@
 .edit-reservation-line-break {
     height: 20px;
 }
+
+.reservation-restaurant-image {
+    margin-left: 35px;
+    margin-top: 35px;
+}
+
+.reservation-confirmation-preview-img {
+    height: 130px;
+    width: 130px;
+    border-radius: 4px;
+}
+
+.reservation-restaurant-name-options {
+    margin-top: 37px;
+    margin-left: 20px;
+}
+
+.reservation-confirm-name-text {
+    font-size: 1.65rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.reservation-confirm-check-mark {
+    height: 22px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.reservation-confirm-confirmed-text {
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.reservation-confirm-person-icon {
+    height: 22px;
+    width: 22px;
+    margin-top: -1px;
+}
+
+.reservation-confirm-party-size-time-container {
+    display: flex;
+    margin-top: 12px;
+}
+
+.reservation-confirm-party-size-text {
+    font-size: 1rem;
+    color: rgb(34, 34, 34);
+}
+
+.reservation-confirm-upcoming-icon {
+    height: 30px;
+    width: 32px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+}
+
+.edit-reservation-line-break {
+    height: 25px;
+    width: 5px;
+    margin-top: 1px;
+    margin-bottom: -7px;
+}
+.reservation-confirm-buttons {
+    border: none;
+    background-color: white;
+    color: rgb(218, 54, 68);
+    font-size: 1rem;
+}
+
+.reservation-confirm-space-to-left {
+    margin-left: -6px;
+    margin-top: -2px;
+}
+
+/* .reservation-confirmation-details-right {
+    display: flex;
+} */
+
+.user-info-details-container {
+    display: flex;
+}
+
+.reservation-confirm-user-person-icon {
+    height: 25px;
+    width: 24px;
+}
+
+

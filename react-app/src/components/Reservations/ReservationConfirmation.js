@@ -5,6 +5,10 @@ import { Modal } from "../../context/Modal";
 import { getAllUserReservations } from "../../store/reservations";
 import CancelReservation from "./CancelReservation";
 import lineBreak from '../../icons/button-line-break.ico';
+import confirmCheck from '../../icons/reservation-confirmed-icon.ico';
+import personIcon from '../../icons/person-icon.ico';
+import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
+// import lineBreak from '../../icons/line-break.png';
 import dayjs from 'dayjs';
 import './ReservationConfirmation.css';
 
@@ -19,10 +23,10 @@ function ReservationConfirmation() {
     const allReservations = useSelector(state => Object.values(state.reservations));
     const reservation = allReservations.filter(reservation => reservation.id === +reservationId)[0];
 
-    const [showModal, setShowModal] = useState(false);
+    const [showCancelModal, setShowCancelModal] = useState(false);
 
-    const openModal = () => {
-        setShowModal(true);
+    const openCancelModal = () => {
+        setShowCancelModal(true);
     }
 
     useEffect(() => {
@@ -45,45 +49,50 @@ function ReservationConfirmation() {
         <div className="reservation-details-outer-container">
             <div className="reservation-confirmation-details-left">
                 <div className="reservation-restaurant-image">
-                    <img />
+                    <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img"/>
                 </div>
                 <div className="reservation-restaurant-name-options">
-                    <div>
+                    <div className="reservation-confirm-name-text">
                         {reservation.restaurant.name}
                     </div>
-                    <div>
+                    <div className="reservaton-confirm-check-container">
                         <span>
-                            <img className="reservation-confirmed-check-mark" />
-                            <div>Reservation confirmed</div>
+                            <img src={confirmCheck} className="reservation-confirm-check-mark" />
+                            <span className="reservation-confirm-confirmed-text">Reservation confirmed</span>
                         </span>
                     </div>
-                    <div>
-                        <span>
-                            <img className="standard-seating-icon"/>
-                            <div>{reservation.party_size} (Standard seating)</div>
-                            <img className="reservation-details-date-time"/>
+                    <div className="reservation-confirm-party-size-time-container">
+                            <img src={personIcon} className="reservation-confirm-person-icon"/>
+                            &nbsp;&nbsp;
+                            <div className="reservation-confirm-party-size-text">{reservation.party_size} (Standard seating)</div>
+                            &nbsp;&nbsp;
+                            <img src={upcomingReservationIcon} className="reservation-confirm-upcoming-icon"/>
                             <div>{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
-                        </span>
                     </div>
-                    <div className="modify-cancel-add-to-calendar-buttons">
+                    <div className="modify-cancel-add-to-calendar-buttons reservation-confirm-space-to-left">
                         <span>
-                            <button onClick={routeToModifyPage}>Modify</button>
+                            <button onClick={routeToModifyPage} className="reservation-confirm-buttons">Modify</button>
+                            &nbsp;
                             <img src={lineBreak} className="edit-reservation-line-break"/>
-                            <button onClick={openModal}>Cancel</button>
+                            &nbsp;
+                            <button onClick={openCancelModal} className="reservation-confirm-buttons">Cancel</button>
+                            &nbsp;
                             <img src={lineBreak} className="edit-reservation-line-break"/>
-                            {/* <button>Add to calendar</button> */}
+                            &nbsp;
+                            <button className="reservation-confirm-buttons">Add to calendar</button>
                         </span>
                     </div>
                 </div>
             </div>
-            {showModal &&
-                <Modal onClose={() => setShowModal(false)}>
-                    <CancelReservation reservation={reservation} setShowModal={setShowModal}/>
+            {showCancelModal &&
+                <Modal onClose={() => setShowCancelModal(false)}>
+                    <CancelReservation reservation={reservation} setShowCancelModal={setShowCancelModal}/>
                 </Modal>
             }
 
             <div className="reservation-confirmation-details-right">
                 <div className="user-info-details-container">
+                    <div><img src={personIcon} className="reservation-confirm-user-person-icon"/></div>
                     <div>{sessionUser.first_name} {sessionUser.last_name}</div>
                 </div>
             </div>
