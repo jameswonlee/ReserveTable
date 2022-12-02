@@ -49,17 +49,17 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 
 <br>
 
- Sample Features
+# Sample Features
 
 - ### Log in as Demo User (desktop)
 
-![desktop-login](https://imgur.com/pa3ATgw.gif)
+![desktop-login]()
 
 <br>
 
 - ### Log in as Demo User (mobile)
 
-![mobile-login-large](https://imgur.com/0xIYfpc.gif)
+![mobile-login-large]()
 
 <br>
 
@@ -69,8 +69,8 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
     - [x] Load all user reservations
     - [x] Load details of single reservation
     - [x] Create a new reservation
-    - [x] Update reservation
-    - [x] Delete reservation
+    - [x] Update a reservation
+    - [x] Delete a reservation
 - [ ] Reviews
     - [x] Load all reviews for a restaurant
     - [x] Create a review
@@ -92,7 +92,7 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 ## ▶️ Getting Started
 1. Clone repository.
 ```
-https://github.com/jameswonlee/airbnb-clone.git
+https://github.com/jameswonlee/reservetable.git
 ```
 2. cd into the backend folder and npm install dependencies.
 ```sh
