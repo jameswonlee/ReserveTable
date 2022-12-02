@@ -71,7 +71,7 @@ function ReservationConfirmation() {
                             <img src={lineBreak} className="edit-reservation-line-break"/>
                             <button onClick={openModal}>Cancel</button>
                             <img src={lineBreak} className="edit-reservation-line-break"/>
-                            <button>Add to calendar</button>
+                            {/* <button>Add to calendar</button> */}
                         </span>
                     </div>
                 </div>

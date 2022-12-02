@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import bookingSymbol from '../../icons/booking-symbol.ico'
 import './RestaurantCard.css'
 
 
 function RestaurantCard({ restaurant }) {
+    const history = useHistory();
     const reviews = restaurant.reviews
 
     const averageRating = () => {
@@ -15,11 +16,20 @@ function RestaurantCard({ restaurant }) {
         return sum / reviews.length;
     }
 
+    const routeToReservations = () => {
+        history.replace(`/restaurants/${restaurant.id}/reservations`);
+    }
+
     return (
         <NavLink to={`/restaurants/${restaurant.id}`} className="restaurant-nav-card-container">
             <div className="restaurant-card-upper">
                 <div className="preview-image-container">
-                    <img className="preview-image" src={restaurant.preview_img} />
+                    <img className="preview-image" src={restaurant.preview_img}
+                        alt="img2"
+                        onError={(e) => {
+                            e.target.src="https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
+                        }}
+                    />
                 </div>
             </div>
             <div className="restaurant-card-lower">
@@ -85,17 +95,17 @@ function RestaurantCard({ restaurant }) {
                     <div className="preview-time-buttons-continer">
                         <div className="preview-time-buttons-div">
                             <div>
-                                <button className="preview-time-buttons">
+                                <button className="preview-time-buttons 6pm" onClick={routeToReservations}>
                                     6:00 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons">
+                                <button className="preview-time-buttons 630pm" onClick={routeToReservations}>
                                     6:30 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons">
+                                <button className="preview-time-buttons 7pm" onClick={routeToReservations}>
                                     7:00 PM
                                 </button>
                             </div>

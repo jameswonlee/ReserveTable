@@ -1,7 +1,7 @@
 .upcoming-reservations-menu-container {
     position: absolute;
     background-color: white;
-    height: 300px;
+    height: 280px;
     width: 340px;
     display: flex;
     margin-left: -263px;
@@ -14,9 +14,87 @@
 .next-reservation-details-container {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+.upcoming-reservations-menu-heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+.upcoming-reservation-menu-name {
+    margin-left: 5px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+
+.upcoming-reservation-menu-icon-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.upcoming-reservation-menu-date-details {
+    margin-left: 40px;
+    margin-top: -25px;
+    font-size: 0.88rem;
+}
+
+.upcoming-reservation-menu-person-icon {
+    height: 20px;
+    width: 17px;
+}
+
+.upcoming-reservations-clock-icon {
+    height: 18px;
+    width: 19.5px;
+    margin-left: -1.3px;
+    margin-top: 1px;
+}
+
+.upcoming-reservation-menu-party-size {
+    display: flex;
+    flex-direction: row;
+    margin-top: -2px;
+    margin-bottom: -1px;
+}
+
+.upcoming-reservation-menu-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -3px;
+}
+
+
+.upcoming-reservation-space-to-right {
+    margin-left: 2px;
+}
+
+.upcoming-reservation-menu-icon {
+    height: 27px;
+    width: 28px;
+    margin-left: -5px;
+    margin-top: -1px;
+}
+
+.upcoming-reservation-menu-time {
+    display: flex;
+}
+
+.upcoming-reservation-menu-time-details {
+    margin-left: -2px;
+    margin-top: -6px;
+}
+
+
+.upcoming-restaurant-icon {
+    margin-left: 3px;
+}
 .upcoming-restaurant-icon {
     height: 35px;
 }

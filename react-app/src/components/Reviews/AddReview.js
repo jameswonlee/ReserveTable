@@ -51,10 +51,12 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
             </div>
             <div className="create-review-form-container">
                 <form onSubmit={submitHandler} className="create-review-form">
-                    {validationErrors.length > 0 &&
-                        validationErrors.map(error =>
-                            <li key={error}>{error}</li>
-                        )}
+                    <div className="review-validation-errors">
+                        {validationErrors.length > 0 &&
+                            validationErrors.map(error =>
+                                <div key={error}>{error}</div>
+                            )}
+                    </div>
                     <div className="review-inputs">
                         <input
                             type="text"
@@ -79,11 +81,11 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                                 className="rating-input" />
                         </div>
                         <div className="review-submit-button-container">
-                        <button
-                            disabled={!!validationErrors.length}
-                            className="submit-review-button">
-                            Submit Review
-                        </button>
+                            <button
+                                disabled={!!validationErrors.length}
+                                className="submit-review-button">
+                                Submit Review
+                            </button>
                         </div>
                     </div>
                 </form>

@@ -47,18 +47,18 @@ function Reviews({ restaurant }) {
     return (
         <div>
             <div>
-                {shouldShowReviewButton &&
-                    <button onClick={openAddReviewModal}>
+                {/* {shouldShowReviewButton && */}
+                    <button onClick={openAddReviewModal} className="leave-review-button">
                         Leave a review
                     </button>
-                }
+                {/* } */}
                 {showAddModal && (
                     <Modal onClose={() => setShowAddModal(false)}>
                         <AddReviewForm setShowAddModal={setShowAddModal} restaurant={restaurant} />
                     </Modal>
                 )}
             </div>
-            <div>
+            <div className="reviews-outer-container">
                 {allReviews.map(review => (
                     <div key={review.id} className="reviews-container">
                         <div className="review-container-left">
@@ -67,20 +67,22 @@ function Reviews({ restaurant }) {
                                     <div className="reviewer-initials-circle">
                                     <div className="reviewer-initials">{review.user.first_name.slice(0, 1).toUpperCase()}{review.user.last_name.slice(0, 1).toUpperCase()}</div>
                                     </div>
-                                    <div className="reviewer-name">{review.user.first_name}{review.user.last_name.slice(0,1)}</div>
+                                    <div className="reviewer-name">{review.user.first_name}
+                                    {review.user.last_name.slice(0,1)}
+                                    </div>
 
                                 </div>
                                 <div>
                                     {review.user_id === sessionUser.id &&
-                                        <button onClick={() => openUpdateReviewModal(review)}>
-                                            Update your review
+                                        <button onClick={() => openUpdateReviewModal(review)} className="update-review-button">
+                                            Edit review
                                         </button>
                                     }
                                 </div>
                                 <div>
                                     {review.user_id === sessionUser.id &&
-                                        <button onClick={() => openDeleteReviewModal(review)}>
-                                            Delete your review
+                                        <button onClick={() => openDeleteReviewModal(review)} className="delete-review-button">
+                                            Delete review
                                         </button>
                                     }
                                 </div>

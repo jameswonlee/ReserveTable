@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
+import bookingSymbol from '../../icons/booking-symbol.ico';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import './Reservations.css';
@@ -11,10 +12,13 @@ dayjs.extend(utc);
 
 
 function Reservations() {
-    const { restaurantId } = useParams();
-    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
+    const { restaurantId } = useParams();
+
+    const sessionUser = useSelector(state => state.session.user);
+    const totalNumReservations = useSelector(state => state.restaurants[restaurantId].total_num_reservations);
+
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -57,7 +61,7 @@ function Reservations() {
                     <div className="reservation-errors-container">
                         {validationErrors.length > 0 &&
                             validationErrors.map(error =>
-                                <li key={error}>{error}</li>
+                                <div key={error} className="reservation-errors">{error}</div>
                             )}
                     </div>
                     <div className="reservation-party-size-label">
@@ -89,7 +93,7 @@ function Reservations() {
                                 onChange={e => setDate(e.target.value)}
                                 value={date}
                                 placeholder="Date"
-                                className="reservation-date-input"/>
+                                className="reservation-date-input" />
                         </div>
                         <div className="reservation-time-input-border">
                             <div className="reservation-time-text">Time</div>
@@ -100,17 +104,32 @@ function Reservations() {
                                 step="1800"
                                 min="17:00"
                                 max="22:00"
-                                placeholder="Time" 
-                                className="reservation-time-input"/>
+                                placeholder="Time"
+                                className="reservation-time-input" />
                         </div>
                     </div>
                     <div className="reservation-find-time-button-container">
                         <button
                             type="submit"
-                            className="reservation-find-time-button"
-                        >
+                            className="reservation-find-time-button">
                             Find a time
                         </button>
+                    </div>
+                    <div className="reservation-booking-total-num">
+                        <span className="reservation-booking-align">
+                            <img src={bookingSymbol} className="reservation-booking-symbol" />
+                            &nbsp;&nbsp;
+                            {totalNumReservations === 1
+                                ?
+                                <span className="reservation-booking-text">
+                                    Booked {totalNumReservations} time today
+                                </span>
+                                :
+                                <span className="reservation-booking-text">
+                                    Booked {totalNumReservations} times today
+                                </span>
+                            }
+                        </span>
                     </div>
                 </div>
             </form>

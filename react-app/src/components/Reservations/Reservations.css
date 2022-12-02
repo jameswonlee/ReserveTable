@@ -10,6 +10,8 @@
     border-bottom: solid;
     margin-left: 12px;
     margin-right: 15px;
+    margin-top: 1px;
+    padding-bottom: -3px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,7 +32,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: rgb(77, 77, 77);
-    margin-top: 15px;
+    margin-top: 18px;
     margin-left: 14px;
     margin-bottom: 5px;
 }
@@ -73,14 +75,17 @@
     border: none;
     margin-top: 8px;
     font-size: 0.9rem;
-    color: rgb(140, 140, 140);
+    font-weight: 400;
+
+    color: rgb(97, 96, 96);
 }
 
 .reservation-time-input {
     width: 160x;
     margin-top: 8px;
     font-size: 0.9rem;
-    color: rgb(140, 140, 140);
+    font-weight: 400;
+    color: rgb(97, 96, 96);
     border: none;
     border-radius: none;
     margin-left: 2px;
@@ -92,7 +97,6 @@
     border-color: rgb(222, 221, 221);
     margin-right: 15px;
     margin-bottom: 20px;
-
 }
 
 .reservation-date-text {
@@ -114,13 +118,43 @@
 
 .reservation-find-time-button {
     width: 300px;
-    height: 47px;
+    height: 46px;
     margin-left: 10px;
+    margin-top: -3px;
     border-radius: 4px;
     border: none;
     background-color: rgb(218, 54, 68);
     font-size: 1rem;
     color: white;
     font-weight: 600;
+}
 
+.reservation-booking-symbol {
+    height: 15px;
+    width: 20px;
+    margin-top: 2px;
+}
+
+.reservation-booking-total-num {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    margin-left: 11px;
+}
+
+.reservation-booking-text {
+    font-size: 0.9rem;
+}
+
+.reservation-booking-align {
+    display: flex;
+    flex-direction: row;
+}
+
+.reservation-errors-container {
+margin-left: 10px;
+}
+
+.reservation-errors {
+    color: red;
 }

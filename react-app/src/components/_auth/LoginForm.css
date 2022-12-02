@@ -1,5 +1,5 @@
 .login-form {
-    height: 325px;
+    height: 355px;
     width: 500px;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     border-radius: 5px;
 }
 
-.sign-in-form-button {
+.sign-in-form-button1 {
     background-color: rgb(218, 54, 68);
     color: white;
     height: 50px;
@@ -15,12 +15,32 @@
     border-radius: 6px;
     font-size: 1em;
     border: none;
-    margin-top: 26px;
+    margin-top: 35px;
+}
+
+.sign-in-form-button2 {
+    background-color: rgb(218, 54, 68);
+    color: white;
+    height: 50px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 1em;
+    border: none;
+    margin-top: 15px;
+}
+
+.sign-in-form-button1:hover {
+    cursor: pointer;
+}
+
+.sign-in-form-button2:hover {
+    cursor: pointer;
 }
 
 .sign-in-form-error-messages {
     font-size: 0.8rem;
     font-weight: 500;
     color: red;
+    margin-top: -20px;
 }
 

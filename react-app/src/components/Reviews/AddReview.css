@@ -1,6 +1,6 @@
 .add-review-form-outer-container {
-    height: 300px;
-    width: 500px;
+    height: 350px !important;
+    width: 500px !important;
     display: flex;
     flex-direction: column;
 }
@@ -49,4 +49,10 @@
     color: white;
     font-size: 0.9rem;
     font-weight: 600;
+    margin-bottom: -40px;
+}
+
+.review-validation-errors {
+    color: red;
+    margin-top: 20px;
 }

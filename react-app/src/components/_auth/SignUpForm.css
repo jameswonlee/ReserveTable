@@ -36,8 +36,13 @@ input {
     margin-top: 26px;
 }
 
+.sign-up-form-button:hover {
+    cursor: pointer;
+}
+
 .sign-up-form-error-messages {
     font-size: 0.8rem;
     font-weight: 500;
     color: red;
+    margin-top: -15px;
 }

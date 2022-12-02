@@ -41,11 +41,15 @@ function RestaurantProfile() {
         <div className="restaurant-profile-main-container">
             <div className="restaurant-profile-upper">
                 <div className="restaurant-profile-image-container">
-                    <img src={restaurant.preview_img} className="restaurant-profile-image" />
+                    <img src={restaurant.preview_img} className="restaurant-profile-image"
+                        alt="img2"
+                        onError={(e) => {
+                            e.target.src = "https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
+                        }} />
                     <div className="overflow-into-image">
                         <div className="restaurant-profile-details-tabs">
                             <div className="space-to-left-11">Overview</div>
-                            {/* <div className="space-to-left-12">Experiences</div> */}
+                            <div className="space-to-left-12">Experiences</div>
                             <div className="space-to-left-12">Popular dishes</div>
                             <div className="space-to-left-12">Photos</div>
                             <div className="space-to-left-12">Menu</div>
