@@ -12,8 +12,7 @@ import ModifyReservation from './components/Reservations/ModifyReservation';
 import Reservations from './components/Reservations/Reservations';
 import SignUpForm from './components/_auth/SignUpForm';
 import MyDiningHistory from './components/Reservations/MyDiningHistory';
-import githubIcon from './icons/github.svg';
-import linkedInIcon from './icons/linked-in.svg';
+
 
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
 // import UsersList from './components/UsersList';
