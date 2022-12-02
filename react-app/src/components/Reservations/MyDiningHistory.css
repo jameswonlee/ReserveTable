@@ -162,11 +162,19 @@
 }
 
 .dining-dashboard-points-reward-text {
-    border-bottom: solid;
+    /* border-bottom: solid; */
     border-color: rgb(226, 225, 225);
     margin-right: 40px;
     margin-left: 22px;
     margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.dining-dashboard-under-points-border-bottom-line {
+    border-bottom: solid;
+    border-color: rgb(231, 230, 230);
+    height: 12px;
+    border-width: thin;
 }
 
 .dining-dashboard-points-text-space-below {
