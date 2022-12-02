@@ -28,3 +28,28 @@ dark-font {
 body {
     max-width: 1600px;
 }
+
+.linkedin-link {
+    color: rgb(165, 166, 169);
+}
+
+.github-link {
+    color: rgb(165, 166, 169);
+}
+
+.footer-container {
+    color: gray;
+    /* display: flex; */
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+}
+
+.footer-top-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
