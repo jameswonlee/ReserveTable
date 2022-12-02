@@ -82,7 +82,6 @@
     justify-content: flex-start;
     align-items: center;
     position: sticky;
-    /* z-index: 2; */
     color: rgb(111, 115, 123);
     font-size: 0.85rem;
     font-weight: 400;

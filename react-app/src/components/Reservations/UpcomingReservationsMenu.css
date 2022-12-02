@@ -15,21 +15,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items:flex-start;
+    margin-left: 2px;
 }
 
 .upcoming-reservations-menu-heading {
     font-size: 0.95rem;
     font-weight: 600;
     margin-left: 4px;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .upcoming-reservation-menu-name {
     margin-left: 5px;
     font-size: 0.88rem;
     font-weight: 600;
-    margin-bottom: 13px;
+    margin-bottom: 11px;
 }
 
 .upcoming-reservation-menu-icon-name {
@@ -42,6 +43,7 @@
     margin-left: 40px;
     margin-top: -25px;
     font-size: 0.88rem;
+    margin-bottom: -10px;
 }
 
 .upcoming-reservation-menu-person-icon {
@@ -50,10 +52,11 @@
 }
 
 .upcoming-reservations-clock-icon {
-    height: 18px;
-    width: 19.5px;
-    margin-left: -1.3px;
-    margin-top: 1px;
+    height: 17.5px;
+    width: 19px;
+    margin-left: -1.4px;
+    margin-top: 1.5px;
+    margin-right: 2px;
 }
 
 .upcoming-reservation-menu-party-size {
@@ -70,15 +73,15 @@
     margin-top: -3px;
 }
 
-
-.upcoming-reservation-space-to-right {
+.upcoming-reservation-party-size-text {
     margin-left: 2px;
+    margin-top: 2px;
 }
 
 .upcoming-reservation-menu-icon {
     height: 27px;
     width: 28px;
-    margin-left: -5px;
+    margin-left: -6px;
     margin-top: -1px;
 }
 
@@ -89,6 +92,10 @@
 .upcoming-reservation-menu-time-details {
     margin-left: -2px;
     margin-top: -6px;
+}
+
+.upcoming-reservation-reservation-time {
+    margin-right: 3px;
 }
 
 
@@ -106,4 +113,68 @@
 
 .upcoming-view-all-reservations {
     cursor: pointer;
+}
+
+.upcoming-reservation-menu-options {
+    margin-left: 40px;
+    margin-top: -10px;
+}
+
+.upcoming-reservation-button {
+    background-color: white;
+    border: none;
+    font-size: 0.85rem;
+    color: rgb(37, 127, 158);
+    font-weight: 500;
+}
+
+.upcoming-reservation-button-no-pointer {
+    background-color: white;
+    border: none;
+    font-size: 0.85rem;
+    color: rgb(37, 127, 158);
+    font-weight: 500;
+}
+
+.upcoming-reservation-button-no-pointer:hover {
+    cursor: text;
+}
+
+.upcoming-reservation-button:hover {
+    cursor: pointer;
+}
+
+.upcoming-reservation-menu-dot {
+    color: rgb(202, 202, 202);
+    font-size: large;
+}
+
+.upcoming-reservation-menu-cancel-button {
+    margin-left: 43px;
+    margin-top: -14px;
+    font-size: 0.86rem;
+    color: rgb(218, 54, 68);
+    font-weight: 500;
+}
+
+.upcoming-reservation-menu-cancel-button:hover {
+    cursor: pointer;
+}
+
+.upcoming-reservation-view-all-reservations-button {
+    margin-left: 23px;
+    font-size: 0.82rem;
+    color: rgb(218, 54, 68);
+}
+
+.upcoming-reservation-view-all-reservations-button:hover {
+    cursor: pointer;
+}
+
+
+.upcoming-reservation-menu-border-line {
+    border-bottom: solid;
+    width: 317px;
+    padding-top: 15px;
+    border-color: rgb(226, 225, 225);
 }

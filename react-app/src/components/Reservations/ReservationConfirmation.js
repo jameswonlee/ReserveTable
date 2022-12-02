@@ -36,7 +36,7 @@ function ReservationConfirmation() {
     }
 
     if (!sessionUser) {
-        history.replace(`/`);
+        history.replace('/');
         return null;
     };
 
@@ -59,10 +59,10 @@ function ReservationConfirmation() {
                     </div>
                     <div>
                         <span>
-                            <img className="standars-seating-icon"/>
+                            <img className="standard-seating-icon"/>
                             <div>{reservation.party_size} (Standard seating)</div>
                             <img className="reservation-details-date-time"/>
-                            <div>{dayjs(reservation?.reservation_time).format("ddd, MMM D, h:mm A")}</div>
+                            <div>{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
                         </span>
                     </div>
                     <div className="modify-cancel-add-to-calendar-buttons">

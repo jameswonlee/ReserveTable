@@ -3,7 +3,7 @@ import bookingSymbol from '../../icons/booking-symbol.ico'
 import './RestaurantCard.css'
 
 
-function RestaurantCard({ restaurant }) {
+function RestaurantCard({ restaurant, setUserReservationTime }) {
     const history = useHistory();
     const reviews = restaurant.reviews
 
@@ -16,8 +16,9 @@ function RestaurantCard({ restaurant }) {
         return sum / reviews.length;
     }
 
-    const routeToReservations = () => {
-        history.replace(`/restaurants/${restaurant.id}/reservations`);
+    const routeToReservations = ({ userReservationTime }) => {
+        setUserReservationTime(userReservationTime);
+        history.replace(`/restaurants/${restaurant.id}`);
     }
 
     return (
@@ -95,17 +96,17 @@ function RestaurantCard({ restaurant }) {
                     <div className="preview-time-buttons-continer">
                         <div className="preview-time-buttons-div">
                             <div>
-                                <button className="preview-time-buttons 6pm" onClick={routeToReservations}>
+                                <button className="preview-time-buttons 6pm" onClick={() => routeToReservations({ userReservationTime: "18:00" })}>
                                     6:00 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons 630pm" onClick={routeToReservations}>
+                                <button className="preview-time-buttons 630pm" onClick={() => routeToReservations({ userReservationTime: "18:30" })}>
                                     6:30 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons 7pm" onClick={routeToReservations}>
+                                <button className="preview-time-buttons 7pm" onClick={() => routeToReservations({ userReservationTime: "19:00" })}>
                                     7:00 PM
                                 </button>
                             </div>

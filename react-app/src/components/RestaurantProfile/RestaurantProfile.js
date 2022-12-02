@@ -13,7 +13,7 @@ import './RestaurantProfile.css'
 
 
 
-function RestaurantProfile() {
+function RestaurantProfile({ userReservationTime }) {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
     const restaurant = useSelector(state => state.restaurants[restaurantId]);
@@ -56,7 +56,7 @@ function RestaurantProfile() {
                             <div className="space-to-left-12">Reviews</div>
                         </div>
                         <div className="reservations-component">
-                            <Reservations />
+                            <Reservations userReservationTime={userReservationTime}/>
                         </div>
                     </div>
                 </div>

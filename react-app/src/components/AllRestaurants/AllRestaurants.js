@@ -6,7 +6,7 @@ import getCurrentLocation from '../../icons/current-location-arrow.ico'
 import './AllRestaurants.css'
 
 
-function DisplayAllRestaurants() {
+function DisplayAllRestaurants({ setUserReservationTime }) {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,7 +26,7 @@ function DisplayAllRestaurants() {
                 <div className="card-wrapper">
                     <div className="restaurant-cards">
                         {allRestaurants.map(restaurant => (
-                            <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+                            <RestaurantCard key={restaurant.id} restaurant={restaurant} setUserReservationTime={setUserReservationTime}/>
                         ))}
                     </div>
                 </div>

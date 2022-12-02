@@ -6,12 +6,11 @@ import bookingSymbol from '../../icons/booking-symbol.ico';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import './Reservations.css';
-// import './UpcomingReservationsMenu.css';
 
 dayjs.extend(utc);
 
 
-function Reservations() {
+function Reservations({ userReservationTime }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const { restaurantId } = useParams();
@@ -20,8 +19,8 @@ function Reservations() {
     const totalNumReservations = useSelector(state => state.restaurants[restaurantId].total_num_reservations);
 
 
-    const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
+    const [date, setDate] = useState(dayjs().add(1, "day").format("YYYY-MM-DD"));
+    const [time, setTime] = useState(userReservationTime || "17:00");
     const [partySize, setPartySize] = useState(2);
     const [validationErrors, setValidationErrors] = useState([]);
 
@@ -32,7 +31,8 @@ function Reservations() {
 
         if (!partySize) errors.push("Please tell us how many are in your party");
         if (!date) errors.push("Please select a date");
-        if (dayjs(date).isBefore(dayjs())) errors.push("Please select a future date")
+        if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future time");
+
         if (!time) errors.push("Please select a time");
 
         setValidationErrors(errors);

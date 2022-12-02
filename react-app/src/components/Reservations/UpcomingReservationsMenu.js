@@ -57,7 +57,7 @@ function UpcomingReservationsMenu() {
                             <div>
                                 <img src={personIcon} className="upcoming-reservation-menu-person-icon" />
                             </div>
-                            <div className="upcoming-reservation-space-to-right">
+                            <div className="upcoming-reservation-party-size-text">
                                 Table for {nextReservation.party_size} people
                             </div>
                         </div>
@@ -66,7 +66,7 @@ function UpcomingReservationsMenu() {
                                 <div>
                                     <img src={clockIcon} className="upcoming-reservations-clock-icon" />
                                 </div>
-                                <div className="upcoming-reservation-space-to-right">
+                                <div className="upcoming-reservation-reservation-time">
                                     {dayjs(nextReservation.reservation_time).format("h:mm A")}
                                 </div>
 
@@ -86,15 +86,28 @@ function UpcomingReservationsMenu() {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className="upcoming-reservation-menu-options">
                         <span>
-                            <button onClick={handleSubmit}>View</button>
-                            <button onClick={handleSubmit}>Modify</button>
-                            <button>Invite guests</button>
+                            <button onClick={handleSubmit} className="upcoming-reservation-button">View </button>
+                            <span className="upcoming-reservation-menu-dot">&nbsp;·&nbsp;</span>
+                            <button onClick={handleSubmit} className="upcoming-reservation-button"> Modify </button>
+                            <span className="upcoming-reservation-menu-dot">·&nbsp;</span>
+                            <button className="upcoming-reservation-button-no-pointer">Invite guests</button>
                         </span>
                     </div>
-                    <div>Cancel</div>
-                    <div onClick={clickHandler} className="upcoming-view-all-reservations">View all reservations</div>
+                    <div>
+                        <div onClick={handleSubmit}className="upcoming-reservation-menu-cancel-button">
+                            Cancel
+                        </div>
+                        <div className="upcoming-reservation-menu-border-line">
+
+                        </div>
+                    </div>
+                    <div>
+                        <div onClick={clickHandler} className="upcoming-reservation-view-all-reservations-button">
+                            View all reservations
+                        </div>
+                    </div>
                 </div>
                 :
                 <div>You have no upcoming reservations</div>

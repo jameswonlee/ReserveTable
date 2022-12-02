@@ -8,6 +8,7 @@ const LOAD_ONE_RESERVATION = '/reservations/LOAD_ONE_RESERVATION'
 const ADD_RESERVATION = '/reservations/ADD_RESERVATION'
 const UPDATE_RESERVATION = '/reservations/UPDATE_RESERVATION'
 const DELETE_RESERVATION = '/reservations/DELETE_RESERVATION'
+const RESET_RESERVATIONS = '/reservations/RESET_RESERVATIONS'
 
 
 /* ------------------------------------ Action Creators --------------------------------- */
@@ -44,6 +45,12 @@ const removeReservation = (reservationId) => {
     return {
         type: DELETE_RESERVATION,
         reservationId: reservationId
+    }
+}
+
+export const resetReservations = () => {
+    return {
+        type: RESET_RESERVATIONS
     }
 }
 
@@ -151,6 +158,10 @@ const reservationsReducer = (state = initialState, action) => {
         case DELETE_RESERVATION:
             newState = { ...state };
             delete newState[action.reservationId];
+            return newState;
+
+        case RESET_RESERVATIONS:
+            newState = {}
             return newState;
 
         default:

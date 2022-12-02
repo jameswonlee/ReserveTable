@@ -20,9 +20,9 @@ import MyDiningHistory from './components/Reservations/MyDiningHistory';
 import './index.css';
 
 
-
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [userReservationTime, setUserReservationTime] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function App() {
           </Route>
           <Route path='/' exact={true} >
             <SearchBar />
-            <DisplayAllRestaurants />
+            <DisplayAllRestaurants setUserReservationTime={setUserReservationTime}/>
           </Route>
           {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -58,10 +58,7 @@ function App() {
           <User />
         </ProtectedRoute> */}
           <Route path='/restaurants/:restaurantId'>
-            <RestaurantProfile />
-          </Route>
-          <Route path='/restaurants/:restaurantId/reservations'>
-            <Reservations />
+            <RestaurantProfile userReservationTime={userReservationTime}/>
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />
