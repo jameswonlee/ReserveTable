@@ -1,14 +1,13 @@
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { changeReservation, getAllUserReservations, getOneReservation } from "../../store/reservations";
 import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
 import clockIcon from '../../icons/clock-icon.ico';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-
 import './ModifyReservation.css';
-import { changeReservation, getAllUserReservations, getOneReservation } from "../../store/reservations";
 dayjs.extend(utc);
 
 
@@ -95,17 +94,19 @@ function ModifyReservation() {
                             <div>
                                 <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" />
                             </div>
-                            <div>
+                            <div className="modify-reservation-current-reservation-date">
                                 {dayjs(reservation.reservation_time).format("ddd, MMM D")}
                             </div>
-                            <div>
+                            <div className="modify-reservation-reservation-clock-icon-container">
                                 <img src={clockIcon} className="modify-reservation-clock-icon" />
                             </div>
-                            <div>
+                            <div className="modify-reservation-current-reservation-time">
                                 {dayjs(reservation.reservation_time).format("h:mm A")}
                             </div>
-                            <div>
+                            <div className="modify-reservation-person-icon-container">
                                 <img src={personIcon} className="modify-reservation-person-icon" />
+                            </div>
+                            <div className="modify-reservation-current-party-size">
                                 {reservation.party_size} people (Standard seating)
                             </div>
                         </span>
@@ -117,54 +118,58 @@ function ModifyReservation() {
             <div className="modify-reservation-bottom-header">
                 Modify your reservation
             </div>
+            <div className="modify-reservation-errors-container">
+                {validationErrors.length > 0 &&
+                    validationErrors.map(error =>
+                        <div key={error}>{error}</div>
+                    )}
+            </div>
             <div className="modify-reservation-form-container">
                 <form onSubmit={submitHandler} className="modify-reservation-form">
-                    <div className="modify-reservation-errors-container">
-                        {validationErrors.length > 0 &&
-                            validationErrors.map(error =>
-                                <li key={error}>{error}</li>
-                            )}
-                    </div>
-                    <div>
-                        <input
-                            type="date"
-                            onChange={e => setDate(e.target.value)}
-                            value={date}
-                            placeholder="Date"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="time"
-                            onChange={e => setTime(e.target.value)}
-                            value={time}
-                            placeholder="Time" />
-                    </div>
-                    <div>
-                        <label>
-                            <select value={partySize} onChange={e => setPartySize(e.target.value)}>
-                                <option value="1">1 Person</option>
-                                <option value="2">2 People</option>
-                                <option value="3">3 People</option>
-                                <option value="4">4 People</option>
-                                <option value="5">5 People</option>
-                                <option value="6">6 People</option>
-                                <option value="7">7 People</option>
-                                <option value="8">8 People</option>
-                                <option value="9">9 People</option>
-                                <option value="10">10 People</option>
-                                <option value="11">11 People</option>
-                                <option value="12">12 People</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div>
-                        <button
-                            type="submit"
-                            className=""
-                        >
-                            Find a new table
-                        </button>
+                    <div className="modify-reservation-form-inputs">
+                        <div className="modify-reservation-new-date">
+                            <input
+                                type="date"
+                                onChange={e => setDate(e.target.value)}
+                                value={date}
+                                placeholder="Date"
+                                className="modify-reservation-new-date-input"
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="time"
+                                onChange={e => setTime(e.target.value)}
+                                value={time}
+                                placeholder="Time" 
+                                className="modify-reservation-new-time-input"/>
+                        </div>
+                        <div>
+                            <label>
+                                <select value={partySize} onChange={e => setPartySize(e.target.value)} className="modify-reservation-new-party-size">
+                                    <option value="1">1 Person </option> <img src={personIcon} className="modify-reservation-person-icon" />
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                    <option value="9">9 People</option>
+                                    <option value="10">10 People</option>
+                                    <option value="11">11 People</option>
+                                    <option value="12">12 People</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                className="modify-reservation-new-reservation-submit-button"
+                            >
+                                Find a new table
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
