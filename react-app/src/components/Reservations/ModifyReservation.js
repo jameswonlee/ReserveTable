@@ -163,7 +163,7 @@ function ModifyReservation() {
                             type="submit"
                             className=""
                         >
-                            Find a new time
+                            Find a new table
                         </button>
                     </div>
                 </form>
