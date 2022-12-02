@@ -134,7 +134,7 @@ const reservationsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_ALL_USER_RESERVATIONS:
             newState = { ...state }
-            action.reservations.Reservations.forEach(reservation => {
+            action.reservations.Reservations?.forEach(reservation => {
                 newState[reservation.id] = reservation
             })
             return newState;
