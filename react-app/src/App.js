@@ -12,6 +12,8 @@ import ModifyReservation from './components/Reservations/ModifyReservation';
 import Reservations from './components/Reservations/Reservations';
 import SignUpForm from './components/_auth/SignUpForm';
 import MyDiningHistory from './components/Reservations/MyDiningHistory';
+import githubIcon from './icons/github.svg';
+import linkedInIcon from './icons/linked-in.svg';
 
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
 // import UsersList from './components/UsersList';
@@ -49,7 +51,7 @@ function App() {
           </Route>
           <Route path='/' exact={true} >
             <SearchBar />
-            <DisplayAllRestaurants setUserReservationTime={setUserReservationTime}/>
+            <DisplayAllRestaurants setUserReservationTime={setUserReservationTime} />
           </Route>
           {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -58,7 +60,7 @@ function App() {
           <User />
         </ProtectedRoute> */}
           <Route path='/restaurants/:restaurantId'>
-            <RestaurantProfile userReservationTime={userReservationTime}/>
+            <RestaurantProfile userReservationTime={userReservationTime} />
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />
@@ -73,8 +75,35 @@ function App() {
       </BrowserRouter>
       <footer>
         <div className="footer-container">
+          <div className="footer-top">
+            <div className="footer-top-left">
+              <div>Discover</div>
+              <div>Opentable</div>
+              <div>More</div>
+              <div>Our sites</div>
+            </div>
+            <div className="footer-top-right">
+              <div>
+                Businesses
+              </div>
+              <div className="footer-middle-right">
+                <div className="footer-links">
+                  <a id="github" className="github-link" href="https://github.com/jameswonlee">
+                    <i className="fa-brands fa-github fa-xl"></i>
+                  </a>
+                  <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/">
+                    <i className="fa-brands fa-linkedin fa-xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <div>Privacy Policy</div>
+            <div>Terms of Use</div>
+            <div>Cookies and INterest-Based Ads</div>
 
-
+          </div>
         </div>
       </footer>
     </>

@@ -11,6 +11,8 @@
 .modify-reservation-header {
     border: solid;
     border-color: blue;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .modify-reservation-preview-image {
@@ -34,10 +36,18 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: 20px;
+    height: 50px;
+    padding-bottom: 20px;
 }
 
 .modify-reservation-top {
     border-bottom: solid;
+    margin-top: 20px;
+}
+
+.modify-reservation-bottom {
+    margin-top: 20px;
 }
 
 .modify-reservation-form {
@@ -53,4 +63,32 @@
 .modify-reservation-upcoming-reservations-icon {
     height: 30px;
     width: 35px;
+}
+
+.modify-reservation-restaurant-name {
+    margin-left: 16px;
+}
+
+.modify-reservation-restaurant-name-text {
+    font-size: 1.42rem;
+    font-weight: 600;
+}
+
+.modify-reservation-reservation-time {
+    display: flex;
+}
+
+.modify-reservation-clock-icon {
+    height: 21px;
+    width: 24px;
+}
+
+.modify-reservation-reservation-time-container {
+    margin-left: -12px;
+    margin-top: 5px;
+}
+
+.modify-reservation-reservation-time {
+    margin-left: 20px;
+    width: 500px;
 }

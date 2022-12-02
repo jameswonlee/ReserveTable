@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
+import clockIcon from '../../icons/clock-icon.ico';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 
@@ -24,7 +25,7 @@ function ModifyReservation() {
     const previousDate = new Date(reservation?.reservation_time);
 
     const modifyDate = dayjs(reservation?.reservation_time).format("YYYY-MM-DD");
-    const modifyTime= dayjs(reservation?.reservation_time).format("HH:mm")
+    const modifyTime = dayjs(reservation?.reservation_time).format("HH:mm")
 
     const [date, setDate] = useState(modifyDate);
     const [time, setTime] = useState(modifyTime);
@@ -85,22 +86,30 @@ function ModifyReservation() {
                 </div>
                 <div className="modify-reservation-name-time">
                     <div className="modify-reservation-restaurant-name">
-                        <span>
-                            <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" />
-                        </span>
-                        
+                        <div className="modify-reservation-restaurant-name-text">
+                            {reservation.restaurant.name}
+                        </div>
                     </div>
-                    <div className="modify-reservation-reservation-time">
-                        <span>{dayjs(reservation.reservation_time).format("ddd, MMM D")} IMG {dayjs(reservation.reservation_time).format("h:mm A")}
-                            <span>
-                                <span>
-                                    <img src={personIcon} className="modify-reservation-person-icon" />
-                                    {reservation.party_size} people (Standard seating)
-                                </span>
-                            </span>
+                    <div className="modify-reservation-reservation-time-container">
+                        <span className="modify-reservation-reservation-time">
+                            <div>
+                                <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" />
+                            </div>
+                            <div>
+                                {dayjs(reservation.reservation_time).format("ddd, MMM D")}
+                            </div>
+                            <div>
+                                <img src={clockIcon} className="modify-reservation-clock-icon" />
+                            </div>
+                            <div>
+                                {dayjs(reservation.reservation_time).format("h:mm A")}
+                            </div>
+                            <div>
+                                <img src={personIcon} className="modify-reservation-person-icon" />
+                                {reservation.party_size} people (Standard seating)
+                            </div>
                         </span>
                     </div>
-
                 </div>
             </div>
         </div>
