@@ -30,6 +30,12 @@ function UpcomingReservationsMenu() {
     const handleSubmit = () => {
         history.push(`/reservations/${nextReservation.id}`)
     };
+
+    // const handleCancelSubmit = () => {
+    //     history.push(`/reservations/${nextReservation.id}`)
+
+    // }
+
     const clickHandler = () => {
         history.push(`/users/${sessionUser.id}/dining-dashboard`);
     }

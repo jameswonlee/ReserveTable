@@ -91,9 +91,14 @@
 .reservation-confirm-upcoming-icon {
     height: 30px;
     width: 32px;
-    margin-top: -4px;
+    margin-top: -3.5px;
     margin-bottom: 8px;
 }
+
+.reservation-confirmation-reservation-date-time {
+    margin-top: 1px;
+}
+
 
 .edit-reservation-line-break {
     height: 25px;

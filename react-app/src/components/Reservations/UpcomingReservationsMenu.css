@@ -2,9 +2,9 @@
     position: absolute;
     background-color: white;
     height: 280px;
-    width: 340px;
+    width: 330px;
     display: flex;
-    margin-left: -263px;
+    margin-left: -250px;
     margin-top: 360px;
     border: solid;
     border-color: rgb(235, 235, 235);
@@ -22,7 +22,7 @@
 .upcoming-reservations-menu-heading {
     font-size: 0.95rem;
     font-weight: 600;
-    margin-left: 4px;
+    margin-left: 10px;
     margin-top: 2px;
 }
 

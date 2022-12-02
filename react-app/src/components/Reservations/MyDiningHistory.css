@@ -173,7 +173,7 @@
 .dining-dashboard-under-points-border-bottom-line {
     border-bottom: solid;
     border-color: rgb(231, 230, 230);
-    height: 30px;
+    height: 25px;
     border-width: thin;
 }
 
@@ -199,7 +199,7 @@
 
 .dining-dashboard-learn-more-rewards-text {
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: 25px;
     color: rgb(37, 127, 158);
     font-weight: 400;

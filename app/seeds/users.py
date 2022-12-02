@@ -253,31 +253,19 @@ def seed_reviews():
     )
 
     review2_1 = Review(
-        user_id=4, restaurant_id=2, review="""Was fortunate enough to get a seat by the fireplace in the 
-        courtyard as requested as usual. The hosts, the wait staff, everyone is exceptional every time. 
-        And I eat there frequently. I have yet to have a less than perfect meal there and I've been going 
-        since 1994 at the old location. Miss seeing Mr Puck as much as used to be around but understandably, 
-        he's a busy gentleman. Shout out to Maria, love to walk in and see your smile.""", rating=5
+        user_id=4, restaurant_id=2, review="""Was fortunate enough to get a seat by the fireplace in the courtyard as requested as usual. The hosts, the wait staff, everyone is exceptional every time. And I eat there frequently. I have yet to have a less than perfect meal there and I've been going since 1994 at the old location. Miss seeing Mr Puck as much as used to be around but understandably, he's a busy gentleman. Shout out to Maria, love to walk in and see your smile.""", rating=5
     )
 
     review2_2 = Review(
-        user_id=5, restaurant_id=2, review="""Excellent service and food. Only thing I would change is the
-        temperature in the restaurant. It felt a bit chilly like a window was open. Otherwise, staff, service, 
-        food, drinks, was stellar!""", rating=4
+        user_id=5, restaurant_id=2, review="""Excellent service and food. Only thing I would change is the temperature in the restaurant. It felt a bit chilly like a window was open. Otherwise, staff, service, food, drinks, was stellar!""", rating=4
     )
 
     review3_1 = Review(
-        user_id=2, restaurant_id=3, review="""From beginning to end, a great experience! When was the last time 
-        you went to a nice restaurant and the the manager walked you to your table and pulled the table out for 
-        you to sit in the booth? And, when was the last time your waiter offered you an ice cold fork for your 
-        salad? The prime rib and all the sides were delicious! To top off the wonderful meal, warm chocolate cake 
-        and ice cream! Outstanding service! (Mike was our waiter) Loved this evening!""", rating=5
+        user_id=2, restaurant_id=3, review="""From beginning to end, a great experience! When was the last time you went to a nice restaurant and the the manager walked you to your table and pulled the table out for you to sit in the booth? And, when was the last time your waiter offered you an ice cold fork for your salad? The prime rib and all the sides were delicious! To top off the wonderful meal, warm chocolate cake and ice cream! Outstanding service! (Mike was our waiter) Loved this evening!""", rating=5
     )
 
     review3_2 = Review(
-        user_id=3, restaurant_id=3, review="""Lawry's is a perfect example of fine dining at a great price. We have 
-        been members for the last five years, and we enjoy the locations in Beverly Hills and in Las Vegas. This is 
-        a restaurant that is consistently excellent. Thank you, guys!""", rating=5
+        user_id=3, restaurant_id=3, review="""Lawry's is a perfect example of fine dining at a great price. We have been members for the last five years, and we enjoy the locations in Beverly Hills and in Las Vegas. This is a restaurant that is consistently excellent. Thank you, guys!""", rating=5
     )
 
     review3_3 = Review(
@@ -290,14 +278,12 @@ def seed_reviews():
         still as great and consistent as it was back then.""", rating=5
     )
 
-    # review3_5 = Review(
-    #     user_id=6, restaurant_id=3, review="""Service was a little slow however, the service staff was pleasant and 
-    #     attentive. Food was phenomenal and the raspberry cake was delicious.""", rating=4
-    # )
+    review3_5 = Review(
+        user_id=6, restaurant_id=3, review="""Service was a little slow however, the service staff was pleasant and attentive. Food was phenomenal and the raspberry cake was delicious.""", rating=4
+    )
 
     # review3_6 = Review(
-    #     user_id=7, restaurant_id=3, review="""Had a great time and the food / service was outstanding. Was a bit disappointed 
-    #     that the 2 BDays I had noted on invite and mentioned to server were not recognized.""", rating=4
+    #     user_id=7, restaurant_id=3, review="""Had a great time and the food / service was outstanding. Was a bit disappointed that the 2 BDays I had noted on invite and mentioned to server were not recognized.""", rating=4
     # )
 
     # review3_7 = Review(
@@ -311,69 +297,49 @@ def seed_reviews():
 
 
     review4_1 = Review(
-        user_id=4, restaurant_id=4, review="""We have been going to Little Door for quite some time. It had been a 
-        number of years since out last visit. Still a great 'go to' place for a celebration or a romantic night out. 
-        The restaurant is sparkly and the food was excellent. I had lamb, and my partner had sea bass. both quite good.""",
+        user_id=4, restaurant_id=4, review="""We have been going to Little Door for quite some time. It had been a number of years since out last visit. Still a great 'go to' place for a celebration or a romantic night out. The restaurant is sparkly and the food was excellent. I had lamb, and my partner had sea bass. both quite good.""",
         rating=5
     )
 
     review4_2 = Review(
-        user_id=5, restaurant_id=4, review="""Always the most beautiful patio in LA along with great food and wine. Master 
-        chef Nicolas Mechoin and his well trained staff never disappoint.""", rating=5
+        user_id=5, restaurant_id=4, review="""Always the most beautiful patio in LA along with great food and wine. Master chef Nicolas Mechoin and his well trained staff never disappoint.""", rating=5
     )
 
     review5_1 = Review(
-        user_id=2, restaurant_id=5, review="""I have gone to different locations of Granville for years. They have always 
-        had vegan options. Sadly after the pandemic they removed some of the best vegan options. Please bring back the farro 
-        risotto, beet salad (without cheese), artichoke hummus and pita. I'm so tired of ordering this impossible burger. 
-        I can get one of those anywhere. WeHo should definately have more vegan options.""", rating=4
+        user_id=2, restaurant_id=5, review="""I have gone to different locations of Granville for years. They have always had vegan options. Sadly after the pandemic they removed some of the best vegan options. Please bring back the farro risotto, beet salad (without cheese), artichoke hummus and pita. I'm so tired of ordering this impossible burger. I can get one of those anywhere. WeHo should definately have more vegan options.""", rating=4
     )
 
     review5_2 = Review(
-        user_id=3, restaurant_id=5, review="""We were there on Friday at 7pm. We had the salmon, pork chops and steak! All we're 
-        great ! We love the scratch kitchen was able to accommodate some dietary restrictions. The service was great but the 
-        kitchen did take a while to get the food out.""", rating=4
+        user_id=3, restaurant_id=5, review="""We were there on Friday at 7pm. We had the salmon, pork chops and steak! All we're great ! We love the scratch kitchen was able to accommodate some dietary restrictions. The service was great but the kitchen did take a while to get the food out.""", rating=4
     )
 
     review6_1 = Review(
-        user_id=4, restaurant_id=6, review="""Every dish was so tasty. Thanks, chef! Our server was amazing. A great place to 
-        celebrate our fun adventure exploring excellent restaurants in Los Angeles. Happy anniversary to us! We were shocked to 
-        be asked five times in three minutes whether we were done with our oysters. We clearly weren't finished so that was an 
-        unnecessary stress See you again!""", rating=4
+        user_id=4, restaurant_id=6, review="""Every dish was so tasty. Thanks, chef! Our server was amazing. A great place to celebrate our fun adventure exploring excellent restaurants in Los Angeles. Happy anniversary to us! We were shocked to be asked five times in three minutes whether we were done with our oysters. We clearly weren't finished so that was an unnecessary stress See you again!""", rating=4
     )
 
     review6_2 = Review(
-        user_id=5, restaurant_id=6, review="""The food was absolutely AMAZING and the overall vibe/decor was really cool, but it was 
-        very loud and crowded. If you want incredible food but don't mind the loud noise level and waiting an hour to be sat (with reservations), 
-        then definitely check this place out.""", rating=4
+        user_id=5, restaurant_id=6, review="""The food was absolutely AMAZING and the overall vibe/decor was really cool, but it was very loud and crowded. If you want incredible food but don't mind the loud noise level and waiting an hour to be sat (with reservations), then definitely check this place out.""", rating=4
     )
 
     review7_1 = Review(
-        user_id=2, restaurant_id=7, review="""Great food great ambience. Service was a bit behind but they were pretty busy for 
-        a Tuesday night so we understood. Server was nice and sweet overall. Will go back!""", rating=5
+        user_id=2, restaurant_id=7, review="""Great food great ambience. Service was a bit behind but they were pretty busy for a Tuesday night so we understood. Server was nice and sweet overall. Will go back!""", rating=5
     )
 
     review7_2 = Review(
-        user_id=3, restaurant_id=7, review="""It was a first time fun experience. We were seated in the main room which was very noisy so were 
-        moved to an area just below the elevated patio. It was much quieter and the heater was very pleasant. Daniela B. was helpful and funny. 
-        Didn't know about Happy Hour but benefited from it which made the evening all the more enjoyable.""", rating=5
+        user_id=3, restaurant_id=7, review="""It was a first time fun experience. We were seated in the main room which was very noisy so were moved to an area just below the elevated patio. It was much quieter and the heater was very pleasant. Daniela B. was helpful and funny. Didn't know about Happy Hour but benefited from it which made the evening all the more enjoyable.""", rating=5
     )
 
     review8_1 = Review(
-        user_id=4, restaurant_id=8, review="""Food was fantastic, but the service was not on point. From the staff to get seated(seemed a little chaotic) 
-        to the servers(it was like the JV team came in for the Thanksgiving holiday), just not the A++ level experience we have had in the past.""", 
+        user_id=4, restaurant_id=8, review="""Food was fantastic, but the service was not on point. From the staff to get seated(seemed a little chaotic) to the servers(it was like the JV team came in for the Thanksgiving holiday), just not the A++ level experience we have had in the past.""", 
         rating=3
     )
 
     review8_2 = Review(
-        user_id=5, restaurant_id=8, review="""Dinner at Morton's is always a treat, and the Steak & Seafood special can't be beat for dining value. I 
-        particularly enjoy this LA location because it reminds me of the dearly departed Original location in Chicago. The food was especially outstanding 
-        this time!""", rating=5
+        user_id=5, restaurant_id=8, review="""Dinner at Morton's is always a treat, and the Steak & Seafood special can't be beat for dining value. I particularly enjoy this LA location because it reminds me of the dearly departed Original location in Chicago. The food was especially outstanding this time!""", rating=5
     )
 
     review9_1 = Review(
-        user_id=2, restaurant_id=9, review="""Went on Thanksgiving and the food was great. In fact, it was so good we might have gone back the next day to 
-        try their fried chicken and ribs, but, the noise level was so high it was overwhelming. Too loud, great food, it's a dilemma.""", rating=4
+        user_id=2, restaurant_id=9, review="""Went on Thanksgiving and the food was great. In fact, it was so good we might have gone back the next day to try their fried chicken and ribs, but, the noise level was so high it was overwhelming. Too loud, great food, it's a dilemma.""", rating=4
     )
 
     review9_2 = Review(
@@ -381,22 +347,19 @@ def seed_reviews():
     )
 
     review10_1 = Review(
-        user_id=4, restaurant_id=10, review="""The restaurant was beautiful I love the view. The service was also really good and the customer service by 
-        open table is the best. I had to make a change and they responded promptly. My only suggestion is to have better signs in the parking garage because 
-        it's sort of confusing to know where to park or what elevator to take from the garage.""", rating=5
+        user_id=4, restaurant_id=10, review="""The restaurant was beautiful I love the view. The service was also really good and the customer service by open table is the best. I had to make a change and they responded promptly. My only suggestion is to have better signs in the parking garage because it's sort of confusing to know where to park or what elevator to take from the garage.""", rating=5
     )
 
     review10_2 = Review(
-        user_id=5, restaurant_id=10, review="""Perfect Thanksgiving Dinner. The view was obviously spectacular. Service was efficient and friendly. Food was
-        delicious. Also valet... Quick and efficient.""", rating=5
+        user_id=5, restaurant_id=10, review="""Perfect Thanksgiving Dinner. The view was obviously spectacular. Service was efficient and friendly. Food was delicious. Also valet... Quick and efficient.""", rating=5
     )
 
-    db.session.add_all([review1_1, review1_2, review2_1, review2_2, review3_1, review3_2, review3_3, review3_4, 
+    db.session.add_all([review1_1, review1_2, review2_1, review2_2, review3_1, review3_2, review3_3, review3_4, review3_5,
         review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review7_1, review7_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2])
 
     db.session.commit()
 
-    # review3_5, review3_6, review3_7, review3_8,
+    # review3_6, review3_7, review3_8,
 
 def undo_reviews():
     if environment == "production":

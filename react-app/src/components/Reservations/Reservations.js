@@ -18,7 +18,6 @@ function Reservations({ userReservationTime }) {
     const sessionUser = useSelector(state => state.session.user);
     const totalNumReservations = useSelector(state => state.restaurants[restaurantId].total_num_reservations);
 
-
     const [date, setDate] = useState(dayjs().add(1, "day").format("YYYY-MM-DD"));
     const [time, setTime] = useState(userReservationTime || "17:00");
     const [partySize, setPartySize] = useState(2);
@@ -32,7 +31,6 @@ function Reservations({ userReservationTime }) {
         if (!partySize) errors.push("Please tell us how many are in your party");
         if (!date) errors.push("Please select a date");
         if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future time");
-
         if (!time) errors.push("Please select a time");
 
         setValidationErrors(errors);
@@ -101,7 +99,7 @@ function Reservations({ userReservationTime }) {
                                 type="time"
                                 onChange={e => setTime(e.target.value)}
                                 value={time}
-                                step="1800"
+                                step="900"
                                 min="17:00"
                                 max="22:00"
                                 placeholder="Time"
