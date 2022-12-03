@@ -43,6 +43,9 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
     }
 
 
+    if (!sessionUser) return null;
+
+
 
     return (
         <div className="add-review-form-outer-container">

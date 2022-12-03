@@ -35,24 +35,21 @@ function Reviews({ restaurant }) {
         setShowDeleteModal({ showModal: true, reviewId: review.id })
     }
 
-    if (!sessionUser) return null;
-
-
+    // if (!sessionUser) return null;
+    
+    
     const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
     const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
-    const hasPreviousReview = allReviews.some(review => review.user_id === sessionUser.id);
+    const hasPreviousReview = allReviews.some(review => review.user_id === sessionUser?.id);
     // const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
-
+    
     const shouldShowReviewButton = (!hasPreviousReview);
-
-
-
 
 
     return (
         <div>
             <div>
-                {shouldShowReviewButton &&
+                {sessionUser && shouldShowReviewButton &&
                     <button onClick={openAddReviewModal} className="leave-review-button">
                         Leave a review
                     </button>
@@ -78,14 +75,14 @@ function Reviews({ restaurant }) {
 
                                 </div>
                                 <div>
-                                    {review.user_id === sessionUser.id &&
+                                    {review.user_id === sessionUser?.id &&
                                         <button onClick={() => openUpdateReviewModal(review)} className="update-review-button">
                                             Edit review
                                         </button>
                                     }
                                 </div>
                                 <div>
-                                    {review.user_id === sessionUser.id &&
+                                    {review.user_id === sessionUser?.id &&
                                         <button onClick={() => openDeleteReviewModal(review)} className="delete-review-button">
                                             Delete review
                                         </button>
