@@ -22,9 +22,9 @@
     width: 100%;
 }
 
-.preview-image:hover {
+/* .preview-image:hover {
     transform: scaleX(1.08) scaleY(1.08);
-}
+} */
 
 .restaurant-preview-details {
     font-weight: 400;
