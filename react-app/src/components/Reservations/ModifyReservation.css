@@ -154,7 +154,10 @@
     border-color: rgb(199, 199, 199);
     font-size: 1.03rem;
     text-align: center;
+}
 
+.modify-reservation-new-date-input {
+    cursor: pointer;
 }
 
 .modify-reservation-new-time-input {
@@ -169,7 +172,10 @@
     width: 120px;
     font-size: 1.05rem;
     text-align: center;
+}
 
+.modify-reservation-new-time-input:hover {
+    cursor: pointer;
 }
 
 .modify-reservation-new-party-size {
@@ -183,6 +189,10 @@
     text-align: center;
 }
 
+.modify-reservation-new-party-size:hover {
+    cursor: pointer;
+}
+
 .modify-reservation-new-reservation-submit-button {
     height: 44.9px;
     width: 140px;
@@ -194,5 +204,9 @@
     color: rgb(255, 255, 255);
     font-size: 0.97rem;
     font-weight: 600;
+}
+
+.modify-reservation-new-reservation-submit-button:hover {
+    cursor: pointer;
 }
 

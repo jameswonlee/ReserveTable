@@ -76,8 +76,11 @@
     margin-top: 8px;
     font-size: 0.9rem;
     font-weight: 400;
-
     color: rgb(97, 96, 96);
+}
+
+.reservation-date-input:hover {
+    cursor: pointer;
 }
 
 .reservation-time-input {
@@ -89,7 +92,10 @@
     border: none;
     border-radius: none;
     margin-left: 2px;
-    /* padding-right: 2px; */
+}
+
+.reservation-time-input:hover {
+    cursor: pointer;
 }
 
 .reservation-time-input-border {
@@ -112,9 +118,6 @@
     margin-left: 11px;
 }
 
-/* .reservation-find-time-button-container {
-    height: 200px;
-} */
 
 .reservation-find-time-button {
     width: 300px;
@@ -127,6 +130,10 @@
     font-size: 1rem;
     color: white;
     font-weight: 600;
+}
+
+.reservation-find-time-button:hover {
+    cursor: pointer;
 }
 
 .reservation-booking-symbol {

@@ -1,13 +1,7 @@
-
 import './Footer.css';
 
 
-
-
-
 function Footer() {
-
-
 
     return (
         <footer>
@@ -136,9 +130,9 @@ function Footer() {
                     <div className="footer-copyright">
                         Copyright © 2022 ReserveTable, Inc, an
                         <a id="opentable" className="opentable-link" href="https://www.opentable.com">
-                        &nbsp;OpenTable&nbsp;
+                        &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
                         </a>
-                        clone by James Lee, Los Angeles CA 90048 - All rights reserved.
+                        clone by <span className="footer-name-text">James Lee</span>, Los Angeles CA 90048 - All rights reserved.
                     </div>
                 </div>
             </div>
