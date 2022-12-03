@@ -109,7 +109,9 @@ function Reservations({ userReservationTime }) {
                     <div className="reservation-find-time-button-container">
                         <button
                             type="submit"
-                            className="reservation-find-time-button">
+                            className="reservation-find-time-button"
+                            disabled={!sessionUser}
+                            >
                             Find a time
                         </button>
                     </div>

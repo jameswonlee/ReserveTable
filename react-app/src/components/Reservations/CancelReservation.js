@@ -36,11 +36,12 @@ function CancelReservation({ reservation, setShowCancelModal }) {
                         <span>
                             {reservation.party_size} (Standard seating)
                         </span>
+                        &nbsp;
                         <span>
                             <img src={upcomingReservationsIcon} className="reservation-cancellation-upcoming-reservations-icon" />
                         </span>
                         <span>
-                            {dayjs(reservation.reservation_time).format("ddd, MMM D, h:mm A")}
+                            {dayjs(reservation.reservation_time).format("ddd, MMM D [at] h:mm A")}
                         </span>
                     </span>
                 </div>

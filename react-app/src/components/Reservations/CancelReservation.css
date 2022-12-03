@@ -3,7 +3,7 @@
     width: 425px;
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     margin-left: 30px;
 }
 
@@ -19,14 +19,19 @@
 }
 
 .reservation-cancellation-person-icon {
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 21px;
     margin-bottom: -4px;
-
 }
 
 .reservation-cancellation-person-icon-container {
     margin-right: 5px;
+}
+
+.reservation-cancellation-upcoming-reservations-icon {
+    height: 32px;
+    margin-top: 5px;
+    margin-right: -3px;
 }
 
 .cancel-reservation-restaurant-name {
