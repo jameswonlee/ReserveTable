@@ -4,8 +4,8 @@
     height: 280px;
     width: 330px;
     display: flex;
-    margin-left: -250px;
-    margin-top: 360px;
+    margin-left: -255px;
+    margin-top: 330px;
     border: solid;
     border-color: rgb(235, 235, 235);
     border-radius: 4px;
@@ -20,7 +20,7 @@
 }
 
 .upcoming-reservations-menu-heading {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-left: 10px;
     margin-top: 2px;
@@ -177,4 +177,33 @@
     width: 317px;
     padding-top: 15px;
     border-color: rgb(226, 225, 225);
+}
+
+.upcoming-reservation-menu-none {
+    position: absolute;
+    background-color: white;
+    height: 90px;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -258px;
+    margin-top: 140px;
+    border: solid;
+    border-color: rgb(235, 235, 235);
+    border-radius: 4px;
+}
+
+.upcoming-reservations-menu-none-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.upcoming-reservations-menu-none-message {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgb(62, 61, 61);
+    margin-left: 10px;
+    margin-top: 20px;
 }

@@ -80,7 +80,7 @@ function ReservationConfirmation() {
                             &nbsp;
                             <img src={lineBreak} className="edit-reservation-line-break" />
                             &nbsp;
-                            <button className="reservation-confirm-buttons">Add to calendar</button>
+                            <button className="reservation-confirm-buttons add-to-calendar">Add to calendar</button>
                         </span>
                     </div>
                 </div>
