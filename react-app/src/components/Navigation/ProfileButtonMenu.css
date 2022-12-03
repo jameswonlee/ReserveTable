@@ -49,6 +49,7 @@
 
 .profile-drop-button:hover {
     background-color: #f7f7f7;
+    cursor: not-allowed;
 }
 
 .profile-log-out-button {
@@ -78,6 +79,10 @@
     font-size: 0.85rem;
     font-weight: 400;
     color: rgb(218, 54, 68);
+}
+
+.learn-about-points:hover {
+    cursor: not-allowed;
 }
 
 .points-graph {

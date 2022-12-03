@@ -71,7 +71,7 @@
 }
 
 .notifications-icon:hover {
-    cursor: text;
+    cursor: not-allowed;
 }
 
 .line-break {
@@ -89,7 +89,7 @@
 }
 
 .logged-in-search-button:hover {
-    cursor: text;
+    cursor: not-allowed;
 }
 
 .sign-up-button {
@@ -135,5 +135,5 @@
 }
 
 .logged-out-search-button:hover {
-    cursor: text;
+    cursor: not-allowed;
 }

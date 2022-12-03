@@ -56,8 +56,6 @@ function NavigationMenu() {
     useEffect(() => {
         if (!showMenu) return;
         document.addEventListener('click', closeMenu);
-        // setShowSignInModal(false);
-        // setShowSignUpModal(false);
         return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
 
