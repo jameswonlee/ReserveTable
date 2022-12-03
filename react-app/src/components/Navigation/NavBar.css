@@ -28,7 +28,7 @@
 }
 
 .above-nav-img:hover {
-    cursor: text;
+    cursor: not-allowed;
 }
 
 .location-button {

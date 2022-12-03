@@ -49,6 +49,10 @@
     justify-content: space-between;
 }
 
+.dining-dashboard-menu-options:hover {
+    cursor: not-allowed;
+}
+
 .dining-dashboard-space-to-top {
     font-size: 1rem;
     font-weight: 300;
@@ -162,7 +166,6 @@
 }
 
 .dining-dashboard-points-reward-text {
-    /* border-bottom: solid; */
     border-color: rgb(226, 225, 225);
     margin-right: 40px;
     margin-left: 22px;
@@ -206,7 +209,7 @@
 }
 
 .dining-dashboard-learn-more-rewards-text:hover {
-    cursor: text;
+    cursor: not-allowed;
 }
 
 

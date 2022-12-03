@@ -19,9 +19,12 @@
     background-color: white;
     border-bottom: solid;
     border-color: rgb(227, 227, 227);
-    /* border-radius: 5px; */
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+}
+
+.restaurant-profile-details-tabs:hover {
+    cursor: not-allowed;
 }
 
 .restaurant-profile-upper {

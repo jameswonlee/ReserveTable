@@ -106,13 +106,28 @@ function Reservations({ userReservationTime }) {
                                 className="reservation-time-input" />
                         </div>
                     </div>
-                    <div className="reservation-find-time-button-container">
-                        <button
-                            type="submit"
-                            className="reservation-find-time-button">
-                            Find a time
-                        </button>
-                    </div>
+                    {sessionUser
+                        ?
+                        < div className="reservation-find-time-button-container">
+                            <button
+                                type="submit"
+                                className="reservation-find-time-button-logged-in"
+                                disabled={!sessionUser}
+                            >
+                                Find a time
+                            </button>
+                        </div>
+                        :
+                        <div className="reservation-find-time-button-container">
+                            <button
+                                type="submit"
+                                className="reservation-find-time-button-logged-out"
+                                disabled={!sessionUser}
+                            >
+                                Find a time
+                            </button>
+                        </div>
+                    }
                     <div className="reservation-booking-total-num">
                         <span className="reservation-booking-align">
                             <img src={bookingSymbol} className="reservation-booking-symbol" />
@@ -130,8 +145,8 @@ function Reservations({ userReservationTime }) {
                         </span>
                     </div>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     )
 }
 
