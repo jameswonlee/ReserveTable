@@ -141,6 +141,9 @@ function ModifyReservation() {
                                 type="time"
                                 onChange={e => setTime(e.target.value)}
                                 value={time}
+                                step="900"
+                                min="17:00"
+                                max="22:00"
                                 placeholder="Time" 
                                 className="modify-reservation-new-time-input"/>
                         </div>

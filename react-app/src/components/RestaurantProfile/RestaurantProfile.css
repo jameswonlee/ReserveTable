@@ -145,11 +145,11 @@
 /* Spacing */
 .space-to-left-11 {
     margin-left: 20px;
-    color: rgb(192, 2, 2);
+    color: rgb(214, 4, 4);
 }
 
 .space-to-left-11:hover{
-    color: rgb(192, 2, 2);
+    color: rgb(142, 2, 2);
 }
 
 .space-to-left-12 {
@@ -157,13 +157,12 @@
 }
 
 .space-to-left-12:hover {
-    color: rgb(192, 2, 2);
+    color: rgb(142, 2, 2);
 }
 
 .space-to-left-21 {
     margin-left: 15px;
 }
-
 
 .space-to-left-22 {
     margin-left: 15px;
@@ -183,8 +182,6 @@
 .profile-avg-rating-num {
     margin-left: 2px;
 }
-
-
 
 /* Icons */
 .profile-reviews-icon {

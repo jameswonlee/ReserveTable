@@ -14,7 +14,16 @@
 .restaurant-nav-card-container:hover {
     top: -6px;
     transition: all .4s ease-in-out;
-    box-shadow: 2px 2px 6px rgb(229, 228, 228)
+    box-shadow: 2px 2px 6px rgb(229, 228, 228);
+}
+
+.preview-image {
+    height: 150px;
+    width: 100%;
+}
+
+.preview-image:hover {
+    transform: scaleX(1.08) scaleY(1.08);
 }
 
 .restaurant-preview-details {
@@ -23,11 +32,6 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-.preview-image {
-    height: 150px;
-    width: 100%;
 }
 
 .restaurant-name-and-details-container {

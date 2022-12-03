@@ -49,10 +49,12 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
             </div>
             <div className="create-review-form-container">
                 <form onSubmit={submitHandler} className="create-review-form">
-                    {validationErrors.length > 0 &&
-                        validationErrors.map(error =>
-                            <li key={error}>{error}</li>
-                        )}
+                    <div className="update-review-validation-errors">
+                        {validationErrors.length > 0 &&
+                            validationErrors.map(error =>
+                                <div key={error}>{error}</div>
+                            )}
+                    </div>
                     <div className="review-inputs">
                         <div>
                             <textarea

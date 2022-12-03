@@ -18,12 +18,12 @@
 
 .ayrbnb-link {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(222, 217, 217);
 }
 
 .codebunny-link {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(222, 217, 217);
 }
 
 .opentable-link {
@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: -30px;
+    margin-left: -40px;
 }
 
 .footer-below-tech-stack {
@@ -92,7 +92,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: 80px;
+    margin-left: 73px;
 }
 
 .footer-ides-text {
@@ -113,7 +113,7 @@
 .footer-other-sites {
     display: flex;
     flex-direction: column;
-    margin-left: 73px;
+    margin-left: 75px;
 }
 
 .footer-other-sites-text {
@@ -156,7 +156,7 @@
 .footer-bottom {
     display: flex;
     flex-direction: column;
-    margin-left: 270px;
+    margin-left: 257px;
     margin-top: 90px;
 }
 
@@ -173,4 +173,9 @@
 
 .footer-copyright {
     margin-top: 30px;
+}
+
+.footer-name-text {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
 }

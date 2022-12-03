@@ -82,6 +82,10 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
     - [ ] Create user profile
     - [ ] Update user profile
     - [ ] Delete user profile
+- [ ] Favorites
+    - [ ] View favorite restaurants
+    - [ ] Add favorite restaurant
+    - [ ] Delete favorite restaurant
 - [ ] Search
     - [ ] Search for available reservations by date and time
     - [ ] Search for available reservations by cuisine
