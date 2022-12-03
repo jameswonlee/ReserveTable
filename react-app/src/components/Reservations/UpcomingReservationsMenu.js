@@ -43,83 +43,91 @@ function UpcomingReservationsMenu() {
     // if (!userReservations.length > 0) return null;
 
     return (
-        <div className="upcoming-reservations-menu-container">
+        <>
             {nextReservation
                 ?
-                <div className="next-reservation-details-container">
-                    <div className="upcoming-reservations-menu-heading">
-                        Upcoming reservations
-                    </div>
-                    <div className="upcoming-reservation-menu-icon-name">
-                        <div>
-                            <img src={upcomingRestaurantIcon} className="upcoming-restaurant-icon" />
+                <div className="upcoming-reservations-menu-container">
+                    <div className="next-reservation-details-container">
+                        <div className="upcoming-reservations-menu-heading">
+                            Upcoming reservations
                         </div>
-                        <div className="upcoming-reservation-menu-name">
-                            {nextReservation.restaurant?.name}
-                        </div>
-                    </div>
-                    <div className="upcoming-reservation-menu-date-details">
-                        <div className="upcoming-reservation-menu-party-size">
+                        <div className="upcoming-reservation-menu-icon-name">
                             <div>
-                                <img src={personIcon} className="upcoming-reservation-menu-person-icon" />
+                                <img src={upcomingRestaurantIcon} className="upcoming-restaurant-icon" />
                             </div>
-                            <div className="upcoming-reservation-party-size-text">
-                                Table for {nextReservation.party_size} people
-                            </div>
-                        </div>
-                        <div>
-                            <div className="upcoming-reservation-menu-time">
-                                <div>
-                                    <img src={clockIcon} className="upcoming-reservations-clock-icon" />
-                                </div>
-                                <div className="upcoming-reservation-reservation-time">
-                                    {dayjs(nextReservation.reservation_time).format("h:mm A")}
-                                </div>
-
+                            <div className="upcoming-reservation-menu-name">
+                                {nextReservation.restaurant?.name}
                             </div>
                         </div>
-                        <div>
-                            <div className="upcoming-reservation-menu-time">
+                        <div className="upcoming-reservation-menu-date-details">
+                            <div className="upcoming-reservation-menu-party-size">
                                 <div>
-                                    <img src={upcomingReservationIcon} className="upcoming-reservation-menu-icon" />
+                                    <img src={personIcon} className="upcoming-reservation-menu-person-icon" />
                                 </div>
-                                <div>
-                                    <div className="upcoming-reservation-menu-time-details">
-                                        {dayjs(nextReservation.reservation_time).format("MMM D, YYYY")}
+                                <div className="upcoming-reservation-party-size-text">
+                                    Table for {nextReservation.party_size} people
+                                </div>
+                            </div>
+                            <div>
+                                <div className="upcoming-reservation-menu-time">
+                                    <div>
+                                        <img src={clockIcon} className="upcoming-reservations-clock-icon" />
+                                    </div>
+                                    <div className="upcoming-reservation-reservation-time">
+                                        {dayjs(nextReservation.reservation_time).format("h:mm A")}
                                     </div>
 
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="upcoming-reservation-menu-options">
-                        <span>
-                            <button onClick={handleSubmit} className="upcoming-reservation-button">View </button>
-                            <span className="upcoming-reservation-menu-dot">&nbsp;·&nbsp;</span>
-                            <button onClick={handleSubmit} className="upcoming-reservation-button"> Modify </button>
-                            <span className="upcoming-reservation-menu-dot">·&nbsp;</span>
-                            <button className="upcoming-reservation-button-no-pointer">Invite guests</button>
-                        </span>
-                    </div>
-                    <div>
-                        <div onClick={handleSubmit}className="upcoming-reservation-menu-cancel-button">
-                            Cancel
-                        </div>
-                        <div className="upcoming-reservation-menu-border-line">
+                            <div>
+                                <div className="upcoming-reservation-menu-time">
+                                    <div>
+                                        <img src={upcomingReservationIcon} className="upcoming-reservation-menu-icon" />
+                                    </div>
+                                    <div>
+                                        <div className="upcoming-reservation-menu-time-details">
+                                            {dayjs(nextReservation.reservation_time).format("MMM D, YYYY")}
+                                        </div>
 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div onClick={clickHandler} className="upcoming-reservation-view-all-reservations-button">
-                            View all reservations
+                        <div className="upcoming-reservation-menu-options">
+                            <span>
+                                <button onClick={handleSubmit} className="upcoming-reservation-button">View </button>
+                                <span className="upcoming-reservation-menu-dot">&nbsp;·&nbsp;</span>
+                                <button onClick={handleSubmit} className="upcoming-reservation-button"> Modify </button>
+                                <span className="upcoming-reservation-menu-dot">·&nbsp;</span>
+                                <button className="upcoming-reservation-button-no-pointer">Invite guests</button>
+                            </span>
+                        </div>
+                        <div>
+                            <div onClick={handleSubmit} className="upcoming-reservation-menu-cancel-button">
+                                Cancel
+                            </div>
+                            <div className="upcoming-reservation-menu-border-line">
+
+                            </div>
+                        </div>
+                        <div>
+                            <div onClick={clickHandler} className="upcoming-reservation-view-all-reservations-button">
+                                View all reservations
+                            </div>
                         </div>
                     </div>
                 </div>
                 :
-                <div>You have no upcoming reservations</div>
+                <div className="upcoming-reservation-menu-none">
+                    <div className="upcoming-reservations-menu-none-heading">
+                        Upcoming reservations
+                    </div>
+                    <div className="upcoming-reservations-menu-none-message">
+                        You have no upcoming reservations
+                    </div>
+                </div>
             }
-
-        </div>
+        </>
     )
 }
 
