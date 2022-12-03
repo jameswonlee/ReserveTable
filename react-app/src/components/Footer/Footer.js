@@ -68,7 +68,7 @@ function Footer() {
                         <div>
                             <div className="footer-ides">
                                 <div className="footer-ides-text">
-                                    IDEs/Editors/Other
+                                    IDEs/Editors/Misc
                                 </div>
                                 <div className="footer-below-ides">
                                     <div>
@@ -134,7 +134,11 @@ function Footer() {
                         <div>Cookies Settings</div>
                     </div>
                     <div className="footer-copyright">
-                        Copyright © 2022 ReserveTable, Inc, 125 N Doheny Dr, Los Angeles CA 90048 - All rights reserved.
+                        Copyright © 2022 ReserveTable, Inc, an
+                        <a id="opentable" className="opentable-link" href="https://www.opentable.com">
+                        &nbsp;OpenTable&nbsp;
+                        </a>
+                        clone by James Lee, Los Angeles CA 90048 - All rights reserved.
                     </div>
                 </div>
             </div>

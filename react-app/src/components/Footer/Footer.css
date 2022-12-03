@@ -7,24 +7,30 @@
 }
 
 .linkedin-link {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 2rem;
 }
 
 .github-link {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 2rem;
 }
 
 .ayrbnb-link {
     text-decoration: none;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .codebunny-link {
     text-decoration: none;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
+
+.opentable-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
 .footer-top {
     display: flex;
     flex-direction: row;
@@ -49,13 +55,13 @@
     flex-direction: column;
 }
 
-.footer-below-tech-stack > div {
+.footer-below-tech-stack>div {
     margin-top: 7px;
 }
 
 .footer-tech-stack-text {
     font-weight: 600;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
 }
 
@@ -68,7 +74,7 @@
 
 .footer-hosting-text {
     font-weight: 600;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
 }
 
@@ -78,7 +84,7 @@
     justify-content: space-evenly;
 }
 
-.footer-below-hosting > div {
+.footer-below-hosting>div {
     margin-top: 7px;
 }
 
@@ -91,7 +97,7 @@
 
 .footer-ides-text {
     font-weight: 600;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
 }
 
@@ -100,19 +106,19 @@
     flex-direction: column;
 }
 
-.footer-below-ides > div {
+.footer-below-ides>div {
     margin-top: 7px;
 }
 
 .footer-other-sites {
     display: flex;
     flex-direction: column;
-    margin-left: 65px;
+    margin-left: 73px;
 }
 
 .footer-other-sites-text {
     font-weight: 600;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
 }
 
@@ -121,7 +127,7 @@
     flex-direction: column;
 }
 
-.footer-below-other-sites > div {
+.footer-below-other-sites>div {
     margin-top: 5px;
 }
 
@@ -131,7 +137,7 @@
 
 .footer-connect-with-me-text {
     font-weight: 600;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .footer-below-connect {
@@ -143,14 +149,14 @@
     margin-bottom: 13px;
 }
 
-.footer-links > a {
+.footer-links>a {
     margin-left: 10px;
 }
 
 .footer-bottom {
     display: flex;
     flex-direction: column;
-    margin-left: 220px;
+    margin-left: 270px;
     margin-top: 90px;
 }
 
@@ -161,7 +167,7 @@
     margin-left: -14px;
 }
 
-.footer-terms > div {
+.footer-terms>div {
     margin-left: 15px;
 }
 

@@ -26,7 +26,7 @@ function DisplayAllRestaurants({ setUserReservationTime }) {
                 <div className="card-wrapper">
                     <div className="restaurant-cards">
                         {allRestaurants.map(restaurant => (
-                            <RestaurantCard key={restaurant.id} restaurant={restaurant} setUserReservationTime={setUserReservationTime}/>
+                            <RestaurantCard key={restaurant.id} restaurant={restaurant} setUserReservationTime={setUserReservationTime} />
                         ))}
                     </div>
                 </div>

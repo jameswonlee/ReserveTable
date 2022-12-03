@@ -64,7 +64,6 @@ function RestaurantProfile({ userReservationTime }) {
 
             <div className="restaurant-profile-lower">
                 <div className="restaurant-profile-details-container">
-
                     <div className="restaurant-profile-left">
                         <div className="restaurant-profile-name">
                             <h1>{restaurant.name}</h1>

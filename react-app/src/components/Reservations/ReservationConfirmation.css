@@ -1,5 +1,5 @@
 .reservation-details-outer-container {
-    height: 1000px;
+    height: 500px;
     display: flex;
     flex-direction: row;
     background-color: rgb(241, 242, 244);
@@ -10,7 +10,7 @@
     background-color: white;
     border: solid;
     border-color: rgb(230, 230, 230);
-    height: 800px;
+    height: 250px;
     margin-left: 270px;
     margin-top: 30px;
     display: flex;
