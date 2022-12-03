@@ -6,6 +6,7 @@
 
 .all-restaurants-outer-container {
     max-width: 1500px;
+    padding-bottom: 50px;
 }
 
 
@@ -49,6 +50,8 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+
 
 
 

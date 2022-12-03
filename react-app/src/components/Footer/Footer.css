@@ -1,0 +1,176 @@
+.footer-container {
+    color: rgb(222, 217, 217);
+    font-weight: 300;
+    font-size: 0.9rem;
+    padding-top: 50px;
+    height: 400px;
+}
+
+.linkedin-link {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+}
+
+.github-link {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+}
+
+.ayrbnb-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.codebunny-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.opentable-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+}
+
+.footer-top-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-tech-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: -30px;
+}
+
+.footer-below-tech-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-below-tech-stack>div {
+    margin-top: 7px;
+}
+
+.footer-tech-stack-text {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.footer-hosting {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 80px;
+}
+
+.footer-hosting-text {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.footer-below-hosting {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer-below-hosting>div {
+    margin-top: 7px;
+}
+
+.footer-ides {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 80px;
+}
+
+.footer-ides-text {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.footer-below-ides {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-below-ides>div {
+    margin-top: 7px;
+}
+
+.footer-other-sites {
+    display: flex;
+    flex-direction: column;
+    margin-left: 73px;
+}
+
+.footer-other-sites-text {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.footer-below-other-sites {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-below-other-sites>div {
+    margin-top: 5px;
+}
+
+.footer-connect {
+    margin-left: 50px;
+}
+
+.footer-connect-with-me-text {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.footer-below-connect {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-connect-with-me-text {
+    margin-bottom: 13px;
+}
+
+.footer-links>a {
+    margin-left: 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    margin-left: 270px;
+    margin-top: 90px;
+}
+
+.footer-terms {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: -14px;
+}
+
+.footer-terms>div {
+    margin-left: 15px;
+}
+
+.footer-copyright {
+    margin-top: 30px;
+}

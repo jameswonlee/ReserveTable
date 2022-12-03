@@ -3,7 +3,7 @@
     border-color: rgb(216, 217, 219);
     border-style: solid;
     margin: 7px;
-    height: 308px;
+    height: 312px;
     width: 235px;
     display: flex;
     flex-direction: column;
@@ -14,8 +14,7 @@
 .restaurant-nav-card-container:hover {
     top: -6px;
     transition: all .4s ease-in-out;
-    box-shadow: 4px 2px rgb(229, 228, 228)
-    /* -webkit-transition: all .4s ease;    */
+    box-shadow: 2px 2px 6px rgb(229, 228, 228)
 }
 
 .restaurant-preview-details {
@@ -58,25 +57,22 @@
     flex-direction: row;
     align-items: center;
     font-size: 0.87rem;
-    margin-top: -5px;
+    margin-top: -6px;
 }
 
 .preview-stars-reviews {
     font-weight: 400;
-    margin-top: 2px;
+    margin-top: -2px;
 }
 
 .preview-cuisine-cost-neighborhood {
     font-weight: 300;
     font-size: .82rem;
     overflow: hidden;
-    /* width: 220px; */
-    /* height: 19px; */
-    overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    margin-top: 6px;
+    margin-top: 3px;
 }
 
 .restaurant-card-name {
