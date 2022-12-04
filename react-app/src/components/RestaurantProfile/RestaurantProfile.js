@@ -11,8 +11,6 @@ import cuisineIcon from './icons/cuisine-icon.ico';
 import './RestaurantProfile.css'
 
 
-
-
 function RestaurantProfile({ userReservationTime }) {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
@@ -67,8 +65,6 @@ function RestaurantProfile({ userReservationTime }) {
                     <div className="restaurant-profile-left">
                         <div className="restaurant-profile-name">
                             <h1>{restaurant.name}</h1>
-                        </div>
-                        <div>
                         </div>
                         <div className="restaurant-profile-general-info">
                             <div className="restaurant-profile-general-info-top">

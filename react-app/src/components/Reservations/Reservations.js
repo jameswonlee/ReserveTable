@@ -114,7 +114,8 @@ function Reservations({ userReservationTime }) {
                                 className="reservation-find-time-button-logged-in"
                                 disabled={!sessionUser}
                             >
-                                Find a time
+                                {/* Find a time */}
+                                Reserve your table
                             </button>
                         </div>
                         :

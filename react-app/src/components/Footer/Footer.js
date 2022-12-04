@@ -87,8 +87,8 @@ function Footer() {
                                 </div>
                                 <div className="footer-below-other-sites">
                                     <div>
-                                        <a id="ayrbnb" className="ayrbnb-link" href="https://www.airbnb-james-lee.herokuapp.com">
-                                            https://www.airbnb-james-lee.herokuapp.com
+                                        <a id="ayrbnb" className="ayrbnb-link" href="https://www.ayrbnb-james-lee.herokuapp.com">
+                                            https://www.ayrbnb-james-lee.herokuapp.com
                                         </a>
                                     </div>
                                     <div>
