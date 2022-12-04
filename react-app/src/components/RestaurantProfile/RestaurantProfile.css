@@ -33,6 +33,10 @@
 }
 .restaurant-profile-lower {
     height: 1500px;
+    /* min-height: 800px; */
+    /* max-height: 1800px; */
+    /* height: 1200px; */
+    /* overflow: scroll; */
 }
 
 .restaurant-profile-details-container {
@@ -87,7 +91,7 @@
     margin-right: -705px;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 1px 1px 5px rgb(202, 202, 202)
+    box-shadow: 1px 1px 5px rgb(202, 202, 202);
 }
 
 .restaurant-reviews-container {
@@ -143,6 +147,8 @@
 
 .additional-info-container {
     margin-top: -20px;
+    margin-left: 30px;
+    width: 300px;
 }
 
 /* Spacing */

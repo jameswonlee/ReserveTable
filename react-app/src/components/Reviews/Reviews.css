@@ -9,9 +9,14 @@
     justify-content: space-around;
 }
 
-/* .reviews-outer-container {
-    max-height: 500px;
+/* .reviews-main-outer-container {
+    max-height: 1200px;
+    overflow: scroll;
 } */
+
+.reviews-outer-container {
+    height: 1800px;
+}
 
 .review-container-left {
     /* border: solid; */
@@ -63,7 +68,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
 }
 
 .review {

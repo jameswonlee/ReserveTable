@@ -47,7 +47,7 @@ function Reviews({ restaurant }) {
 
 
     return (
-        <div>
+        <div className="reviews-main-outer-container">
             <div>
                 {sessionUser && shouldShowReviewButton &&
                     <button onClick={openAddReviewModal} className="leave-review-button">

@@ -249,7 +249,17 @@ def seed_reviews():
 
     review1_2 = Review(
         user_id=3, restaurant_id=1, review="A little loud. Otherwise it was a great experience.",
-        rating=3
+        rating=4
+    )
+
+    review1_3 = Review(
+        user_id=4, restaurant_id=1, review="Food and service were amazing! Perfect meal before going to the theatre.",
+        rating=5
+    )
+
+    review1_4 = Review(
+        user_id=5, restaurant_id=1, review="Food was fantastic. And service was very good. However, our table was so dark we could not even read the menus.",
+        rating=4
     )
 
     review2_1 = Review(
@@ -257,7 +267,18 @@ def seed_reviews():
     )
 
     review2_2 = Review(
-        user_id=5, restaurant_id=2, review="""Excellent service and food. Only thing I would change is the temperature in the restaurant. It felt a bit chilly like a window was open. Otherwise, staff, service, food, drinks, was stellar!""", rating=4
+        user_id=5, restaurant_id=2, review="""Excellent service and food. Only thing I would change is the temperature in the restaurant. It felt a bit chilly like a window was open. Otherwise, staff, service, food, drinks, was stellar!""", 
+        rating=4
+    )
+
+    review2_3 = Review(
+        user_id=2, restaurant_id=2, review="An always dependable LA institution. Yes, it is pricey, but perfect for special occasions. It was my first time back since before the pandemic (!!) and the food and service were as excellent as I remember.",
+        rating=5
+    )
+
+    review2_4 = Review(
+        user_id=3, restaurant_id=2, review="Delightful dinner. Love the outdoor dining space. Wonderful service and food",
+        rating=5
     )
 
     review3_1 = Review(
@@ -278,9 +299,9 @@ def seed_reviews():
         still as great and consistent as it was back then.""", rating=5
     )
 
-    review3_5 = Review(
-        user_id=6, restaurant_id=3, review="""Service was a little slow however, the service staff was pleasant and attentive. Food was phenomenal and the raspberry cake was delicious.""", rating=4
-    )
+    # review3_5 = Review(
+    #     user_id=6, restaurant_id=3, review="""Service was a little slow however, the service staff was pleasant and attentive. Food was phenomenal and the raspberry cake was delicious.""", rating=4
+    # )
 
     # review3_6 = Review(
     #     user_id=7, restaurant_id=3, review="""Had a great time and the food / service was outstanding. Was a bit disappointed that the 2 BDays I had noted on invite and mentioned to server were not recognized.""", rating=4
@@ -294,7 +315,6 @@ def seed_reviews():
     #     user_id=9, restaurant_id=3, review="Fantastic service and exceptional food, always a treat to dine at Lawry's Beverly Hills!!!",
     #     rating=5
     # )
-
 
     review4_1 = Review(
         user_id=4, restaurant_id=4, review="""We have been going to Little Door for quite some time. It had been a number of years since out last visit. Still a great 'go to' place for a celebration or a romantic night out. The restaurant is sparkly and the food was excellent. I had lamb, and my partner had sea bass. both quite good.""",
@@ -354,12 +374,12 @@ def seed_reviews():
         user_id=5, restaurant_id=10, review="""Perfect Thanksgiving Dinner. The view was obviously spectacular. Service was efficient and friendly. Food was delicious. Also valet... Quick and efficient.""", rating=5
     )
 
-    db.session.add_all([review1_1, review1_2, review2_1, review2_2, review3_1, review3_2, review3_3, review3_4, review3_5,
+    db.session.add_all([review1_1, review1_2, review1_3, review1_4, review2_1, review2_2, review2_3, review2_4, review3_1, review3_2, review3_3, review3_4,
         review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review7_1, review7_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2])
 
     db.session.commit()
 
-    # review3_6, review3_7, review3_8,
+    # review3_5, review3_6, review3_7, review3_8,
 
 def undo_reviews():
     if environment == "production":
