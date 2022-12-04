@@ -71,6 +71,9 @@ function App() {
           <Route exact path='/users/:userId/dining-dashboard'>
             <MyDiningHistory />
           </Route>
+          <Route>
+            <h1>PAGE NOT FOUND</h1>
+          </Route>
         </Switch>
       </BrowserRouter>
       <Footer />

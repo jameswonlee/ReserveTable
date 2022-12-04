@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 80px;
+    /* margin-left: calc(5% - 0px); */
+    /* margin-right: calc(5% - 0px); */
 }
 
 .all-restaurants-outer-container {
@@ -10,8 +13,10 @@
 }
 
 .above-restaurant-cards {
-    margin-left: 126px;
-    margin-right: 126px;
+    /* margin-left: 126px;
+    margin-right: 126px; */
+    margin-left: 98px;
+    margin-right: 80px;
     margin-bottom: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -27,7 +32,6 @@
     font-size: 0.84rem;
     display: flex;
 }
-
 
 .current-location-arrow {
     height: 20px;
@@ -53,9 +57,5 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-left: 20px;
 }
-
-
-
-
-
