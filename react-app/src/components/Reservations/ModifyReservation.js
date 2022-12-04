@@ -150,7 +150,7 @@ function ModifyReservation() {
                         <div>
                             <label>
                                 <select value={partySize} onChange={e => setPartySize(e.target.value)} className="modify-reservation-new-party-size">
-                                    <option value="1">1 Person </option> <img src={personIcon} className="modify-reservation-person-icon" />
+                                    <option value="1">1 Person </option>
                                     <option value="2">2 People</option>
                                     <option value="3">3 People</option>
                                     <option value="4">4 People</option>
