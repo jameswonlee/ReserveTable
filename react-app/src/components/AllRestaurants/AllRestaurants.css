@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     /* margin-left: 95px; */
-    margin-left: calc(5% - 0px);
-    margin-right: calc(5% - 0px);
+    /* margin-left: calc(5% - 0px); */
+    /* margin-right: calc(5% - 0px); */
 }
 
 .all-restaurants-outer-container {
