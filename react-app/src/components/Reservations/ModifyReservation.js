@@ -170,7 +170,8 @@ function ModifyReservation() {
                                 type="submit"
                                 className="modify-reservation-new-reservation-submit-button"
                             >
-                                Find a new table
+                                {/* Find a new table */}
+                                Reserve a new table
                             </button>
                         </div>
                     </div>

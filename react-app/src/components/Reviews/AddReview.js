@@ -22,7 +22,7 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
         const errors = [];
 
         if (!review) errors.push("Please tell us about your experience");
-        if (review.length > 300) errors.push("Review can not exceed 300 characters");
+        if (review.length > 500) errors.push("Review can not exceed 500 characters");
         if (!rating) errors.push("Please rate your experience");
 
         setValidationErrors(errors);
@@ -42,9 +42,7 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
         }
     }
 
-
     if (!sessionUser) return null;
-
 
 
     return (

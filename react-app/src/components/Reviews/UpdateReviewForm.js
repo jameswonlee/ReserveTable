@@ -11,18 +11,16 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
 
-    console.log('review', review)
-
     const [reviewText, setReviewText] = useState(review.review);
     const [rating, setRating] = useState(review.rating);
     const [validationErrors, setValidationErrors] = useState([]);
-    console.log('reviewText', reviewText)
+
     const submitHandler = async (e) => {
         e.preventDefault();
         const errors = [];
 
         if (!reviewText) errors.push("Please tell us about your experience");
-        if (reviewText.length > 2000) errors.push("Review can not exceed 2000 characters")
+        if (reviewText.length > 500) errors.push("Review can not exceed 500 characters");
         if (!rating) errors.push("Please rate your experience");
 
         setValidationErrors(errors);
