@@ -1,13 +1,13 @@
-## 🚧🚧 This page is still under construction 🚧🚧
+<!-- ## 🚧🚧 This page is still under construction 🚧🚧 -->
 
-<br></br>
+<br>
 
 ![reservetable-logo]
 
 <br>
 
 # About
-ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http://www.opentable.com) website. ReserveTable is a platform where users go to make reservations at their local restaurants.
+ReserveTable is a fullstack application clone of the [OpenTable](http://www.opentable.com) website. ReserveTable is a platform where users go to make reservations at their favorite local restaurants.
 
 <!-- ## Live site -->
 [**https://reservetable.onrender.com**](https://reservetable.onrender.com)
@@ -19,6 +19,8 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 * [Database Schema](https://github.com/jameswonlee/airbnb-clone/wiki/Database-Schema)
 * [Features List](https://github.com/jameswonlee/airbnb-clone/wiki/Features-List)
 * [Redux State Shape](https://github.com/jameswonlee/airbnb-clone/wiki/Redux-Store-Shape)
+
+<br>
 
 # 🖥️ Tech Stack
 ### Frameworks, Platforms, & Libraries:
@@ -53,13 +55,13 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 
 - ### Log in as Demo User (desktop)
 
-![desktop-login]()
-
+<!-- ![desktop-login](/react-app/src/images/splash-page.png) -->
+![desktop-login](/react-app/src/images/splash-page.gif)
 <br>
 
-- ### Log in as Demo User (mobile)
+<!-- - ### Log in as Demo User (mobile)
 
-![mobile-login-large]()
+![mobile-login-large]() -->
 
 <br>
 
@@ -71,7 +73,7 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
     - [x] Create a new reservation
     - [x] Update a reservation
     - [x] Delete a reservation
-- [ ] Reviews
+- [x] Reviews
     - [x] Load all reviews for a restaurant
     - [x] Create a review
     - [x] Update a review
@@ -93,7 +95,7 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 -------------------------------------------------------------------
 <br>
 
-## ▶️ Getting Started
+<!-- ## ▶️ Getting Started
 1. Clone repository.
 ```
 https://github.com/jameswonlee/reservetable.git
@@ -125,7 +127,7 @@ npm install
 7. npm start to be redirected to http://localhost:3000/
  ```sh
 npm start
- ```
+ ``` -->
 
  <br>
  
