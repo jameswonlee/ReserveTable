@@ -20,6 +20,8 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 * [Features List](https://github.com/jameswonlee/airbnb-clone/wiki/Features-List)
 * [Redux State Shape](https://github.com/jameswonlee/airbnb-clone/wiki/Redux-Store-Shape)
 
+<br>
+
 # 🖥️ Tech Stack
 ### Frameworks, Platforms, & Libraries:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -53,13 +55,13 @@ ReserveTable is a fullstack application 'clone' inspired by the [OpenTable](http
 
 - ### Log in as Demo User (desktop)
 
-![desktop-login]()
-
+<!-- ![desktop-login](/react-app/src/images/splash-page.png) -->
+![desktop-login](/react-app/src/images/splash-page.gif)
 <br>
 
-- ### Log in as Demo User (mobile)
+<!-- - ### Log in as Demo User (mobile)
 
-![mobile-login-large]()
+![mobile-login-large]() -->
 
 <br>
 
