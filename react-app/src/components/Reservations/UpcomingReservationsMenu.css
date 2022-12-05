@@ -102,6 +102,7 @@
 .upcoming-restaurant-icon {
     margin-left: 3px;
 }
+
 .upcoming-restaurant-icon {
     height: 35px;
 }
@@ -137,7 +138,7 @@
 }
 
 .upcoming-reservation-button-no-pointer:hover {
-    cursor: text;
+    cursor: not-allowed;
 }
 
 .upcoming-reservation-button:hover {
