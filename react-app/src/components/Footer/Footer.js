@@ -87,12 +87,12 @@ function Footer() {
                                 </div>
                                 <div className="footer-below-other-sites">
                                     <div>
-                                        <a id="ayrbnb" className="ayrbnb-link" href="https://ayrbnb-james-lee.herokuapp.com">
+                                        <a id="ayrbnb" className="ayrbnb-link" href="https://ayrbnb-james-lee.herokuapp.com" target="_blank">
                                             https://ayrbnb-james-lee.herokuapp.com
                                         </a>
                                     </div>
                                     <div>
-                                        <a id="codebunny" className="codebunny-link" href="https://codebunny.onrender.com">
+                                        <a id="codebunny" className="codebunny-link" href="https://codebunny.onrender.com" target="_blank">
                                             https://codebunny.onrender.com
                                         </a>
                                     </div>
