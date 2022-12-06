@@ -30,7 +30,7 @@ function Reservations({ userReservationTime }) {
 
         if (!partySize) errors.push("Please tell us how many are in your party");
         if (!date) errors.push("Please select a date");
-        if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future time");
+        // if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future time");
         if (!time) errors.push("Please select a time");
 
         setValidationErrors(errors);
@@ -43,7 +43,7 @@ function Reservations({ userReservationTime }) {
                 reservation_time: dayjs(`${date} ${time}`).utc().format("YYYY-MM-DD HH:mm:ss")
             }
             const newReservation = await dispatch(createReservation(reservationData, restaurantId));
-            window.alert('Reservation successfully created!');
+            // window.alert('Reservation successfully created!');
             history.push(`/reservations/${newReservation.id}`);
         }
     }
