@@ -151,7 +151,7 @@ function AdditionalInfo({ restaurant }) {
                             Website
                         </div>
                         <div className="website-details">
-                            {restaurant.website}
+                            <a href={restaurant.website} target="_blank" className="website-details-font">{restaurant.website}</a> 
                         </div>
                     </div>
                 </div>

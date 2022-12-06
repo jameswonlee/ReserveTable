@@ -49,7 +49,7 @@
 }
 
 .get-current-location:hover {
-    cursor: not-allowed;
+    cursor: text;
 }
 
 .restaurant-cards {

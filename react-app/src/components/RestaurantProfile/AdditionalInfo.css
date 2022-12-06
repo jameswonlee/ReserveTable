@@ -137,7 +137,12 @@
 
 .website-details {
     font-weight: 300;
-    color: rgb(10, 10, 10);
+}
+
+.website-details-font {
+    color: rgb(218, 54, 68);
+    text-decoration: none;
+    font-weight: 300;
 }
 
 .phone-number-container {

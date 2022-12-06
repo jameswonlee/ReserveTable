@@ -17,10 +17,7 @@ function UpcomingReservationsMenu() {
     const sessionUser = useSelector(state => state.session.user);
     const userReservationsObj = useSelector(state => state.reservations);
     const userReservations = Object.values(userReservationsObj);
-    // userReservations.sort((reservationA, reservationB) => {
-    //     return dayjs(reservationA.reservation_time).valueOf() - dayjs(reservationB.reservation_time).valueOf()
-    // })
-
+ 
     const upcomingReservations = userReservations
         .filter(reservation => dayjs().isBefore(reservation.reservation_time))
         .sort((reservationA, reservationB) => {
