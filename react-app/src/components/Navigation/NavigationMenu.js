@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../../context/Modal';
+import { getAllUserReservations } from '../../store/reservations';
 import LoginForm from '../_auth/LoginForm';
 import SignUpForm from '../_auth/SignUpForm';
 import profileButton from '../../icons/profile-button.ico';
@@ -11,14 +12,15 @@ import magnifyingGlass from '../../icons/search-button.ico';
 import ProfileButtonMenu from './ProfileButtonMenu';
 import UpcomingReservationsMenu from '../Reservations/UpcomingReservationsMenu';
 import upcomingReservationsNotification from '../../icons/upcoming-reservation-w-notification.ico';
+import dayjs from 'dayjs';
 import './NavigationMenu.css'
-import { getAllUserReservations } from '../../store/reservations';
 
 
 function NavigationMenu() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const reservations = useSelector(state => state.reservations);
+    const allReservations = useSelector(state => Object.values(state.reservations));
+    const futureReservations = allReservations.filter(reservation => dayjs().isBefore(reservation.reservation_time));
 
     const [showSignInModal, setShowSignInModal] = useState(false);
     const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -87,7 +89,7 @@ function NavigationMenu() {
                             <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
                         )}
                         <button className="upcoming-reservations-menu-button" onClick={openReservationsMenu}>
-                            {Object.keys(reservations).length > 0
+                            {futureReservations.length > 0
                                 ?
                                 <img src={upcomingReservationsNotification} className="upcoming-reservations-notification-icon" />
                                 :
