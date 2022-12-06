@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 105px;
-    /* margin-left: calc(5% - 0px); */
-    /* margin-right: calc(5% - 0px); */
+    /* margin-left: 105px; */
+    margin-left: calc(5% - 0px);
+    margin-right: calc(5% - 0px);
 }
 
 .all-restaurants-outer-container {
@@ -15,8 +15,8 @@
 .above-restaurant-cards {
     /* margin-left: 126px; */
     /* margin-right: 126px; */
-    margin-left: 87px;
-    margin-right: 69px;
+    margin-left: 65px;
+    margin-right: 46px;
     margin-bottom: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
