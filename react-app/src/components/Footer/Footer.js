@@ -107,10 +107,10 @@ function Footer() {
                             </div>
                             <div className="footer-below-connect">
                                 <div className="footer-links">
-                                    <a id="github" className="github-link" href="https://github.com/jameswonlee">
+                                    <a id="github" className="github-link" href="https://github.com/jameswonlee" target="_blank">
                                         <i className="fa-brands fa-github fa-xl"></i>
                                     </a>
-                                    <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/">
+                                    <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/" target="_blank">
                                         <i className="fa-brands fa-linkedin fa-xl"></i>
                                         {/* <img src="https://cdn.otstatic.com/cfe/10/images/linkedin-b5ed36.svg" /> */}
                                     </a>
