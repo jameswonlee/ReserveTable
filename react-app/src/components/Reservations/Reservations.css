@@ -49,6 +49,10 @@
     color: rgb(106, 105, 105);
 }
 
+.reservation-party-size-select:hover {
+    cursor: pointer;
+}
+
 .reservation-party-size-border-bottom {
     border-bottom: solid;
     border-color: rgb(222, 221, 221);

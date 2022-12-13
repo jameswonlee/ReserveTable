@@ -8,6 +8,7 @@ const LOAD_ALL_USER_REVIEWS = '/reviews/LOAD_ALL_USER_REVIEWS'
 const ADD_REVIEW = '/reviews/ADD_REVIEW'
 const UPDATE_REVIEW = '/reviews/UPDATE_REVIEW'
 const DELETE_REVIEW = '/reviews/DELETE_REVIEW'
+const RESET_REVIEWS = '/reviews/RESET_REVIEWS'
 
 
 /* ----------------------------- Action Creators ------------------------ */
@@ -47,6 +48,12 @@ const removeReview = (review) => PageTransitionEventreturn => {
     }
 }
 
+export const resetReviews = () => {
+    return {
+        type: RESET_REVIEWS
+    }
+}
+
 
 /* ---------------------------- Thunk Action Creators ----------------------- */
 
@@ -62,12 +69,17 @@ export const getAllRestaurantReviews = (restaurantId) => async (dispatch) => {
 }
 
 export const getUserReviews = (userId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/reviews`);
+    try {
+        const response = await csrfFetch(`/api/users/${userId}/reviews`);
 
-    if (response.ok) {
-        const reviews = await response.json();
-        dispatch(loadAllUserReviews(reviews));
-        return reviews;
+        if (response.ok) {
+            const reviews = await response.json();
+            dispatch(loadAllUserReviews(reviews));
+            return reviews;
+        }
+
+    } catch (e) {
+
     }
 }
 
@@ -116,12 +128,12 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 const initialState = {};
 
 const reviewsReducer = (state = initialState, action) => {
-    let newState;
+    let newState = {};
     switch (action.type) {
         case LOAD_ALL_RESTAURANT_REVIEWS:
             newState = { ...state };
-            action.reviews.forEach(review1 => {
-                newState[review1.id] = review1
+            action.reviews.forEach(review => {
+                newState[review.id] = review
             })
             return newState;
 
@@ -145,6 +157,10 @@ const reviewsReducer = (state = initialState, action) => {
         case DELETE_REVIEW:
             newState = { ...state };
             delete newState[action.review.id];
+            return newState;
+
+        case RESET_REVIEWS:
+            newState = {};
             return newState;
 
         default:
