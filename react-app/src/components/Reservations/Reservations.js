@@ -43,7 +43,6 @@ function Reservations({ userReservationTime }) {
                 reservation_time: dayjs(`${date} ${time}`).utc().format("YYYY-MM-DD HH:mm:ss")
             }
             const newReservation = await dispatch(createReservation(reservationData, restaurantId));
-            // window.alert('Reservation successfully created!');
             history.push(`/reservations/${newReservation.id}`);
         }
     }
@@ -93,18 +92,6 @@ function Reservations({ userReservationTime }) {
                                 placeholder="Date"
                                 className="reservation-date-input" />
                         </div>
-                        {/* <div className="reservation-time-input-border">
-                            <div className="reservation-time-text">Time</div>
-                            <input
-                                type="time"
-                                onChange={e => setTime(e.target.value)}
-                                value={time}
-                                step="900"
-                                min="17:00"
-                                max="22:00"
-                                placeholder="Time"
-                                className="reservation-time-input" />
-                        </div> */}
                         <div className="reservation-time-input-border">
                             <div className="reservation-time-text">Time</div>
                             <label className="reservation-time-select-label">
