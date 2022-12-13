@@ -17,6 +17,23 @@
     font-size: 2rem;
 }
 
+.angel-list-link {
+    color: rgb(255, 255, 255);
+    height: 20px;
+}
+
+.angel-list-icon {
+    height: 70px;
+    margin-left: -20px;
+    margin-bottom: -23px;
+    color: rgb(169, 41, 41);
+    /* background-color: white; */
+}
+
+/* .fa-angellist {
+    height: 60px;
+} */
+
 .ayrbnb-link {
     text-decoration: none;
     color: rgb(222, 217, 217);
@@ -139,6 +156,7 @@
 .footer-connect-with-me-text {
     font-weight: 600;
     color: rgb(255, 255, 255);
+    margin-left: 12px;
 }
 
 .footer-below-connect {

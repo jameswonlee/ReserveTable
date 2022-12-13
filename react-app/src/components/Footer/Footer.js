@@ -1,3 +1,4 @@
+import angelList from '../../icons/angellist.ico';
 import './Footer.css';
 
 
@@ -103,7 +104,7 @@ function Footer() {
                     <div>
                         <div className="footer-connect">
                             <div className="footer-connect-with-me-text">
-                                CONNECT WITH ME!
+                                CONNECT WITH ME
                             </div>
                             <div className="footer-below-connect">
                                 <div className="footer-links">
@@ -113,6 +114,10 @@ function Footer() {
                                     <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/" target="_blank">
                                         <i className="fa-brands fa-linkedin fa-xl"></i>
                                         {/* <img src="https://cdn.otstatic.com/cfe/10/images/linkedin-b5ed36.svg" /> */}
+                                    </a>
+                                    <a id="angel-list" className="angel-list-link" href="https://angel.co/u/jameswonlee" target="_blank">
+                                        <img src={angelList} className=" f-brands angel-list-icon" />
+                                        {/* <i className="fa-brands fa-angellist angel-list-icon"></i> */}
                                     </a>
                                 </div>
                             </div>
