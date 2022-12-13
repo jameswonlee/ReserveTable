@@ -22,6 +22,8 @@
     height: 65px;
     width: 65px;
     border-radius: 4px;
+    object-fit: cover;
+
 }
 
 .modify-reservation-reservation-time {
@@ -39,7 +41,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 28px;
     height: 50px;
     padding-bottom: 20px;
 }
@@ -47,7 +49,8 @@
 .modify-reservation-top {
     border-bottom: solid;
     margin-top: 20px;
-    border-color: rgb(199, 199, 199);
+    border-color: rgb(226, 226, 226);
+    width: 605px;
 }
 
 .modify-reservation-bottom {
@@ -140,6 +143,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: -3px;
 }
 
 .modify-reservation-new-date {
@@ -149,7 +153,7 @@
 
 .modify-reservation-new-date-input {
     border-radius: 2px;
-    width: 135px;
+    width: 140px;
     height: 43px;
     border-color: rgb(199, 199, 199);
     font-size: 1.03rem;
@@ -161,17 +165,22 @@
 }
 
 .modify-reservation-new-time-input {
-    border-radius: 2px;
+    /* border-radius: 2px; */
     margin-right: 1px;
-    margin-left: -0.1px;
-    height: 43px;
+    margin-left: -0.2px;
+    height: 45.5px;
     border-left-color: white;
     border-right-color: rgb(199, 199, 199);
     border-bottom-color: rgb(199, 199, 199);
     border-top-color: rgb(199, 199, 199);
-    width: 120px;
+    width: 140px;
     font-size: 1.05rem;
     text-align: center;
+    margin-top: 12.5px;
+}
+
+.modify-reservation-time-option {
+    padding-right: 10px;
 }
 
 .modify-reservation-new-time-input:hover {
@@ -180,7 +189,7 @@
 
 .modify-reservation-new-party-size {
     height: 44.9px;
-    width: 130px;
+    width: 140px;
     margin-top: 12px;
     border-left: white;
     margin-left: -0.8px;
@@ -194,8 +203,8 @@
 }
 
 .modify-reservation-new-reservation-submit-button {
-    height: 44.9px;
-    width: 140px;
+    height: 47px;
+    width: 150px;
     margin-top: 12px;
     margin-left: 17px;
     border-radius: 4px;

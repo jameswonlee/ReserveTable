@@ -42,8 +42,6 @@ function MyDiningHistory() {
         return null;
     };
 
-    console.log('futureReservations', futureReservations)
-
     return (
         <div className="dining-dashboard-outer-container">
             <div className="dining-dashboard-name">
@@ -99,7 +97,6 @@ function MyDiningHistory() {
                             <div className="dining-dashboard-points-text-space-below">You are only 1,000 points away from a $20 reward!</div>
                             <div className="dining-dashboard-under-points-border-bottom-line"></div>
                         </div>
-
                         <div className="dining-dashboard-learn-more-rewards-container">
                             <div className="dining-dashboard-learn-more-rewards-text">
                                 Learn more about ReserveTable Rewards
@@ -113,7 +110,7 @@ function MyDiningHistory() {
                         {futureReservations.length > 0
                             ?
                             futureReservations.map(reservation => (
-                                <div className="dining-dashboard-upcoming-border">
+                                <div key={reservation.id} className="dining-dashboard-upcoming-border">
                                     <div className="dining-dashboard-upcoming-reservations-details-container" onClick={(e) => routeToReservationConfirmation(reservation.id)}>
                                         <div>
                                             <img src={reservation.restaurant.preview_img} className="dining-dashboard-restaurant-img" />

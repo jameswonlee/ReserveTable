@@ -93,7 +93,6 @@ export const createReservation = (newReservationData, restaurantId) => async (di
     if (response.ok) {
         const newReservation= await response.json();
         dispatch(addReservation(newReservation));
-        console.log('newReservation', newReservation)
         return newReservation;
     }
 }

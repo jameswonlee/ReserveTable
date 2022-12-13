@@ -79,7 +79,6 @@ function UpcomingReservationsMenu() {
                                     <div className="upcoming-reservation-reservation-time">
                                         {dayjs(nextReservation.reservation_time).format("h:mm A")}
                                     </div>
-
                                 </div>
                             </div>
                             <div>
@@ -91,7 +90,6 @@ function UpcomingReservationsMenu() {
                                         <div className="upcoming-reservation-menu-time-details">
                                             {dayjs(nextReservation.reservation_time).format("MMM D, YYYY")}
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +108,6 @@ function UpcomingReservationsMenu() {
                                 Cancel
                             </div>
                             <div className="upcoming-reservation-menu-border-line">
-
                             </div>
                         </div>
                         <div>

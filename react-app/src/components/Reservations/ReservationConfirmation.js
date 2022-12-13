@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import { getAllUserReservations } from "../../store/reservations";
+import { getUserReviews } from '../../store/reviews';
 import CancelReservation from "./CancelReservation";
 import lineBreak from '../../icons/button-line-break.ico';
 import confirmCheck from '../../icons/reservation-confirmed-icon.ico';
 import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
 import locationIcon from '../../icons/location-icon.ico';
+import numReviewsIcon from '../../icons/num-reviews.ico';
 // import lineBreak from '../../icons/line-break.png';
 import dayjs from 'dayjs';
 import './ReservationConfirmation.css';
@@ -24,6 +26,9 @@ function ReservationConfirmation() {
     const allReservations = useSelector(state => Object.values(state.reservations));
     const reservation = allReservations.filter(reservation => reservation.id === +reservationId)[0];
 
+    const userReviews = useSelector(state => state.reviews);
+    const numReviews = Object.values(userReviews).length;
+
     const [showCancelModal, setShowCancelModal] = useState(false);
 
     const openCancelModal = () => {
@@ -31,8 +36,9 @@ function ReservationConfirmation() {
     }
 
     useEffect(() => {
-        dispatch(getAllUserReservations(sessionUser.id))
-    }, [])
+        dispatch(getAllUserReservations(sessionUser?.id))
+        dispatch(getUserReviews(sessionUser?.id))
+    }, [sessionUser])
 
     if (!reservation) return null;
 
@@ -73,13 +79,9 @@ function ReservationConfirmation() {
                     <div className="modify-cancel-add-to-calendar-buttons reservation-confirm-space-to-left">
                         <span>
                             <button onClick={routeToModifyPage} className="reservation-confirm-buttons">Modify</button>
-                            &nbsp;
                             <img src={lineBreak} className="edit-reservation-line-break" />
-                            &nbsp;
                             <button onClick={openCancelModal} className="reservation-confirm-buttons">Cancel</button>
-                            &nbsp;
                             <img src={lineBreak} className="edit-reservation-line-break" />
-                            &nbsp;
                             <button className="reservation-confirm-buttons add-to-calendar">Add to calendar</button>
                         </span>
                     </div>
@@ -105,12 +107,20 @@ function ReservationConfirmation() {
                         Joined in December 2022
                     </div>
                     <div className="reservation-confirm-location-icon-city">
-                        <img src={locationIcon} className="reservation-confirm-location-icon"/>
+                        <img src={locationIcon} className="reservation-confirm-location-icon" />
                         <div className="reservation-confirm-city-text">Los Angeles</div>
                     </div>
-                    {/* <div>
-                        [number of reviews goes here]
-                    </div> */}
+                    {numReviews > 0 &&
+                        <div className="reservation-confirm-num-reviews-container">
+                            <img src={numReviewsIcon} className="reservation-confirm-num-reviews-icon" />
+                            {numReviews === 1
+                                ?
+                                <div className="reservation-confirm-num-reviews-text">{numReviews} review</div>
+                                :
+                                <div className="reservation-confirm-num-reviews-text">{numReviews} reviews</div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         </div>
