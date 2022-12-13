@@ -96,13 +96,13 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
                     <div className="preview-time-buttons-continer">
                         <div className="preview-time-buttons-div">
                             <div>
-                                <button className="preview-time-buttons 6pm" onClick={() => routeToReservations({ userReservationTime: "18:30" })}>
-                                    6:30 PM
+                                <button className="preview-time-buttons 6pm" onClick={() => routeToReservations({ userReservationTime: "18:00" })}>
+                                    6:00 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons 630pm" onClick={() => routeToReservations({ userReservationTime: "18:45" })}>
-                                    6:45 PM
+                                <button className="preview-time-buttons 630pm" onClick={() => routeToReservations({ userReservationTime: "18:30" })}>
+                                    6:30 PM
                                 </button>
                             </div>
                             <div>
