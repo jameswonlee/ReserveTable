@@ -43,6 +43,7 @@
     color: rgb(95, 95, 95);
     font-weight: 400;
     margin-left: 4px;
+    margin-top: 2px;
 }
 
 .nav-bar-location-city-text:hover {
@@ -68,7 +69,7 @@
 .down-carrot-icon {
     height: 12px;
     margin-left: 6px;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
 .down-carrot-icon:hover {
