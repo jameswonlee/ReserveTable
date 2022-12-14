@@ -57,8 +57,6 @@ function Footer() {
                                     <div>
                                         Render
                                     </div>
-                                    <div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -115,11 +113,9 @@ function Footer() {
                                     </a>
                                     <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/" target="_blank" rel="noreferrer">
                                         <i className="fa-brands fa-linkedin fa-xl"></i>
-                                        {/* <img src="https://cdn.otstatic.com/cfe/10/images/linkedin-b5ed36.svg" /> */}
                                     </a>
                                     <a id="angel-list" className="angel-list-link" href="https://angel.co/u/jameswonlee" target="_blank" rel="noreferrer">
                                         <img src={angelList} className=" f-brands angel-list-icon" alt="" />
-                                        {/* <i className="fa-brands fa-angellist angel-list-icon"></i> */}
                                     </a>
                                 </div>
                             </div>

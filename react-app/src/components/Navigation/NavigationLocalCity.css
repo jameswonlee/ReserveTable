@@ -1,0 +1,35 @@
+.under-nav {
+    height: 35px;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 27px;
+}
+
+.under-nav-line-break-icon {
+    height: 37px;
+    width: 14px;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+
+.under-nav-home {
+    color: rgb(37, 127, 158);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.under-nav-us {
+    color: rgb(45, 51, 63);
+    font-size: 0.8rem;
+    margin-left: 7px;
+    font-weight: 400;
+}
+
+.under-nav-l-a {
+    color: rgb(37, 127, 158);
+    font-size: 0.8rem;
+    margin-left: 7px;
+    font-weight: 400;
+}

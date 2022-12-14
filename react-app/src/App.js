@@ -12,6 +12,7 @@ import ModifyReservation from './components/Reservations/ModifyReservation';
 import SignUpForm from './components/_auth/SignUpForm';
 import MyDiningHistory from './components/Reservations/MyDiningHistory';
 import Footer from './components/Footer/Footer';
+import NavigationLocalCity from './components/Navigation/NavigationLocalCity';
 
 
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
@@ -49,6 +50,7 @@ function App() {
             <SignUpForm />
           </Route>
           <Route path='/' exact={true} >
+          <NavigationLocalCity/>
             <SearchBar />
             <DisplayAllRestaurants setUserReservationTime={setUserReservationTime} />
           </Route>
@@ -59,6 +61,7 @@ function App() {
           <User />
         </ProtectedRoute> */}
           <Route path='/restaurants/:restaurantId'>
+          <NavigationLocalCity/>
             <RestaurantProfile userReservationTime={userReservationTime} />
           </Route>
           <Route exact path='/reservations/:reservationId'>
