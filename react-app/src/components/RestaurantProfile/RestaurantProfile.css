@@ -74,7 +74,7 @@
     justify-content:center;
 }
 
-.restaurant-profile-description {
+.restaurant-profile-description-container {
     padding-left: 15px;
     padding-right: 15px;
     border-bottom: solid;
@@ -82,13 +82,21 @@
     padding-bottom: 10px;
     border-color: rgb(226, 226, 226);
     margin-right: 5px;
-    margin-left: 5px;
+    margin-left: 10px;
+}
+
+.restaurant-profile-description {
+    margin-left: -10px;
 }
 
 .restaurant-profile-left {
     width: 620px;
     margin-right: 50px;
     overflow: scroll;
+}
+
+.restaurant-reviews-count-text {
+    margin-left: -12px;
 }
 
 .restaurant-profile-right {
@@ -116,7 +124,7 @@
     padding-right: 15px;
     margin-top: 40px;
     margin-right: 8px;
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 .restaurant-profile-name {
@@ -162,8 +170,8 @@
 
 .additional-info-container {
     margin-top: -20px;
-    margin-left: 0px;
-    width: 300px;
+    margin-left: 5px;
+    width: 310px;
 }
 
 /* Spacing */
@@ -294,4 +302,8 @@
     font-size: 0.9rem;
     font-weight: 500;
     border-color:rgb(216, 217, 219)
+}
+
+.restaurant-profile-star {
+    font-size: 1.2rem;
 }

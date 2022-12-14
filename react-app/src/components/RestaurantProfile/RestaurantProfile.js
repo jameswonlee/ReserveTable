@@ -87,22 +87,22 @@ function RestaurantProfile({ userReservationTime }) {
                                         ?
                                         <span>{averageRating().toFixed(1) >= 0.1 &&
                                             averageRating().toFixed(1) < 1.9 &&
-                                            <span className="red-star card-star">★ <span className="gray-star card-star">★ ★ ★ ★</span></span>}
+                                            <span className="red-star restaurant-profile-star">★ <span className="gray-star restaurant-profile-star">★ ★ ★ ★</span></span>}
                                             {averageRating().toFixed(1) >= 1.9 &&
                                                 averageRating().toFixed(1) < 2.9 &&
-                                                <span className="red-star card-star">★ ★ <span className="gray-star card-star">★ ★ ★</span></span>}
+                                                <span className="red-star restaurant-profile-star">★ ★ <span className="gray-star restaurant-profile-star">★ ★ ★</span></span>}
                                             {averageRating().toFixed(1) >= 2.9 &&
                                                 averageRating().toFixed(1) < 3.9 &&
-                                                <span className="red-star card-star">★ ★ ★ <span className="gray-star card-star">★ ★</span></span>}
+                                                <span className="red-star restaurant-profile-star">★ ★ ★ <span className="gray-star restaurant-profile-star">★ ★</span></span>}
                                             {averageRating().toFixed(1) >= 3.9 &&
                                                 averageRating().toFixed(1) < 4.9 &&
-                                                <span className="red-star card-star">★ ★ ★ ★ <span className="gray-star card-star">★</span></span>}
+                                                <span className="red-star restaurant-profile-star">★ ★ ★ ★ <span className="gray-star restaurant-profile-star">★</span></span>}
                                             {averageRating().toFixed(1) >= 4.9 &&
-                                                <span className="red-star card-star">★ ★ ★ ★ ★ </span>}
+                                                <span className="red-star restaurant-profile-star">★ ★ ★ ★ ★ </span>}
                                             <span className="space-to-left-25">{averageRating().toFixed(1)}</span>
                                         </span>
                                         :
-                                        <span className="gray-star card-star">★ ★ ★ ★ ★<span className="preview-num-reviews">
+                                        <span className="gray-star restaurant-profile-star">★ ★ ★ ★ ★<span className="preview-num-reviews">
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Reviews</span>
                                         </span>
                                     }
@@ -152,11 +152,11 @@ function RestaurantProfile({ userReservationTime }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="restaurant-profile-description">
-                            <p>{restaurant.description}</p>
+                        <div className="restaurant-profile-description-container">
+                            <p className="restaurant-profile-description">{restaurant.description}</p>
                         </div>
                         <div className="restaurant-reviews-container">
-                            <h2>What {reviews.length} people are saying</h2>
+                            <h2 className="restaurant-reviews-count-text">What {reviews.length} people are saying</h2>
                             <Reviews restaurant={restaurant} />
                         </div>
                     </div>
