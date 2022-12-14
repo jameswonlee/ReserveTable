@@ -3,6 +3,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: solid;
+    border-width: thin;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-color: rgb(236, 235, 235);
 }
 
 .logo {
@@ -13,12 +18,35 @@
     margin-top: 5px;
 }
 
+.nav-bar-logo-location-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-bar-logo {
+    border-right: solid;
+    border-color: rgb(236, 235, 235);
+    border-width: thin;
+}
+
 .above-nav {
     height: 28px;
     background-color: rgb(241, 242, 244);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.nav-bar-location-city-text {
+    font-size: 1.01rem;
+    color: rgb(95, 95, 95);
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.nav-bar-location-city-text:hover {
+    cursor: not-allowed;
 }
 
 .above-nav-img {
@@ -31,36 +59,18 @@
     cursor: text;
 }
 
-.location-button {
-    height: 26px;
-    width: 125px;
-    margin-bottom: 3px;
-}
-
-.location-line-break {
-    margin-right: 13px;
-    height: 30px;
-}
-
-.location-button:hover {
-    cursor: not-allowed
-}
-
-.under-nav {
-    height: 35px;
-    border-top: solid;
-    border-color: rgb(235, 235, 235);
-    margin-bottom: 1px;
-}
-
-.under-nav-image {
-    height: 33px;
+.location-icon {
+    height: 27px;
     margin-left: 12px;
+    margin-top: 3px;
 }
 
-.under-nav-image:hover {
-    cursor: text;
+.down-carrot-icon {
+    height: 12px;
+    margin-left: 6px;
+    margin-top: 6px;
 }
 
-
-
+.down-carrot-icon:hover {
+    cursor: not-allowed;
+}
