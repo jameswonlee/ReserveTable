@@ -2,7 +2,6 @@
     width: 100%;
     height: 460px;
     object-fit: cover;
-    /* z-index: 0; */
 }
 
 .overflow-into-image {
@@ -11,37 +10,65 @@
     justify-content: space-around;
     margin-top: -45px;
     margin-left: 2.5px;
-    /* z-index: 3; */
     position: sticky;
+}
+
+.restaurant-profile-details-tab-and-border {
+    display: flex;
+    flex-direction: column;
+    margin-left: -373px;
 }
 
 .restaurant-profile-details-tabs {
     background-color: white;
-    border-bottom: solid;
-    border-color: rgb(227, 227, 227);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    position: sticky;
+    width: 620px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(111, 115, 123);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-top: -9.5px;
 }
 
 .restaurant-profile-details-tabs:hover {
     cursor: text;
 }
 
+.restaurant-profile-details-tab-border-bottom {
+    border-bottom: solid;
+    border-color: rgb(226, 226, 226);
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.restaurant-profile-details-tab-underscore {
+    width: 58px;
+    border-bottom: solid;
+    border-color: rgb(209, 4, 4);
+    margin-left: 3px;
+    position: absolute;
+}
+
 .restaurant-profile-upper {
     object-fit: cover;
     height: 460px;
 }
+
 .restaurant-profile-lower {
-    height: 1500px;
-    /* min-height: 800px; */
-    /* max-height: 1800px; */
-    /* height: 1200px; */
-    overflow: scroll;
+    height: 1200px;
+    margin-left: 30px;
 }
 
 .restaurant-profile-details-container {
     width: 100%;
-    /* height: 100%; */
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -54,11 +81,14 @@
     border-width: thin;
     padding-bottom: 10px;
     border-color: rgb(226, 226, 226);
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .restaurant-profile-left {
-    width: 650px;
+    width: 620px;
     margin-right: 50px;
+    overflow: scroll;
 }
 
 .restaurant-profile-right {
@@ -67,28 +97,12 @@
     margin-top: 350px;
 }
 
-.restaurant-profile-details-tabs {
-    position: sticky;
-    width: 652.5px;
-    height: 50px;
-    margin-left: -403px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    position: sticky;
-    color: rgb(111, 115, 123);
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-top: -10px;
-}
-
 .reservations-component {
     width: 320px;
     height: 340px;
     position: absolute;
-    margin-top: -10.5px;
-    margin-right: -705px;
+    margin-top: -10px;
+    margin-right: -675px;
     background-color: white;
     border-radius: 4px;
     box-shadow: 1px 1px 3px rgb(202, 202, 202);
@@ -101,6 +115,8 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 40px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .restaurant-profile-name {
@@ -108,15 +124,14 @@
     font-weight: 700;
     color: #2d333f;
     margin-left: 15px;
+    margin-right: 15px;
     margin-bottom: 5px;
-    /* Do I need this?? */
     line-height: 3.5rem;
     border-bottom: solid;
     border-color: rgb(216, 217, 219);
 }
 
 .restaurant-profile-general-info {
-    /* border-top: solid; */
     border-color: rgb(224, 224, 224);
     border-width: thin;
     height: 90px;
@@ -147,7 +162,7 @@
 
 .additional-info-container {
     margin-top: -20px;
-    margin-left: 30px;
+    margin-left: 0px;
     width: 300px;
 }
 
@@ -280,5 +295,3 @@
     font-weight: 500;
     border-color:rgb(216, 217, 219)
 }
-
-

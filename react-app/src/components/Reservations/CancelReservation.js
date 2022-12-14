@@ -20,7 +20,7 @@ function CancelReservation({ reservation, setShowCancelModal }) {
 
     return (
         <div>
-            <img src={x} className="cancel-reservation-modal-x" onClick={() => setShowCancelModal(false)} />
+            <img src={x} className="cancel-reservation-modal-x" alt="" onClick={() => setShowCancelModal(false)} />
             <div className="cancel-reservation-modal-container">
                 <div className="cancellation-heading">
                     Are you sure you want to cancel this reservation?
@@ -31,14 +31,14 @@ function CancelReservation({ reservation, setShowCancelModal }) {
                 <div className="cancel-reservation-modal-time">
                     <span>
                         <span className="reservation-cancellation-person-icon-container">
-                            <img src={personIcon} className="reservation-cancellation-person-icon" />
+                            <img src={personIcon} className="reservation-cancellation-person-icon" alt=""/>
                         </span>
                         <span>
                             {reservation.party_size} (Standard seating)
                         </span>
                         &nbsp;
                         <span>
-                            <img src={upcomingReservationsIcon} className="reservation-cancellation-upcoming-reservations-icon" />
+                            <img src={upcomingReservationsIcon} className="reservation-cancellation-upcoming-reservations-icon" alt=""/>
                         </span>
                         <span>
                             {dayjs(reservation.reservation_time).format("ddd, MMM D [at] h:mm A")}

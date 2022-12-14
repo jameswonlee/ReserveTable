@@ -88,12 +88,12 @@ function Footer() {
                                 </div>
                                 <div className="footer-below-other-sites">
                                     <div>
-                                        <a id="ayrbnb" className="ayrbnb-link" href="https://ayrbnb-james-lee.herokuapp.com" target="_blank">
+                                        <a id="ayrbnb" className="ayrbnb-link" href="https://ayrbnb-james-lee.herokuapp.com" target="_blank" rel="noreferrer">
                                             https://ayrbnb-james-lee.herokuapp.com
                                         </a>
                                     </div>
                                     <div>
-                                        <a id="codebunny" className="codebunny-link" href="https://codebunny.onrender.com" target="_blank">
+                                        <a id="codebunny" className="codebunny-link" href="https://codebunny.onrender.com" target="_blank" rel="noreferrer">
                                             https://codebunny.onrender.com
                                         </a>
                                     </div>
@@ -108,15 +108,15 @@ function Footer() {
                             </div>
                             <div className="footer-below-connect">
                                 <div className="footer-links">
-                                    <a id="github" className="github-link" href="https://github.com/jameswonlee" target="_blank">
+                                    <a id="github" className="github-link" href="https://github.com/jameswonlee" target="_blank" rel="noreferrer">
                                         <i className="fa-brands fa-github fa-xl"></i>
                                     </a>
-                                    <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/" target="_blank">
+                                    <a id="linkedin" className="linkedin-link" href="https://www.linkedin.com/in/jameswonlee/" target="_blank" rel="noreferrer">
                                         <i className="fa-brands fa-linkedin fa-xl"></i>
                                         {/* <img src="https://cdn.otstatic.com/cfe/10/images/linkedin-b5ed36.svg" /> */}
                                     </a>
-                                    <a id="angel-list" className="angel-list-link" href="https://angel.co/u/jameswonlee" target="_blank">
-                                        <img src={angelList} className=" f-brands angel-list-icon" />
+                                    <a id="angel-list" className="angel-list-link" href="https://angel.co/u/jameswonlee" target="_blank" rel="noreferrer">
+                                        <img src={angelList} className=" f-brands angel-list-icon" alt="" />
                                         {/* <i className="fa-brands fa-angellist angel-list-icon"></i> */}
                                     </a>
                                 </div>

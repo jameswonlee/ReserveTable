@@ -17,7 +17,14 @@ function RestaurantProfile({ userReservationTime }) {
     const restaurant = useSelector(state => state.restaurants[restaurantId]);
 
     useEffect(() => {
-        dispatch(getOneRestaurant(restaurantId))
+        dispatch(getOneRestaurant(restaurantId));
+
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: 'smooth'
+          });
+
     }, [restaurantId])
 
     if (!restaurant) return null;
@@ -33,6 +40,7 @@ function RestaurantProfile({ userReservationTime }) {
         return sum / reviews.length;
     }
 
+   
 
 
     return (
@@ -45,16 +53,22 @@ function RestaurantProfile({ userReservationTime }) {
                             e.target.src = "https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
                         }} />
                     <div className="overflow-into-image">
-                        <div className="restaurant-profile-details-tabs">
-                            <div className="space-to-left-11">Overview</div>
-                            <div className="space-to-left-12">Experiences</div>
-                            <div className="space-to-left-12">Popular dishes</div>
-                            <div className="space-to-left-12">Photos</div>
-                            <div className="space-to-left-12">Menu</div>
-                            <div className="space-to-left-12">Reviews</div>
+                        <div className="restaurant-profile-details-tab-and-border">
+                            <div className="restaurant-profile-details-tabs">
+                                <div className="space-to-left-11">Overview</div>
+                                <div className="space-to-left-12">Experiences</div>
+                                {/* <div className="space-to-left-12">Offers</div> */}
+                                <div className="space-to-left-12">Popular dishes</div>
+                                <div className="space-to-left-12">Photos</div>
+                                <div className="space-to-left-12">Menu</div>
+                                <div className="space-to-left-12">Reviews</div>
+                            </div>
+                            <div className="restaurant-profile-details-tab-border-bottom">
+                                <div className="restaurant-profile-details-tab-underscore"></div>
+                            </div>
                         </div>
                         <div className="reservations-component">
-                            <Reservations userReservationTime={userReservationTime}/>
+                            <Reservations userReservationTime={userReservationTime} />
                         </div>
                     </div>
                 </div>

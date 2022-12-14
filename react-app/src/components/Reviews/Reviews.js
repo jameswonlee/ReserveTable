@@ -36,13 +36,13 @@ function Reviews({ restaurant }) {
     }
 
     // if (!sessionUser) return null;
-    
-    
+
+
     const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
     const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
     const hasPreviousReview = allReviews.some(review => review.user_id === sessionUser?.id);
     // const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
-    
+
     const shouldShowReviewButton = (!hasPreviousReview);
 
 
@@ -72,7 +72,6 @@ function Reviews({ restaurant }) {
                                     <div className="reviewer-name">{review.user.first_name}
                                         {review.user.last_name.slice(0, 1)}
                                     </div>
-
                                 </div>
                                 <div>
                                     {review.user_id === sessionUser?.id &&
@@ -101,6 +100,18 @@ function Reviews({ restaurant }) {
                             )}
                         </div>
                         <div className="review-container-right">
+                            <div className="review-rating-stars">
+                                {review.rating === 1 &&
+                                    <span className="red-star review-star">★ <span className="gray-star review-star">★ ★ ★ ★</span></span>}
+                                {review.rating === 2 &&
+                                    <span className="red-star review-star">★ ★ <span className="gray-star review-star">★ ★ ★</span></span>}
+                                {review.rating === 3 &&
+                                    <span className="red-star review-star">★ ★ ★ <span className="gray-star review-star">★ ★</span></span>}
+                                {review.rating === 4 &&
+                                    <span className="red-star review-star">★ ★ ★ ★ <span className="gray-star review-star">★</span></span>}
+                                {review.rating === 5 &&
+                                    <span className="red-star review-star">★ ★ ★ ★ ★ </span>}
+                            </div>
                             <div key={review.id} className="review">
                                 {review.review}
                             </div>

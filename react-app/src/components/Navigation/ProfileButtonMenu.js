@@ -40,7 +40,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                     </div>
                 </div>
                 <div className="points-graph">
-                    <img src={pointsGraph} className="points-graph-icon"/>
+                    <img src={pointsGraph} className="points-graph-icon" alt=""/>
                 </div>
                 <div className="learn-about-points">Learn more about points</div>
             </div>

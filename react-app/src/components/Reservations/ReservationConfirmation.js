@@ -51,6 +51,12 @@ function ReservationConfirmation() {
         return null;
     };
 
+    window.scrollTo({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+
 
     return (
         <div className="reservation-details-outer-container">
