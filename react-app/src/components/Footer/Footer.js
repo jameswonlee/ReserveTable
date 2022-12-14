@@ -16,19 +16,22 @@ function Footer() {
                                 </div>
                                 <div className="footer-below-tech-stack">
                                     <div>
-                                        React
-                                    </div>
-                                    <div>
-                                        Redux
-                                    </div>
-                                    <div>
                                         JavaScript
                                     </div>
                                     <div>
                                         Python
                                     </div>
                                     <div>
+                                        React
+                                    </div>
+                                    <div>
+                                        Redux
+                                    </div>
+                                    <div>
                                         Flask
+                                    </div>
+                                    <div>
+                                        SQLAlchemy
                                     </div>
                                     <div>
                                         HTML5
@@ -46,16 +49,15 @@ function Footer() {
                                 </div>
                                 <div className="footer-below-hosting">
                                     <div>
-                                        Render
-                                    </div>
-                                    <div>
-                                        Postgres
+                                        PostgreSQL
                                     </div>
                                     <div>
                                         SQLite
                                     </div>
                                     <div>
-
+                                        Render
+                                    </div>
+                                    <div>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +106,7 @@ function Footer() {
                     <div>
                         <div className="footer-connect">
                             <div className="footer-connect-with-me-text">
-                                CONNECT WITH ME
+                                LET'S CONNECT!
                             </div>
                             <div className="footer-below-connect">
                                 <div className="footer-links">
@@ -135,7 +137,7 @@ function Footer() {
                     <div className="footer-copyright">
                         Copyright © 2022 ReserveTable, Inc, an
                         <a id="opentable" className="opentable-link" href="https://www.opentable.com">
-                        &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
+                            &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
                         </a>
                         clone by <span className="footer-name-text">James Lee</span>, Los Angeles CA 90048 - All rights reserved.
                     </div>
