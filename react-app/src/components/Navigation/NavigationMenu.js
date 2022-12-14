@@ -72,7 +72,7 @@ function NavigationMenu() {
         if (sessionUser) {
             dispatch(getAllUserReservations(sessionUser.id));
         }
-    }, [sessionUser])
+    }, [dispatch, sessionUser])
 
 
 
@@ -83,7 +83,7 @@ function NavigationMenu() {
                     ?
                     <div className="nav-bar-menu-items">
                         <button className="profile-button" onClick={openMenu}>
-                            <img src={profileButton} className="profile-button-icon" />
+                            <img src={profileButton} className="profile-button-icon" alt=""/>
                         </button>
                         {showMenu && (
                             <ProfileButtonMenu setShowSignInModal={setShowSignInModal} />
@@ -91,17 +91,17 @@ function NavigationMenu() {
                         <button className="upcoming-reservations-menu-button" onClick={openReservationsMenu}>
                             {futureReservations.length > 0
                                 ?
-                                <img src={upcomingReservationsNotification} className="upcoming-reservations-notification-icon" />
+                                <img src={upcomingReservationsNotification} alt="" className="upcoming-reservations-notification-icon" />
                                 :
-                                <img src={upcomingReservations} className="upcoming-reservations-icon" />
+                                <img src={upcomingReservations} alt="" className="upcoming-reservations-icon" />
                             }
                         </button>
                             {showReservationsMenu && (
                                 <UpcomingReservationsMenu />
                             )}
-                        <img src={notifications} className="notifications-icon" />
-                        <img src={lineBreak} className="line-break" />
-                        <img src={magnifyingGlass} className="logged-in-search-button" />
+                        <img src={notifications} className="notifications-icon" alt=""/>
+                        <img src={lineBreak} className="line-break" alt=""/>
+                        <img src={magnifyingGlass} className="logged-in-search-button" alt=""/>
                     </div>
                     :
                     <div className="sign-in-menu-items">
@@ -124,7 +124,7 @@ function NavigationMenu() {
                             </button>
                         </div>
                         <div>
-                            <img src={magnifyingGlass} className="logged-out-search-button" />
+                            <img src={magnifyingGlass} className="logged-out-search-button" alt=""/>
                         </div>
                     </div>
             }

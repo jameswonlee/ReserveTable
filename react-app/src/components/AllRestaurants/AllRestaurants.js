@@ -11,7 +11,7 @@ function DisplayAllRestaurants({ setUserReservationTime }) {
 
     useEffect(() => {
         dispatch(getAllRestaurants())
-    }, [])
+    }, [dispatch])
 
     const allRestaurants = useSelector(state => Object.values(state.restaurants));
 
@@ -20,7 +20,7 @@ function DisplayAllRestaurants({ setUserReservationTime }) {
             <div className="all-restaurants-container">
                 <div className="above-restaurant-cards">
                     <div className="verify-city"><p>It looks like you're in West Hollywood. Not correct?</p></div>
-                    <div><img src={getCurrentLocation} className="current-location-arrow" /></div>
+                    <div><img src={getCurrentLocation} className="current-location-arrow" alt=""/></div>
                     <div className="get-current-location">Get current location</div>
                 </div>
                 <div className="card-wrapper">

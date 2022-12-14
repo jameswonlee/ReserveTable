@@ -31,7 +31,7 @@ function MyDiningHistory() {
 
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser?.id));
-    }, []);
+    }, [dispatch, sessionUser?.id]);
 
     const routeToReservationConfirmation = (reservationId) => {
         history.push(`/reservations/${reservationId}`)
@@ -166,7 +166,7 @@ function MyDiningHistory() {
                         {pastReservations.length > 0
                             ?
                             pastReservations.map(reservation => (
-                                <div className="dining-dashboard-past-border">
+                                <div key={reservation.id} className="dining-dashboard-past-border">
                                     <div className="dining-dashboard-past-reservations-details-container"
                                         // onClick={(e) => routeToReservationConfirmation(reservation.id)}
                                     >

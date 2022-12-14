@@ -1,7 +1,7 @@
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { changeReservation, getAllUserReservations, getOneReservation } from "../../store/reservations";
+import { changeReservation, getAllUserReservations } from "../../store/reservations";
 import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
 import clockIcon from '../../icons/clock-icon.ico';
@@ -19,9 +19,9 @@ function ModifyReservation() {
     const sessionUser = useSelector(state => state.session.user)
     const reservationsData = useSelector(state => Object.values(state.reservations));
     const reservation = reservationsData.filter(reservation => reservation.id == reservationId)[0];
-    const reservationTime = dayjs(reservation?.reservation_time).format("ddd, MMMM DD h:m a");
+    // const reservationTime = dayjs(reservation?.reservation_time).format("ddd, MMMM DD h:m a");
 
-    const previousDate = new Date(reservation?.reservation_time);
+    // const previousDate = new Date(reservation?.reservation_time);
 
     const modifyDate = dayjs(reservation?.reservation_time).format("YYYY-MM-DD");
     const modifyTime = dayjs(reservation?.reservation_time).format("HH:mm")
@@ -51,7 +51,6 @@ function ModifyReservation() {
 
             const updatedReservation = await dispatch(changeReservation(newReservationDetails, reservationId));
             if (updatedReservation) {
-                window.alert("Reservation successfully updated!");
                 history.push(`/reservations/${reservationId}`)
             }
         }
@@ -59,14 +58,14 @@ function ModifyReservation() {
 
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser?.id))
-    }, [sessionUser])
+    }, [dispatch, sessionUser])
 
 
     useEffect(() => {
         setDate(modifyDate);
         setTime(modifyTime);
         setPartySize(reservation?.party_size);
-    }, [reservation])
+    }, [modifyDate, modifyTime, reservation])
 
     if (!sessionUser) {
         history.replace(`/`);
@@ -81,7 +80,7 @@ function ModifyReservation() {
             <div className="modify-reservation-header">Your current reservation</div>
             <div className="modify-reservation-image-and-details">
                 <div className="modify-reservation-restaurant-image">
-                    <img src={reservation.restaurant.preview_img} className="modify-reservation-preview-image" />
+                    <img src={reservation.restaurant.preview_img} className="modify-reservation-preview-image" alt=""/>
                 </div>
                 <div className="modify-reservation-name-time">
                     <div className="modify-reservation-restaurant-name">
@@ -92,19 +91,19 @@ function ModifyReservation() {
                     <div className="modify-reservation-reservation-time-container">
                         <span className="modify-reservation-reservation-time">
                             <div>
-                                <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" />
+                                <img src={upcomingReservationIcon} className="modify-reservation-upcoming-reservations-icon" alt=""/>
                             </div>
                             <div className="modify-reservation-current-reservation-date">
                                 {dayjs(reservation.reservation_time).format("ddd, MMM D")}
                             </div>
                             <div className="modify-reservation-reservation-clock-icon-container">
-                                <img src={clockIcon} className="modify-reservation-clock-icon" />
+                                <img src={clockIcon} className="modify-reservation-clock-icon" alt=""/>
                             </div>
                             <div className="modify-reservation-current-reservation-time">
                                 {dayjs(reservation.reservation_time).format("h:mm A")}
                             </div>
                             <div className="modify-reservation-person-icon-container">
-                                <img src={personIcon} className="modify-reservation-person-icon" />
+                                <img src={personIcon} className="modify-reservation-person-icon" alt=""/>
                             </div>
                             <div className="modify-reservation-current-party-size">
                                 {reservation.party_size} people (Standard seating)

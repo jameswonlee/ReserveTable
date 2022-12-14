@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import NavigationMenu from './NavigationMenu'
 
@@ -8,7 +8,6 @@ import locationButton from '../../icons/location-button-la.ico';
 import locationLineBreak from '../../icons/location-line-break.png';
 import navCity from '../../icons/home-us-la.png';
 import './NavBar.css';
-import LogoutButton from '../_auth/LogoutButton';
 
 
 const NavBar = ({ loaded }) => {
@@ -16,21 +15,21 @@ const NavBar = ({ loaded }) => {
   return (
     <div className="navigation">
       <div className="above-nav">
-        <img src={aboveNav} className="above-nav-img"></img>
+        <img src={aboveNav} className="above-nav-img" alt="" ></img>
       </div>
       <div className="nav-bar">
         <div>
           <NavLink to="/" exact={true} className="nav-link">
-            <img src={logo} className="logo"></img>
+            <img src={logo} className="logo" alt="" />
           </NavLink>
-          <img src={locationLineBreak} className="location-line-break" />
-          <img src={locationButton} className="location-button" />
+          <img src={locationLineBreak} className="location-line-break" alt=""/>
+          <img src={locationButton} className="location-button" alt=""/>
         </div>
         {loaded &&
           <NavigationMenu />}
       </div>
       <div className="under-nav">
-        <img src={navCity} className="under-nav-image" />
+        <img src={navCity} className="under-nav-image" alt=""/>
       </div>
     </div>
   );
@@ -39,13 +38,4 @@ const NavBar = ({ loaded }) => {
 export default NavBar;
 
 
-{/* <div>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </div> */}
+

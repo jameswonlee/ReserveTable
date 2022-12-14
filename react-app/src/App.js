@@ -9,7 +9,6 @@ import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';
 import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile';
 import ReservationConfirmation from './components/Reservations/ReservationConfirmation';
 import ModifyReservation from './components/Reservations/ModifyReservation';
-import Reservations from './components/Reservations/Reservations';
 import SignUpForm from './components/_auth/SignUpForm';
 import MyDiningHistory from './components/Reservations/MyDiningHistory';
 import Footer from './components/Footer/Footer';
