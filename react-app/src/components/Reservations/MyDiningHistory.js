@@ -155,20 +155,18 @@ function MyDiningHistory() {
                                     You have no upcoming reservations
                                 </div>
                             </div>
-
                         }
                     </div>
                     <div className="dining-dashboard-past-reservations-container">
                         <div className="dining-dashboard-past-header">
                             <h1>Past reservations</h1>
                         </div>
-
                         {pastReservations.length > 0
                             ?
                             pastReservations.map(reservation => (
                                 <div key={reservation.id} className="dining-dashboard-past-border">
                                     <div className="dining-dashboard-past-reservations-details-container"
-                                        // onClick={(e) => routeToReservationConfirmation(reservation.id)}
+                                        onClick={(e) => routeToReservationConfirmation(reservation.id)}
                                     >
                                         <div>
                                             <img src={reservation.restaurant.preview_img} className="dining-dashboard-restaurant-img" />

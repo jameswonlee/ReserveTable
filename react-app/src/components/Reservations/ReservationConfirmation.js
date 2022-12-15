@@ -11,6 +11,7 @@ import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
 import locationIcon from '../../icons/location-icon.ico';
 import numReviewsIcon from '../../icons/num-reviews.ico';
+import reservationCompletedIcon from '../../icons/reservation-completed-red-icon.ico';
 // import lineBreak from '../../icons/line-break.png';
 import dayjs from 'dayjs';
 import './ReservationConfirmation.css';
@@ -46,6 +47,10 @@ function ReservationConfirmation() {
         history.push(`/reservations/${reservationId}/modify`)
     }
 
+    const routeToRestaurant = () => {
+        history.push(`/restaurants/${reservation.restaurant.id}`)
+    }
+
     if (!sessionUser) {
         history.replace('/');
         return null;
@@ -55,50 +60,80 @@ function ReservationConfirmation() {
         top: 100,
         left: 100,
         behavior: 'smooth'
-      });
+    });
 
 
     return (
         <div className="reservation-details-outer-container">
-            <div className="reservation-confirmation-details-left">
-                <div className="reservation-restaurant-image">
-                    <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img" />
+            {dayjs(reservation.reservation_time) > dayjs()
+                ?
+                <div className="reservation-confirmation-details-left">
+                    <div className="reservation-restaurant-image">
+                        <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img" />
+                    </div>
+                    <div className="reservation-restaurant-name-options">
+                        <div className="reservation-confirm-name-text">
+                            {reservation.restaurant.name}
+                        </div>
+                        <div className="reservaton-confirm-check-container">
+                            <span>
+                                <img src={confirmCheck} className="reservation-confirm-check-mark" />
+                                <span className="reservation-confirm-confirmed-text">Reservation confirmed</span>
+                            </span>
+                        </div>
+                        <div className="reservation-confirm-party-size-time-container">
+                            <img src={personIcon} className="reservation-confirm-person-icon" />
+                            &nbsp;&nbsp;
+                            <div className="reservation-confirm-party-size-text">{reservation.party_size} (Standard seating)</div>
+                            &nbsp;&nbsp;
+                            <img src={upcomingReservationIcon} className="reservation-confirm-upcoming-icon" />
+                            <div className="reservation-confirmation-reservation-date-time">{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
+                        </div>
+                        <div className="modify-cancel-add-to-calendar-buttons reservation-confirm-space-to-left">
+                            <span>
+                                <button onClick={routeToModifyPage} className="reservation-confirm-buttons">Modify</button>
+                                <img src={lineBreak} className="edit-reservation-line-break" />
+                                <button onClick={openCancelModal} className="reservation-confirm-buttons">Cancel</button>
+                                <img src={lineBreak} className="edit-reservation-line-break" />
+                                <button className="reservation-confirm-buttons add-to-calendar">Add to calendar</button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div className="reservation-restaurant-name-options">
-                    <div className="reservation-confirm-name-text">
-                        {reservation.restaurant.name}
+                :
+                <div className="reservation-confirmation-details-left">
+                    <div className="reservation-restaurant-image">
+                        <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img" />
                     </div>
-                    <div className="reservaton-confirm-check-container">
-                        <span>
-                            <img src={confirmCheck} className="reservation-confirm-check-mark" />
-                            <span className="reservation-confirm-confirmed-text">Reservation confirmed</span>
-                        </span>
+                    <div className="reservation-restaurant-name-options">
+                        <div className="reservation-confirm-past-name-text">
+                            {reservation.restaurant.name}
+                        </div>
+                        <div className="reservaton-confirm-check-container">
+                            <span>
+                                <img src={reservationCompletedIcon} className="reservation-confirm-check-mark" />
+                                <span className="reservation-confirm-confirmed-text">Reservation completed</span>
+                            </span>
+                        </div>
+                        <div className="reservation-confirm-past-party-size-time-container">
+                            <img src={personIcon} className="reservation-confirm-person-icon" />
+                            &nbsp;&nbsp;
+                            <div className="reservation-confirm-party-size-text">{reservation.party_size} (Standard seating)</div>
+                            &nbsp;&nbsp;
+                            <img src={upcomingReservationIcon} className="reservation-confirm-upcoming-icon" />
+                            <div className="reservation-confirmation-reservation-date-time">{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
+                        </div>
                     </div>
-                    <div className="reservation-confirm-party-size-time-container">
-                        <img src={personIcon} className="reservation-confirm-person-icon" />
-                        &nbsp;&nbsp;
-                        <div className="reservation-confirm-party-size-text">{reservation.party_size} (Standard seating)</div>
-                        &nbsp;&nbsp;
-                        <img src={upcomingReservationIcon} className="reservation-confirm-upcoming-icon" />
-                        <div className="reservation-confirmation-reservation-date-time">{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
-                    </div>
-                    <div className="modify-cancel-add-to-calendar-buttons reservation-confirm-space-to-left">
-                        <span>
-                            <button onClick={routeToModifyPage} className="reservation-confirm-buttons">Modify</button>
-                            <img src={lineBreak} className="edit-reservation-line-break" />
-                            <button onClick={openCancelModal} className="reservation-confirm-buttons">Cancel</button>
-                            <img src={lineBreak} className="edit-reservation-line-break" />
-                            <button className="reservation-confirm-buttons add-to-calendar">Add to calendar</button>
-                        </span>
+                    <div className="reservation-confirm-past-book-again-button-container">
+                        <button className="reservation-confirm-past-book-again-button" onClick={routeToRestaurant}>Book again</button>
                     </div>
                 </div>
-            </div>
+            }
             {showCancelModal &&
                 <Modal onClose={() => setShowCancelModal(false)}>
                     <CancelReservation reservation={reservation} setShowCancelModal={setShowCancelModal} />
                 </Modal>
             }
-
             <div className="reservation-confirmation-details-right">
                 <div className="user-info-details-container">
                     <div className="reservation-confirmation-person-name">
