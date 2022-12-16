@@ -103,6 +103,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             onChange={updateUsername}
             value={username}
             placeholder="Username"
+            className="sign-up-input"
           ></input>
         </div>
         <div>
@@ -113,6 +114,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             onChange={updateEmail}
             value={email}
             placeholder="Email"
+            className="sign-up-input"
           ></input>
         </div>
         <div>
@@ -123,6 +125,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             onChange={updateFirstName}
             value={firstName}
             placeholder="First name"
+            className="sign-up-input"
           ></input>
         </div>
         <div>
@@ -133,6 +136,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             onChange={updateLastName}
             value={lastName}
             placeholder="Last name"
+            className="sign-up-input"
           ></input>
         </div>
         <div>
@@ -143,6 +147,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             onChange={updatePassword}
             value={password}
             placeholder="Password"
+            className="sign-up-input"
           ></input>
         </div>
         <div>
@@ -153,6 +158,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             onChange={updateRepeatPassword}
             value={repeatPassword}
             placeholder="Confirm password"
+            className="sign-up-input"
           // required={true}
           ></input>
         </div>

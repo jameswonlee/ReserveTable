@@ -1,14 +1,185 @@
 .search-bar-container {
     height: 250px;
-    /* background: linear-gradient(.25turn, rgb(20, 33, 75), 50%, rgb(100, 109, 136)); */
-    background: linear-gradient(.647turn,#1a0a47cc,#0d1b4599 .01%,#0d1b45cc 51.04%,#0d1b45 99.1%);
+    background: linear-gradient(.25turn, rgb(20, 33, 75), 50%, rgb(100, 109, 136));
+    /* background: linear-gradient(.647turn,#1a0a47cc,#0d1b4599 .01%,#0d1b45cc 51.04%,#0d1b45 99.1%); */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .search-bar-heading {
-    color: white;
-    font-size: 1.56rem;
-    margin-bottom: 60px;
+    color: #fff;
+    font-size: 1.52rem;
+}
+
+.search-bar-lower-container {
+    margin-bottom: 35px;
+    margin-top: -20px;
+}
+
+.search-bar-lower {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin-left: -10px; */
+}
+
+.search-bar-date-time-party-container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    width: 480px;
+    border-radius: 4px;
+    /* margin-left: -5px; */
+}
+
+/* delete after presentation */
+.search-bar-reservation-date-icon {
+    height: 33px;
+    width: 33px;
+    margin-top: 5px;
+    margin-left: -18px;
+}
+
+.search-bar-date-input-container {
+    border-right: solid;
+    border-color: rgb(218, 218, 218);
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 5px;
+
+    /* delete after presentation */
+    display: flex;
+    flex-direction: row;
+    padding-left: 25px;
+
+}
+
+.search-bar-reservation-date-text {
+    margin-top: 11px;
+    font-size: 1.05rem;
+    color: rgb(66, 65, 65);
+
+}
+
+.search-bar-date-input {
+    width: 135px;
+    height: 48px;
+    border: none;
+    font-size: 1.05rem;
+    color: rgb(66, 65, 65);
+}
+
+/* delete after presentation */
+.search-bar-clock-icon {
+    height: 22px;
+    width: 25px;
+    margin-left: -10px;
+    margin-right: -2px;
+    margin-top: 14px;
+    padding-left: 5px;
+}
+
+/* delete */
+.search-bar-down-carrot-icon {
+    height: 12px;
+    width: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+
+.search-bar-time-input-container {
+    border-right: solid;
+    border-color: rgb(218, 218, 218);
+    height: 48px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 117px;
+    /* delete */
+    display: flex;
+    flex-direction: row;
+
+}
+
+.search-bar-time-select {
+    border: none;
+    font-size: 1.05rem;
+    width: 120px;
+    margin-top: 1px;
+    padding-left: 10px;
+    color: rgb(66, 65, 65);
+}
+
+.search-bar-party-size-container {
+    width: 125px;   
+    padding-left: 25px;
+    /* delete */
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* delete */
+.search-bar-person-icon {
+    height: 22px;
+    width: 22px;
+    margin-left: -15px;
+}
+
+.search-bar-party-size-select {
+    /* width: 112px;    */
+    border: none;
+    font-size: 1.05rem;
+    color: rgb(66, 65, 65);
+    /* delete */
+    margin-left: 5px;
+    width: 100px;
+
+}
+
+.search-bar-cuisine-text-container {
+    background-color: white;
+    height: 48px;
+    margin-left: 17px;
+    display: flex;
+    flex-direction: row;
+    width: 295px;
+    border-radius: 4px;
+}
+
+.search-bar-search-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    color: rgb(149, 149, 149);
+    font-size: 1.02rem;
+}
+
+.search-bar-magnifying-glass-icon {
+    height: 23px;
+    margin-top: 13px;
+    margin-left: 8px;
+}
+
+.search-bar-button {
+    height: 48px;
+    width: 150px;
+    margin-left: 15px;
+    background-color: rgb(218, 54, 68);
+    color: #fff;
+    font-size: 1.02rem;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+
+.search-bar-button:hover {
+    background-color: rgb(153, 38, 48);
+    cursor: pointer;
 }

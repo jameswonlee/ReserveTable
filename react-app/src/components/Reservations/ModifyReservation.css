@@ -1,6 +1,4 @@
 .modify-reservation-container {
-    /* border: solid; */
-    /* border-color: red; */
     display: flex;
     flex-direction: column;
     margin-left: 260px;
@@ -10,25 +8,18 @@
 }
 
 .modify-reservation-header {
-    /* border: solid; */
-    /* border-color: blue; */
     font-size: 0.95rem;
     font-weight: 600;
 }
 
 .modify-reservation-preview-image {
-    /* border: solid; */
-    /* border-color: yellow; */
     height: 65px;
     width: 65px;
     border-radius: 4px;
     object-fit: cover;
-
 }
 
 .modify-reservation-reservation-time {
-    /* border: solid; */
-    /* border-color: green; */
     margin-top: 4px;
 }
 
@@ -147,25 +138,25 @@
 }
 
 .modify-reservation-new-date {
-    border-radius: none;
     margin-left: 2px;
+    margin-bottom: -12px;
 }
 
 .modify-reservation-new-date-input {
     border-radius: 2px;
-    width: 140px;
+    width: 150px;
     height: 43px;
-    border-color: rgb(199, 199, 199);
     font-size: 1.03rem;
     text-align: center;
+    border: 1px solid rgb(199, 199, 199);
+    padding-right: 10px;
 }
 
-.modify-reservation-new-date-input {
+.modify-reservation-new-date-input:hover {
     cursor: pointer;
 }
 
 .modify-reservation-new-time-input {
-    /* border-radius: 2px; */
     margin-right: 1px;
     margin-left: -0.2px;
     height: 45.5px;
@@ -177,6 +168,7 @@
     font-size: 1.05rem;
     text-align: center;
     margin-top: 12.5px;
+    padding-right: 10px;
 }
 
 .modify-reservation-time-option {
