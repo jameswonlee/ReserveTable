@@ -158,9 +158,9 @@
 
 .modify-reservation-new-time-input {
     margin-right: 1px;
-    margin-left: -0.2px;
     height: 45.5px;
     border-left-color: white;
+    border-left: none;
     border-right-color: rgb(199, 199, 199);
     border-bottom-color: rgb(199, 199, 199);
     border-top-color: rgb(199, 199, 199);
