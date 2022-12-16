@@ -20,12 +20,27 @@
 
 .review-text-input {
     height: 40px;
-    width: 480px;
+    /* width: 460px; */
+    width: calc(100% - 16px);
+    height: 40px;
+    border-radius: 6px;
+    border-color: gray;
+    font-size: large;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid rgb(164, 163, 163);
 }
 
 .rating-input {
-    width: 480px;
-    margin-top: -100px;
+    width: calc(100% - 16px);
+    height: 40px;
+    border-radius: 6px;
+    border-color: gray;
+    font-size: large;
+    /* margin-top: 12px; */
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid rgb(164, 163, 163);
 }
 
 .review-form-heading {

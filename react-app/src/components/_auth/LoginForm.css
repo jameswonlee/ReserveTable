@@ -7,6 +7,18 @@
     border-radius: 5px;
 }
 
+.sign-in-input {
+    width: calc(100% - 16px);
+    height: 40px;
+    border-radius: 6px;
+    border-color: gray;
+    font-size: large;
+    margin-top: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid rgb(164, 163, 163);
+}
+
 .sign-in-form-button1 {
     background-color: rgb(218, 54, 68);
     color: white;

@@ -75,6 +75,7 @@ const LoginForm = ({ setShowSignInModal }) => {
           placeholder='Email'
           value={email}
           onChange={updateEmail}
+          className="sign-in-input"
         />
       </div>
       <div>
@@ -85,6 +86,7 @@ const LoginForm = ({ setShowSignInModal }) => {
           placeholder='Password'
           value={password}
           onChange={updatePassword}
+          className="sign-in-input"
         />
         <button type='submit' className="sign-in-form-button1">Login</button>
       </div>

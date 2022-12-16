@@ -80,8 +80,7 @@
 .reservation-date-input {
     width: 135px;
     border: none;
-    margin-top: 8px;
-    margin-left: -6px;
+    margin-top: 15px;
     font-size: 0.95rem;
     font-weight: 400;
     color: rgb(97, 96, 96);
@@ -103,12 +102,13 @@
 
 .reservation-time-select {
     width: 125px;
-    margin-top: 18px;
     font-size: 0.95rem;
     font-weight: 400;
     color: rgb(97, 96, 96);
     border: none;
-    margin-left: 1px;
+    margin-left: 2px;
+    margin-top: 15px;
+    padding-bottom: 10px;
 }
 
 .reservation-time-select:hover {

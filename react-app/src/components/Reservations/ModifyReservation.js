@@ -137,7 +137,7 @@ function ModifyReservation() {
                                 />
                             </div>
                             <div>
-                                <label className="reservation-time-select-label">
+                                <label className="modify-reservation-time-select-label">
                                     <select value={time} onChange={e => setTime(e.target.value)} className="modify-reservation-new-time-input">
                                         <option value="11:00">11:00 AM</option>
                                         <option value="11:30">11:30 AM</option>
@@ -168,18 +168,18 @@ function ModifyReservation() {
                             <div>
                                 <label>
                                     <select value={partySize} onChange={e => setPartySize(e.target.value)} className="modify-reservation-new-party-size">
-                                        <option value="1">1 Person </option>
-                                        <option value="2">2 People</option>
-                                        <option value="3">3 People</option>
-                                        <option value="4">4 People</option>
-                                        <option value="5">5 People</option>
-                                        <option value="6">6 People</option>
-                                        <option value="7">7 People</option>
-                                        <option value="8">8 People</option>
-                                        <option value="9">9 People</option>
-                                        <option value="10">10 People</option>
-                                        <option value="11">11 People</option>
-                                        <option value="12">12 People</option>
+                                        <option value="1">1 person </option>
+                                        <option value="2">2 people</option>
+                                        <option value="3">3 people</option>
+                                        <option value="4">4 people</option>
+                                        <option value="5">5 people</option>
+                                        <option value="6">6 people</option>
+                                        <option value="7">7 people</option>
+                                        <option value="8">8 people</option>
+                                        <option value="9">9 people</option>
+                                        <option value="10">10 people</option>
+                                        <option value="11">11 people</option>
+                                        <option value="12">12 people</option>
                                     </select>
                                 </label>
                             </div>
