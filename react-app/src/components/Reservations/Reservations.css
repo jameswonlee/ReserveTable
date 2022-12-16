@@ -41,8 +41,8 @@
     width: 292px;
     margin-right: 7px;
     margin-left: -1px;
-    margin-top: 11px !important;
-    margin-bottom: 48x;
+    margin-top: 12px !important;
+    margin-bottom: 1px;
     border: none;
     font-size: 0.9rem;
     font-weight: 400;
@@ -84,6 +84,7 @@
     font-size: 0.95rem;
     font-weight: 400;
     color: rgb(97, 96, 96);
+    margin-left: 1px;
 }
 
 .reservation-date-text {

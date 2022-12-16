@@ -40,7 +40,7 @@
 }
 
 .upcoming-reservation-menu-date-details {
-    margin-left: 40px;
+    margin-left: 45px;
     margin-top: -25px;
     font-size: 0.88rem;
     margin-bottom: -10px;
@@ -100,11 +100,8 @@
 
 
 .upcoming-restaurant-icon {
-    margin-left: 3px;
-}
-
-.upcoming-restaurant-icon {
     height: 35px;
+    margin-left: 3px;
 }
 
 .upcoming-reservations-false-container {
@@ -117,7 +114,7 @@
 }
 
 .upcoming-reservation-menu-options {
-    margin-left: 40px;
+    margin-left: 38px;
     margin-top: -10px;
 }
 
@@ -163,7 +160,7 @@
 }
 
 .upcoming-reservation-view-all-reservations-button {
-    margin-left: 23px;
+    margin-left: 20px;
     font-size: 0.82rem;
     color: rgb(218, 54, 68);
 }
