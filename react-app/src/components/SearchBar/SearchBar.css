@@ -10,7 +10,7 @@
 
 .search-bar-heading {
     color: #fff;
-    font-size: 1.52rem;
+    font-size: 1.51rem;
 }
 
 .search-bar-lower-container {
@@ -169,8 +169,8 @@
 
 .search-bar-button {
     height: 48px;
-    width: 150px;
-    margin-left: 15px;
+    width: 143px;
+    margin-left: 17px;
     background-color: rgb(218, 54, 68);
     color: #fff;
     font-size: 1.02rem;
