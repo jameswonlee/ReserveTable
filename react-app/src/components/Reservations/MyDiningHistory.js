@@ -10,6 +10,7 @@ import newIcon from '../../icons/new-icon.ico';
 import pointsGraph from '../../icons/points-graph-icon.ico';
 import dayjs from 'dayjs';
 import './MyDiningHistory.css';
+import { getUserReviews } from '../../store/reviews';
 
 
 function MyDiningHistory() {
@@ -29,8 +30,11 @@ function MyDiningHistory() {
             return dayjs(reservationA.reservation_time).valueOf() - dayjs(reservationB.reservation_time).valueOf()
         });
 
+    const userReviews = useSelector(state => Object.values(state.reviews));
+
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser?.id));
+        dispatch(getUserReviews(sessionUser?.id));
     }, [dispatch, sessionUser?.id]);
 
     const routeToReservationConfirmation = (reservationId) => {
@@ -120,7 +124,7 @@ function MyDiningHistory() {
                                                 <div className="dining-dashboard-future-restaurant-name">
                                                     {reservation.restaurant.name}
                                                 </div>
-                                                <div>
+                                                <div className="dining-dashboard-reservation-confirmed-container">
                                                     <span>
                                                         <img src={reservationConfirmedIcon} className="reservation-confirmed-icon" />
                                                         &nbsp;&nbsp;&nbsp;
@@ -129,7 +133,7 @@ function MyDiningHistory() {
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <div className="dining-dashboard-div-align">
+                                                <div className="dining-dashboard-party-date-container">
                                                     <span>
                                                         <img src={personIcon} className="dining-dashboard-person-icon" />
                                                         &nbsp;&nbsp;
@@ -166,8 +170,7 @@ function MyDiningHistory() {
                             pastReservations.map(reservation => (
                                 <div key={reservation.id} className="dining-dashboard-past-border">
                                     <div className="dining-dashboard-past-reservations-details-container"
-                                        onClick={(e) => routeToReservationConfirmation(reservation.id)}
-                                    >
+                                        onClick={(e) => routeToReservationConfirmation(reservation.id)}>
                                         <div>
                                             <img src={reservation.restaurant.preview_img} className="dining-dashboard-restaurant-img" />
                                         </div>
@@ -176,7 +179,7 @@ function MyDiningHistory() {
                                                 <div className="dining-dashboard-past-restaurant-name">
                                                     {reservation.restaurant.name}
                                                 </div>
-                                                <div>
+                                                <div className="dining-dashboard-reservation-completed-container">
                                                     <span className="dining-dashboard-reservation-completed-align">
                                                         <img src={reservationCompletedIcon} className="dining-dashboard-reservation-completed-icon" />
                                                         &nbsp;&nbsp;&nbsp;
@@ -185,7 +188,7 @@ function MyDiningHistory() {
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <div className="dining-dashboard-reservation-time-align">
+                                                <div className="dining-dashboard-past-reservation-time-align">
                                                     <span>
                                                         <img src={personIcon} className="dining-dashboard-person-icon" />
                                                         &nbsp;&nbsp;
@@ -196,10 +199,37 @@ function MyDiningHistory() {
                                                         <img src={upcomingReservationsIcon} className="dining-dashboard-upcoming-reservations-icon" />
                                                         &nbsp;
                                                         <span className="dining-dashboard-reservation-time-text">
-                                                            {dayjs(reservation.reservation_time).format("ddd, MMMM DD, h:mm A")}
+                                                            {dayjs(reservation.reservation_time).format("MMM DD[,] YYYY")}
                                                         </span>
                                                     </span>
                                                 </div>
+                                                {userReviews.find(review => review.restaurant_id === reservation.restaurant_id)
+                                                    ?
+                                                    <div className="dining-dashboard-past-reservations-rating-container">
+                                                        <div className="dining-dashboard-past-reservations-rating-text">
+                                                            Your rating
+                                                        </div>
+                                                        <div className="dining-dashboard-review-rating-stars">
+                                                            {userReviews.find(review => review.restaurant_id === reservation.restaurant_id).rating === 1 &&
+                                                                <span className="red-star review-star">★ <span className="gray-star review-star">★ ★ ★ ★</span></span>}
+                                                            {userReviews.find(review => review.restaurant_id === reservation.restaurant_id).rating === 2 &&
+                                                                <span className="red-star review-star">★ ★ <span className="gray-star review-star">★ ★ ★</span></span>}
+                                                            {userReviews.find(review => review.restaurant_id === reservation.restaurant_id).rating === 3 &&
+                                                                <span className="red-star review-star">★ ★ ★ <span className="gray-star review-star">★ ★</span></span>}
+                                                            {userReviews.find(review => review.restaurant_id === reservation.restaurant_id).rating === 4 &&
+                                                                <span className="red-star review-star">★ ★ ★ ★ <span className="gray-star review-star">★</span></span>}
+                                                            {userReviews.find(review => review.restaurant_id === reservation.restaurant_id).rating === 5 &&
+                                                                <span className="red-star review-star">★ ★ ★ ★ ★ </span>}
+                                                        </div>
+                                                    </div>
+                                                    :
+                                                    <div className="dining-dashboard-past-leave-review-container">
+                                                        <span className="dining-dashboard-past-leave-review-text">
+                                                            Leave a review
+                                                            <span className="gray-star dining-dashboard-past-reservation-star">★ ★ ★ ★ ★</span>
+                                                        </span>
+                                                    </div>
+                                                }
                                             </div>
                                         </div>
                                     </div>

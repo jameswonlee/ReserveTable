@@ -196,6 +196,7 @@
     padding-bottom: 25px;
     margin-left: -24px;
     padding-top: 10px;
+    box-shadow: 0px 1px 1px rgb(217, 217, 217)
 }
 
 .dining-dashboard-learn-more-rewards-text {
@@ -209,7 +210,7 @@
 .dining-dashboard-upcoming-reservations-details-container {
     display: flex;
     flex-direction: row;
-    height: 170px;
+    height: 160px;
 }
 
 .dining-dashboard-upcoming-reservations-details-container:hover {
@@ -226,13 +227,35 @@
     padding-bottom: 25px;
     margin-left: -24px;
     padding-top: 10px;
+    box-shadow: 0px 1px 1px rgb(217, 217, 217)
+
 }
 
+.dining-dashboard-past-reservations-rating-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: -4px;
+    margin-top: 8px;
+}
+
+.dining-dashboard-past-reservations-rating-text {
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.dining-dashboard-review-rating-stars {
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+
 .dining-dashboard-restaurant-img {
-    height: 120px;
-    width: 120px;
-    margin-top: 20px;
-    margin-left: 21px;
+    height: 130px;
+    width: 130px;
+    border-radius: 3px;
+    margin-top: 16px;
+    margin-left: 17px;
     object-fit: cover;
 }
 
@@ -263,7 +286,7 @@
 .dining-dashboard-upcoming-border {
     border: solid;
     border-color: rgb(227, 227, 227);
-    height: 170px;
+    height: 160px;
     width: 730px;
     margin-left: 20px;
     margin-top: 13px;
@@ -271,13 +294,17 @@
 }
 
 .dining-dashboard-future-reservation-details {
-    margin-left: 5px;
+    margin-top: -3px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     width: 300px;
     padding-left: 20px;
     padding-top: 10px;
+}
+
+.dining-dashboard-reservation-confirmed-container {
+    margin-left: -3px;
 }
 
 .dining-dashboard-past-reservations-details-container {
@@ -343,10 +370,17 @@
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 6px;
+    margin-left: -4px;
+    width: 500px;
 }
 
 .dining-dashboard-reservation-confirmed-text {
     font-size: 1rem;
+}
+
+.dining-dashboard-reservation-completed-container {
+    margin-left: -9px;
+    margin-top: 6px;
 }
 
 .dining-dashboard-reservation-completed-align {
@@ -355,27 +389,30 @@
     align-items: center;
 }
 
-.dining-dashboard-div-align {
+.dining-dashboard-party-date-container {
     display: flex;
     flex-direction: row;
     margin-top: 7px;
     align-items: center;
+    margin-left: -1.5px;
 }
 
 .dining-dashboard-party-size-text {
     font-size: 1.1rem;
-    color: rgb(119, 119, 119);
+    color: rgb(94, 94, 94);
     font-weight: 400;
 }
 
 .dining-dashboard-reservation-time-text {
     font-size: 1.05rem;
-    color: rgb(68, 67, 67);
-    font-weight: 300;
+    color: rgb(94, 94, 94);
+    font-weight: 400;
+    margin-left: -2px;
 }
 
-.dining-dashboard-reservation-time-align {
+.dining-dashboard-past-reservation-time-align {
     margin-top: 4px;
+    margin-left: -7px;
 }
 
 .dining-history-none-container {
@@ -387,4 +424,21 @@
     font-weight: 400;
     color: gray;
 }
+
+.dining-dashboard-past-reservation-star {
+    font-size: 1.1rem;
+}
+
+.dining-dashboard-past-leave-review-container {
+    margin-left: -4px;
+    margin-top: 6px;
+}
+
+.dining-dashboard-past-leave-review-text {
+    font-weight: 300;
+    color: black;
+    font-size: 0.98rem;
+}
+
+
 
