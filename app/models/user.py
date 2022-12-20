@@ -42,6 +42,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'first_name': self.first_name,
             'last_name': self.last_name,
+            'restaurants': [restaurant.to_dict() for restaurant in self.restaurants] if self.restaurants else None,
             # 'reviews': self.reviews,
             # 'reservations': self.reservations
             # 'reviews': len(self.reviews)
