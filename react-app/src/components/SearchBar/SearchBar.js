@@ -96,7 +96,7 @@ function SearchBar() {
                                 <img src={magnifyingGlass} className="search-bar-magnifying-glass-icon" alt="" />
                             </div>
                             <div className="search-bar-search-text">
-                                <text>Location, Restaurant, or Cuisine</text>
+                                <div>Location, Restaurant, or Cuisine</div>
                             </div>
                         </div>
                         <div>

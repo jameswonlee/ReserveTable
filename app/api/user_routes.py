@@ -54,3 +54,18 @@ def user_reviews(user_id):
             response.append(review_obj)
         return response, 200
     return { "Error": "No user/reviews found" }, 404
+
+
+#View all user favorite restaurants
+# @user_routes.route("/<int:user_id>/favorites", methods=["GET"])
+# @login_required
+# def user_favorite_restaurants(user_id):
+#     user_restaurants = Restaurant.query.filter(Restaurant.users.id == user_id).all()
+
+
+# Create user favorite restaurant
+@user_routes.route("/<int:user_id>/favorites/<int:restaurant_id>", methods=["POST"])
+@login_required
+def create_favorite(user_id, restaurant_id):
+    restaurant = Restaurant.get(restaurant_id)
+    user = User.get(user_id)

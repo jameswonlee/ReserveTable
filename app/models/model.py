@@ -5,7 +5,6 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 
 
-
 Base = declarative_base()
 
 favorites = db.Table(
