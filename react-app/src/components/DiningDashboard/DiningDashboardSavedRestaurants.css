@@ -1,0 +1,123 @@
+.saved-restaurants-outer-container {
+    background: white;
+    width: 780px;
+    margin-left: 38px;
+    margin-top: 35px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.saved-restaurants-heading-border-bottom {
+    border-bottom: solid;
+    border-color: rgb(238, 237, 237);
+    height: 53px;
+}
+
+.saved-restaurants-header-text {
+    font-size: 1.5rem;
+    margin-left: 23px;
+    margin-top: 22px;
+    font-weight: 600;
+}
+
+.saved-restaurants-restaurant-image-container {
+    margin-left: 22px;
+    margin-top: 18px
+}
+
+.saved-restaurants-restaurant-image {
+    height: 78px;
+    width: 79px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.saved-restaurants-restaurant-details-container {
+    margin-top: 21px;
+    margin-left: 15px;
+}
+
+.saved-restaurants-restaurant-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 165px;
+    border-bottom: solid;
+    border-color: rgb(238, 237, 237);
+}
+
+.saved-restaurants-restaurant-left {
+    display: flex;
+    flex-direction: row;
+}
+
+.saved-restaurants-saved-restaurant-icon {
+    height: 19px;
+    width: 14px;
+}
+
+.saved-restaurants-icon-and-remove {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.saved-restaurants-icon-and-remove:hover {
+    cursor: pointer;
+}
+
+.saved-restaurants-remove-text {
+    margin-left: 2px;
+    font-size: 0.87rem;
+    color: rgb(95, 94, 94);
+}
+
+.saved-restaurants-remove-text:hover {
+    color: rgb(164, 2, 2)
+}
+
+.saved-restaurants-restaurant-name-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.saved-restaurants-rating-stars-container {
+    margin-top: -2px;
+}
+
+.saved-restaurants-star {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 0.5px;
+}
+
+.peach-star {
+    color: rgb(254, 171, 109);
+}
+
+.saved-restaurants-restaurant-cuisine {
+    font-size: 0.85rem;
+    color: rgb(95, 94, 94);
+}
+
+.saved-restaurants-restaurant-right {
+    margin-right: 25px;
+    margin-top: 35px;
+}
+
+.saved-restaurants-reserve-now-button {
+    width: 123px;
+    height: 48px;
+    border: none;
+    background-color: rgb(218, 54, 68);
+    color: white;
+    border-radius: 4px;
+}
+
+.saved-restaurants-reserve-now-button:hover {
+    cursor: pointer;
+    background-color: rgb(181, 45, 57);
+    transition: background-color 300ms ease-out;
+
+}
+

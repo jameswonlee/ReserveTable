@@ -1,19 +1,22 @@
-// import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import LogoutButton from "../_auth/LogoutButton";
 import pointsGraph from '../../icons/points-graph.ico'
-
 import './ProfileButtonMenu.css'
 
 
 function ProfileButtonMenu({ setShowSignInModal }) {
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user)
+    const sessionUser = useSelector(state => state.session.user);
 
-    const clickHandler = () => {
-        history.push(`/users/${sessionUser.id}/dining-dashboard`)
+    const routeToDiningDashboard = () => {
+        history.push(`/users/${sessionUser.id}/dining-dashboard`);
     }
+
+    const routeToSavedRestaurants = () => {
+        history.push(`/users/${sessionUser.id}/dining-dashboard`);
+    }
+
 
     return (
         <div className="profile-drop-down-menu">
@@ -40,7 +43,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                     </div>
                 </div>
                 <div className="points-graph">
-                    <img src={pointsGraph} className="points-graph-icon" alt=""/>
+                    <img src={pointsGraph} className="points-graph-icon" alt="" />
                 </div>
                 <div className="learn-about-points">Learn more about points</div>
             </div>
@@ -48,16 +51,15 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                 <div className="profile-drop-button">
                     <span className="spacing-down">My Profile</span>
                 </div>
-                <div className="profile-drop-button my-dining-history" onClick={clickHandler}>
+                <div className="profile-drop-button my-dining-history" onClick={routeToDiningDashboard}>
                     <span className="spacing-down">My Dining History</span>
                 </div>
-                <div className="profile-drop-button">
-                    <span className="spacing-down">My Saved Restaurants</span>
+                <div className="profile-drop-button my-saved-restaurants" onClick={routeToSavedRestaurants}>
+                    <span className="spacing-down ">My Saved Restaurants</span>
                 </div>
                 <div className="profile-log-out-button"><LogoutButton setShowSignInModal={setShowSignInModal} /></div>
             </div>
         </div>
-
     )
 }
 

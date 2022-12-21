@@ -57,8 +57,8 @@ def user_reviews(user_id):
     return { "Error": "No user/reviews found" }, 404
 
 
-# Get all user favorite restaurants
-@user_routes.route("/<int:user_id>/favorites", methods=["GET"])
+# Get all user saved restaurants
+@user_routes.route("/<int:user_id>/saved-restaurants", methods=["GET"])
 @login_required
 def user_saved_restaurants(user_id):
     user = User.query.get(user_id)
@@ -69,7 +69,7 @@ def user_saved_restaurants(user_id):
 
 
 # Create saved restaurant
-@user_routes.route("/<int:user_id>/favorites/<int:restaurant_id>", methods=["POST"])
+@user_routes.route("/<int:user_id>/saved-restaurants/<int:restaurant_id>", methods=["POST"])
 @login_required
 def create_saved_restaurant(user_id, restaurant_id):
     restaurant = Restaurant.query.get(restaurant_id)
@@ -91,7 +91,7 @@ def create_saved_restaurant(user_id, restaurant_id):
 
 
 # Remove saved restaurant
-@user_routes.route("/<int:user_id>/favorites/<int:restaurant_id>", methods=["DELETE"])
+@user_routes.route("/<int:user_id>/saved-restaurants/<int:restaurant_id>", methods=["DELETE"])
 def remove_saved_restaurant(user_id, restaurant_id):
     restaurant = Restaurant.query.get(restaurant_id)
     user = User.query.get(current_user.id)

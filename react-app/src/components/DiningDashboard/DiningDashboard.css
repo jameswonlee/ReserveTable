@@ -1,0 +1,75 @@
+.dining-dashboard-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(247, 247, 247);
+    padding-bottom: 40px;
+}
+
+.dining-dashboard-name {
+    border-bottom: solid;
+    border-color: rgb(234, 233, 233);
+    height: 80px;
+    margin-top: 20px;
+}
+
+.dining-dashboard-name-text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 240px;
+
+}
+
+.dining-dashboard-points-text {
+    margin-left: 242px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgb(170, 170, 170);
+}
+
+.dining-history-new-icon {
+    height: 20px;
+    margin-bottom: -5px;
+}
+
+.dining-dashboard-left {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    height: 300px;
+    margin-left: 230px;
+    margin-right: -60px;
+    margin-top: 55px;
+    padding-left: 30px;
+}
+
+.dining-dashboard-menu-options {
+    display: flex;
+    height: 215px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dining-dashboard-space-to-top {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.not-first-item {
+    color: rgb(16, 16, 16);
+}
+
+.first-item {
+    color: rgb(59, 59, 59);
+    font-weight: 600;
+}
+
+.dining-dashboard-reservations:hover {
+    cursor: pointer;
+}
+
+.dining-dashboard-saved-restaurants:hover {
+    cursor: pointer;
+}
+
