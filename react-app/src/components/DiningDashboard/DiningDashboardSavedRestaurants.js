@@ -41,7 +41,7 @@ function DiningDashboardSavedRestaurants() {
     }
 
     const routeToReservations = (restaurantId) => {
-        history.replace(`/restaurants/${restaurantId}`);    
+        history.push(`/restaurants/${restaurantId}`);    
     }
 
     useEffect(() => {
