@@ -67,7 +67,6 @@ function DiningDashboard() {
                 {showSavedRestaurants &&
                     <DiningDashboardSavedRestaurants />
                 }
-
             </div>
         </div>
     )

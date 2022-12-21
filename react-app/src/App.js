@@ -13,14 +13,10 @@ import SignUpForm from './components/_auth/SignUpForm';
 import DiningDashboard from './components/DiningDashboard/DiningDashboard';
 import Footer from './components/Footer/Footer';
 import NavigationLocalCity from './components/Navigation/NavigationLocalCity';
-
-
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
-
 import './index.css';
-
 
 function App() {
   const [loaded, setLoaded] = useState(false);

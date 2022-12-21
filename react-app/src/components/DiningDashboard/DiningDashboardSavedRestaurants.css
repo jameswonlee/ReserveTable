@@ -1,28 +1,58 @@
 .saved-restaurants-outer-container {
+    margin-top: 20px;
+}
+
+.saved-restaurants-heading {
+    border-bottom: solid;
+    border-color: rgb(238, 237, 237);
+    height: 73px;
+    background: white;
+    width: 780px;
+    margin-left: 40px;
+    margin-top: 35px;
+    border-radius: 5px;
+}
+
+.saved-restaurants-show-container {
+    height: auto;
+    border-radius: 4px;
+    background-color: white;
+    width: 780px;
+    margin-left: 40px;
+    box-shadow: 0px 01px 1px rgb(213, 213, 213);
+
+}
+
+.saved-restaurants-no-saved-restaurants-container {
+    height: 80px;
     background: white;
     width: 780px;
     margin-left: 38px;
-    margin-top: 35px;
-    height: auto;
     border-radius: 4px;
+    box-shadow: 0px 01px 1px rgb(213, 213, 213);
 }
 
-.saved-restaurants-heading-border-bottom {
-    border-bottom: solid;
-    border-color: rgb(238, 237, 237);
-    height: 53px;
+.saved-restaurants-no-favorites-text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 30px;
+    padding-top: 30px;
 }
 
 .saved-restaurants-header-text {
     font-size: 1.5rem;
     margin-left: 23px;
-    margin-top: 22px;
+    padding-top: 22px;
     font-weight: 600;
 }
 
 .saved-restaurants-restaurant-image-container {
     margin-left: 22px;
     margin-top: 18px
+}
+
+.saved-restaurants-restaurant-image-container:hover {
+    cursor: pointer;
 }
 
 .saved-restaurants-restaurant-image {
@@ -81,6 +111,10 @@
     font-weight: 500;
 }
 
+.saved-restaurants-restaurant-name-text:hover {
+    cursor: pointer;
+}
+
 .saved-restaurants-rating-stars-container {
     margin-top: -2px;
 }
@@ -118,6 +152,9 @@
     cursor: pointer;
     background-color: rgb(181, 45, 57);
     transition: background-color 300ms ease-out;
-
 }
+
+
+
+
 
