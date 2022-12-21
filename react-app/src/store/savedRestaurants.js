@@ -35,7 +35,7 @@ const removeSavedRestaurant = (restaurantId) => {
 /* ------------------------- Thunk Action Creators ------------------- */
 
 export const getAllSavedRestaurants = (userId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/favorites`);
+    const response = await csrfFetch(`/api/users/${userId}/saved-restaurants`);
 
     if (response.ok) {
         const restaurants = await response.json();
@@ -45,7 +45,7 @@ export const getAllSavedRestaurants = (userId) => async (dispatch) => {
 }
 
 export const createSavedRestaurant = (userId, restaurantId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/favorites/${restaurantId}`, {
+    const response = await csrfFetch(`/api/users/${userId}/saved-restaurants/${restaurantId}`, {
         method: 'POST'
     })
 
@@ -57,7 +57,7 @@ export const createSavedRestaurant = (userId, restaurantId) => async (dispatch) 
 }
 
 export const deleteSavedRestaurant = (userId, restaurantId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/users/${userId}/favorites/${restaurantId}`, {
+    const response = await csrfFetch(`/api/users/${userId}/saved-restaurants/${restaurantId}`, {
         method: 'DELETE'
     })
 
@@ -75,7 +75,9 @@ const initialState = {};
 
 const savedRestaurantsReducer = (state = initialState, action) => {
     let newState = {};
+
     switch (action.type) {
+
         case LOAD_ALL_SAVED_RESTAURANTS:
             newState = { ...state };
             action.savedRestaurants.SavedRestaurants.forEach(restaurant => {

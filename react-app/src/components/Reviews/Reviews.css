@@ -9,13 +9,12 @@
     margin-left: -17px;
 }
 
-/* .reviews-main-outer-container {
-    max-height: 1200px;
-    overflow: scroll;
-} */
+.reviews-main-outer-container {
+    height: auto;
+}
 
 .reviews-outer-container {
-    height: 1400px;
+    height: auto;
 }
 
 .review-container-left {

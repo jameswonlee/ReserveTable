@@ -144,3 +144,7 @@
 .my-dining-history:hover {
     cursor: pointer;
 }
+
+.my-saved-restaurants:hover {
+    cursor: pointer;
+}

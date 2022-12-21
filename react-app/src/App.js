@@ -10,7 +10,7 @@ import RestaurantProfile from './components/RestaurantProfile/RestaurantProfile'
 import ReservationConfirmation from './components/Reservations/ReservationConfirmation';
 import ModifyReservation from './components/Reservations/ModifyReservation';
 import SignUpForm from './components/_auth/SignUpForm';
-import MyDiningHistory from './components/Reservations/MyDiningHistory';
+import DiningDashboard from './components/DiningDashboard/DiningDashboard';
 import Footer from './components/Footer/Footer';
 import NavigationLocalCity from './components/Navigation/NavigationLocalCity';
 
@@ -71,7 +71,7 @@ function App() {
             <ModifyReservation />
           </Route>
           <Route exact path='/users/:userId/dining-dashboard'>
-            <MyDiningHistory />
+            <DiningDashboard />
           </Route>
           <Route>
             <h1>PAGE NOT FOUND</h1>
