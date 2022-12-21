@@ -41,7 +41,7 @@ function DiningDashboardSavedRestaurants() {
     }
 
     const routeToReservations = (restaurantId) => {
-        history.push(`/restaurants/${restaurantId}`);    
+        history.push(`/restaurants/${restaurantId}`);
     }
 
     useEffect(() => {
@@ -53,55 +53,71 @@ function DiningDashboardSavedRestaurants() {
 
     return (
         <div className="saved-restaurants-outer-container">
-            <div className="saved-restaurants-heading-border-bottom">
+            <div className="saved-restaurants-heading">
                 <h2 className="saved-restaurants-header-text">Saved Restaurants</h2>
             </div>
-            {savedRestaurants.map(restaurant => (
-                <div key={restaurant.id} className="saved-restaurants-restaurant-container">
-                    <div className="saved-restaurants-restaurant-left">
-                        <div className="saved-restaurants-restaurant-image-container">
-                            <img src={restaurant.preview_img} className="saved-restaurants-restaurant-image" />
+            {savedRestaurantsData.length > 0
+                ?
+                <div className="saved-restaurants-show-container">
+                    {savedRestaurants.map(restaurant => (
+                        <div key={restaurant.id} className="saved-restaurants-restaurant-container">
+                            <div className="saved-restaurants-restaurant-left">
+                                <div className="saved-restaurants-restaurant-image-container"
+                                    onClick={() => routeToReservations(restaurant.id)}>
+                                    <img src={restaurant.preview_img} className="saved-restaurants-restaurant-image" />
+                                </div>
+                                <div className="saved-restaurants-restaurant-details-container">
+                                    <div className="saved-restaurants-restaurant-name-text"
+                                        onClick={() => routeToReservations(restaurant.id)}>
+                                        {restaurant.name}
+                                    </div>
+                                    <div className="saved-restaurants-icon-and-remove">
+                                        <img src={savedRestaurantIcon} className="saved-restaurants-saved-restaurant-icon" />
+                                        <div className="saved-restaurants-remove-text">Remove from saved restaurants</div>
+                                    </div>
+                                    <div className="saved-restaurants-rating-stars-container">
+                                        {restaurant.reviews
+                                            ?
+                                            <span>{averageRating(restaurant.reviews).toFixed(1) >= 0.1 &&
+                                                averageRating(restaurant.reviews).toFixed(1) < 1.9 &&
+                                                <span className="peach-star saved-restaurants-star">★<span className="gray-star saved-restaurants-star">★★★★</span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 1.9 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 2.9 &&
+                                                    <span className="peach-star saved-restaurants-star">★★<span className="gray-star saved-restaurants-star">★★★</span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 2.9 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 3.9 &&
+                                                    <span className="peach-star saved-restaurants-star">★★★<span className="gray-star saved-restaurants-star">★★</span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 3.9 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 4.9 &&
+                                                    <span className="peach-star saved-restaurants-star">★★★★<span className="gray-star saved-restaurants-star">★</span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 4.9 &&
+                                                    <span className="peach-star saved-restaurants-star">★★★★★</span>}
+                                            </span>
+                                            :
+                                            <span className="peach-star saved-restaurants-star">★ ★ ★ ★ ★</span>
+                                        }
+                                    </div>
+                                    <div className="saved-restaurants-restaurant-cuisine">
+                                        {restaurantCuisine(restaurant)} | Los Angeles / {restaurant.neighborhood}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="saved-restaurants-restaurant-right">
+                                <button onClick={() => routeToReservations(restaurant.id)} className="saved-restaurants-reserve-now-button">
+                                    Reserve Now
+                                </button>
+                            </div>
                         </div>
-                        <div className="saved-restaurants-restaurant-details-container">
-                            <div className="saved-restaurants-restaurant-name-text">{restaurant.name}</div>
-                            <div className="saved-restaurants-icon-and-remove">
-                                <img src={savedRestaurantIcon} className="saved-restaurants-saved-restaurant-icon" />
-                                <div className="saved-restaurants-remove-text">Remove from saved restaurants</div>
-                            </div>
-                            <div className="saved-restaurants-rating-stars-container">
-                                {restaurant.reviews
-                                    ?
-                                    <span>{averageRating(restaurant.reviews).toFixed(1) >= 0.1 &&
-                                        averageRating(restaurant.reviews).toFixed(1) < 1.9 &&
-                                        <span className="peach-star saved-restaurants-star">★<span className="gray-star saved-restaurants-star">★★★★</span></span>}
-                                        {averageRating(restaurant.reviews).toFixed(1) >= 1.9 &&
-                                            averageRating(restaurant.reviews).toFixed(1) < 2.9 &&
-                                            <span className="peach-star saved-restaurants-star">★★<span className="gray-star saved-restaurants-star">★★★</span></span>}
-                                        {averageRating(restaurant.reviews).toFixed(1) >= 2.9 &&
-                                            averageRating(restaurant.reviews).toFixed(1) < 3.9 &&
-                                            <span className="peach-star saved-restaurants-star">★★★<span className="gray-star saved-restaurants-star">★★</span></span>}
-                                        {averageRating(restaurant.reviews).toFixed(1) >= 3.9 &&
-                                            averageRating(restaurant.reviews).toFixed(1) < 4.9 &&
-                                            <span className="peach-star saved-restaurants-star">★★★★<span className="gray-star saved-restaurants-star">★</span></span>}
-                                        {averageRating(restaurant.reviews).toFixed(1) >= 4.9 &&
-                                            <span className="peach-star saved-restaurants-star">★★★★★</span>}
-                                    </span>
-                                    :
-                                    <span className="peach-star saved-restaurants-star">★ ★ ★ ★ ★</span>
-                                }
-                            </div>
-                            <div className="saved-restaurants-restaurant-cuisine">
-                                {restaurantCuisine(restaurant)} | Los Angeles / {restaurant.neighborhood}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="saved-restaurants-restaurant-right">
-                        <button onClick={() => routeToReservations(restaurant.id)} className="saved-restaurants-reserve-now-button">
-                            Reserve Now
-                        </button>
+                    ))}
+                </div>
+                :
+                <div className="saved-restaurants-no-saved-restaurants-container">
+                    <div className="saved-restaurants-no-favorites-text">
+                    You have no favorite restaurants to show on this list.
+
                     </div>
                 </div>
-            ))}
+            }
         </div>
     )
 }
