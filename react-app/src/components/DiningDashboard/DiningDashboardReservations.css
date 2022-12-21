@@ -5,6 +5,7 @@
     margin-left: 70px;
     margin-top: 75px;
     border-color: rgb(181, 179, 179);
+    border-radius: 5px;
 }
 
 .dining-dashboard-points-container {
@@ -122,8 +123,6 @@
 }
 
 .dining-dashboard-upcoming-reservations-container {
-    /* max-height: 1000px; */
-    /* overflow:scroll; */
     height: auto;
     margin-top: 20px;
     background-color: white;

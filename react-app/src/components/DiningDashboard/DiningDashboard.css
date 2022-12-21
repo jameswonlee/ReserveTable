@@ -60,11 +60,6 @@
     color: rgb(16, 16, 16);
 }
 
-.first-item {
-    color: rgb(59, 59, 59);
-    font-weight: 600;
-}
-
 .dining-dashboard-reservations:hover {
     cursor: pointer;
 }
@@ -73,3 +68,25 @@
     cursor: pointer;
 }
 
+.dining-dashboard-reservations-text-true {
+    color: rgb(59, 59, 59);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.dining-dashboard-reservations-text-false {
+    color: rgb(59, 59, 59);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.dining-dashboard-saved-restaurants-text-true {
+    color: rgb(59, 59, 59);
+    font-weight: 600;
+}
+
+.dining-dashboard-saved-restaurants-text-false {
+    color: rgb(59, 59, 59);
+    font-size: 1rem;
+    font-weight: 300;
+}
