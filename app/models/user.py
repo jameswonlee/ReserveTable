@@ -22,7 +22,9 @@ class User(db.Model, UserMixin):
     reviews = db.relationship("Review", back_populates="user")
     reservations = db.relationship("Reservation", back_populates="user")
 
-    restaurants = db.relationship("Restaurant", secondary="favorites", back_populates="users")
+    saved_restaurants = db.relationship("SavedRestaurant", back_populates="users")
+
+    # restaurants = db.relationship("Restaurant", secondary="favorites", back_populates="users")
 
     @property
     def password(self):
@@ -42,7 +44,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'first_name': self.first_name,
             'last_name': self.last_name,
-            'restaurants': [restaurant.to_dict() for restaurant in self.restaurants] if self.restaurants else None,
+            'saved_restaurants': [restaurant.to_dict() for restaurant in self.saved_restaurants] if self.saved_restaurants else None,
             # 'reviews': self.reviews,
             # 'reservations': self.reservations
             # 'reviews': len(self.reviews)

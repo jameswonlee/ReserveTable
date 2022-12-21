@@ -41,10 +41,10 @@ const updateReview = (review) => {
     }
 }
 
-const removeReview = (review) => PageTransitionEventreturn => {
+const removeReview = (reviewId) => {
     return {
         type: DELETE_REVIEW,
-        review: review
+        reviewId: reviewId
     }
 }
 
@@ -63,7 +63,7 @@ export const getAllRestaurantReviews = (restaurantId) => async (dispatch) => {
 
     if (response.ok) {
         const reviews = await response.json();
-        dispatch(loadAllRestaurantReviews(reviews))
+        dispatch(loadAllRestaurantReviews(reviews));
         return reviews;
     }
 }
@@ -117,6 +117,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
     })
 
     if (response.ok) {
+        console.log('reviewId$$$$$$$', reviewId)
         const message = await response.json();
         dispatch(removeReview(reviewId));
         return message;
@@ -156,7 +157,7 @@ const reviewsReducer = (state = initialState, action) => {
 
         case DELETE_REVIEW:
             newState = { ...state };
-            delete newState[action.review.id];
+            delete newState[action.reviewId];
             return newState;
 
         case RESET_REVIEWS:

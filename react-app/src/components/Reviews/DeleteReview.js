@@ -14,7 +14,6 @@ function DeleteReview({ setShowDeleteModal, review }) {
         e.preventDefault();
         await dispatch(deleteReview(review.id));
         await dispatch(getOneRestaurant(review.restaurant_id));
-        alert("Review successfully deleted");
         setShowDeleteModal({ showModal: false, reviewId: 0 });
     }
 

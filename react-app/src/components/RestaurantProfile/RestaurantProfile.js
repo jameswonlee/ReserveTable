@@ -8,28 +8,37 @@ import AdditionalInfo from './AdditionalInfo';
 import reviewsIcon from './icons/reviews-icon.ico';
 import costIcon from './icons/cost-icon.ico';
 import cuisineIcon from './icons/cuisine-icon.ico';
+import saveRestaurantIcon from '../../icons/save-restaurant.ico';
+import savedRestaurantIcon from '../../icons/saved-restaurant-icon.ico';
 import './RestaurantProfile.css'
+import { createSavedRestaurant, deleteSavedRestaurant, getAllSavedRestaurants } from '../../store/savedRestaurants';
 
 
 function RestaurantProfile({ userReservationTime }) {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
+    const sessionUser = useSelector(state => state.session.user);
     const restaurant = useSelector(state => state.restaurants[restaurantId]);
+    const savedRestaurants = useSelector(state => Object.values(state.savedRestaurants));
+    const restaurantAlreadySaved = savedRestaurants.find(restaurant => restaurant.restaurant_id === +restaurantId);
+
+    console.log('restaurantAlreadySaved', restaurantAlreadySaved)
 
     useEffect(() => {
         dispatch(getOneRestaurant(restaurantId));
+        dispatch(getAllSavedRestaurants(sessionUser.id));
 
         window.scrollTo({
             top: 100,
             left: 100,
             behavior: 'smooth'
-          });
+        });
 
-    }, [restaurantId])
+    }, [restaurantId, sessionUser.id])
 
     if (!restaurant) return null;
 
-    const reviews = restaurant.reviews
+    const reviews = restaurant.reviews;
 
     const averageRating = () => {
         let sum = 0;
@@ -40,24 +49,48 @@ function RestaurantProfile({ userReservationTime }) {
         return sum / reviews.length;
     }
 
-   
+    const saveRestaurant = () => {
+        restaurantAlreadySaved 
+        ? 
+        dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId))
+        :
+        dispatch(createSavedRestaurant(sessionUser.id, restaurantId))
+    }
+    
 
 
     return (
         <div className="restaurant-profile-main-container">
             <div className="restaurant-profile-upper">
                 <div className="restaurant-profile-image-container">
-                    <img src={restaurant.preview_img} className="restaurant-profile-image"
-                        alt="img2"
-                        onError={(e) => {
-                            e.target.src = "https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
-                        }} />
+                    <div className="restaurant-profile-image-save-button-container">
+                        <img src={restaurant.preview_img} className="restaurant-profile-image"
+                            alt="img2"
+                            onError={(e) => {
+                                e.target.src = "https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
+                            }} />
+                        {restaurantAlreadySaved
+                            ?
+                            <button onClick={saveRestaurant} className="restaurant-profile-save-restaurant-button">
+                                <img src={savedRestaurantIcon} className="restaurant-profile-saved-restaurant-icon" />
+                                <div className="restaurant-profile-save-restaurant-text">
+                                    Restaurant saved!
+                                </div>
+                            </button>
+                            :
+                            <button onClick={saveRestaurant} className="restaurant-profile-save-restaurant-button">
+                                <img src={saveRestaurantIcon} className="restaurant-profile-save-restaurant-icon" />
+                                <div className="restaurant-profile-save-restaurant-text">
+                                    Save this restaurant
+                                </div>
+                            </button>
+                        }
+                    </div>
                     <div className="overflow-into-image">
                         <div className="restaurant-profile-details-tab-and-border">
                             <div className="restaurant-profile-details-tabs">
                                 <div className="space-to-left-11">Overview</div>
                                 <div className="space-to-left-12">Experiences</div>
-                                {/* <div className="space-to-left-12">Offers</div> */}
                                 <div className="space-to-left-12">Popular dishes</div>
                                 <div className="space-to-left-12">Photos</div>
                                 <div className="space-to-left-12">Menu</div>

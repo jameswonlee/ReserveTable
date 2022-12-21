@@ -12,6 +12,7 @@
     border-style: solid;
     border-color: rgb(235, 235, 235);
     border-radius: 2px;
+    z-index: 9;
 }
 
 .profile-drop-down-top {

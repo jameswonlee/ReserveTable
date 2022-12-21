@@ -18,7 +18,7 @@ function ModifyReservation() {
     const { reservationId } = useParams();
     const sessionUser = useSelector(state => state.session.user)
     const reservationsData = useSelector(state => Object.values(state.reservations));
-    const reservation = reservationsData.filter(reservation => reservation.id == reservationId)[0];
+    const reservation = reservationsData.filter(reservation => reservation.id === +reservationId)[0];
     // const reservationTime = dayjs(reservation?.reservation_time).format("ddd, MMMM DD h:m a");
 
     // const previousDate = new Date(reservation?.reservation_time);

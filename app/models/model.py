@@ -7,22 +7,22 @@ from datetime import datetime
 
 Base = declarative_base()
 
-favorites = db.Table(
-    "favorites",
-    db.Model.metadata,
-    db.Column(
-        "user_id",
-        db.Integer,
-        db.ForeignKey("users.id"),
-        primary_key=True
-    ),
-    db.Column(
-        "restaurant_id",
-        db.Integer,
-        db.ForeignKey("restaurants.id"),
-        primary_key=True
-    ),
-)
+# favorites = db.Table(
+#     "favorites",
+#     db.Model.metadata,
+#     db.Column(
+#         "user_id",
+#         db.Integer,
+#         db.ForeignKey("users.id"),
+#         primary_key=True
+#     ),
+#     db.Column(
+#         "restaurant_id",
+#         db.Integer,
+#         db.ForeignKey("restaurants.id"),
+#         primary_key=True
+#     ),
+# )
 
 
 class Restaurant(db.Model):
@@ -51,8 +51,10 @@ class Restaurant(db.Model):
     reservations = db.relationship("Reservation", back_populates="restaurant")
     reviews = db.relationship("Review", back_populates="restaurant")
 
-    users = db.relationship("User", secondary=favorites,
-                            back_populates="restaurants")
+    saved_restaurants = db.relationship("SavedRestaurant", back_populates="restaurants")
+
+    # users = db.relationship("User", secondary=favorites,
+    #                         back_populates="restaurants")
 
     def to_dict(self):
         return {
@@ -145,3 +147,21 @@ class Review(db.Model):
         return f'''<Review, id={self.id}, user_id={self.user_id}, 
         restaruant_id={self.restaurant_id}, review={self.review},
         rating={self.rating}>'''
+
+
+class SavedRestaurant(db.Model):
+    __tablename__ = "saved_restaurants"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
+
+    restaurants = db.relationship("Restaurant", back_populates="saved_restaurants")
+    users = db.relationship("User", back_populates="saved_restaurants")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'restaurant_id': self.restaurant_id
+        }

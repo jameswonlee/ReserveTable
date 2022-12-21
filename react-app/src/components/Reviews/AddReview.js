@@ -35,7 +35,6 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
             };
 
             await dispatch(createReview(reviewData, restaurant.id));
-            alert("Review successfully added");
             await dispatch(getOneRestaurant(restaurant.id));
             setShowAddModal(false);
             history.push(`/restaurants/${restaurant.id}`);
