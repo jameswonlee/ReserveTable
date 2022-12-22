@@ -62,7 +62,6 @@ function NavigationMenu({ showSignInModal, setShowSignInModal }) {
 
     useEffect(() => {
         if (!showReservationsMenu) return;
-
         document.addEventListener('click', closeReservationsMenu);
         return () => document.removeEventListener('click', closeReservationsMenu);
     }, [showReservationsMenu]);
