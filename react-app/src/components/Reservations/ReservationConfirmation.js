@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, useLocation } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import { getAllUserReservations } from "../../store/reservations";
 import { getUserReviews } from '../../store/reviews';
@@ -22,11 +22,12 @@ function ReservationConfirmation() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { reservationId } = useParams();
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
 
     const sessionUser = useSelector(state => state.session.user);
     const allReservations = useSelector(state => Object.values(state.reservations));
     const reservation = allReservations.filter(reservation => reservation.id === +reservationId)[0];
-
     const userReviews = useSelector(state => state.reviews);
     const numReviews = Object.values(userReviews).length;
 
@@ -35,6 +36,14 @@ function ReservationConfirmation() {
     const openCancelModal = () => {
         setShowCancelModal(true);
     }
+
+    useEffect(() => {
+        if (params.get('showCancelModal') === 'true') {
+            setShowCancelModal(true)
+        } else {
+            setShowCancelModal(false)
+        }
+    }, [params])
 
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser?.id))
@@ -51,16 +60,24 @@ function ReservationConfirmation() {
         history.push(`/restaurants/${reservation.restaurant.id}`)
     }
 
+    const routeToReservationConfirmation = () => {
+        history.replace(`/reservations/${reservationId}`);
+    }
+
+    const routeToCancelReservationModal = () => {
+        history.push(`/reservations/${reservation.id}?showCancelModal=true`);
+    }
+
     if (!sessionUser) {
         history.replace('/');
         return null;
     };
 
-    window.scrollTo({
-        top: 100,
-        left: 100,
-        behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //     top: 100,
+    //     left: 100,
+    //     behavior: 'smooth'
+    // });
 
 
     return (
@@ -93,7 +110,7 @@ function ReservationConfirmation() {
                             <span>
                                 <button onClick={routeToModifyPage} className="reservation-confirm-buttons">Modify</button>
                                 <img src={lineBreak} className="edit-reservation-line-break" />
-                                <button onClick={openCancelModal} className="reservation-confirm-buttons">Cancel</button>
+                                <button onClick={routeToCancelReservationModal} className="reservation-confirm-buttons">Cancel</button>
                                 <img src={lineBreak} className="edit-reservation-line-break" />
                                 <button className="reservation-confirm-buttons add-to-calendar">Add to calendar</button>
                             </span>
@@ -130,8 +147,8 @@ function ReservationConfirmation() {
                 </div>
             }
             {showCancelModal &&
-                <Modal onClose={() => setShowCancelModal(false)}>
-                    <CancelReservation reservation={reservation} setShowCancelModal={setShowCancelModal} />
+                <Modal onClose={routeToReservationConfirmation}>
+                    <CancelReservation reservation={reservation} />
                 </Modal>
             }
             <div className="reservation-confirmation-details-right">
