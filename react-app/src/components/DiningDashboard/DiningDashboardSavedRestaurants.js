@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllRestaurants } from "../../store/restaurants";
 import { getAllSavedRestaurants } from "../../store/savedRestaurants";
+import { deleteSavedRestaurant } from "../../store/savedRestaurants";
 import savedRestaurantIcon from '../../icons/saved-restaurant-icon.ico';
 
 import './DiningDashboardSavedRestaurants.css';
@@ -34,6 +35,10 @@ function DiningDashboardSavedRestaurants() {
             sum += review.rating;
         }
         return sum / reviews.length;
+    }
+
+    const removeSavedRestaurant = (restaurantId) => {
+        dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId));
     }
 
     const restaurantCuisine = (restaurant) => {
@@ -71,7 +76,7 @@ function DiningDashboardSavedRestaurants() {
                                         onClick={() => routeToReservations(restaurant.id)}>
                                         {restaurant.name}
                                     </div>
-                                    <div className="saved-restaurants-icon-and-remove">
+                                    <div className="saved-restaurants-icon-and-remove" onClick={() => removeSavedRestaurant(restaurant.id)}>
                                         <img src={savedRestaurantIcon} className="saved-restaurants-saved-restaurant-icon" />
                                         <div className="saved-restaurants-remove-text">Remove from saved restaurants</div>
                                     </div>

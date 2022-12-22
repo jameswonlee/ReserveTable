@@ -22,8 +22,6 @@ function RestaurantProfile({ userReservationTime }) {
     const savedRestaurants = useSelector(state => Object.values(state.savedRestaurants));
     const restaurantAlreadySaved = savedRestaurants.find(restaurant => restaurant.restaurant_id === +restaurantId);
 
-    console.log('restaurantAlreadySaved', restaurantAlreadySaved)
-
     useEffect(() => {
         dispatch(getOneRestaurant(restaurantId));
         dispatch(getAllSavedRestaurants(sessionUser.id));
@@ -49,7 +47,7 @@ function RestaurantProfile({ userReservationTime }) {
         return sum / reviews.length;
     }
 
-    const saveRestaurant = () => {
+    const saveRestaurant = (restaurantId) => {
         restaurantAlreadySaved 
         ? 
         dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId))
@@ -71,14 +69,14 @@ function RestaurantProfile({ userReservationTime }) {
                             }} />
                         {restaurantAlreadySaved
                             ?
-                            <button onClick={saveRestaurant} className="restaurant-profile-save-restaurant-button">
+                            <button onClick={() => saveRestaurant(restaurant.id)} className="restaurant-profile-save-restaurant-button">
                                 <img src={savedRestaurantIcon} className="restaurant-profile-saved-restaurant-icon" />
                                 <div className="restaurant-profile-save-restaurant-text">
                                     Restaurant saved!
                                 </div>
                             </button>
                             :
-                            <button onClick={saveRestaurant} className="restaurant-profile-save-restaurant-button">
+                            <button onClick={() => saveRestaurant(restaurant.id)} className="restaurant-profile-save-restaurant-button">
                                 <img src={saveRestaurantIcon} className="restaurant-profile-save-restaurant-icon" />
                                 <div className="restaurant-profile-save-restaurant-text">
                                     Save this restaurant
