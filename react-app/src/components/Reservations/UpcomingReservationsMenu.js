@@ -42,8 +42,8 @@ function UpcomingReservationsMenu() {
         history.push(`/users/${sessionUser.id}/dining-dashboard`);
     }
 
-    // if (!userReservations.length > 0) return null;
 
+    
     return (
         <>
             {nextReservation
