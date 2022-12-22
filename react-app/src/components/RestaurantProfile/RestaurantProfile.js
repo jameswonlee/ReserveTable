@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getOneRestaurant } from '../../store/restaurants';
+import { Modal } from '../../context/Modal';
+import LoginForm from '../_auth/LoginForm';
 import Reviews from '../Reviews/Reviews'
 import Reservations from '../Reservations/Reservations';
 import AdditionalInfo from './AdditionalInfo';
@@ -14,8 +16,9 @@ import './RestaurantProfile.css'
 import { createSavedRestaurant, deleteSavedRestaurant, getAllSavedRestaurants } from '../../store/savedRestaurants';
 
 
-function RestaurantProfile({ userReservationTime }) {
+function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignInModal }) {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { restaurantId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const restaurant = useSelector(state => state.restaurants[restaurantId]);
@@ -24,7 +27,10 @@ function RestaurantProfile({ userReservationTime }) {
 
     useEffect(() => {
         dispatch(getOneRestaurant(restaurantId));
-        dispatch(getAllSavedRestaurants(sessionUser.id));
+
+        if (sessionUser) {
+            dispatch(getAllSavedRestaurants(sessionUser.id));
+        }
 
         window.scrollTo({
             top: 100,
@@ -32,7 +38,7 @@ function RestaurantProfile({ userReservationTime }) {
             behavior: 'smooth'
         });
 
-    }, [restaurantId, sessionUser.id])
+    }, [restaurantId, sessionUser])
 
     if (!restaurant) return null;
 
@@ -47,14 +53,19 @@ function RestaurantProfile({ userReservationTime }) {
         return sum / reviews.length;
     }
 
-    const saveRestaurant = (restaurantId) => {
-        restaurantAlreadySaved 
-        ? 
-        dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId))
-        :
-        dispatch(createSavedRestaurant(sessionUser.id, restaurantId))
+    const saveRestaurant = async (restaurantId) => {
+        if (sessionUser) {
+            restaurantAlreadySaved
+                ?
+                dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId))
+                :
+                dispatch(createSavedRestaurant(sessionUser.id, restaurantId))
+        } else {
+            await setShowSignInModal(true)
+            history.push(`/restaurants/${restaurant.id}`)
+        }
     }
-    
+
 
 
     return (
@@ -198,6 +209,11 @@ function RestaurantProfile({ userReservationTime }) {
                     </div>
                 </div>
             </div>
+            {showSignInModal && (
+                <Modal onClose={() => setShowSignInModal(false)}>
+                    <LoginForm setShowSignInModal={setShowSignInModal} />
+                </Modal>
+            )}
         </div>
     )
 }

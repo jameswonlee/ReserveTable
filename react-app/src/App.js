@@ -20,6 +20,7 @@ import './index.css';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [showSignInModal, setShowSignInModal] = useState(false);
   const [userReservationTime, setUserReservationTime] = useState("");
   const dispatch = useDispatch();
 
@@ -37,7 +38,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar loaded={loaded} />
+        <NavBar loaded={loaded}
+          setShowSignInModal={setShowSignInModal}
+          showSignInModal={showSignInModal} />
         <Switch>
           <Route path='/login' exact={true}>
             <LoginForm />
@@ -46,9 +49,10 @@ function App() {
             <SignUpForm />
           </Route>
           <Route path='/' exact={true} >
-          <NavigationLocalCity/>
+            <NavigationLocalCity />
             <SearchBar />
-            <DisplayAllRestaurants setUserReservationTime={setUserReservationTime} />
+            <DisplayAllRestaurants
+              setUserReservationTime={setUserReservationTime} />
           </Route>
           {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -57,8 +61,11 @@ function App() {
           <User />
         </ProtectedRoute> */}
           <Route path='/restaurants/:restaurantId'>
-          <NavigationLocalCity/>
-            <RestaurantProfile userReservationTime={userReservationTime} />
+            <NavigationLocalCity />
+            <RestaurantProfile
+              userReservationTime={userReservationTime}
+              setShowSignInModal={setShowSignInModal}
+              showSignInModal={showSignInModal} />
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />

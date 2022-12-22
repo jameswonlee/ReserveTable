@@ -3,10 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
 import bookingSymbol from '../../icons/booking-symbol.ico';
+import './Reservations.css';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-import './Reservations.css';
-
 dayjs.extend(utc);
 
 
@@ -131,7 +130,6 @@ function Reservations({ userReservationTime }) {
                                 className="reservation-find-time-button-logged-in"
                                 disabled={!sessionUser}
                             >
-                                {/* Find a time */}
                                 Reserve Table
                             </button>
                         </div>
