@@ -10,7 +10,7 @@ import './SearchBar.css'
 
 function SearchBar() {
 
-    const [date, setDate] = useState(dayjs().format("YYYY-MM-DD"))
+    const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"))
 
 
     return (
@@ -31,7 +31,7 @@ function SearchBar() {
                                 <div>
                                     <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
                                 </div>
-                                <div className="search-bar-reservation-date-text">{dayjs().format("MMM D, YYYY")}</div>
+                                <div className="search-bar-reservation-date-text">{date}</div>
                                 <div>
                                     <img src={downCarrot} className="search-bar-down-carrot-icon" alt=""/>
                                 </div>
