@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getOneRestaurant } from '../../store/restaurants';
+import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
 import Reviews from '../Reviews/Reviews'
 import Reservations from '../Reservations/Reservations';
@@ -17,13 +18,12 @@ import { createSavedRestaurant, deleteSavedRestaurant, getAllSavedRestaurants } 
 
 function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignInModal }) {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { restaurantId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const restaurant = useSelector(state => state.restaurants[restaurantId]);
     const savedRestaurants = useSelector(state => Object.values(state.savedRestaurants));
     const restaurantAlreadySaved = savedRestaurants.find(restaurant => restaurant.restaurant_id === +restaurantId);
-
-
 
     useEffect(() => {
         dispatch(getOneRestaurant(restaurantId));
@@ -53,7 +53,7 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
         return sum / reviews.length;
     }
 
-    const saveRestaurant = (restaurantId) => {
+    const saveRestaurant = async (restaurantId) => {
         if (sessionUser) {
             restaurantAlreadySaved
                 ?
@@ -61,7 +61,8 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                 :
                 dispatch(createSavedRestaurant(sessionUser.id, restaurantId))
         } else {
-
+            await setShowSignInModal(true)
+            history.push(`/restaurants/${restaurant.id}`)
         }
     }
 
@@ -208,6 +209,11 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                     </div>
                 </div>
             </div>
+            {showSignInModal && (
+                <Modal onClose={() => setShowSignInModal(false)}>
+                    <LoginForm setShowSignInModal={setShowSignInModal} />
+                </Modal>
+            )}
         </div>
     )
 }

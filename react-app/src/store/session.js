@@ -47,8 +47,6 @@ export const login = (email, password) => async (dispatch) => {
     })
   });
 
-  console.log('response', response)
-
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -62,25 +60,6 @@ export const login = (email, password) => async (dispatch) => {
     return ['An error occurred. Please try again.']
   }
 }
-
-// export const login = (user) => async (dispatch) => {
-//   const { email, password } = user;
-//   const response = await fetch('/api/auth/login', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       email,
-//       password,
-//     }),
-//   });
-//   // console.log("this is the response from our server", response)
-//   const data = await response.json();
-//   // console.log("this iss data of the user", data)
-//   dispatch(setUser(data));
-//   return response;
-// };
 
 
 export const logout = () => async (dispatch) => {
