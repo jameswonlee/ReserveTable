@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { getOneRestaurant } from '../../store/restaurants';
+import LoginForm from '../_auth/LoginForm';
 import Reviews from '../Reviews/Reviews'
 import Reservations from '../Reservations/Reservations';
 import AdditionalInfo from './AdditionalInfo';
@@ -14,7 +15,7 @@ import './RestaurantProfile.css'
 import { createSavedRestaurant, deleteSavedRestaurant, getAllSavedRestaurants } from '../../store/savedRestaurants';
 
 
-function RestaurantProfile({ userReservationTime }) {
+function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignInModal }) {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
@@ -22,9 +23,14 @@ function RestaurantProfile({ userReservationTime }) {
     const savedRestaurants = useSelector(state => Object.values(state.savedRestaurants));
     const restaurantAlreadySaved = savedRestaurants.find(restaurant => restaurant.restaurant_id === +restaurantId);
 
+
+
     useEffect(() => {
         dispatch(getOneRestaurant(restaurantId));
-        dispatch(getAllSavedRestaurants(sessionUser.id));
+
+        if (sessionUser) {
+            dispatch(getAllSavedRestaurants(sessionUser.id));
+        }
 
         window.scrollTo({
             top: 100,
@@ -32,7 +38,7 @@ function RestaurantProfile({ userReservationTime }) {
             behavior: 'smooth'
         });
 
-    }, [restaurantId, sessionUser.id])
+    }, [restaurantId, sessionUser])
 
     if (!restaurant) return null;
 
@@ -48,13 +54,17 @@ function RestaurantProfile({ userReservationTime }) {
     }
 
     const saveRestaurant = (restaurantId) => {
-        restaurantAlreadySaved 
-        ? 
-        dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId))
-        :
-        dispatch(createSavedRestaurant(sessionUser.id, restaurantId))
+        if (sessionUser) {
+            restaurantAlreadySaved
+                ?
+                dispatch(deleteSavedRestaurant(sessionUser.id, restaurantId))
+                :
+                dispatch(createSavedRestaurant(sessionUser.id, restaurantId))
+        } else {
+
+        }
     }
-    
+
 
 
     return (

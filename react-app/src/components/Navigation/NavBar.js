@@ -9,7 +9,7 @@ import downCarrot from '../../icons/down-carrot.ico';
 import './NavBar.css';
 
 
-const NavBar = ({ loaded }) => {
+const NavBar = ({ loaded, showSignInModal, setShowSignInModal }) => {
 
   return (
     <div className="navigation">
@@ -34,7 +34,7 @@ const NavBar = ({ loaded }) => {
           </div>
         </div>
         {loaded &&
-          <NavigationMenu />}
+          <NavigationMenu showSignInModal={showSignInModal} setShowSignInModal={setShowSignInModal}/>}
       </div>
     </div>
   );
