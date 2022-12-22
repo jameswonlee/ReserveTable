@@ -10,7 +10,8 @@
     width: 780px;
     margin-left: 40px;
     margin-top: 35px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .saved-restaurants-show-container {

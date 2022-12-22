@@ -14,7 +14,6 @@ function CancelReservation({ reservation, setShowCancelModal }) {
 
     const deleteReservationHandler = () => {
         dispatch(deleteReservation(reservation.id));
-        alert("Reservation canceled");
         history.push(`/`)
     }
 
