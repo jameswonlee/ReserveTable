@@ -30,16 +30,15 @@ function UpcomingReservationsMenu() {
         dispatch(getAllUserReservations(sessionUser.id));
     }, [sessionUser])
 
-    const handleSubmit = () => {
+    const routeToReservationConfirmation = () => {
         history.push(`/reservations/${nextReservation.id}`)
     };
 
-    // const handleCancelSubmit = () => {
-    //     history.push(`/reservations/${nextReservation.id}`)
+    const routeToCancelReservationModal = () => {
+        history.push(`/reservations/${nextReservation.id}?showCancelModal=true`);
+    }
 
-    // }
-
-    const clickHandler = () => {
+    const routeToDiningDashboard = () => {
         history.push(`/users/${sessionUser.id}/dining-dashboard`);
     }
 
@@ -96,22 +95,22 @@ function UpcomingReservationsMenu() {
                         </div>
                         <div className="upcoming-reservation-menu-options">
                             <span>
-                                <button onClick={handleSubmit} className="upcoming-reservation-button">View </button>
+                                <button onClick={routeToReservationConfirmation} className="upcoming-reservation-button">View </button>
                                 <span className="upcoming-reservation-menu-dot">&nbsp;·&nbsp;</span>
-                                <button onClick={handleSubmit} className="upcoming-reservation-button"> Modify </button>
+                                <button onClick={routeToReservationConfirmation} className="upcoming-reservation-button"> Modify </button>
                                 <span className="upcoming-reservation-menu-dot">·&nbsp;</span>
                                 <button className="upcoming-reservation-button-no-pointer">Invite guests</button>
                             </span>
                         </div>
                         <div>
-                            <div onClick={handleSubmit} className="upcoming-reservation-menu-cancel-button">
+                            <div onClick={routeToCancelReservationModal} className="upcoming-reservation-menu-cancel-button">
                                 Cancel
                             </div>
                             <div className="upcoming-reservation-menu-border-line">
                             </div>
                         </div>
                         <div>
-                            <div onClick={clickHandler} className="upcoming-reservation-view-all-reservations-button">
+                            <div onClick={routeToDiningDashboard} className="upcoming-reservation-view-all-reservations-button">
                                 View all reservations
                             </div>
                         </div>

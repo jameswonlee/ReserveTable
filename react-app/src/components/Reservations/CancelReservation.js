@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import upcomingReservationsIcon from '../../icons/upcoming-reservations-icon.ico';
 import { deleteReservation } from '../../store/reservations';
 import personIcon from '../../icons/person-icon.ico';
-import x from '../../icons/x-icon.ico';
+import xIcon from '../../icons/x-icon.ico';
 import dayjs from 'dayjs';
 import './CancelReservation.css';
 
@@ -17,9 +17,13 @@ function CancelReservation({ reservation, setShowCancelModal }) {
         history.push(`/`)
     }
 
+    const routeToReservationConfirmation = () => {
+        history.replace(`/reservations/${reservation.id}`);
+    }
+
     return (
         <div>
-            <img src={x} className="cancel-reservation-modal-x" alt="" onClick={() => setShowCancelModal(false)} />
+            <img src={xIcon} className="cancel-reservation-modal-x" alt="" onClick={routeToReservationConfirmation} />
             <div className="cancel-reservation-modal-container">
                 <div className="cancellation-heading">
                     Are you sure you want to cancel this reservation?
@@ -47,7 +51,7 @@ function CancelReservation({ reservation, setShowCancelModal }) {
             </div>
             <div className="cancel-reservation-modal-buttons">
                 <span>
-                    <button onClick={() => setShowCancelModal(false)} className="reservation-cancel-modal-nevermind-button">
+                    <button onClick={routeToReservationConfirmation} className="reservation-cancel-modal-nevermind-button">
                         Nevermind
                     </button>
                     <button onClick={deleteReservationHandler} className="reservation-cancel-modal-cancel-button">
