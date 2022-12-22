@@ -31,7 +31,7 @@ function SearchBar() {
                                 <div>
                                     <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
                                 </div>
-                                <div className="search-bar-reservation-date-text">Dec 17, 2022</div>
+                                <div className="search-bar-reservation-date-text">{dayjs().format("MMM D, YYYY")}</div>
                                 <div>
                                     <img src={downCarrot} className="search-bar-down-carrot-icon" alt=""/>
                                 </div>
