@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
+import { Modal } from '../../context/Modal';
+import LoginForm from '../_auth/LoginForm';
 import bookingSymbol from '../../icons/booking-symbol.ico';
 import './Reservations.css';
 import dayjs from 'dayjs';
@@ -9,7 +11,7 @@ import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
 
-function Reservations({ userReservationTime }) {
+function Reservations({ userReservationTime, showSignInModal, setShowSignInModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const { restaurantId } = useParams();
@@ -24,6 +26,12 @@ function Reservations({ userReservationTime }) {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+
+        if (!sessionUser) {
+            setShowSignInModal(true);
+            return;
+        }
+
         setValidationErrors([]);
         const errors = [];
 
@@ -122,28 +130,19 @@ function Reservations({ userReservationTime }) {
                             </label>
                         </div>
                     </div>
-                    {sessionUser
-                        ?
-                        < div className="reservation-find-time-button-container">
-                            <button
-                                type="submit"
-                                className="reservation-find-time-button-logged-in"
-                                disabled={!sessionUser}
-                            >
-                                Reserve Table
-                            </button>
-                        </div>
-                        :
-                        <div className="reservation-find-time-button-container">
-                            <button
-                                type="submit"
-                                className="reservation-find-time-button-logged-out"
-                                disabled={!sessionUser}
-                            >
-                                Reserve Table
-                            </button>
-                        </div>
-                    }
+                    < div className="reservation-reserve-table-button-container">
+                        <button
+                            type="submit"
+                            className="reservation-reserve-table-button"
+                        >
+                            Reserve Table
+                        </button>
+                    </div>
+                    {showSignInModal && (
+                        <Modal onClose={() => setShowSignInModal(false)}>
+                            <LoginForm setShowSignInModal={setShowSignInModal} />
+                        </Modal>
+                    )}
                     <div className="reservation-booking-total-num">
                         <span className="reservation-booking-align">
                             <img src={bookingSymbol} className="reservation-booking-symbol" />

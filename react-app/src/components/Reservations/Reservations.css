@@ -132,7 +132,7 @@
 }
 
 
-.reservation-find-time-button-logged-in {
+.reservation-reserve-table-button {
     width: 295px;
     height: 46px;
     margin-left: 12px;
@@ -145,26 +145,8 @@
     font-weight: 600;
 }
 
-.reservation-find-time-button-logged-in:hover {
+.reservation-reserve-table-button:hover {
     cursor: pointer;
-}
-
-.reservation-find-time-button-logged-out {
-    width: 295px;
-    height: 46px;
-    margin-left: 12px;
-    margin-top: -3px;
-    border-radius: 4px;
-    border: none;
-    background-color: rgb(218, 54, 68);
-    font-size: 1rem;
-    color: white;
-    font-weight: 600;
-}
-
-.reservation-find-time-button-logged-out:hover {
-    cursor: not-allowed;
-    background-color: rgb(246, 127, 127);
 }
 
 .reservation-booking-symbol {
