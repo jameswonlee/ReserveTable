@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import DiningDashboardReservations from './DiningDashboardReservations';
 import DiningDashboardSavedRestaurants from './DiningDashboardSavedRestaurants';
 import newIcon from '../../icons/new-icon.ico';
@@ -9,10 +9,12 @@ import './DiningDashboard.css';
 
 function DiningDashboard() {
     const history = useHistory();
+    const location = useLocation();
     const sessionUser = useSelector(state => state.session.user);
-
-    const [showReservations, setShowReservations] = useState(true);
-    const [showSavedRestaurants, setShowSavedRestaurants] = useState(false);
+    console.log('location', location)
+    const params = new URLSearchParams(location.search);
+    console.log('params', params.toString())
+    console.log('params.get', params.get('view'))
 
     if (!sessionUser) {
         history.replace(`/`);
@@ -33,11 +35,10 @@ function DiningDashboard() {
                 <div className="dining-dashboard-left">
                     <div className="dining-dashboard-menu-options">
                         <div onClick={() => {
-                            setShowSavedRestaurants(false)
-                            setShowReservations(true)
+                            history.push(`/users/${sessionUser.id}/dining-dashboard`)
                         }}
                             className="dining-dashboard-space-to-top dining-dashboard-reservations">
-                            {showReservations
+                            {!params.has('view')
                                 ?
                                 <div className="dining-dashboard-reservations-text-true">Reservations</div>
                                 :
@@ -45,11 +46,10 @@ function DiningDashboard() {
                             }
                         </div>
                         <div onClick={() => {
-                            setShowReservations(false)
-                            setShowSavedRestaurants(true)
+                            history.push(`/users/${sessionUser.id}/dining-dashboard?view=saved-restaurants`)
                         }}
                             className="dining-dashboard-space-to-top dining-dashboard-saved-restaurants">
-                            {showSavedRestaurants
+                            {params.get('view') === 'saved-restaurants'
                                 ?
                                 <div className="dining-dashboard-saved-restaurants-text-true">Saved Restaurants</div>
                                 :
@@ -61,10 +61,10 @@ function DiningDashboard() {
                         <div className="dining-dashboard-space-to-top not-first-item">Payment Methods</div>
                     </div>
                 </div>
-                {showReservations &&
+                {!params.has('view') &&
                     <DiningDashboardReservations />
                 }
-                {showSavedRestaurants &&
+                {params.get('view') === 'saved-restaurants' &&
                     <DiningDashboardSavedRestaurants />
                 }
             </div>

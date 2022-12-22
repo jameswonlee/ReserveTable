@@ -14,7 +14,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
     }
 
     const routeToSavedRestaurants = () => {
-        history.push(`/users/${sessionUser.id}/dining-dashboard`);
+        history.push(`/users/${sessionUser.id}/dining-dashboard?view=saved-restaurants`);
     }
 
 

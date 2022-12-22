@@ -5,7 +5,6 @@ import { getAllRestaurants } from "../../store/restaurants";
 import { getAllSavedRestaurants } from "../../store/savedRestaurants";
 import { deleteSavedRestaurant } from "../../store/savedRestaurants";
 import savedRestaurantIcon from '../../icons/saved-restaurant-icon.ico';
-
 import './DiningDashboardSavedRestaurants.css';
 
 

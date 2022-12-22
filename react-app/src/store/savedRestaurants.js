@@ -51,6 +51,7 @@ export const createSavedRestaurant = (userId, restaurantId) => async (dispatch) 
 
     if (response.ok) {
         const restaurant = await response.json();
+        console.log('restaurant', restaurant)
         dispatch(addSavedRestaurant(restaurant));
         return restaurant;
     }
@@ -81,23 +82,18 @@ const savedRestaurantsReducer = (state = initialState, action) => {
         case LOAD_ALL_SAVED_RESTAURANTS:
             newState = { ...state };
             action.savedRestaurants.SavedRestaurants.forEach(restaurant => {
-                newState[restaurant.id] = restaurant
+                newState[restaurant.restaurant_id] = restaurant
             })
             return newState;
 
         case ADD_SAVED_RESTAURANT:
             newState = { ...state };
-            newState[action.savedRestaurant.id] = action.savedRestaurant;
+            newState[action.savedRestaurant.restaurant_id] = action.savedRestaurant;
             return newState;
 
         case REMOVE_SAVED_RESTAURANT:
             newState = { ...state };
             delete newState[action.restaurantId];
-            // const { [action.savedRestaurant]: deletedRestaurant, ...rest } = state.savedRestaurants;
-            // newState = {
-            //     ...state,
-            //     savedRestaurants: rest
-            // }
             return newState;
 
         default:
