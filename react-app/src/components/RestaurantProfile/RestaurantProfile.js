@@ -110,7 +110,10 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                             </div>
                         </div>
                         <div className="reservations-component">
-                            <Reservations userReservationTime={userReservationTime} />
+                            <Reservations 
+                            userReservationTime={userReservationTime} 
+                            showSignInModal={showSignInModal}
+                            setShowSignInModal={setShowSignInModal}/>
                         </div>
                     </div>
                 </div>
