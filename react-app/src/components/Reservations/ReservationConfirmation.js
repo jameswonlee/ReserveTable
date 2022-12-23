@@ -12,10 +12,8 @@ import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico'
 import locationIcon from '../../icons/location-icon.ico';
 import numReviewsIcon from '../../icons/num-reviews.ico';
 import reservationCompletedIcon from '../../icons/reservation-completed-red-icon.ico';
-// import lineBreak from '../../icons/line-break.png';
 import dayjs from 'dayjs';
 import './ReservationConfirmation.css';
-
 
 
 function ReservationConfirmation() {
@@ -48,7 +46,7 @@ function ReservationConfirmation() {
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser?.id))
         dispatch(getUserReviews(sessionUser?.id))
-    }, [sessionUser])
+    }, [sessionUser?.id])
 
     if (!reservation) return null;
 
