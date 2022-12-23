@@ -481,7 +481,7 @@ def seed_reviews():
     )
 
     review13_2 = Review(
-        user_id=2, restaurant_id=13, review="I have been to the restaurant for lunch and dinner and love the ambiance during the dinner time. The noise level a little to high at certain times. Overall , very enjoyable.",
+        user_id=2, restaurant_id=13, review="I have been to the restaurant for lunch and dinner and love the ambiance during the dinner time. The noise level a little too high at certain times. Overall , very enjoyable.",
         rating=5
     )
 
