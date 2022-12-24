@@ -31,9 +31,6 @@ function ReservationConfirmation() {
 
     const [showCancelModal, setShowCancelModal] = useState(false);
 
-    const openCancelModal = () => {
-        setShowCancelModal(true);
-    }
 
     useEffect(() => {
         if (params.get('showCancelModal') === 'true') {
