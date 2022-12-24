@@ -215,77 +215,77 @@ def undo_restaurants():
 
 def seed_reservations():
     rsvp1 = Reservation(
-        user_id=2, restaurant_id=1, reservation_time=datetime.datetime(2022,12,10,17,30),
+        user_id=2, restaurant_id=1, reservation_time=datetime.datetime(2022,12,10,2,30),
         party_size=2
     )
 
     rsvp2 = Reservation(
-        user_id=2, restaurant_id=2, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=2, restaurant_id=2, reservation_time=datetime.datetime(2022,12,25,2,00),
         party_size=3
     )
 
     rsvp3 = Reservation(
-        user_id=3, restaurant_id=3, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=3, restaurant_id=3, reservation_time=datetime.datetime(2022,12,25,2,00),
         party_size=4
     )
 
     rsvp4 = Reservation(
-        user_id=3, restaurant_id=4, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=3, restaurant_id=4, reservation_time=datetime.datetime(2022,12,25,2,00),
         party_size=3
     )
 
     rsvp5 = Reservation(
-        user_id=4, restaurant_id=5, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=4, restaurant_id=5, reservation_time=datetime.datetime(2022,12,25,3,00),
         party_size=3
     )
 
     rsvp6 = Reservation(
-        user_id=5, restaurant_id=6, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=5, restaurant_id=6, reservation_time=datetime.datetime(2022,12,25,2,00),
         party_size=3
     )
 
     rsvp7 = Reservation(
-        user_id=6, restaurant_id=7, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=6, restaurant_id=7, reservation_time=datetime.datetime(2022,12,25,2,30),
         party_size=3
     )
 
     rsvp8 = Reservation(
-        user_id=2, restaurant_id=8, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=2, restaurant_id=8, reservation_time=datetime.datetime(2022,12,25,3,00),
         party_size=3
     )
 
     rsvp9 = Reservation(
-        user_id=3, restaurant_id=9, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=3, restaurant_id=9, reservation_time=datetime.datetime(2022,12,25,2,00),
         party_size=3
     )
 
     rsvp10 = Reservation(
-        user_id=4, restaurant_id=2, reservation_time=datetime.datetime(2022,12,24,18,00),
+        user_id=4, restaurant_id=2, reservation_time=datetime.datetime(2022,12,25,2,00),
         party_size=3
     )
 
     rsvp11 = Reservation(
-        user_id=1, restaurant_id=11, reservation_time=datetime.datetime(2022,12,5,18,00),
+        user_id=1, restaurant_id=11, reservation_time=datetime.datetime(2022,12,5,2,00),
         party_size=4
     )
 
     rsvp12 = Reservation(
-        user_id=1, restaurant_id=12, reservation_time=datetime.datetime(2022,12,1,19,00),
+        user_id=1, restaurant_id=12, reservation_time=datetime.datetime(2022,12,1,3,00),
         party_size=2
     )
 
     rsvp13 = Reservation(
-        user_id=1, restaurant_id=13, reservation_time=datetime.datetime(2023,1,5,18,30),
+        user_id=1, restaurant_id=13, reservation_time=datetime.datetime(2023,1,5,2,30),
         party_size=2
     )
 
     rsvp14 = Reservation(
-        user_id=1, restaurant_id=14, reservation_time=datetime.datetime(2023,2,5,18,30),
+        user_id=1, restaurant_id=14, reservation_time=datetime.datetime(2023,2,5,2,30),
         party_size=2
     )
 
     rsvp15 = Reservation(
-        user_id=1, restaurant_id=15, reservation_time=datetime.datetime(2023,3,3,17,00),
+        user_id=1, restaurant_id=15, reservation_time=datetime.datetime(2023,3,3,1,00),
         party_size=3
     )
 
@@ -300,7 +300,6 @@ def undo_reservations():
         db.session.execute("DELETE FROM users")
         
     db.session.commit()
-
 
 
 
@@ -328,7 +327,8 @@ def seed_reviews():
     )
 
     review2_1 = Review(
-        user_id=4, restaurant_id=2, review="""Was fortunate enough to get a seat by the fireplace in the courtyard as requested as usual. The hosts, the wait staff, everyone is exceptional every time. And I eat there frequently. I have yet to have a less than perfect meal there and I've been going since 1994 at the old location. Miss seeing Mr Puck as much as used to be around but understandably, he's a busy gentleman. Shout out to Maria, love to walk in and see your smile.""", rating=5
+        user_id=4, restaurant_id=2, review="""Was fortunate enough to get a seat by the fireplace in the courtyard as requested as usual. The hosts, the wait staff, everyone is exceptional every time. And I eat there frequently. I have yet to have a less than perfect meal there and I've been going since 1994 at the old location. Miss seeing Mr Puck as much as used to be around but understandably, he's a busy gentleman. Shout out to Maria, love to walk in and see your smile.""", 
+        rating=5
     )
 
     review2_2 = Review(
@@ -347,7 +347,8 @@ def seed_reviews():
     )
 
     review3_1 = Review(
-        user_id=2, restaurant_id=3, review="""From beginning to end, a great experience! When was the last time you went to a nice restaurant and the the manager walked you to your table and pulled the table out for you to sit in the booth? And, when was the last time your waiter offered you an ice cold fork for your salad? The prime rib and all the sides were delicious! To top off the wonderful meal, warm chocolate cake and ice cream! Outstanding service! (Mike was our waiter) Loved this evening!""", rating=5
+        user_id=2, restaurant_id=3, review="""From beginning to end, a great experience! When was the last time you went to a nice restaurant and the the manager walked you to your table and pulled the table out for you to sit in the booth? And, when was the last time your waiter offered you an ice cold fork for your salad? The prime rib and all the sides were delicious! To top off the wonderful meal, warm chocolate cake and ice cream! Outstanding service! (Mike was our waiter) Loved this evening!""", 
+        rating=5
     )
 
     review3_2 = Review(
