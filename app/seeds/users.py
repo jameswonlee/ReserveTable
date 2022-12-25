@@ -302,7 +302,6 @@ def undo_reservations():
     db.session.commit()
 
 
-
 # *************************************** Reviews ******************************************** #
 
 def seed_reviews():
