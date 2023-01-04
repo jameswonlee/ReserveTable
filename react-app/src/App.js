@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/_auth/LoginForm';
-import SearchBar from './components/SearchBar/SearchBar'
+import SearchBar from './components/Search/SearchBar'
 import NavBar from './components/Navigation/NavBar';
 import { authenticate } from './store/session';
 import DisplayAllRestaurants from './components/AllRestaurants/AllRestaurants';

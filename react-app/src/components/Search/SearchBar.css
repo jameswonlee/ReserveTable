@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* margin-left: -10px; */
 }
 
 .search-bar-date-time-party-container {
@@ -34,7 +33,6 @@
     height: 48px;
     width: 480px;
     border-radius: 4px;
-    /* margin-left: -5px; */
 }
 
 /* delete after presentation */
@@ -139,10 +137,9 @@
     /* delete */
     margin-left: 5px;
     width: 100px;
-
 }
 
-.search-bar-cuisine-text-container {
+.search-bar-text-input-container {
     background-color: white;
     height: 48px;
     margin-left: 17px;
@@ -152,13 +149,171 @@
     border-radius: 4px;
 }
 
-.search-bar-search-text {
+.search-bar-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(203, 203, 203);
+
+}
+
+.search-bar-search-input {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5px;
-    color: rgb(149, 149, 149);
+    color: rgb(90, 89, 89);
     font-size: 1.02rem;
+    font-weight: 500;
+    width: 240px;
+    height: 40px;
+    border: none;
+}
+
+.search-bar-search-results-container {
+    margin-left: 497px;
+    margin-top: -2px;
+    border: solid;
+    border-color: rgb(233, 233, 233);
+    border-top-width: thin;
+    width: 292px;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    z-index: 5;
+}
+
+.search-bar-search-text-container {
+    height: 38px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(218, 54, 68);
+}
+
+.search-bar-search-text {
+    color: white;
+    font-weight: 300;
+    margin-left: 40px;
+}
+
+.search-bar-locations-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 38px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: rgb(243, 241, 241);
+}
+
+.search-bar-locations-icon {
+    height: 25px;
+    width: 20px;
+    margin-left: 7px;
+}
+
+.search-bar-locations-text {
+    color: rgb(111, 115, 123);
+    font-weight: 500;
+    margin-left: 13px;
+}
+
+.search-bar-locations-results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.search-bar-locations-results {
+    color: rgb(111, 115, 123);
+    margin-left: 40px;
+    height: 38px;
+    margin-top: 3px;
+    margin-bottom: -3px;
+}
+
+.search-bar-cuisines-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 38px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: rgb(243, 241, 241);
+}
+
+.search-bar-cuisines-text {
+    color: rgb(111, 115, 123);
+    font-weight: 500;
+    margin-left: 7px;
+}
+
+.search-bar-cuisines-icon {
+    height: 25px;
+    width: 25px;
+    margin-left: 7px;
+}
+
+.search-bar-cuisines-results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 12px;
+    margin-top: 1px;
+    margin-bottom: -3px;
+}
+
+.search-bar-cuisines-results {
+    color: rgb(111, 115, 123);
+    margin-left: 39px;
+    height: 38px;
+  
+}
+
+.search-bar-restaurants-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 38px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: rgb(243, 241, 241);
+    /* margin-top: -4px; */
+}
+
+.search-bar-restaurants-text {
+    color: rgb(111, 115, 123);
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.search-bar-restaurants-results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-top: 3px;
+    margin-bottom: -3px;
+}
+
+.search-bar-restaurants-results {
+    color: rgb(111, 115, 123);
+    margin-left: 38px;
+    min-height: 38px;
+    padding-right: 14px;
+    
+}
+
+.search-bar-restaurants-icon {
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
 }
 
 .search-bar-magnifying-glass-icon {

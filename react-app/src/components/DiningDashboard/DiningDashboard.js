@@ -12,8 +12,6 @@ function DiningDashboard() {
     const sessionUser = useSelector(state => state.session.user);
     console.log('location', location)
     const params = new URLSearchParams(location.search);
-    console.log('params', params.toString())
-    console.log('params.get', params.get('view'))
 
     if (!sessionUser) {
         history.replace(`/`);
