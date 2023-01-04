@@ -1,16 +1,45 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import reservationDateIcon from '../../icons/upcoming-reservations-icon.ico';
 import magnifyingGlass from '../../icons/search-button.ico';
 import clockIcon from '../../icons/clock-icon.ico';
 import downCarrot from '../../icons/down-carrot.ico';
 import personIcon from '../../icons/person-icon.ico';
+import locationsIcon from '../../icons/search-location-icon.ico';
+import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
+import cuisinesIcon from '../../icons/search-cuisines-icon.ico';
 import dayjs from 'dayjs';
 import './SearchBar.css'
 
 
 function SearchBar() {
+    const allRestaurants = useSelector(state => Object.values(state.restaurants));
 
-    const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"))
+    const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"));
+    const [searchInput, setSearchInput] = useState("");
+
+    // const futureReservations = allReservations
+    //     .filter(reservation => dayjs().isBefore(reservation.reservation_time))
+    //     .sort((reservationA, reservationB) => {
+    //         return dayjs(reservationA.reservation_time).valueOf() - dayjs(reservationB.reservation_time).valueOf()
+    //     });
+
+    const locationResults = allRestaurants
+        .filter(restaurant => restaurant.neighborhood.toLowerCase().includes(searchInput.toLowerCase()));
+
+    const locations = [...new Set(locationResults)];
+
+
+    const restaurantResults = allRestaurants
+        .filter(restaurant => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()));
+
+    const restaurants = [...new Set(restaurantResults)];
+
+
+    const cuisineResults = allRestaurants
+        .filter(restaurant => restaurant.cuisines.split(',')[0].toLowerCase().includes(searchInput.toLowerCase()));
+
+    const cuisines = [...new Set(cuisineResults)];
 
 
     return (
@@ -33,11 +62,11 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-reservation-date-text">{date}</div>
                                 <div>
-                                    <img src={downCarrot} className="search-bar-down-carrot-icon" alt=""/>
+                                    <img src={downCarrot} className="search-bar-down-carrot-icon" alt="" />
                                 </div>
                             </div>
                             <div className="search-bar-time-input-container">
-                                <img src={clockIcon} className="search-bar-clock-icon" alt=""/>
+                                <img src={clockIcon} className="search-bar-clock-icon" alt="" />
                                 <select className="search-bar-time-select">
                                     <option value="11:00">11:00 AM</option>
                                     <option value="11:30">11:30 AM</option>
@@ -65,7 +94,7 @@ function SearchBar() {
                                 </select>
                             </div>
                             <div className="search-bar-party-size-container">
-                                <img src={personIcon} className="search-bar-person-icon" alt=""/>
+                                <img src={personIcon} className="search-bar-person-icon" alt="" />
                                 <select className="search-bar-party-size-select">
                                     {/* <option value="1">1 person</option> */}
                                     <option value="2">2 people</option>
@@ -91,12 +120,17 @@ function SearchBar() {
                                 </select>
                             </div>
                         </div>
-                        <div className="search-bar-cuisine-text-container">
+                        <div className="search-bar-text-input-container">
                             <div>
                                 <img src={magnifyingGlass} className="search-bar-magnifying-glass-icon" alt="" />
                             </div>
-                            <div className="search-bar-search-text">
-                                <div>Location, Restaurant, or Cuisine</div>
+                            <div className="search-bar-search-container">
+                                <input className="search-bar-search-input"
+                                    type="search"
+                                    placeholder="Location, Restaurant, or Cuisine"
+                                    value={searchInput}
+                                    onChange={(e) => setSearchInput(e.target.value)}
+                                />
                             </div>
                         </div>
                         <div>
@@ -105,8 +139,55 @@ function SearchBar() {
                             </button>
                         </div>
                     </div>
-
                 </form>
+                {searchInput &&
+                    <div className="search-bar-search-results-container">
+                        <div className="search-bar-search-text-container">
+                            <div className="search-bar-search-text">
+                                Search : "<strong>{searchInput}</strong>"
+                            </div>
+                        </div>
+                        {locations.length > 0 &&
+                            <div className="search-bar-location-results-container">
+                                <div className="search-bar-locations-text-container">
+                                    <img src={locationsIcon} className="search-bar-locations-icon" />
+                                    <div className="search-bar-locations-text">Locations</div>
+                                </div>
+                                <div className="search-bar-locations-results-container">
+                                    {locations.map(restaurant => (
+                                        <div className="search-bar-locations-results">{restaurant.neighborhood}</div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
+                        {cuisines.length > 0 &&
+                            <div className="search-bar-cuisines-container">
+                                <div className="search-bar-cuisines-text-container">
+                                    <img src={cuisinesIcon} className="search-bar-cuisines-icon" />
+                                    <div className="search-bar-cuisines-text">Cuisines</div>
+                                </div>
+                                <div className="search-bar-cuisines-results-container">
+                                    {cuisines.map(restaurant => (
+                                        <div className="search-bar-cuisines-results">{restaurant.cuisines.split(',')[0]}</div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
+                        {restaurants.length > 0 &&
+                            <div className="search-bar-restaurants-container">
+                                <div className="search-bar-restaurants-text-container">
+                                    <img src={restaurantsIcon} className="search-bar-restaurants-icon" />
+                                    <div className="search-bar-restaurants-text">Restaurants</div>
+                                </div>
+                                <div className="search-bar-restaurants-results-container">
+                                    {restaurants.map(restaurant => (
+                                        <div className="searc-bar-restaurants-results">{restaurant.name}</div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
             </div>
         </div>
     )
