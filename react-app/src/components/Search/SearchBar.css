@@ -305,6 +305,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 2px;
+    margin-bottom: -3px;
 }
 
 .search-bar-restaurants-results-text {
