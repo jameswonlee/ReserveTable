@@ -198,7 +198,7 @@
 .search-bar-search-text {
     color: white;
     font-weight: 300;
-    margin-left: 40px;
+    margin-left: 38px;
 }
 
 .search-bar-locations-text-container {
@@ -234,8 +234,7 @@
     color: rgb(111, 115, 123);
     margin-left: 40px;
     height: 38px;
-    margin-top: 3px;
-    margin-bottom: -3px;
+    margin-bottom: -6px;
 }
 
 .search-bar-cuisines-text-container {
@@ -265,8 +264,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-top: 12px;
-    margin-top: 1px;
-    margin-bottom: -3px;
+    margin-bottom: -6px;
 }
 
 .search-bar-cuisines-results {
@@ -284,7 +282,6 @@
     border-top: solid;
     border-bottom: solid;
     border-color: rgb(243, 241, 241);
-    /* margin-top: -4px; */
 }
 
 .search-bar-restaurants-text {
@@ -296,18 +293,25 @@
 .search-bar-restaurants-results-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 10px;
-    margin-top: 3px;
-    margin-bottom: -3px;
 }
 
 .search-bar-restaurants-results {
     color: rgb(111, 115, 123);
     margin-left: 38px;
-    min-height: 38px;
-    padding-right: 14px;
-    
+    height: 38px;
+    padding-right: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search-bar-restaurants-results-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .search-bar-restaurants-icon {

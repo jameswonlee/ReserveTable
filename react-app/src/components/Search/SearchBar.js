@@ -190,7 +190,9 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-restaurants-results-container">
                                     {restaurants.map(restaurant => (
-                                        <div className="search-bar-restaurants-results">{restaurant.name}</div>
+                                        <div className="search-bar-restaurants-results">
+                                            <div className="search-bar-restaurants-results-text">{restaurant.name}</div>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
