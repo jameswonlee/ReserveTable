@@ -18,16 +18,18 @@ function SearchBar() {
     const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"));
     const [searchInput, setSearchInput] = useState("");
 
-    // const futureReservations = allReservations
-    //     .filter(reservation => dayjs().isBefore(reservation.reservation_time))
-    //     .sort((reservationA, reservationB) => {
-    //         return dayjs(reservationA.reservation_time).valueOf() - dayjs(reservationB.reservation_time).valueOf()
-    //     });
+    const allLocations = () => {
+        let uniqueLocations = [];
 
-    const locationResults = allRestaurants
-        .filter(restaurant => restaurant.neighborhood.toLowerCase().includes(searchInput.toLowerCase()));
+        allRestaurants.forEach(restaurant => {
+            uniqueLocations.push(restaurant.neighborhood)
+        })
+        return [...new Set(uniqueLocations)];
+    }
 
-    const locations = [...new Set(locationResults)];
+    const locationsArr = allLocations();
+    const locations = locationsArr
+        .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
 
 
     const restaurantResults = allRestaurants
@@ -35,11 +37,18 @@ function SearchBar() {
 
     const restaurants = [...new Set(restaurantResults)];
 
+    const allCuisines = () => {
+        let uniqueCuisines = [];
 
-    const cuisineResults = allRestaurants
-        .filter(restaurant => restaurant.cuisines.split(',')[0].toLowerCase().includes(searchInput.toLowerCase()));
+        allRestaurants.forEach(restaurant => {
+            uniqueCuisines.push(restaurant.cuisines.split(', ')[0])
+        })
+        return [...new Set(uniqueCuisines)];
+    }
+    const cuisinesArr = allCuisines();
+    const cuisines = cuisinesArr
+        .filter(cuisine => cuisine.toLowerCase().includes(searchInput.toLowerCase()));
 
-    const cuisines = [...new Set(cuisineResults)];
 
 
     return (
@@ -154,8 +163,8 @@ function SearchBar() {
                                     <div className="search-bar-locations-text">Locations</div>
                                 </div>
                                 <div className="search-bar-locations-results-container">
-                                    {locations.map(restaurant => (
-                                        <div className="search-bar-locations-results">{restaurant.neighborhood}</div>
+                                    {locations.map(location => (
+                                        <div className="search-bar-locations-results">{location}</div>
                                     ))}
                                 </div>
                             </div>
@@ -167,8 +176,8 @@ function SearchBar() {
                                     <div className="search-bar-cuisines-text">Cuisines</div>
                                 </div>
                                 <div className="search-bar-cuisines-results-container">
-                                    {cuisines.map(restaurant => (
-                                        <div className="search-bar-cuisines-results">{restaurant.cuisines.split(',')[0]}</div>
+                                    {cuisines.map(cuisine => (
+                                        <div className="search-bar-cuisines-results">{cuisine}</div>
                                     ))}
                                 </div>
                             </div>
@@ -181,7 +190,7 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-restaurants-results-container">
                                     {restaurants.map(restaurant => (
-                                        <div className="searc-bar-restaurants-results">{restaurant.name}</div>
+                                        <div className="search-bar-restaurants-results">{restaurant.name}</div>
                                     ))}
                                 </div>
                             </div>
