@@ -230,6 +230,7 @@
 }
 
 .search-bar-locations-results {
+    color: rgb(111, 115, 123);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -244,7 +245,6 @@
 }
 
 .search-bar-locations-results-text {
-    color: rgb(111, 115, 123);
     margin-left: 40px;
 }
 
