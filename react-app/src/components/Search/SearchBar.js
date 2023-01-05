@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import reservationDateIcon from '../../icons/upcoming-reservations-icon.ico';
 import magnifyingGlass from '../../icons/search-button.ico';
 import clockIcon from '../../icons/clock-icon.ico';
@@ -13,10 +14,13 @@ import './SearchBar.css'
 
 
 function SearchBar() {
+    const history = useHistory();
     const allRestaurants = useSelector(state => Object.values(state.restaurants));
 
     const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"));
+    const [partySize, setPartySize] = useState(2)
     const [searchInput, setSearchInput] = useState("");
+
 
     const allLocations = () => {
         let uniqueLocations = [];
@@ -27,15 +31,17 @@ function SearchBar() {
         return [...new Set(uniqueLocations)];
     }
 
+
     const locationsArr = allLocations();
     const locations = locationsArr
         .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
 
 
+
     const restaurantResults = allRestaurants
         .filter(restaurant => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()));
-
     const restaurants = [...new Set(restaurantResults)];
+
 
     const allCuisines = () => {
         let uniqueCuisines = [];
@@ -48,6 +54,23 @@ function SearchBar() {
     const cuisinesArr = allCuisines();
     const cuisines = cuisinesArr
         .filter(cuisine => cuisine.toLowerCase().includes(searchInput.toLowerCase()));
+
+
+    const closeSearchResults = () => {
+        setSearchInput("");
+    }
+
+    useEffect(() => {
+        if (!searchInput) return;
+
+        window.addEventListener('click', closeSearchResults);
+        return () => window.removeEventListener("click", closeSearchResults);
+    }, [searchInput]);
+
+
+    const routeToRestaurantProfile = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}`)
+    }
 
 
 
@@ -104,8 +127,9 @@ function SearchBar() {
                             </div>
                             <div className="search-bar-party-size-container">
                                 <img src={personIcon} className="search-bar-person-icon" alt="" />
-                                <select className="search-bar-party-size-select">
-                                    {/* <option value="1">1 person</option> */}
+                                <select value={partySize} onChange={e => setPartySize(e.target.value)}
+                                    className="search-bar-party-size-select">
+                                    <option value="1">1 person</option>
                                     <option value="2">2 people</option>
                                     <option value="3">3 people</option>
                                     <option value="4">4 people</option>
@@ -157,14 +181,18 @@ function SearchBar() {
                             </div>
                         </div>
                         {locations.length > 0 &&
-                            <div className="search-bar-location-results-container">
+                            <div className="search-bar-locations-container">
                                 <div className="search-bar-locations-text-container">
                                     <img src={locationsIcon} className="search-bar-locations-icon" />
                                     <div className="search-bar-locations-text">Locations</div>
                                 </div>
                                 <div className="search-bar-locations-results-container">
                                     {locations.map(location => (
-                                        <div className="search-bar-locations-results">{location}</div>
+                                        <div key={location} className="search-bar-locations-results">
+                                            <div className="search-bar-locations-results-text">
+                                                {location}
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
@@ -177,7 +205,11 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-cuisines-results-container">
                                     {cuisines.map(cuisine => (
-                                        <div className="search-bar-cuisines-results">{cuisine}</div>
+                                        <div key={cuisine} className="search-bar-cuisines-results">
+                                            <div className="search-bar-cuisines-results-text">
+                                                {cuisine}
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
@@ -190,8 +222,11 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-restaurants-results-container">
                                     {restaurants.map(restaurant => (
-                                        <div className="search-bar-restaurants-results">
-                                            <div className="search-bar-restaurants-results-text">{restaurant.name}</div>
+                                        <div key={restaurant.id} className="search-bar-restaurants-results">
+                                            <div className="search-bar-restaurants-results-text"
+                                                onClick={() => routeToRestaurantProfile(restaurant.id)}>
+                                                {restaurant.name}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>

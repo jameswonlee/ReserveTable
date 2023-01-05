@@ -226,15 +226,26 @@
 .search-bar-locations-results-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 10px;
+    justify-content: center;
 }
 
 .search-bar-locations-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 38px;
+}
+
+
+.search-bar-locations-results:hover {
+    background-color: rgb(218, 54, 68);
+    color: white;
+    cursor: pointer;
+}
+
+.search-bar-locations-results-text {
     color: rgb(111, 115, 123);
     margin-left: 40px;
-    height: 38px;
-    margin-bottom: -6px;
 }
 
 .search-bar-cuisines-text-container {
@@ -262,16 +273,25 @@
 .search-bar-cuisines-results-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 12px;
-    margin-bottom: -6px;
+    justify-content: center;
 }
 
 .search-bar-cuisines-results {
     color: rgb(111, 115, 123);
-    margin-left: 39px;
     height: 38px;
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search-bar-cuisines-results-text {
+    margin-left: 40px;
+}
+
+.search-bar-cuisines-results:hover {
+    background-color: rgb(218, 54, 68);
+    color: white;
+    cursor: pointer;
 }
 
 .search-bar-restaurants-text-container {
@@ -293,20 +313,22 @@
 .search-bar-restaurants-results-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-top: 10px;
+    justify-content: space-between;
 }
 
 .search-bar-restaurants-results {
     color: rgb(111, 115, 123);
-    margin-left: 38px;
     height: 38px;
     padding-right: 13px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-top: 2px;
-    margin-bottom: -3px;
+    justify-content: center;
+}
+
+.search-bar-restaurants-results:hover {
+    background-color: rgb(218, 54, 68);
+    color: white;
+    cursor: pointer;
 }
 
 .search-bar-restaurants-results-text {
@@ -314,6 +336,8 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin-left: 39px;
+
 }
 
 .search-bar-restaurants-icon {
