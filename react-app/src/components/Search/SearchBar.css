@@ -198,7 +198,7 @@
 .search-bar-search-text {
     color: white;
     font-weight: 300;
-    margin-left: 38px;
+    margin-left: 39px;
 }
 
 .search-bar-locations-text-container {
@@ -285,7 +285,7 @@
 }
 
 .search-bar-cuisines-results-text {
-    margin-left: 40px;
+    margin-left: 39px;
 }
 
 .search-bar-cuisines-results:hover {
@@ -307,7 +307,7 @@
 .search-bar-restaurants-text {
     color: rgb(111, 115, 123);
     font-weight: 500;
-    margin-left: 8px;
+    margin-left: 9px;
 }
 
 .search-bar-restaurants-results-container {
