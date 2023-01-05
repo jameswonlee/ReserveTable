@@ -37,7 +37,6 @@ function SearchBar() {
         .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
 
 
-
     const restaurantResults = allRestaurants
         .filter(restaurant => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()));
     const restaurants = [...new Set(restaurantResults)];
