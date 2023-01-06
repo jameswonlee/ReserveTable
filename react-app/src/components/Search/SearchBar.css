@@ -10,7 +10,7 @@
 
 .search-bar-heading {
     color: #fff;
-    font-size: 1.51rem;
+    font-size: 1.50rem;
 }
 
 .search-bar-lower-container {
@@ -37,31 +37,34 @@
 
 /* delete after presentation */
 .search-bar-reservation-date-icon {
-    height: 33px;
-    width: 33px;
+    height: 32px;
+    width: 34px;
     margin-top: 5px;
-    margin-left: -18px;
+    margin-left: -27px;
 }
 
 .search-bar-date-input-container {
     border-right: solid;
-    border-color: rgb(218, 218, 218);
+    border-color: rgb(235, 233, 233);
     padding-right: 15px;
     padding-left: 15px;
     margin-left: 5px;
+    width: 119px;
 
     /* delete after presentation */
     display: flex;
     flex-direction: row;
     padding-left: 25px;
-
 }
 
-.search-bar-reservation-date-text {
-    margin-top: 11px;
-    font-size: 1.05rem;
-    color: rgb(66, 65, 65);
+.search-bar-reservation-date {
+    margin-top: 9px;
+}
 
+.search-bar-reservation-date-select {
+    border: none;
+    font-size: 1.05rem;
+    width: 115px;
 }
 
 .search-bar-date-input {
@@ -76,28 +79,19 @@
 .search-bar-clock-icon {
     height: 22px;
     width: 25px;
-    margin-left: -10px;
+    margin-left: -29px;
     margin-right: -2px;
     margin-top: 14px;
     padding-left: 5px;
 }
 
-/* delete */
-.search-bar-down-carrot-icon {
-    height: 12px;
-    width: 15px;
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
-
 .search-bar-time-input-container {
     border-right: solid;
     border-color: rgb(218, 218, 218);
     height: 48px;
-    padding-right: 15px;
+    padding-right: 10px;
     padding-left: 15px;
-    width: 117px;
+    width: 113px;
     /* delete */
     display: flex;
     flex-direction: row;
@@ -107,30 +101,28 @@
 .search-bar-time-select {
     border: none;
     font-size: 1.05rem;
-    width: 120px;
+    width: 110px;
     margin-top: 1px;
     padding-left: 10px;
     color: rgb(66, 65, 65);
 }
 
 .search-bar-party-size-container {
-    width: 125px;   
+    width: 115px;   
     padding-left: 25px;
-    /* delete */
     display: flex;
     flex-direction: row;
-
 }
 
 /* delete */
 .search-bar-person-icon {
     height: 22px;
     width: 22px;
-    margin-left: -15px;
+    margin-left: -29px;
 }
 
 .search-bar-party-size-select {
-    /* width: 112px;    */
+    width: 152px;   
     border: none;
     font-size: 1.05rem;
     color: rgb(66, 65, 65);
@@ -147,6 +139,12 @@
     flex-direction: row;
     width: 295px;
     border-radius: 4px;
+}
+
+.search-bar-magnifying-glass-icon {
+    height: 22px;
+    margin-top: 13px;
+    margin-left: 8px;
 }
 
 .search-bar-search-container {
@@ -346,16 +344,12 @@
     margin-left: 5px;
 }
 
-.search-bar-magnifying-glass-icon {
-    height: 23px;
-    margin-top: 13px;
-    margin-left: 8px;
-}
 
-.search-bar-button {
+
+.search-bar-search-button {
     height: 48px;
     width: 143px;
-    margin-left: 17px;
+    margin-left: 16px;
     background-color: rgb(218, 54, 68);
     color: #fff;
     font-size: 1.02rem;
@@ -364,7 +358,7 @@
     font-weight: 600;
 }
 
-.search-bar-button:hover {
+.search-bar-search-button:hover {
     background-color: rgb(153, 38, 48);
     cursor: pointer;
 }
