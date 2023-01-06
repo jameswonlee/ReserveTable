@@ -158,7 +158,6 @@ function SearchBar() {
                                 <option value="18">18 people</option>
                                 <option value="19">19 people</option>
                                 <option value="20">20 people</option>
-                                {/* <option value="21">Larger party</option> */}
                             </select>
                         </div>
                     </div>

@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { getAllRestaurants } from "../../store/restaurants";
 import reservationDateIcon from '../../icons/upcoming-reservations-icon.ico';
-import downCarrot from '../../icons/down-carrot.ico';
 import clockIcon from '../../icons/clock-icon.ico';
 import personIcon from '../../icons/person-icon.ico';
 import magnifyingGlass from '../../icons/search-button.ico';
+import locationsIcon from '../../icons/search-location-icon.ico';
+import cuisinesIcon from '../../icons/search-cuisines-icon.ico';
+import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
+
 import dayjs from 'dayjs';
 import './SearchResults.css';
 
@@ -27,7 +30,7 @@ function SearchResults() {
     const [date, setDate] = useState(searchDate);
     const [time, setTime] = useState(searchTime);
     const [partySize, setPartySize] = useState(searchPartySize);
-    const [search, setSearch] = useState("")
+    const [search, setSearch] = useState("");
 
 
     let filteredRestaurants;
@@ -49,14 +52,65 @@ function SearchResults() {
             .filter(restaurant => restaurant.cuisines.includes(cuisineSearch));
     }
 
-    const routeToSearchResults = () => {
-        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&search=${search}`)
+
+    const allLocations = () => {
+        let uniqueLocations = [];
+
+        allRestaurants.forEach(restaurant => {
+            uniqueLocations.push(restaurant.neighborhood)
+        })
+        return [...new Set(uniqueLocations)];
     }
+
+
+    const locationsArr = allLocations();
+    const locations = locationsArr
+        .filter(location => location.toLowerCase().includes(search.toLowerCase()));
+
+
+    const filteredRestaurants2 = allRestaurants
+        .filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase()));
+    const restaurants = [...new Set(filteredRestaurants)];
+
+
+    const allCuisines = () => {
+        let uniqueCuisines = [];
+
+        allRestaurants.forEach(restaurant => {
+            uniqueCuisines.push(restaurant.cuisines.split(', ')[0])
+        })
+        return [...new Set(uniqueCuisines)];
+    }
+    const cuisinesArr = allCuisines();
+    const cuisines = cuisinesArr
+        .filter(cuisine => cuisine.toLowerCase().includes(search.toLowerCase()));
 
 
     useEffect(() => {
         dispatch(getAllRestaurants())
     }, [dispatch]);
+
+
+    const routeToRestaurantProfile = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}`);
+        setSearch("");
+    }
+
+    const routeToSearchResults = () => {
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&search=${search}`);
+        setSearch("");
+    }
+
+
+    const routeToLocationResults = (location) => {
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&location=${location}`);
+        setSearch("");
+    }
+
+    const routeToCuisineResults = (cuisine) => {
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&cuisine=${cuisine}`);
+        setSearch("");
+    }
 
 
 
@@ -127,20 +181,86 @@ function SearchResults() {
                             <option value="18">18 people</option>
                             <option value="19">19 people</option>
                             <option value="20">20 people</option>
-                            {/* <option value="21">Larger party</option> */}
                         </select>
                     </div>
                 </div>
-                <div className="search-results-search-bar-text-input-container">
-                    <div>
-                        <img src={magnifyingGlass} className="search-results-search-bar-magnifying-glass-icon" alt="" />
+                <div className="search-results-search-bar-text-input-and-results-container">
+                    <div className="search-results-search-bar-search-outer-container">
+                        <div>
+                            <img src={magnifyingGlass} className="search-results-search-bar-magnifying-glass-icon" alt="" />
+                        </div>
+                        <div className="search-results-search-bar-search-container">
+                            <input className="search-results-search-bar-search-input"
+                                type="search"
+                                placeholder="Location, Restaurant, or Cuisine"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)} />
+                        </div>
                     </div>
-                    <div className="search-results-search-bar-search-container">
-                        <input className="search-results-search-bar-search-input"
-                            type="search"
-                            placeholder="Location, Restaurant, or Cuisine"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}/>
+                    <div className="search-results-search-bar-results-container-div">
+                        {search &&
+                            <div className="search-results-search-bar-search-results-container">
+                                <div className="search-bar-search-text-container">
+                                    <div className="search-bar-search-text">
+                                        Search : "<strong>{search}</strong>"
+                                    </div>
+                                </div>
+                                {locations.length > 0 &&
+                                    <div className="search-bar-locations-container">
+                                        <div className="search-bar-locations-text-container">
+                                            <img src={locationsIcon} className="search-bar-locations-icon" />
+                                            <div className="search-bar-locations-text">Locations</div>
+                                        </div>
+                                        <div className="search-bar-locations-results-container">
+                                            {locations.map(location => (
+                                                <div key={location} className="search-bar-locations-results"
+                                                    onClick={() => routeToLocationResults(location)}>
+                                                    <div className="search-bar-locations-results-text">
+                                                        {location}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                }
+                                {cuisines.length > 0 &&
+                                    <div className="search-bar-cuisines-container">
+                                        <div className="search-bar-cuisines-text-container">
+                                            <img src={cuisinesIcon} className="search-bar-cuisines-icon" />
+                                            <div className="search-bar-cuisines-text">Cuisines</div>
+                                        </div>
+                                        <div className="search-bar-cuisines-results-container">
+                                            {cuisines.map(cuisine => (
+                                                <div key={cuisine} className="search-bar-cuisines-results"
+                                                    onClick={() => routeToCuisineResults(cuisine)}>
+                                                    <div className="search-bar-cuisines-results-text">
+                                                        {cuisine}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                }
+                                {restaurants.length > 0 &&
+                                    <div className="search-bar-restaurants-container">
+                                        <div className="search-bar-restaurants-text-container">
+                                            <img src={restaurantsIcon} className="search-bar-restaurants-icon" />
+                                            <div className="search-bar-restaurants-text">Restaurants</div>
+                                        </div>
+                                        <div className="search-bar-restaurants-results-container">
+                                            {restaurants.map(restaurant => (
+                                                <div key={restaurant.id} className="search-bar-restaurants-results"
+                                                    onClick={() => routeToRestaurantProfile(restaurant.id)}>
+                                                    <div className="search-bar-restaurants-results-text">
+                                                        {restaurant.name}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
                 <div>
@@ -150,6 +270,7 @@ function SearchResults() {
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     )
