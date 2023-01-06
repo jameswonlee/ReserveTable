@@ -1,0 +1,143 @@
+.search-results-search-bar-container {
+    background-color: rgb(45, 51, 63);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 83px;
+    margin-bottom: 100px;
+}
+
+.search-results-search-bar-date-time-party-container {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 50px;
+    width: 480px;
+    border-radius: 4px;
+    margin-left: 273px;
+}
+
+.search-results-search-bar-date-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 166px;
+    border-right: solid;
+    border-color: rgb(228, 228, 228);
+}
+
+.search-results-search-bar-reservation-date-icon {
+    height: 32px;
+    width: 37px;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.search-results-search-bar-reservation-date {
+    padding-right: 5px;
+    margin-left: -1px;
+}
+
+.search-results-search-bar-reservation-date-select {
+    border: none;
+    font-size: 1.05rem;
+    margin-right: 15px;
+    width: 115px;
+}
+
+.search-results-search-bar-time-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-right: solid;
+    border-color: rgb(228, 228, 228);
+    width: 150px;
+}
+
+.search-results-search-bar-clock-icon {
+    height: 22px;
+    width: 25px;
+    margin-left: 9px;
+}
+
+.search-results-search-bar-time-select {
+    border: none;
+    font-size: 1.05rem;
+    margin-left: 3px;
+    width: 100px;
+}
+
+.search-results-search-bar-party-size-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-results-search-bar-person-icon {
+    height: 23px;
+    width: 21px;
+    margin-left: 10px;
+}
+
+.search-results-search-bar-party-size-select {
+    border: none;
+    font-size: 1.05rem;
+    margin-left: 6px;
+    width: 110px;
+}
+
+.search-results-search-bar-text-input-container {
+    background-color: white;
+    height: 48px;
+    margin-left: 17px;
+    display: flex;
+    flex-direction: row;
+    width: 292px;
+    border-radius: 4px;
+}
+
+.search-results-search-bar-magnifying-glass-icon {
+    height: 23px;
+    margin-top: 13px;
+    margin-left: 8px;
+}
+
+.search-results-search-bar-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(221, 221, 221);
+
+}
+
+.search-results-search-bar-search-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    color: rgb(62, 61, 61);
+    font-size: 1rem;
+    font-weight: 500;
+    width: 240px;
+    height: 40px;
+    border: none;
+}
+
+.search-results-search-bar-search-button {
+    height: 48px;
+    width: 143px;
+    margin-left: 16px;
+    background-color: rgb(218, 54, 68);
+    color: #fff;
+    font-size: 1.02rem;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+
+.search-results-search-bar-search-button:hover {
+    background-color: rgb(153, 38, 48);
+    cursor: pointer;
+}
+

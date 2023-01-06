@@ -76,6 +76,14 @@ function SearchBar() {
         history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&search=${search}`)
     }
 
+    const routeToLocationResults = (location) => {
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&location=${location}`)
+    }
+
+    const routeToCuisineResults = (cuisine) => {
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&cuisine=${cuisine}`)
+    }
+
 
 
     return (
@@ -85,98 +93,94 @@ function SearchBar() {
             </div>
             <div className="search-bar-lower-container">
                 {/* <form> */}
-                    <div className="search-bar-lower">
-                        <div className="search-bar-date-time-party-container">
-                            <div className="search-bar-date-input-container">
-                                {/* <input
-                                    type="date"
-                                    value={date}
-                                    className="search-bar-date-input"
-                                /> */}
-                                <div>
-                                    <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
-                                </div>
-                                <div className="search-bar-reservation-date-text">{date}</div>
-                                <div>
-                                    <img src={downCarrot} className="search-bar-down-carrot-icon" alt="" />
-                                </div>
-                            </div>
-                            <div className="search-bar-time-input-container">
-                                <img src={clockIcon} className="search-bar-clock-icon" alt="" />
-                                <select value={time} onChange={e => setTime(e.target.value)}
-                                    className="search-bar-time-select">
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="11:30">11:30 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="12:30">12:30 PM</option>
-                                    <option value="13:00">1:00 PM</option>
-                                    <option value="13:30">1:30 PM</option>
-                                    <option value="14:00">2:00 PM</option>
-                                    <option value="14:30">2:30 PM</option>
-                                    <option value="15:00">3:00 PM</option>
-                                    <option value="15:30">3:30 PM</option>
-                                    <option value="16:00">4:00 PM</option>
-                                    <option value="16:30">4:30 PM</option>
-                                    <option value="17:00">5:00 PM</option>
-                                    <option value="17:30">5:30 PM</option>
-                                    <option value="18:00">6:00 PM</option>
-                                    <option value="18:30">6:30 PM</option>
-                                    <option value="19:00">7:00 PM</option>
-                                    <option value="19:30">7:30 PM</option>
-                                    <option value="20:00">8:00 PM</option>
-                                    <option value="20:30">8:30 PM</option>
-                                    <option value="21:00">9:00 PM</option>
-                                    <option value="21:30">9:30 PM</option>
-                                    <option value="22:00">10:00 PM</option>
-                                </select>
-                            </div>
-                            <div className="search-bar-party-size-container">
-                                <img src={personIcon} className="search-bar-person-icon" alt="" />
-                                <select value={partySize} onChange={e => setPartySize(e.target.value)}
-                                    className="search-bar-party-size-select">
-                                    <option value="1">1 person</option>
-                                    <option value="2">2 people</option>
-                                    <option value="3">3 people</option>
-                                    <option value="4">4 people</option>
-                                    <option value="5">5 people</option>
-                                    <option value="6">6 people</option>
-                                    <option value="7">7 people</option>
-                                    <option value="8">8 people</option>
-                                    <option value="9">9 people</option>
-                                    <option value="10">10 people</option>
-                                    <option value="11">11 people</option>
-                                    <option value="12">12 people</option>
-                                    <option value="13">13 people</option>
-                                    <option value="14">14 people</option>
-                                    <option value="15">15 people</option>
-                                    <option value="16">16 people</option>
-                                    <option value="17">17 people</option>
-                                    <option value="18">18 people</option>
-                                    <option value="19">19 people</option>
-                                    <option value="20">20 people</option>
-                                    <option value="21">Larger party</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="search-bar-text-input-container">
+                <div className="search-bar-lower">
+                    <div className="search-bar-date-time-party-container">
+                        <div className="search-bar-date-input-container">
                             <div>
-                                <img src={magnifyingGlass} className="search-bar-magnifying-glass-icon" alt="" />
+                                <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
                             </div>
-                            <div className="search-bar-search-container">
-                                <input className="search-bar-search-input"
-                                    type="search"
-                                    placeholder="Location, Restaurant, or Cuisine"
-                                    value={search}
-                                    onChange={(e) => setSearch(e.target.value)}
-                                />
+                            <div className="search-bar-reservation-date">
+                                <select className="search-bar-reservation-date-select">
+                                    <option value={dayjs(date).format("YYYY-MM-DD")}>{dayjs(date).format("MMM D, YYYY")}</option>
+                                </select>
                             </div>
                         </div>
-                        <div>
-                            <button onClick={routeToSearchResults} className="search-bar-button">
-                                Let's go
-                            </button>
+                        <div className="search-bar-time-input-container">
+                            <img src={clockIcon} className="search-bar-clock-icon" alt="" />
+                            <select value={time} onChange={e => setTime(e.target.value)}
+                                className="search-bar-time-select">
+                                <option value="11:00">11:00 AM</option>
+                                <option value="11:30">11:30 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="12:30">12:30 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="13:30">1:30 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="14:30">2:30 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="15:30">3:30 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="16:30">4:30 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                                <option value="21:30">9:30 PM</option>
+                                <option value="22:00">10:00 PM</option>
+                            </select>
+                        </div>
+                        <div className="search-bar-party-size-container">
+                            <img src={personIcon} className="search-bar-person-icon" alt="" />
+                            <select value={partySize} onChange={e => setPartySize(e.target.value)}
+                                className="search-bar-party-size-select">
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                                <option value="7">7 people</option>
+                                <option value="8">8 people</option>
+                                <option value="9">9 people</option>
+                                <option value="10">10 people</option>
+                                <option value="11">11 people</option>
+                                <option value="12">12 people</option>
+                                <option value="13">13 people</option>
+                                <option value="14">14 people</option>
+                                <option value="15">15 people</option>
+                                <option value="16">16 people</option>
+                                <option value="17">17 people</option>
+                                <option value="18">18 people</option>
+                                <option value="19">19 people</option>
+                                <option value="20">20 people</option>
+                                {/* <option value="21">Larger party</option> */}
+                            </select>
                         </div>
                     </div>
+                    <div className="search-bar-text-input-container">
+                        <div>
+                            <img src={magnifyingGlass} className="search-bar-magnifying-glass-icon" alt="" />
+                        </div>
+                        <div className="search-bar-search-container">
+                            <input className="search-bar-search-input"
+                                type="search"
+                                placeholder="Location, Restaurant, or Cuisine"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <button onClick={routeToSearchResults} className="search-bar-search-button">
+                            Let's go
+                        </button>
+                    </div>
+                </div>
                 {/* </form> */}
                 {search &&
                     <div className="search-bar-search-results-container">
@@ -193,7 +197,8 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-locations-results-container">
                                     {locations.map(location => (
-                                        <div key={location} className="search-bar-locations-results">
+                                        <div key={location} className="search-bar-locations-results"
+                                            onClick={() => routeToLocationResults(location)}>
                                             <div className="search-bar-locations-results-text">
                                                 {location}
                                             </div>
@@ -210,7 +215,8 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-cuisines-results-container">
                                     {cuisines.map(cuisine => (
-                                        <div key={cuisine} className="search-bar-cuisines-results">
+                                        <div key={cuisine} className="search-bar-cuisines-results"
+                                            onClick={() => routeToCuisineResults(cuisine)}>
                                             <div className="search-bar-cuisines-results-text">
                                                 {cuisine}
                                             </div>
@@ -227,9 +233,9 @@ function SearchBar() {
                                 </div>
                                 <div className="search-bar-restaurants-results-container">
                                     {restaurants.map(restaurant => (
-                                        <div key={restaurant.id} className="search-bar-restaurants-results">
-                                            <div className="search-bar-restaurants-results-text"
-                                                onClick={() => routeToRestaurantProfile(restaurant.id)}>
+                                        <div key={restaurant.id} className="search-bar-restaurants-results"
+                                            onClick={() => routeToRestaurantProfile(restaurant.id)}>
+                                            <div className="search-bar-restaurants-results-text">
                                                 {restaurant.name}
                                             </div>
                                         </div>

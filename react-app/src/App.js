@@ -78,6 +78,7 @@ function App() {
             <DiningDashboard />
           </Route>
           <Route exact path='/search-results'>
+            <NavigationLocalCity />
             <SearchResults />
           </Route>
           <Route>
