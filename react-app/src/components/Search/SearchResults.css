@@ -55,7 +55,7 @@
 }
 
 .search-results-search-bar-clock-icon {
-    height: 22px;
+    height: 21px;
     width: 25px;
     margin-left: 9px;
 }
@@ -74,7 +74,7 @@
 }
 
 .search-results-search-bar-person-icon {
-    height: 23px;
+    height: 22px;
     width: 21px;
     margin-left: 10px;
 }
@@ -86,12 +86,12 @@
     width: 110px;
 }
 
-.search-results-search-bar-text-input-container {
+.search-results-search-bar-text-input-and-results-container {
     background-color: white;
     height: 48px;
     margin-left: 17px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 292px;
     border-radius: 4px;
 }
@@ -122,6 +122,17 @@
     width: 240px;
     height: 40px;
     border: none;
+    margin-top: 4px;
+}
+
+.search-results-search-bar-search-outer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-results-search-bar-results-container-div {
+    display: flex;
+    flex-direction: column;
 }
 
 .search-results-search-bar-search-button {
@@ -139,5 +150,22 @@
 .search-results-search-bar-search-button:hover {
     background-color: rgb(153, 38, 48);
     cursor: pointer;
+}
+
+/* CSS properties for search-results-container in SearchBar.css */
+
+.search-results-search-bar-search-results-container {
+    margin-top: 4px;
+    border: solid;
+    border-color: rgb(233, 233, 233);
+    border-top-width: thin;
+    width: 290px;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    z-index: 5;
 }
 
