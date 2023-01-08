@@ -53,6 +53,7 @@ function SearchResults() {
     }
 
 
+
     const allLocations = () => {
         let uniqueLocations = [];
 
@@ -68,7 +69,7 @@ function SearchResults() {
         .filter(location => location.toLowerCase().includes(search.toLowerCase()));
 
 
-    const filteredRestaurants2 = allRestaurants
+    const restaurantsByName = allRestaurants
         .filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase()));
     const restaurants = [...new Set(filteredRestaurants)];
 
@@ -91,6 +92,18 @@ function SearchResults() {
     }, [dispatch]);
 
 
+    const closeSearchResults = () => {
+        setSearch("");
+    }
+
+    useEffect(() => {
+        if (!search) return;
+
+        window.addEventListener('click', closeSearchResults);
+        return () => window.removeEventListener("click", closeSearchResults);
+    }, [search]);
+
+
     const routeToRestaurantProfile = (restaurantId) => {
         history.push(`/restaurants/${restaurantId}`);
         setSearch("");
@@ -100,7 +113,6 @@ function SearchResults() {
         history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&search=${search}`);
         setSearch("");
     }
-
 
     const routeToLocationResults = (location) => {
         history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&location=${location}`);
@@ -115,7 +127,7 @@ function SearchResults() {
 
 
     return (
-        <div>
+        <div className="search-results-search-bar-and-results-container">
             <div className="search-results-search-bar-container">
                 <div className="search-results-search-bar-date-time-party-container">
                     <div className="search-results-search-bar-date-input-container">
@@ -269,6 +281,19 @@ function SearchResults() {
                             Find a table
                         </button>
                     </div>
+                </div>
+
+            </div>
+
+            <div className="search-results-restaurant-results-container">
+                <div>
+                    {filteredRestaurants && 
+                    filteredRestaurants.map(restaurant => (
+                        <div>{restaurant.name}</div>
+                    ))}
+                </div>
+                <div>
+
                 </div>
 
             </div>
