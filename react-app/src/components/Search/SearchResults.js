@@ -282,7 +282,6 @@ function SearchResults() {
                         </button>
                     </div>
                 </div>
-
             </div>
 
             <div className="search-results-restaurant-results-container">
