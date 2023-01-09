@@ -201,7 +201,7 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                             <p className="restaurant-profile-description">{restaurant.description}</p>
                         </div>
                         <div className="restaurant-reviews-container">
-                            <h2 className="restaurant-reviews-count-text">What {reviews.length} people are saying</h2>
+                            <h2 className="restaurant-reviews-count-text">What {reviews?.length ? reviews.length : 0} people are saying</h2>
                             <Reviews restaurant={restaurant} />
                         </div>
                     </div>

@@ -23,21 +23,30 @@ function SearchResults() {
     const searchDate = params.get('date');
     const searchTime = params.get('time');
     const searchPartySize = params.get('partySize');
-    const nameSearch = params.get('search');
+    const search = params.get('searchInput');
     const locationSearch = params.get('location');
     const cuisineSearch = params.get('cuisine');
 
     const [date, setDate] = useState(searchDate);
     const [time, setTime] = useState(searchTime);
     const [partySize, setPartySize] = useState(searchPartySize);
-    const [search, setSearch] = useState("");
+    const [searchInput, setSearchInput] = useState("");
 
 
     let filteredRestaurants;
 
-    if (nameSearch) {
-        filteredRestaurants = allRestaurants
-            .filter(restaurant => restaurant.name.toLowerCase().includes(nameSearch.toLowerCase()));
+    if (search) {
+        let restaurantsByName = allRestaurants
+            .filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase()));
+
+        let restaurantsByLocation = allRestaurants
+            .filter(restaurant => restaurant.neighborhood.toLowerCase().includes(search.toLowerCase()));
+
+        let restaurantsByCuisine = allRestaurants
+            .filter(restaurant => restaurant.cuisines.toLowerCase().includes(search.toLowerCase()));
+
+        const filteredRestaurantsWithDuplicates = restaurantsByName.concat(restaurantsByLocation, restaurantsByCuisine);
+        filteredRestaurants = [...new Set(filteredRestaurantsWithDuplicates)];
     }
 
 
@@ -66,12 +75,12 @@ function SearchResults() {
 
     const locationsArr = allLocations();
     const locations = locationsArr
-        .filter(location => location.toLowerCase().includes(search.toLowerCase()));
+        .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
 
 
     const restaurantsByName = allRestaurants
-        .filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase()));
-    const restaurants = [...new Set(filteredRestaurants)];
+        .filter(restaurant => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()));
+    const restaurants = [...new Set(restaurantsByName)];
 
 
     const allCuisines = () => {
@@ -84,8 +93,18 @@ function SearchResults() {
     }
     const cuisinesArr = allCuisines();
     const cuisines = cuisinesArr
-        .filter(cuisine => cuisine.toLowerCase().includes(search.toLowerCase()));
+        .filter(cuisine => cuisine.toLowerCase().includes(searchInput.toLowerCase()));
 
+
+    const averageRating = (reviews) => {
+        let sum = 0;
+
+        for (let i = 0; i < reviews.length; i++) {
+            let review = reviews[i];
+            sum += review.rating;
+        }
+        return sum / reviews.length;
+    }
 
     useEffect(() => {
         dispatch(getAllRestaurants())
@@ -93,35 +112,35 @@ function SearchResults() {
 
 
     const closeSearchResults = () => {
-        setSearch("");
+        setSearchInput("");
     }
 
     useEffect(() => {
-        if (!search) return;
+        if (!searchInput) return;
 
         window.addEventListener('click', closeSearchResults);
         return () => window.removeEventListener("click", closeSearchResults);
-    }, [search]);
+    }, [searchInput]);
 
 
     const routeToRestaurantProfile = (restaurantId) => {
         history.push(`/restaurants/${restaurantId}`);
-        setSearch("");
+        setSearchInput("");
     }
 
     const routeToSearchResults = () => {
-        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&search=${search}`);
-        setSearch("");
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&searchInput=${searchInput}`);
+        setSearchInput("");
     }
 
     const routeToLocationResults = (location) => {
         history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&location=${location}`);
-        setSearch("");
+        setSearchInput("");
     }
 
     const routeToCuisineResults = (cuisine) => {
         history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&cuisine=${cuisine}`);
-        setSearch("");
+        setSearchInput("");
     }
 
 
@@ -205,16 +224,16 @@ function SearchResults() {
                             <input className="search-results-search-bar-search-input"
                                 type="search"
                                 placeholder="Location, Restaurant, or Cuisine"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)} />
+                                value={searchInput}
+                                onChange={(e) => setSearchInput(e.target.value)} />
                         </div>
                     </div>
                     <div className="search-results-search-bar-results-container-div">
-                        {search &&
+                        {searchInput &&
                             <div className="search-results-search-bar-search-results-container">
                                 <div className="search-bar-search-text-container">
-                                    <div className="search-bar-search-text">
-                                        Search : "<strong>{search}</strong>"
+                                    <div className="search-bar-search-text" onClick={routeToSearchResults}>
+                                        Search : "<strong>{searchInput}</strong>"
                                     </div>
                                 </div>
                                 {locations.length > 0 &&
@@ -285,11 +304,75 @@ function SearchResults() {
             </div>
 
             <div className="search-results-restaurant-results-container">
-                <div>
-                    {filteredRestaurants && 
-                    filteredRestaurants.map(restaurant => (
-                        <div>{restaurant.name}</div>
-                    ))}
+                <div className="search-results-restaurant-results-upper">
+                    {search
+                        ?
+                        <div className="search-results-upper-heading">
+                            <div className="search-results-upper-search-text">
+                                You searched for "{search}" in Los Angeles
+                            </div>
+                            <div className="search-results-upper-number-results-text">
+                                {filteredRestaurants.length} restaurants match "{search}"
+                            </div>
+                        </div>
+                        :
+                        <div className="search-results-number-restaurants-available">
+                            {filteredRestaurants.length} restaurants available
+                        </div>
+                    }
+                </div>
+                <div className="search-results-restaurant-results-lower">
+                    <div className="search-results-restaurant-results-border">
+
+                    </div>
+                    {filteredRestaurants &&
+                        filteredRestaurants.map(restaurant => (
+                            <div className="search-results-restaurant-result-container">
+                                <div className="search-results-restaurant-result-left">
+                                    <div><img src={restaurant.preview_img} className="search-results-restaurant-result-preview-image" /></div>
+                                </div>
+                                <div className="search-results-restaurant-result-right">
+                                    <div>
+                                        {restaurant.name}
+                                    </div>
+                                    <div>
+                                        {restaurant.reviews
+                                            ?
+                                            <span>{averageRating(restaurant.reviews).toFixed(1) >= 0.1 &&
+                                                averageRating(restaurant.reviews).toFixed(1) < 1.6 &&
+                                                <span className="gold-star search-results-star">★ <span className="gray-star search-results-star">★ ★ ★ ★</span>
+                                                    <span className="search-results-rating-text">
+                                                        &nbsp;&nbsp;Good<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 1.6 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 2.6 &&
+                                                    <span className="gold-star search-results-star">★ ★ <span className="gray-star search-results-star">★ ★ ★</span>
+                                                        <span className="search-results-rating-text">
+                                                            &nbsp;&nbsp;Excellent<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 2.6 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 3.6 &&
+                                                    <span className="gold-star search-results-star">★ ★ ★ <span className="gray-star search-results-star">★ ★</span>
+                                                        <span className="search-results-rating-text">
+                                                            &nbsp;&nbsp;Very Good<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 3.6 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 4.6 &&
+                                                    <span className="gold-star search-results-star">★ ★ ★ ★ <span className="gray-star search-results-star">★</span>
+                                                        <span className="search-results-rating-text">
+                                                            &nbsp;&nbsp;Awesome<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 4.6 &&
+                                                    <span className="gold-star search-results-star">★ ★ ★ ★ ★<span className="search-results-rating-text">
+                                                        &nbsp;&nbsp;Exceptional<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                            </span>
+                                            :
+                                            <span className="gray-star search-results-star">★ ★ ★ ★ ★</span>
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+                        ))}
+                        {filteredRestaurants.length === 0 &&
+                        <div>We didn't find a match for your search</div>
+                        }
                 </div>
                 <div>
 

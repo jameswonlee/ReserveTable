@@ -40,7 +40,7 @@ function Reviews({ restaurant }) {
 
     const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
     const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
-    const hasPreviousReview = allReviews.some(review => review.user_id === sessionUser?.id);
+    const hasPreviousReview = allReviews?.some(review => review.user_id === sessionUser?.id);
     // const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
 
     const shouldShowReviewButton = (!hasPreviousReview);
@@ -61,7 +61,7 @@ function Reviews({ restaurant }) {
                 )}
             </div>
             <div className="reviews-outer-container">
-                {allReviews.map(review => (
+                {allReviews?.map(review => (
                     <div key={review.id} className="reviews-container">
                         <div className="review-container-left">
                             <div className="reviewer-initials-and-options">

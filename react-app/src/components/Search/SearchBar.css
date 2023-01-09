@@ -185,6 +185,11 @@
     z-index: 5;
 }
 
+.search-bar-search-text-container:hover {
+    cursor: pointer;
+    
+}
+
 .search-bar-search-text-container {
     height: 38px;
     display: flex;

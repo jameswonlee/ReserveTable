@@ -1,6 +1,7 @@
 .search-results-search-bar-and-results-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .search-results-search-bar-container {
@@ -9,7 +10,6 @@
     flex-direction: row;
     align-items: center;
     height: 83px;
-    margin-bottom: 100px;
 }
 
 .search-results-search-bar-date-time-party-container {
@@ -140,6 +140,8 @@
     flex-direction: column;
 }
 
+
+
 .search-results-search-bar-search-button {
     height: 48px;
     width: 143px;
@@ -175,7 +177,71 @@
 }
 
 .search-results-restaurant-results-container {
-    background-color: pink;
-    height: 500px;
+    height: auto;
+}
+
+.search-results-restaurant-results-upper {
+    margin-top: 30px;
+}
+
+.search-results-upper-heading {
+    margin-left: 480px;
+}
+
+.search-results-upper-search-text {
+    font-size: 1.45rem;
+}
+
+.search-results-upper-number-results-text {
+    margin-top: 25px;
+    font-size: 0.92rem;
+}
+
+.search-results-number-restaurants-available {
+    margin-left: 480px;
+    font-size: 0.9rem;
+}
+
+.search-results-restaurant-results-lower {
+    margin-left: 480px;
+    margin-top: 30px;
+}
+
+.search-results-restaurant-results-border {
+    border-bottom: solid;
+    border-color: rgb(243, 242, 242);
+    width: 810px;
+    margin-bottom: 20px;
+}
+
+.search-results-restaurant-result-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-results-restaurant-result-preview-image {
+    height: 170px;
+    width: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.search-results-restaurant-result-right {
+    margin-left: 15px;
+}
+
+
+.search-results-star {
+    font-size: 1.1rem;
+    
+}
+
+.gold-star {
+    color: rgb(254, 175, 7);
+}
+
+.search-results-rating-text {
+    font-size: 0.9rem;
+    color: black;
 }
 

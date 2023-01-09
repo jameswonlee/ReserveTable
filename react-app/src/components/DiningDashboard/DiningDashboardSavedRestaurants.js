@@ -98,7 +98,7 @@ function DiningDashboardSavedRestaurants() {
                                                     <span className="peach-star saved-restaurants-star">★★★★★</span>}
                                             </span>
                                             :
-                                            <span className="peach-star saved-restaurants-star">★ ★ ★ ★ ★</span>
+                                            <span className="gray-star saved-restaurants-star">★ ★ ★ ★ ★</span>
                                         }
                                     </div>
                                     <div className="saved-restaurants-restaurant-cuisine">
