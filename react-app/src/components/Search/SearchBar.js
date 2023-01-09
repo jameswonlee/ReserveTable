@@ -20,7 +20,7 @@ function SearchBar() {
     const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"));
     const [time, setTime] = useState("11:00");
     const [partySize, setPartySize] = useState(2);
-    const [search, setSearch] = useState("");
+    const [searchInput, setSearchInput] = useState("");
 
 
     const allLocations = () => {
@@ -35,11 +35,11 @@ function SearchBar() {
 
     const locationsArr = allLocations();
     const locations = locationsArr
-        .filter(location => location.toLowerCase().includes(search.toLowerCase()));
+        .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
 
 
     const filteredRestaurants = allRestaurants
-        .filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase()));
+        .filter(restaurant => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()));
     const restaurants = [...new Set(filteredRestaurants)];
 
 
@@ -53,19 +53,19 @@ function SearchBar() {
     }
     const cuisinesArr = allCuisines();
     const cuisines = cuisinesArr
-        .filter(cuisine => cuisine.toLowerCase().includes(search.toLowerCase()));
+        .filter(cuisine => cuisine.toLowerCase().includes(searchInput.toLowerCase()));
 
 
     const closeSearchResults = () => {
-        setSearch("");
+        setSearchInput("");
     }
 
     useEffect(() => {
-        if (!search) return;
+        if (!searchInput) return;
 
         window.addEventListener('click', closeSearchResults);
         return () => window.removeEventListener("click", closeSearchResults);
-    }, [search]);
+    }, [searchInput]);
 
 
     const routeToRestaurantProfile = (restaurantId) => {
@@ -73,7 +73,7 @@ function SearchBar() {
     }
 
     const routeToSearchResults = () => {
-        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&search=${search}`)
+        history.push(`/search-results?date=${dayjs(date).format("YYYY-MM-DD")}&time=${time}&partySize=${partySize}&searchInput=${searchInput}`)
     }
 
     const routeToLocationResults = (location) => {
@@ -92,7 +92,6 @@ function SearchBar() {
                 <h1>Find your table for any occasion</h1>
             </div>
             <div className="search-bar-lower-container">
-                {/* <form> */}
                 <div className="search-bar-lower">
                     <div className="search-bar-date-time-party-container">
                         <div className="search-bar-date-input-container">
@@ -169,8 +168,8 @@ function SearchBar() {
                             <input className="search-bar-search-input"
                                 type="search"
                                 placeholder="Location, Restaurant, or Cuisine"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
+                                value={searchInput}
+                                onChange={(e) => setSearchInput(e.target.value)}
                             />
                         </div>
                     </div>
@@ -180,12 +179,11 @@ function SearchBar() {
                         </button>
                     </div>
                 </div>
-                {/* </form> */}
-                {search &&
+                {searchInput &&
                     <div className="search-bar-search-results-container">
-                        <div className="search-bar-search-text-container">
+                        <div className="search-bar-search-text-container" onClick={routeToSearchResults}>
                             <div className="search-bar-search-text">
-                                Search : "<strong>{search}</strong>"
+                                Search : "<strong>{searchInput}</strong>"
                             </div>
                         </div>
                         {locations.length > 0 &&
