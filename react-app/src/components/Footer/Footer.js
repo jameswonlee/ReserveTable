@@ -131,7 +131,7 @@ function Footer() {
                         <div>Cookies Settings</div>
                     </div>
                     <div className="footer-copyright">
-                        Copyright © 2022 ReserveTable, Inc, an
+                        Copyright © 2023 ReserveTable, Inc, an
                         <a id="opentable" className="opentable-link" href="https://www.opentable.com">
                             &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
                         </a>
