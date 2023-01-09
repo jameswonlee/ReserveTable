@@ -40,18 +40,18 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
                         {restaurant.reviews
                             ?
                             <span>{averageRating().toFixed(1) >= 0.1 &&
-                                averageRating().toFixed(1) < 1.9 &&
+                                averageRating().toFixed(1) < 1.6 &&
                                 <span className="red-star card-star">★<span className="gray-star card-star"> ★ ★ ★ ★</span></span>}
-                                {averageRating().toFixed(1) >= 1.9 &&
-                                    averageRating().toFixed(1) < 2.9 &&
+                                {averageRating().toFixed(1) >= 1.6 &&
+                                    averageRating().toFixed(1) < 2.6 &&
                                     <span className="red-star card-star">★ ★ <span className="gray-star card-star">★ ★ ★</span></span>}
-                                {averageRating().toFixed(1) >= 2.9 &&
-                                    averageRating().toFixed(1) < 3.9 &&
+                                {averageRating().toFixed(1) >= 2.6 &&
+                                    averageRating().toFixed(1) < 3.6 &&
                                     <span className="red-star card-star">★ ★ ★ <span className="gray-star card-star">★ ★</span></span>}
-                                {averageRating().toFixed(1) >= 3.9 &&
-                                    averageRating().toFixed(1) < 4.9 &&
+                                {averageRating().toFixed(1) >= 3.6 &&
+                                    averageRating().toFixed(1) < 4.6 &&
                                     <span className="red-star card-star">★ ★ ★ ★ <span className="gray-star card-star">★</span></span>}
-                                {averageRating().toFixed(1) >= 4.9 &&
+                                {averageRating().toFixed(1) >= 4.6 &&
                                     <span className="red-star card-star">★ ★ ★ ★ ★</span>}
                             </span>
                             :
