@@ -14,6 +14,7 @@ import numReviewsIcon from '../../icons/num-reviews.ico';
 import reservationCompletedIcon from '../../icons/reservation-completed-red-icon.ico';
 import rateReviewIcon from '../../icons/rate-review-icon.ico';
 import browseMenuIcon from '../../icons/browse-menu-icon.ico';
+import getDirectionsIcon from '../../icons/get-directions-icon.ico';
 import dayjs from 'dayjs';
 import './ReservationConfirmation.css';
 
@@ -115,8 +116,24 @@ function ReservationConfirmation() {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div>Rate and review</div>
+                    <div className="reservation-confirmation-rate-menu-container space-to-top9">
+                        <div className="reservation-confirmation-browse-menu-container">
+                            <div className="reservation-confirmation-browse-menu-left">
+                                <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
+                            </div>
+                            <div className="reservation-confirmation-browse-menu-right">
+                                <div className="reservation-confirmation-browse-menu-text">Browse menu</div>
+                                <div className="reservation-confirmation-restaurant-profile-text">Restaurant's profile</div>
+                            </div>
+                        </div>
+                        <div className="reservation-confirmation-get-directions-container">
+                            <div className="reservation-confirmation-get-directions-left">
+                                <img src={getDirectionsIcon} className="reservation-confirmation-get-directions-icon" />
+                            </div>
+                            <div className="reservation-confirmation-get-directions-right">
+                                <div className="reservation-confirmation-get-directions-text">Get directions</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 :
@@ -162,14 +179,12 @@ function ReservationConfirmation() {
                         </div>
                         <div className="reservation-confirmation-browse-menu-container">
                             <div className="reservation-confirmation-browse-menu-left">
-                                <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon"/>
+                                <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
                             </div>
                             <div className="reservation-confirmation-browse-menu-right">
                                 <div className="reservation-confirmation-browse-menu-text">Browse menu</div>
                                 <div className="reservation-confirmation-restaurant-profile-text">Restaurant's profile</div>
                             </div>
-
-
                         </div>
                     </div>
 

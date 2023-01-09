@@ -257,7 +257,6 @@
     align-items: center;
     margin-left: 10px;
     border-radius: 7px;
-    /* box-shadow: -1px 2px 1px 2px rgb(231, 231, 231); */
     border: .0625rem solid #f1f2f4;
     box-shadow: 0 0.125rem 0.25rem 0 #2d333f33;
 }
@@ -283,6 +282,12 @@
     border-radius: 7px;
     border: .0625rem solid #f1f2f4;
     box-shadow: 0 0.125rem 0.25rem 0 #2d333f33;
+}
+
+.reservation-confirmation-rate-review-container:hover {
+    cursor: pointer;
+    background-color: rgb(252, 252, 252);
+
 }
 
 .reservation-confirmation-rate-review-right {
@@ -316,5 +321,41 @@
     margin-left: 5px;
 }
 
+.reservation-confirmation-browse-menu-container:hover {
+    cursor: pointer;
+    background-color: rgb(252, 252, 252);
+}   
+
+.space-to-top9 {
+    margin-top: 27px;
+}
+
+.reservation-confirmation-get-directions-container {
+    display: flex;
+    height: 80px;
+    width: 275px;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 7px;
+    border: .0625rem solid #f1f2f4;
+    box-shadow: 0 0.125rem 0.25rem 0 #2d333f33;
+}
+
+.reservation-confirmation-get-directions-container:hover {
+    cursor: not-allowed;
+    background-color: rgb(252, 252, 252);
+
+}
+
+.reservation-confirmation-get-directions-icon {
+    height: 48px;
+    width: 48px;
+    margin-left: 10px;
+}
+
+.reservation-confirmation-get-directions-text {
+    font-size: 1.02rem;
+    margin-left: 3px;
+}
 
 
