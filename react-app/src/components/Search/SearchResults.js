@@ -9,6 +9,7 @@ import magnifyingGlass from '../../icons/search-button.ico';
 import locationsIcon from '../../icons/search-location-icon.ico';
 import cuisinesIcon from '../../icons/search-cuisines-icon.ico';
 import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
+import bookingSymbol from '../../icons/booking-symbol.ico';
 
 import dayjs from 'dayjs';
 import './SearchResults.css';
@@ -367,13 +368,42 @@ function SearchResults() {
                                             <span className="gray-star search-results-star">★ ★ ★ ★ ★</span>
                                         }
                                     </div>
+                                    <div className="search-results-cuisine-cost-neighborhood">
+                                        {restaurant.cost === 1 && <span className="dark-gray-dollar large-dollar">$<span className="light-gray-dollar">$$$</span></span>}
+                                        {restaurant.cost === 2 && <span className="dark-gray-dollar large-dollar">$$<span className="light-gray-dollar">$$</span></span>}
+                                        {restaurant.cost === 3 && <span className="dark-gray-dollar large-dollar">$$$<span className="light-gray-dollar">$</span></span>}
+                                        {restaurant.cost === 4 && <span className="dark-gray-dollar large-dollar">$$$$</span>}
+                                        &nbsp; &#x2022; &nbsp;
+                                        <span className="">{restaurant.cuisines.split(',')[0]} </span>
+                                        &nbsp;&#x2022;&nbsp;
+                                        <span> {restaurant.neighborhood}</span>
+                                    </div>
+                                    <div className="search-results-num-booked-container">
+                                        <div>
+                                            {restaurant.total_num_reservations > 0 &&
+                                                <img src={bookingSymbol} className="search-results-booking-symbol" />
+                                            }
+                                        </div>
+                                        <div className="search-results-total-num-bookings-text">
+                                            {!restaurant.total_num_reservations &&
+                                                <div className="search-results-total-bookings-zero"></div>
+                                            }
+                                            {restaurant.total_num_reservations > 0 &&
+                                                (restaurant.total_num_reservations === 1
+                                                    ?
+                                                    <p>Booked {restaurant.total_num_reservations} time today</p>
+                                                    :
+                                                    <p>Booked {restaurant.total_num_reservations} times today</p>
+                                                )}
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
                         ))}
-                        {filteredRestaurants.length === 0 &&
+                    {filteredRestaurants.length === 0 &&
                         <div>We didn't find a match for your search</div>
-                        }
+                    }
                 </div>
                 <div>
 

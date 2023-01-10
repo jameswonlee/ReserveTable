@@ -140,8 +140,6 @@
     flex-direction: column;
 }
 
-
-
 .search-results-search-bar-search-button {
     height: 48px;
     width: 143px;
@@ -169,7 +167,6 @@
     width: 290px;
     height: auto;
     background-color: white;
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     border-radius: 2px;
@@ -217,11 +214,16 @@
 .search-results-restaurant-result-container {
     display: flex;
     flex-direction: row;
+    border-bottom: solid;
+    border-color: rgb(233, 232, 232);
+    padding-bottom: 20px;
+    padding-top: 10px;
+    width: 810px;
 }
 
 .search-results-restaurant-result-preview-image {
-    height: 205px;
-    width: 205px;
+    height: 200px;
+    width: 200px;
     border-radius: 4px;
     object-fit: cover;
 }
@@ -230,10 +232,8 @@
     margin-left: 15px;
 }
 
-
 .search-results-star {
     font-size: 1.1rem;
-    
 }
 
 .gold-star {
@@ -244,4 +244,34 @@
     font-size: 0.9rem;
     color: black;
 }
+
+.search-results-cuisine-cost-neighborhood {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgb(35, 34, 34);
+}
+
+.search-results-num-booked-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-results-booking-symbol {
+    height: 13px;
+    width: 16px;
+}
+
+.search-results-total-num-bookings-text {
+    font-size: 0.87rem;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.large-dollar {
+    font-size: 1.1rem;
+}
+
+
+
 
