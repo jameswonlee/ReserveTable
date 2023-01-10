@@ -169,6 +169,10 @@ function SearchResults() {
         history.push(`/restaurants/${restaurantId}/reservations?date=${date}&time=${dayjs(`${date} ${time}`).add(60, 'minute').format("HH:mm")}&partySize=${partySize}`);
     }
 
+    const randomNumGenerator = (num) => {
+        return Math.floor(Math.random() * num)
+    }
+
 
 
     return (
@@ -331,8 +335,8 @@ function SearchResults() {
 
             <div className="search-results-restaurant-results-container">
                 <div className="search-results-restaurant-results-upper">
-                    {search
-                        ?
+                    {/* {search
+                        ? */}
                         <div className="search-results-upper-heading">
                             <div className="search-results-upper-search-text">
                                 You searched for "{search}" in Los Angeles
@@ -341,11 +345,11 @@ function SearchResults() {
                                 {filteredRestaurants.length} restaurants match "{search}"
                             </div>
                         </div>
-                        :
+                        {/* :
                         <div className="search-results-number-restaurants-available">
                             {filteredRestaurants.length} restaurants available
                         </div>
-                    }
+                    } */}
                 </div>
                 <div className="search-results-restaurant-results-lower">
                     <div className="search-results-restaurant-results-border">
@@ -438,6 +442,15 @@ function SearchResults() {
                                             {dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A")}
                                         </div>
                                     </div>
+                                    {randomNumGenerator(2) === 1 &&
+                                        <div className="search-results-bonus-points-container">
+                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         ))}
