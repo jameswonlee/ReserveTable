@@ -149,6 +149,26 @@ function SearchResults() {
         history.push(`/restaurants/${restaurantId}?review=true`);
     }
 
+    const routeToReservations = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}/reservations?date=${date}&time=${dayjs(`${date} ${time}`).format("HH:mm")}&partySize=${partySize}`);
+    }
+
+    const routeToReservationsMinus30 = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}/reservations?date=${date}&time=${dayjs(`${date} ${time}`).subtract(30, 'minute').format("HH:mm")}&partySize=${partySize}`);
+    }
+
+    const routeToReservationsMinus60 = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}/reservations?date=${date}&time=${dayjs(`${date} ${time}`).subtract(60, 'minute').format("HH:mm")}&partySize=${partySize}`);
+    }
+
+    const routeToReservationsPlus30 = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}/reservations?date=${date}&time=${dayjs(`${date} ${time}`).add(30, 'minute').format("HH:mm")}&partySize=${partySize}`);
+    }
+
+    const routeToReservationsPlus60 = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}/reservations?date=${date}&time=${dayjs(`${date} ${time}`).add(60, 'minute').format("HH:mm")}&partySize=${partySize}`);
+    }
+
 
 
     return (
@@ -402,23 +422,33 @@ function SearchResults() {
                                         </div>
                                     </div>
                                     <div className="search-results-reservation-times-container">
-                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A")}</div>
-                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).subtract(30, 'minute').format("h:mm A")}</div>
-                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).format("h:mm A")}</div>
-                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).add(30, 'minute').format("h:mm A")}</div>
-                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A")}</div>
+                                        <div onClick={() => routeToReservationsMinus60(restaurant.id)} className="search-results-reservation-time">
+                                            {dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A")}
+                                        </div>
+                                        <div onClick={() => routeToReservationsMinus30(restaurant.id)} className="search-results-reservation-time">
+                                            {dayjs(`${date} ${time}`).subtract(30, 'minute').format("h:mm A")}
+                                        </div>
+                                        <div onClick={() => routeToReservations(restaurant.id)} className="search-results-reservation-time">
+                                            {dayjs(`${date} ${time}`).format("h:mm A")}
+                                        </div>
+                                        <div onClick={() => routeToReservationsPlus30(restaurant.id)} className="search-results-reservation-time">
+                                            {dayjs(`${date} ${time}`).add(30, 'minute').format("h:mm A")}
+                                        </div>
+                                        <div onClick={() => routeToReservationsPlus60(restaurant.id)} className="search-results-reservation-time">
+                                            {dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A")}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     {filteredRestaurants.length === 0 &&
-                        <div>We didn't find a match for your search</div>
+                        <div className="search-results-no-results-container">
+                            <div className="search-results-no-results-heading">We didn't find a match for your search</div>
+                            <div className="search-results-no-results-text">Sorry, we couldn't find any results for {search}. Try checking your
+                                spelling or using less specific keywords. There are no restaurants with availability within 30 miles of your search.</div>
+                        </div>
                     }
                 </div>
-                <div>
-
-                </div>
-
             </div>
         </div>
     )

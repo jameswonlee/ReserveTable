@@ -16,6 +16,7 @@ import NavigationLocalCity from './components/Navigation/NavigationLocalCity';
 import SearchResults from './components/Search/SearchResults';
 import './index.css';
 import Reviews from './components/Reviews/Reviews';
+import Reservations from './components/Reservations/Reservations';
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
@@ -71,6 +72,9 @@ function App() {
           </Route>
           <Route exact path='/restaurants/:restaurantId/reviews'>
             <Reviews />
+          </Route>
+          <Route exact path='/restaurants/:restaurantId/reservations'>
+            <Reservations />
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />

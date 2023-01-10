@@ -37,10 +37,13 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
         if (params.get("review") === 'true') {
             window.scrollTo({
                 top: 1000,
-                // left: 200,
                 behavior: 'smooth'
             });
-
+        } else if (params.get("date") && params.get("time") && params.get("partySize")) {
+            window.scrollTo({
+                top: 500,
+                behavior: 'smooth'
+            });
         } else {
             window.scrollTo({
                 top: 100,
