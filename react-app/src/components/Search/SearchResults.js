@@ -335,8 +335,8 @@ function SearchResults() {
 
             <div className="search-results-restaurant-results-container">
                 <div className="search-results-restaurant-results-upper">
-                    {/* {search
-                        ? */}
+                    {search
+                        ?
                         <div className="search-results-upper-heading">
                             <div className="search-results-upper-search-text">
                                 You searched for "{search}" in Los Angeles
@@ -345,11 +345,11 @@ function SearchResults() {
                                 {filteredRestaurants.length} restaurants match "{search}"
                             </div>
                         </div>
-                        {/* :
+                        :
                         <div className="search-results-number-restaurants-available">
-                            {filteredRestaurants.length} restaurants available
+                            {filteredRestaurants.length} restaurants available in Los Angeles
                         </div>
-                    } */}
+                    }
                 </div>
                 <div className="search-results-restaurant-results-lower">
                     <div className="search-results-restaurant-results-border">

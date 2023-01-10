@@ -100,6 +100,7 @@ function SearchBar() {
                             </div>
                             <div className="search-bar-reservation-date">
                                 <select value={date} onChange={e => setDate(e.target.value)} className="search-bar-reservation-date-select">
+                                    <option value={dayjs(date).subtract(1, 'day').format("MMM D, YYYY")}>{dayjs(date).subtract(1, 'day').format("MMM D, YYYY")}</option>
                                     <option value={date}>{date}</option>
                                     <option value={dayjs(date).add(1, 'day').format("MMM D, YYYY")}>{dayjs(date).add(1, 'day').format("MMM D, YYYY")}</option>
                                     <option value={dayjs(date).add(2, 'day').format("MMM D, YYYY")}>{dayjs(date).add(2, 'day').format("MMM D, YYYY")}</option>
