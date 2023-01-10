@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { createReservation } from '../../store/reservations';
 import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
@@ -15,14 +15,29 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
     const dispatch = useDispatch();
     const history = useHistory();
     const { restaurantId } = useParams();
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const searchDate = params.get('date');
+    const searchTime = params.get('time');
+    const searchPartySize = params.get('partySize');
 
     const sessionUser = useSelector(state => state.session.user);
     const totalNumReservations = useSelector(state => state.restaurants[restaurantId].total_num_reservations);
 
-    const [date, setDate] = useState(dayjs().add(1, "day").format("YYYY-MM-DD"));
-    const [time, setTime] = useState(userReservationTime || "17:00");
-    const [partySize, setPartySize] = useState(2);
+    const [date, setDate] = useState(searchDate || dayjs().add(1, "day").format("YYYY-MM-DD"));
+    const [time, setTime] = useState(searchTime || userReservationTime || "17:00");
+    const [partySize, setPartySize] = useState(searchPartySize || 2);
     const [validationErrors, setValidationErrors] = useState([]);
+
+    useEffect(() => {
+        if (params.get("date") && params.get("time") && params.get("partySize")) {
+            window.scrollTo({
+                top: 500,
+                behavior: 'smooth'
+            });
+        }
+    }, [])
+
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -85,6 +100,14 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                                     <option value="10">10 people</option>
                                     <option value="11">11 people</option>
                                     <option value="12">12 people</option>
+                                    <option value="13">13 people</option>
+                                    <option value="14">14 people</option>
+                                    <option value="15">15 people</option>
+                                    <option value="16">16 people</option>
+                                    <option value="17">17 people</option>
+                                    <option value="18">18 people</option>
+                                    <option value="19">19 people</option>
+                                    <option value="20">20 people</option>
                                 </select>
                             </label>
                         </div>

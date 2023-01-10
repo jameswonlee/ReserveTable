@@ -175,6 +175,7 @@
 
 .search-results-restaurant-results-container {
     height: auto;
+    margin-left: 370px;
 }
 
 .search-results-restaurant-name-text {
@@ -197,10 +198,6 @@
     margin-top: 30px;
 }
 
-.search-results-upper-heading {
-    margin-left: 480px;
-}
-
 .search-results-upper-search-text {
     font-size: 1.45rem;
 }
@@ -211,12 +208,10 @@
 }
 
 .search-results-number-restaurants-available {
-    margin-left: 480px;
     font-size: 0.9rem;
 }
 
 .search-results-restaurant-results-lower {
-    margin-left: 480px;
     margin-top: 30px;
 }
 
@@ -308,6 +303,10 @@
     margin-top: -2px;
 }
 
+.search-results-total-bookings-zero {
+    height: 25px;
+}
+
 .large-dollar {
     font-size: 1rem;
 }
@@ -317,12 +316,13 @@
     flex-direction: row;
     justify-content: space-between;
     width: 580px;
+    margin-top: -3px;
 }
 
 .search-results-reservation-time {
     background-color: rgb(218, 54, 68);
     width: 110px;
-    height: 32px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,6 +330,25 @@
     color: white;
     font-size: 0.93rem;
     font-weight: 600;
+}
+
+.search-results-reservation-time:hover {
+    cursor: pointer;
+    background-color: rgb(155, 41, 50);
+}
+
+.search-results-no-results-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(29, 29, 29);
+}
+
+.search-results-no-results-text {
+    width: 800px;
+    margin-top: 17px;
+    font-size: 1rem;
+    color: rgb(100, 99, 99);
+    padding-bottom: 40px;
 }
 
 
