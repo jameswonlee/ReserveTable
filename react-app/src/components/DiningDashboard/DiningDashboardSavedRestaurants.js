@@ -83,18 +83,18 @@ function DiningDashboardSavedRestaurants() {
                                         {restaurant.reviews
                                             ?
                                             <span>{averageRating(restaurant.reviews).toFixed(1) >= 0.1 &&
-                                                averageRating(restaurant.reviews).toFixed(1) < 1.9 &&
+                                                averageRating(restaurant.reviews).toFixed(1) < 1.6 &&
                                                 <span className="peach-star saved-restaurants-star">★<span className="gray-star saved-restaurants-star">★★★★</span></span>}
-                                                {averageRating(restaurant.reviews).toFixed(1) >= 1.9 &&
-                                                    averageRating(restaurant.reviews).toFixed(1) < 2.9 &&
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 1.6 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 2.6 &&
                                                     <span className="peach-star saved-restaurants-star">★★<span className="gray-star saved-restaurants-star">★★★</span></span>}
-                                                {averageRating(restaurant.reviews).toFixed(1) >= 2.9 &&
-                                                    averageRating(restaurant.reviews).toFixed(1) < 3.9 &&
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 2.6 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 3.6 &&
                                                     <span className="peach-star saved-restaurants-star">★★★<span className="gray-star saved-restaurants-star">★★</span></span>}
-                                                {averageRating(restaurant.reviews).toFixed(1) >= 3.9 &&
-                                                    averageRating(restaurant.reviews).toFixed(1) < 4.9 &&
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 3.6 &&
+                                                    averageRating(restaurant.reviews).toFixed(1) < 4.6 &&
                                                     <span className="peach-star saved-restaurants-star">★★★★<span className="gray-star saved-restaurants-star">★</span></span>}
-                                                {averageRating(restaurant.reviews).toFixed(1) >= 4.9 &&
+                                                {averageRating(restaurant.reviews).toFixed(1) >= 4.6 &&
                                                     <span className="peach-star saved-restaurants-star">★★★★★</span>}
                                             </span>
                                             :

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { getOneRestaurant } from '../../store/restaurants';
 import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
@@ -20,6 +20,8 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
     const dispatch = useDispatch();
     const history = useHistory();
     const { restaurantId } = useParams();
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
     const sessionUser = useSelector(state => state.session.user);
     const restaurant = useSelector(state => state.restaurants[restaurantId]);
     const savedRestaurants = useSelector(state => Object.values(state.savedRestaurants));
@@ -32,11 +34,20 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
             dispatch(getAllSavedRestaurants(sessionUser.id));
         }
 
-        window.scrollTo({
-            top: 100,
-            left: 100,
-            behavior: 'smooth'
-        });
+        if (params.get("review") === 'true') {
+            window.scrollTo({
+                top: 1000,
+                // left: 200,
+                behavior: 'smooth'
+            });
+
+        } else {
+            window.scrollTo({
+                top: 100,
+                left: 100,
+                behavior: 'smooth'
+            });
+        }
 
     }, [restaurantId, sessionUser])
 
@@ -110,10 +121,10 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                             </div>
                         </div>
                         <div className="reservations-component">
-                            <Reservations 
-                            userReservationTime={userReservationTime} 
-                            showSignInModal={showSignInModal}
-                            setShowSignInModal={setShowSignInModal}/>
+                            <Reservations
+                                userReservationTime={userReservationTime}
+                                showSignInModal={showSignInModal}
+                                setShowSignInModal={setShowSignInModal} />
                         </div>
                     </div>
                 </div>
@@ -131,18 +142,18 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                     {restaurant.reviews
                                         ?
                                         <span>{averageRating().toFixed(1) >= 0.1 &&
-                                            averageRating().toFixed(1) < 1.9 &&
+                                            averageRating().toFixed(1) < 1.6 &&
                                             <span className="red-star restaurant-profile-star">★ <span className="gray-star restaurant-profile-star">★ ★ ★ ★</span></span>}
-                                            {averageRating().toFixed(1) >= 1.9 &&
-                                                averageRating().toFixed(1) < 2.9 &&
+                                            {averageRating().toFixed(1) >= 1.6 &&
+                                                averageRating().toFixed(1) < 2.6 &&
                                                 <span className="red-star restaurant-profile-star">★ ★ <span className="gray-star restaurant-profile-star">★ ★ ★</span></span>}
-                                            {averageRating().toFixed(1) >= 2.9 &&
-                                                averageRating().toFixed(1) < 3.9 &&
+                                            {averageRating().toFixed(1) >= 2.6 &&
+                                                averageRating().toFixed(1) < 3.6 &&
                                                 <span className="red-star restaurant-profile-star">★ ★ ★ <span className="gray-star restaurant-profile-star">★ ★</span></span>}
-                                            {averageRating().toFixed(1) >= 3.9 &&
-                                                averageRating().toFixed(1) < 4.9 &&
+                                            {averageRating().toFixed(1) >= 3.6 &&
+                                                averageRating().toFixed(1) < 4.6 &&
                                                 <span className="red-star restaurant-profile-star">★ ★ ★ ★ <span className="gray-star restaurant-profile-star">★</span></span>}
-                                            {averageRating().toFixed(1) >= 4.9 &&
+                                            {averageRating().toFixed(1) >= 4.6 &&
                                                 <span className="red-star restaurant-profile-star">★ ★ ★ ★ ★ </span>}
                                             <span className="space-to-left-25">{averageRating().toFixed(1)}</span>
                                         </span>

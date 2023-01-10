@@ -49,18 +49,19 @@ function SearchResults() {
         filteredRestaurants = [...new Set(filteredRestaurantsWithDuplicates)];
     }
 
-
     if (locationSearch) {
         filteredRestaurants = allRestaurants
             .filter(restaurant => restaurant.neighborhood.includes(locationSearch));
     }
-
 
     if (cuisineSearch) {
         filteredRestaurants = allRestaurants
             .filter(restaurant => restaurant.cuisines.includes(cuisineSearch));
     }
 
+    if (!search && !locationSearch && !cuisineSearch) {
+        filteredRestaurants = allRestaurants;
+    }
 
 
     const allLocations = () => {

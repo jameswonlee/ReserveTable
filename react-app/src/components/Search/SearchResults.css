@@ -220,8 +220,8 @@
 }
 
 .search-results-restaurant-result-preview-image {
-    height: 170px;
-    width: 200px;
+    height: 205px;
+    width: 205px;
     border-radius: 4px;
     object-fit: cover;
 }

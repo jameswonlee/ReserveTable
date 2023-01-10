@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import reviewsReducer, { getAllRestaurantReviews } from "../../store/reviews";
+import { getAllRestaurantReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
 import AddReviewForm from "./AddReview";
 import UpdateReviewForm from "./UpdateReviewForm";

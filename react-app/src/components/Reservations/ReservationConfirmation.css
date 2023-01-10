@@ -10,11 +10,15 @@
     background-color: white;
     border: solid;
     border-color: rgb(230, 230, 230);
-    height: 250px;
+    height: 300px;
     margin-left: 260px;
     margin-top: 35px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.reservation-confirmation-details-left-upper {
+    display: flex;
 }
 
 .reservation-confirmation-details-right {
@@ -62,11 +66,19 @@
     margin-bottom: 3px;
 }
 
+.reservation-confirm-name-text:hover {
+    cursor: pointer;
+}
+
 .reservation-confirm-past-name-text {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 3px;
     width: 280px;
+}
+
+.reservation-confirm-past-name-text:hover {
+    cursor: pointer;
 }
 
 .reservation-confirm-check-mark {
@@ -97,7 +109,7 @@
     margin-top: 12px;
     margin-bottom: -5px;
     width: 355px;
-    height: 75px;
+    height: 40px;
 }
 
 .reservation-confirm-party-size-text {
@@ -219,10 +231,8 @@
 
 }
 
-.reservation-confirm-past-book-again-button-container {
-    position: relative;
-    top: 35px;
-    right: 61px;
+.reservation-restaurant-name-book-again-container {
+    display: flex;
 }
 
 .reservation-confirm-past-book-again-button {
@@ -234,6 +244,7 @@
     font-size: 1rem;
     font-weight: 600;
     border-radius: 4px;
+    margin-left: 10px;
 }
 
 .reservation-confirm-past-book-again-button:hover {
@@ -241,5 +252,120 @@
     background-color: rgb(136, 32, 41);
 }
 
+.reservation-confirmation-rate-menu-container-future {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 27px;
+}
+
+.reservation-confirmation-rate-menu-container-past {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.reservation-confirmation-rate-review-container {
+    display: flex;
+    height: 80px;
+    width: 275px;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 7px;
+    border: .0625rem solid #f1f2f4;
+    box-shadow: 0 0.125rem 0.25rem 0 #2d333f33;
+}
+
+.reservation-confirmation-rate-review-icon {
+    height: 48px;
+    width: 48px;
+    margin-left: 10px;
+}
+
+.reservation-confirmation-browse-menu-icon {
+    height: 48px;
+    width: 48px;
+    margin-left: 10px;
+}
+
+.reservation-confirmation-browse-menu-container {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    width: 275px;
+    margin-left: 15px;
+    border-radius: 7px;
+    border: .0625rem solid #f1f2f4;
+    box-shadow: 0 0.125rem 0.25rem 0 #2d333f33;
+}
+
+.reservation-confirmation-rate-review-container:hover {
+    cursor: pointer;
+    background-color: rgb(252, 252, 252);
+
+}
+
+.reservation-confirmation-rate-review-right {
+    margin-left: 5px;
+}
+
+.reservation-confirmation-rate-review-text {
+    font-size: 1.02rem;
+    margin-bottom: 3px;
+}
+
+.reservation-confirmation-rate-review-share-text {
+    font-size: 0.87rem;
+    color: rgb(96, 95, 95);
+    font-weight: 300;
+}
+
+.reservation-confirmation-browse-menu-text {
+    font-size: 1.02rem;
+    margin-bottom: 3px;
+
+}
+
+.reservation-confirmation-restaurant-profile-text {
+    font-size: 0.87rem;
+    color: rgb(96, 95, 95);
+    font-weight: 300;
+}
+
+.reservation-confirmation-browse-menu-right {
+    margin-left: 5px;
+}
+
+.reservation-confirmation-browse-menu-container:hover {
+    cursor: pointer;
+    background-color: rgb(252, 252, 252);
+}   
+
+.reservation-confirmation-get-directions-container {
+    display: flex;
+    height: 80px;
+    width: 275px;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 7px;
+    border: .0625rem solid #f1f2f4;
+    box-shadow: 0 0.125rem 0.25rem 0 #2d333f33;
+}
+
+.reservation-confirmation-get-directions-container:hover {
+    cursor: not-allowed;
+    background-color: rgb(252, 252, 252);
+
+}
+
+.reservation-confirmation-get-directions-icon {
+    height: 48px;
+    width: 48px;
+    margin-left: 10px;
+}
+
+.reservation-confirmation-get-directions-text {
+    font-size: 1.02rem;
+    margin-left: 3px;
+}
 
 
