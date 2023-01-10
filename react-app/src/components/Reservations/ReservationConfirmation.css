@@ -66,11 +66,19 @@
     margin-bottom: 3px;
 }
 
+.reservation-confirm-name-text:hover {
+    cursor: pointer;
+}
+
 .reservation-confirm-past-name-text {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 3px;
     width: 280px;
+}
+
+.reservation-confirm-past-name-text:hover {
+    cursor: pointer;
 }
 
 .reservation-confirm-check-mark {
@@ -101,7 +109,7 @@
     margin-top: 12px;
     margin-bottom: -5px;
     width: 355px;
-    height: 75px;
+    height: 40px;
 }
 
 .reservation-confirm-party-size-text {
@@ -244,10 +252,16 @@
     background-color: rgb(136, 32, 41);
 }
 
-.reservation-confirmation-rate-menu-container {
+.reservation-confirmation-rate-menu-container-future {
     display: flex;
     margin-left: 20px;
-    margin-top: -5px;
+    margin-top: 27px;
+}
+
+.reservation-confirmation-rate-menu-container-past {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 15px;
 }
 
 .reservation-confirmation-rate-review-container {
@@ -325,10 +339,6 @@
     cursor: pointer;
     background-color: rgb(252, 252, 252);
 }   
-
-.space-to-top9 {
-    margin-top: 27px;
-}
 
 .reservation-confirmation-get-directions-container {
     display: flex;

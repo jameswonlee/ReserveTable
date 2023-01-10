@@ -58,6 +58,10 @@ function ReservationConfirmation() {
         history.push(`/restaurants/${reservation.restaurant.id}`)
     }
 
+    const routeToRateReview = () => {
+        history.push(`/restaurants/${reservation.restaurant.id}?review=true`)
+    }
+
     const routeToReservationConfirmation = () => {
         history.replace(`/reservations/${reservationId}`);
     }
@@ -71,11 +75,11 @@ function ReservationConfirmation() {
         return null;
     };
 
-    // window.scrollTo({
-    //     top: 100,
-    //     left: 100,
-    //     behavior: 'smooth'
-    // });
+    window.scrollTo({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+    });
 
 
     return (
@@ -88,7 +92,7 @@ function ReservationConfirmation() {
                             <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img" />
                         </div>
                         <div className="reservation-restaurant-name-options">
-                            <div className="reservation-confirm-name-text">
+                            <div onClick={routeToRestaurant} className="reservation-confirm-name-text">
                                 {reservation.restaurant.name}
                             </div>
                             <div className="reservaton-confirm-check-container">
@@ -116,7 +120,7 @@ function ReservationConfirmation() {
                             </div>
                         </div>
                     </div>
-                    <div className="reservation-confirmation-rate-menu-container space-to-top9">
+                    <div className="reservation-confirmation-rate-menu-container-future">
                         <div className="reservation-confirmation-browse-menu-container">
                             <div className="reservation-confirmation-browse-menu-left">
                                 <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
@@ -144,7 +148,7 @@ function ReservationConfirmation() {
                         </div>
                         <div className="reservation-restaurant-name-options">
                             <div className="reservation-restaurant-name-book-again-container">
-                                <div className="reservation-confirm-past-name-text">
+                                <div onClick={routeToRestaurant}className="reservation-confirm-past-name-text">
                                     {reservation.restaurant.name}
                                 </div>
                                 <div className="reservation-confirm-past-book-again-button-container">
@@ -167,8 +171,8 @@ function ReservationConfirmation() {
                             </div>
                         </div>
                     </div>
-                    <div className="reservation-confirmation-rate-menu-container">
-                        <div className="reservation-confirmation-rate-review-container">
+                    <div className="reservation-confirmation-rate-menu-container-past">
+                        <div onClick={routeToRateReview}className="reservation-confirmation-rate-review-container">
                             <div className="reservation-confirmation-rate-review-left">
                                 <img src={rateReviewIcon} className="reservation-confirmation-rate-review-icon" />
                             </div>
@@ -177,7 +181,7 @@ function ReservationConfirmation() {
                                 <div className="reservation-confirmation-rate-review-share-text">Share your experience</div>
                             </div>
                         </div>
-                        <div className="reservation-confirmation-browse-menu-container">
+                        <div onClick={routeToRestaurant} className="reservation-confirmation-browse-menu-container">
                             <div className="reservation-confirmation-browse-menu-left">
                                 <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
                             </div>

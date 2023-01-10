@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer';
 import NavigationLocalCity from './components/Navigation/NavigationLocalCity';
 import SearchResults from './components/Search/SearchResults';
 import './index.css';
+import Reviews from './components/Reviews/Reviews';
 // import ProtectedRoute from './components/_auth/ProtectedRoute';
 // import UsersList from './components/UsersList';
 // import User from './components/User';
@@ -67,6 +68,9 @@ function App() {
               userReservationTime={userReservationTime}
               setShowSignInModal={setShowSignInModal}
               showSignInModal={showSignInModal} />
+          </Route>
+          <Route exact path='/restaurants/:restaurantId/reviews'>
+            <Reviews />
           </Route>
           <Route exact path='/reservations/:reservationId'>
             <ReservationConfirmation />
