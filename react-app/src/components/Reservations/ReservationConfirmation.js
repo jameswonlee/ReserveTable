@@ -121,7 +121,7 @@ function ReservationConfirmation() {
                         </div>
                     </div>
                     <div className="reservation-confirmation-rate-menu-container-future">
-                        <div className="reservation-confirmation-browse-menu-container">
+                        <div onClick={routeToRestaurant} className="reservation-confirmation-browse-menu-container">
                             <div className="reservation-confirmation-browse-menu-left">
                                 <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
                             </div>
@@ -191,7 +191,6 @@ function ReservationConfirmation() {
                             </div>
                         </div>
                     </div>
-
                 </div>
             }
             {showCancelModal &&
