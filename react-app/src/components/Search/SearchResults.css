@@ -28,7 +28,7 @@
     align-items: center;
     width: 166px;
     border-right: solid;
-    border-color: rgb(228, 228, 228);
+    border-color: rgb(237, 233, 233);
 }
 
 .search-results-search-bar-reservation-date-icon {
@@ -55,7 +55,7 @@
     flex-direction: row;
     align-items: center;
     border-right: solid;
-    border-color: rgb(228, 228, 228);
+    border-color: rgb(237, 233, 233);
     width: 150px;
 }
 
@@ -113,7 +113,6 @@
     justify-content: center;
     align-items: center;
     color: rgb(221, 221, 221);
-
 }
 
 .search-results-search-bar-search-input {
@@ -349,6 +348,24 @@
     font-size: 1rem;
     color: rgb(100, 99, 99);
     padding-bottom: 40px;
+}
+
+.search-results-bonus-points-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 580px;
+    margin-top: 5px;
+}
+
+.search-results-bonus-points-text {
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(218, 54, 68);
+    font-size: 0.95rem;
+    font-weight: 400;
 }
 
 

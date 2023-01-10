@@ -99,8 +99,29 @@ function SearchBar() {
                                 <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
                             </div>
                             <div className="search-bar-reservation-date">
-                                <select className="search-bar-reservation-date-select">
-                                    <option value={dayjs(date).format("YYYY-MM-DD")}>{dayjs(date).format("MMM D, YYYY")}</option>
+                                <select value={date} onChange={e => setDate(e.target.value)} className="search-bar-reservation-date-select">
+                                    <option value={date}>{date}</option>
+                                    <option value={dayjs(date).add(1, 'day').format("MMM D, YYYY")}>{dayjs(date).add(1, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(2, 'day').format("MMM D, YYYY")}>{dayjs(date).add(2, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(3, 'day').format("MMM D, YYYY")}>{dayjs(date).add(3, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(4, 'day').format("MMM D, YYYY")}>{dayjs(date).add(4, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(5, 'day').format("MMM D, YYYY")}>{dayjs(date).add(5, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(6, 'day').format("MMM D, YYYY")}>{dayjs(date).add(6, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(7, 'day').format("MMM D, YYYY")}>{dayjs(date).add(7, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(8, 'day').format("MMM D, YYYY")}>{dayjs(date).add(8, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(9, 'day').format("MMM D, YYYY")}>{dayjs(date).add(9, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(10, 'day').format("MMM D, YYYY")}>{dayjs(date).add(10, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(11, 'day').format("MMM D, YYYY")}>{dayjs(date).add(11, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(12, 'day').format("MMM D, YYYY")}>{dayjs(date).add(12, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(13, 'day').format("MMM D, YYYY")}>{dayjs(date).add(13, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(14, 'day').format("MMM D, YYYY")}>{dayjs(date).add(14, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(15, 'day').format("MMM D, YYYY")}>{dayjs(date).add(15, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(16, 'day').format("MMM D, YYYY")}>{dayjs(date).add(16, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(17, 'day').format("MMM D, YYYY")}>{dayjs(date).add(17, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(18, 'day').format("MMM D, YYYY")}>{dayjs(date).add(18, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(19, 'day').format("MMM D, YYYY")}>{dayjs(date).add(19, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(20, 'day').format("MMM D, YYYY")}>{dayjs(date).add(20, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs(date).add(21, 'day').format("MMM D, YYYY")}>{dayjs(date).add(21, 'day').format("MMM D, YYYY")}</option>
                                 </select>
                             </div>
                         </div>
