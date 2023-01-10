@@ -51,15 +51,15 @@ function ReservationConfirmation() {
     if (!reservation) return null;
 
     const routeToModifyPage = () => {
-        history.push(`/reservations/${reservationId}/modify`)
+        history.push(`/reservations/${reservationId}/modify`);
     }
 
     const routeToRestaurant = () => {
-        history.push(`/restaurants/${reservation.restaurant.id}`)
+        history.push(`/restaurants/${reservation.restaurant.id}`);
     }
 
     const routeToRateReview = () => {
-        history.push(`/restaurants/${reservation.restaurant.id}?review=true`)
+        history.push(`/restaurants/${reservation.restaurant.id}?review=true`);
     }
 
     const routeToReservationConfirmation = () => {

@@ -18,7 +18,7 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
 
     const routeToReservations = ({ userReservationTime }) => {
         setUserReservationTime(userReservationTime);
-        history.replace(`/restaurants/${restaurant.id}`);
+        history.push(`/restaurants/${restaurant.id}`);
     }
 
     return (

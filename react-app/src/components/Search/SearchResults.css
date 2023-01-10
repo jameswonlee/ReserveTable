@@ -177,6 +177,22 @@
     height: auto;
 }
 
+.search-results-restaurant-name-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(37, 127, 158);
+    margin-top: 3px;
+}
+
+.search-results-restaurant-name-text:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.search-results-rating-stars-container {
+    margin-top: 4px;
+}
+
 .search-results-restaurant-results-upper {
     margin-top: 30px;
 }
@@ -241,7 +257,7 @@
 }
 
 .search-results-rating-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: black;
 }
 
@@ -249,6 +265,29 @@
     font-size: 0.9rem;
     font-weight: 300;
     color: rgb(35, 34, 34);
+    margin-top: 2px;
+}
+
+.search-results-restaurant-cuisine {
+    font-size: 0.87rem;
+    color: rgb(1, 1, 1);
+    font-weight: 300;
+}
+
+.search-results-restaurant-neighborhood {
+    font-size: 0.87rem;
+    color: rgb(1, 1, 1);
+}
+
+.search-results-reviews-num {
+    font-size: 0.92rem;
+    font-weight: 300;
+}
+
+.search-results-reviews-num:hover {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .search-results-num-booked-container {
@@ -262,14 +301,35 @@
     width: 16px;
 }
 
-.search-results-total-num-bookings-text {
+.search-results-total-num-bookings {
     font-size: 0.87rem;
     font-weight: 600;
     margin-left: 5px;
+    margin-top: -2px;
 }
 
 .large-dollar {
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+.search-results-reservation-times-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 580px;
+}
+
+.search-results-reservation-time {
+    background-color: rgb(218, 54, 68);
+    width: 110px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.93rem;
+    font-weight: 600;
 }
 
 
