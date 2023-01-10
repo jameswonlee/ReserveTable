@@ -145,6 +145,10 @@ function SearchResults() {
         setSearchInput("");
     }
 
+    const routeToReviews = (restaurantId) => {
+        history.push(`/restaurants/${restaurantId}?review=true`);
+    }
+
 
 
     return (
@@ -334,35 +338,35 @@ function SearchResults() {
                                     <div><img src={restaurant.preview_img} className="search-results-restaurant-result-preview-image" /></div>
                                 </div>
                                 <div className="search-results-restaurant-result-right">
-                                    <div>
+                                    <div onClick={() => routeToRestaurantProfile(restaurant.id)} className="search-results-restaurant-name-text">
                                         {restaurant.name}
                                     </div>
-                                    <div>
+                                    <div className="search-results-rating-stars-container">
                                         {restaurant.reviews
                                             ?
                                             <span>{averageRating(restaurant.reviews).toFixed(1) >= 0.1 &&
                                                 averageRating(restaurant.reviews).toFixed(1) < 1.6 &&
                                                 <span className="gold-star search-results-star">★ <span className="gray-star search-results-star">★ ★ ★ ★</span>
                                                     <span className="search-results-rating-text">
-                                                        &nbsp;&nbsp;Good<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                        &nbsp;&nbsp;Good&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-reviews-num">({restaurant.reviews.length})</span></span></span>}
                                                 {averageRating(restaurant.reviews).toFixed(1) >= 1.6 &&
                                                     averageRating(restaurant.reviews).toFixed(1) < 2.6 &&
                                                     <span className="gold-star search-results-star">★ ★ <span className="gray-star search-results-star">★ ★ ★</span>
                                                         <span className="search-results-rating-text">
-                                                            &nbsp;&nbsp;Excellent<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                            &nbsp;&nbsp;Excellent&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-reviews-num">({restaurant.reviews.length})</span></span></span>}
                                                 {averageRating(restaurant.reviews).toFixed(1) >= 2.6 &&
                                                     averageRating(restaurant.reviews).toFixed(1) < 3.6 &&
                                                     <span className="gold-star search-results-star">★ ★ ★ <span className="gray-star search-results-star">★ ★</span>
                                                         <span className="search-results-rating-text">
-                                                            &nbsp;&nbsp;Very Good<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                            &nbsp;&nbsp;Very Good&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-reviews-num">({restaurant.reviews.length})</span></span></span>}
                                                 {averageRating(restaurant.reviews).toFixed(1) >= 3.6 &&
                                                     averageRating(restaurant.reviews).toFixed(1) < 4.6 &&
                                                     <span className="gold-star search-results-star">★ ★ ★ ★ <span className="gray-star search-results-star">★</span>
                                                         <span className="search-results-rating-text">
-                                                            &nbsp;&nbsp;Awesome<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                            &nbsp;&nbsp;Awesome&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-reviews-num">({restaurant.reviews.length})</span></span></span>}
                                                 {averageRating(restaurant.reviews).toFixed(1) >= 4.6 &&
                                                     <span className="gold-star search-results-star">★ ★ ★ ★ ★<span className="search-results-rating-text">
-                                                        &nbsp;&nbsp;Exceptional<span>&nbsp;&nbsp;({restaurant.reviews.length})</span></span></span>}
+                                                        &nbsp;&nbsp;Exceptional&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-reviews-num">({restaurant.reviews.length})</span></span></span>}
                                             </span>
                                             :
                                             <span className="gray-star search-results-star">★ ★ ★ ★ ★</span>
@@ -374,9 +378,9 @@ function SearchResults() {
                                         {restaurant.cost === 3 && <span className="dark-gray-dollar large-dollar">$$$<span className="light-gray-dollar">$</span></span>}
                                         {restaurant.cost === 4 && <span className="dark-gray-dollar large-dollar">$$$$</span>}
                                         &nbsp; &#x2022; &nbsp;
-                                        <span className="">{restaurant.cuisines.split(',')[0]} </span>
+                                        <span className="search-results-restaurant-cuisine">{restaurant.cuisines.split(',')[0]} </span>
                                         &nbsp;&#x2022;&nbsp;
-                                        <span> {restaurant.neighborhood}</span>
+                                        <span className="search-results-restaurant-neighborhood"> {restaurant.neighborhood}</span>
                                     </div>
                                     <div className="search-results-num-booked-container">
                                         <div>
@@ -384,7 +388,7 @@ function SearchResults() {
                                                 <img src={bookingSymbol} className="search-results-booking-symbol" />
                                             }
                                         </div>
-                                        <div className="search-results-total-num-bookings-text">
+                                        <div className="search-results-total-num-bookings">
                                             {!restaurant.total_num_reservations &&
                                                 <div className="search-results-total-bookings-zero"></div>
                                             }
@@ -396,7 +400,13 @@ function SearchResults() {
                                                     <p>Booked {restaurant.total_num_reservations} times today</p>
                                                 )}
                                         </div>
-
+                                    </div>
+                                    <div className="search-results-reservation-times-container">
+                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A")}</div>
+                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).subtract(30, 'minute').format("h:mm A")}</div>
+                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).format("h:mm A")}</div>
+                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).add(30, 'minute').format("h:mm A")}</div>
+                                        <div className="search-results-reservation-time">{dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A")}</div>
                                     </div>
                                 </div>
                             </div>
