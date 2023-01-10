@@ -190,6 +190,7 @@
     border: solid;
     border-color: rgb(235, 235, 235);
     border-radius: 4px;
+    z-index: 5;
 }
 
 .upcoming-reservations-menu-none-heading {
