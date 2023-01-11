@@ -1,8 +1,9 @@
 .add-review-form-outer-container {
-    height: 350px !important;
-    width: 500px !important;
+    height: 400px;
+    width: 550px;
     display: flex;
     flex-direction: column;
+    border-radius: 4px;
 }
 
 .create-review-form {
@@ -19,34 +20,30 @@
 }
 
 .review-text-input {
-    height: 40px;
-    /* width: 460px; */
-    /* width: calc(100% - 16px); */
-    height: 40px;
+    height: 80px;
+    margin-bottom: 10px;
     border-radius: 6px;
-    border-color: gray;
-    font-size: large;
-    padding-left: 8px;
-    padding-right: 8px;
     border: 1px solid rgb(164, 163, 163);
+    width: calc(100% - 16px);
+    font-size: large;
+    padding-left: 5px;
 }
 
 .rating-input {
-    width: calc(100% - 16px);
+    width: calc(100% - 18px);
     height: 40px;
     border-radius: 6px;
-    border-color: gray;
     font-size: large;
-    /* margin-top: 12px; */
     padding-left: 8px;
-    padding-right: 8px;
     border: 1px solid rgb(164, 163, 163);
+    margin-bottom: 20px;
 }
 
 .review-form-heading {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .review-submit-button-container {
@@ -57,7 +54,7 @@
 
 .submit-review-button {
     width: 200px;
-    height: 35px;
+    height: 45px;
     border-radius: 4px;
     border: none;
     background-color: rgb(218, 54, 68);
@@ -67,7 +64,16 @@
     margin-bottom: -40px;
 }
 
+.submit-review-button:hover {
+    cursor: pointer;
+}
+
 .review-validation-errors {
     color: red;
-    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.update-review-validation-errors {
+    color: red;
+    font-size: 0.9rem;
 }

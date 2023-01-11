@@ -42,7 +42,6 @@ function Reviews({ restaurant }) {
     const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
     const hasPreviousReview = allReviews?.some(review => review.user_id === sessionUser?.id);
     // const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
-
     const shouldShowReviewButton = (!hasPreviousReview);
 
 
@@ -119,8 +118,6 @@ function Reviews({ restaurant }) {
                     </div>
                 ))}
             </div>
-
-
         </div>
     )
 }
