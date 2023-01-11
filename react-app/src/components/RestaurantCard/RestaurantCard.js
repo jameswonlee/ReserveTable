@@ -28,7 +28,7 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
                     <img className="preview-image" src={restaurant.preview_img}
                         alt="img2"
                         onError={(e) => {
-                            e.target.src="https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
+                            e.target.src = "https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg";
                         }}
                     />
                 </div>
@@ -61,7 +61,13 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
                         }
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {restaurant.reviews &&
-                            <span className="preview-num-reviews">{restaurant.reviews.length} reviews</span>}
+                            restaurant.reviews.length === 1 &&
+                            <span className="preview-num-reviews">{restaurant.reviews.length} review</span>
+                        }
+                        {restaurant.reviews &&
+                            restaurant.reviews.length !== 1 &&
+                            <span className="preview-num-reviews">{restaurant.reviews.length} reviews</span>
+                        }
                     </div>
                     <div className="preview-cuisine-cost-neighborhood">
                         <span className="">{restaurant.cuisines.split(',')[0]} </span>
