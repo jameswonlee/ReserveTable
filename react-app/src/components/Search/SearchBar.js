@@ -18,7 +18,7 @@ function SearchBar() {
     const allRestaurants = useSelector(state => Object.values(state.restaurants));
 
     const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"));
-    const [time, setTime] = useState("11:00");
+    const [time, setTime] = useState("18:00");
     const [partySize, setPartySize] = useState(2);
     const [searchInput, setSearchInput] = useState("");
 
@@ -130,6 +130,8 @@ function SearchBar() {
                             <img src={clockIcon} className="search-bar-clock-icon" alt="" />
                             <select value={time} onChange={e => setTime(e.target.value)}
                                 className="search-bar-time-select">
+                                <option value="10:00">10:00 AM</option>
+                                <option value="10:30">10:30 AM</option>
                                 <option value="11:00">11:00 AM</option>
                                 <option value="11:30">11:30 AM</option>
                                 <option value="12:00">12:00 PM</option>

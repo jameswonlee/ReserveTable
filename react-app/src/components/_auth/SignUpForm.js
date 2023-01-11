@@ -54,26 +54,32 @@ const SignUpForm = ({ setShowSignUpModal }) => {
   };
 
   const updateUsername = (e) => {
+    setValidationErrors([]);
     setUsername(e.target.value);
   };
 
   const updateEmail = (e) => {
+    setValidationErrors([]);
     setEmail(e.target.value);
   };
 
   const updateFirstName = (e) => {
+    setValidationErrors([]);
     setFirstName(e.target.value);
   };
 
   const updateLastName = (e) => {
+    setValidationErrors([]);
     setLastName(e.target.value);
   };
 
   const updatePassword = (e) => {
+    setValidationErrors([]);
     setPassword(e.target.value);
   };
 
   const updateRepeatPassword = (e) => {
+    setValidationErrors([]);
     setRepeatPassword(e.target.value);
   };
 
@@ -84,7 +90,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
   return (
     <form onSubmit={onSignUp} className="sign-up-form">
       <div className="sign-up-form-container">
-        <h1>Welcome to ReserveTable</h1>
+        <div>
+          <h1>Welcome to ReserveTable</h1>
+        </div>
         <div className="sign-up-form-error-messages">
           {validationErrors.length > 0 &&
             validationErrors.map(error =>
@@ -94,7 +102,6 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             <div key={ind}>{error}</div>
           ))}
         </div>
-
         <div>
           {/* <label>Username</label> */}
           <input

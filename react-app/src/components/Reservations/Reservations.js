@@ -50,9 +50,9 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
         setValidationErrors([]);
         const errors = [];
 
-        if (!partySize) errors.push("Please tell us how many are in your party");
+        if (!partySize) errors.push("Please select party size");
         if (!date) errors.push("Please select a date");
-        if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future time");
+        if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future date");
         if (!time) errors.push("Please select a time");
 
         setValidationErrors(errors);
@@ -87,7 +87,10 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                         <div className="reservation-party-size-text">Party Size</div>
                         <div className="reservation-party-size-border-bottom">
                             <label className="reservation-party-size-select">
-                                <select value={partySize} onChange={e => setPartySize(e.target.value)} className="reservation-party-size-select">
+                                <select value={partySize} onChange={e => {
+                                    setValidationErrors([]);
+                                    setPartySize(e.target.value)
+                                }} className="reservation-party-size-select">
                                     <option value="1">1 person</option>
                                     <option value="2">2 people</option>
                                     <option value="3">3 people</option>
@@ -117,7 +120,10 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                             <div className="reservation-date-text">Date</div>
                             <input
                                 type="date"
-                                onChange={e => setDate(e.target.value)}
+                                onChange={e => {
+                                    setValidationErrors([]);
+                                    setDate(e.target.value)
+                                }}
                                 value={date}
                                 placeholder="Date"
                                 className="reservation-date-input" />
@@ -126,6 +132,8 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                             <div className="reservation-time-text">Time</div>
                             <label className="reservation-time-select-label">
                                 <select value={time} onChange={e => setTime(e.target.value)} className="reservation-time-select">
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
                                     <option value="11:00">11:00 AM</option>
                                     <option value="11:30">11:30 AM</option>
                                     <option value="12:00">12:00 PM</option>

@@ -6,8 +6,6 @@ import './AddReview.css';
 import { getOneRestaurant } from "../../store/restaurants";
 
 
-
-
 function AddReviewForm({ restaurant, setShowAddModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
