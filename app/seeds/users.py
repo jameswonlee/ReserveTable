@@ -416,16 +416,6 @@ def seed_reviews():
         rating=4
     )
 
-    review7_1 = Review(
-        user_id=2, restaurant_id=7, review="""Great food great ambience. Service was a bit behind but they were pretty busy for a Tuesday night so we understood. Server was nice and sweet overall. Will go back!""", 
-        rating=5
-    )
-
-    review7_2 = Review(
-        user_id=3, restaurant_id=7, review="""It was a first time fun experience. We were seated in the main room which was very noisy so were moved to an area just below the elevated patio. It was much quieter and the heater was very pleasant. Daniela B. was helpful and funny. Didn't know about Happy Hour but benefited from it which made the evening all the more enjoyable.""", 
-        rating=5
-    )
-
     review8_1 = Review(
         user_id=4, restaurant_id=8, review="""Food was fantastic, but the service was not on point. From the staff to get seated(seemed a little chaotic) to the servers(it was like the JV team came in for the Thanksgiving holiday), just not the A++ level experience we have had in the past.""", 
         rating=3
@@ -481,11 +471,6 @@ def seed_reviews():
         rating=5
     )
 
-    review13_2 = Review(
-        user_id=2, restaurant_id=13, review="I have been to the restaurant for lunch and dinner and love the ambiance during the dinner time. The noise level a little too high at certain times. Overall , very enjoyable.",
-        rating=5
-    )
-
     review14_1 = Review(
         user_id=3, restaurant_id=14, review="This place was exceptional. The food, the service, the ambience. It was a Vibe! The pizza is to die for! I will always have dinner here when visiting LA. Nico our waiter was everything. So knowledgeable, friendly and accommodating. Thank you!",
         rating=5
@@ -507,8 +492,8 @@ def seed_reviews():
     )
 
     db.session.add_all([review1_1, review1_2, review1_3, review1_4, review2_1, review2_2, review2_3, review2_4, review3_1, review3_2, review3_3, review3_4, review3_5, review3_6, review3_7, review3_8, 
-    review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review7_1, review7_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2, review11_1, review11_2, review12_1, review12_2, 
-    review13_1, review13_2, review14_1, review14_2, review15_1, review15_2])
+    review4_1, review4_2, review5_1, review5_2, review6_1, review6_2, review8_1, review8_2, review9_1, review9_2, review10_1, review10_2, review11_1, review11_2, review12_1, review12_2, 
+    review13_1, review14_1, review14_2, review15_1, review15_2])
 
     db.session.commit()
 
