@@ -44,10 +44,12 @@ const LoginForm = ({ setShowSignInModal }) => {
   }
 
   const updateEmail = (e) => {
+    setValidationErrors([]);
     setEmail(e.target.value);
   };
 
   const updatePassword = (e) => {
+    setValidationErrors([]);
     setPassword(e.target.value);
   };
 

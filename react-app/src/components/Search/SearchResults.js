@@ -193,6 +193,8 @@ function SearchResults() {
                         <img src={clockIcon} className="search-results-search-bar-clock-icon" alt="" />
                         <select value={time} onChange={e => setTime(e.target.value)}
                             className="search-results-search-bar-time-select">
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
                             <option value="11:00">11:00 AM</option>
                             <option value="11:30">11:30 AM</option>
                             <option value="12:00">12:00 PM</option>
@@ -426,31 +428,73 @@ function SearchResults() {
                                         </div>
                                     </div>
                                     <div className="search-results-reservation-times-container">
-                                        <div onClick={() => routeToReservationsMinus60(restaurant.id)} className="search-results-reservation-time">
-                                            {dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A")}
+                                        {dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A") !== "9:00 AM" &&
+                                            dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A") !== "9:30 AM"
+                                            ?
+                                            <div>
+                                                <div onClick={() => routeToReservationsMinus60(restaurant.id)} className="search-results-reservation-time">
+                                                    {dayjs(`${date} ${time}`).subtract(60, 'minute').format("h:mm A")}
+                                                </div>
+                                                {randomNumGenerator(3) === 1 &&
+                                                    <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                                }
+                                            </div>
+                                            :
+                                            <div className="search-results-empty-timeslot">
+                                            </div>
+                                        }
+                                        {dayjs(`${date} ${time}`).subtract(30, 'minute').format("h:mm A") !== "9:30 AM"
+                                            ?
+                                            <div>
+                                                <div onClick={() => routeToReservationsMinus30(restaurant.id)} className="search-results-reservation-time">
+                                                    {dayjs(`${date} ${time}`).subtract(30, 'minute').format("h:mm A")}
+                                                </div>
+                                                {randomNumGenerator(3) === 1 &&
+                                                    <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                                }
+                                            </div>
+                                            :
+                                            <div className="search-results-empty-timeslot">
+                                            </div>
+                                        }
+                                        <div>
+                                            <div onClick={() => routeToReservations(restaurant.id)} className="search-results-reservation-time">
+                                                {dayjs(`${date} ${time}`).format("h:mm A")}
+                                            </div>
+                                            {randomNumGenerator(3) === 1 &&
+                                                <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                            }
                                         </div>
-                                        <div onClick={() => routeToReservationsMinus30(restaurant.id)} className="search-results-reservation-time">
-                                            {dayjs(`${date} ${time}`).subtract(30, 'minute').format("h:mm A")}
-                                        </div>
-                                        <div onClick={() => routeToReservations(restaurant.id)} className="search-results-reservation-time">
-                                            {dayjs(`${date} ${time}`).format("h:mm A")}
-                                        </div>
-                                        <div onClick={() => routeToReservationsPlus30(restaurant.id)} className="search-results-reservation-time">
-                                            {dayjs(`${date} ${time}`).add(30, 'minute').format("h:mm A")}
-                                        </div>
-                                        <div onClick={() => routeToReservationsPlus60(restaurant.id)} className="search-results-reservation-time">
-                                            {dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A")}
-                                        </div>
+                                        {dayjs(`${date} ${time}`).add(30, 'minute').format("h:mm A") !== "10:30 PM"
+                                            ?
+                                            <div>
+                                                <div onClick={() => routeToReservationsPlus30(restaurant.id)} className="search-results-reservation-time">
+                                                    {dayjs(`${date} ${time}`).add(30, 'minute').format("h:mm A")}
+                                                </div>
+                                                {randomNumGenerator(3) === 1 &&
+                                                    <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                                }
+                                            </div>
+                                            :
+                                            <div className="search-results-empty-timeslot">
+                                            </div>
+                                        }
+                                        {dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A") !== "10:30 PM" &&
+                                            dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A") !== "11:00 PM"
+                                            ?
+                                            <div>
+                                                <div onClick={() => routeToReservationsPlus60(restaurant.id)} className="search-results-reservation-time">
+                                                    {dayjs(`${date} ${time}`).add(60, 'minute').format("h:mm A")}
+                                                </div>
+                                                {randomNumGenerator(3) === 1 &&
+                                                    <div className="search-results-bonus-points-text">+1,000 pts</div>
+                                                }
+                                            </div>
+                                            :
+                                            <div className="search-results-empty-timeslot">
+                                            </div>
+                                        }
                                     </div>
-                                    {randomNumGenerator(2) === 1 &&
-                                        <div className="search-results-bonus-points-container">
-                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
-                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
-                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
-                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
-                                            <div className="search-results-bonus-points-text">+1,000 pts</div>
-                                        </div>
-                                    }
                                 </div>
                             </div>
                         ))}

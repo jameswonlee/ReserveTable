@@ -139,6 +139,8 @@ function ModifyReservation() {
                             <div>
                                 <label className="modify-reservation-time-select-label">
                                     <select value={time} onChange={e => setTime(e.target.value)} className="modify-reservation-new-time-input">
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="10:30">10:30 AM</option>
                                         <option value="11:00">11:00 AM</option>
                                         <option value="11:30">11:30 AM</option>
                                         <option value="12:00">12:00 PM</option>
@@ -183,14 +185,14 @@ function ModifyReservation() {
                                     </select>
                                 </label>
                             </div>
-                            <div>
-                                <button
-                                    type="submit"
-                                    className="modify-reservation-new-reservation-submit-button"
-                                >
-                                    Reserve new table
-                                </button>
-                            </div>
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                className="modify-reservation-new-reservation-submit-button"
+                            >
+                                Reserve new table
+                            </button>
                         </div>
                     </form>
                 </div>

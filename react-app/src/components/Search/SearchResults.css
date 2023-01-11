@@ -331,6 +331,16 @@
     font-weight: 600;
 }
 
+.search-results-empty-timeslot {
+    background-color: rgb(234, 234, 234);
+    width: 110px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
 .search-results-reservation-time:hover {
     cursor: pointer;
     background-color: rgb(155, 41, 50);
@@ -350,22 +360,14 @@
     padding-bottom: 40px;
 }
 
-.search-results-bonus-points-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 580px;
-    margin-top: 5px;
-}
-
 .search-results-bonus-points-text {
-    width: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(218, 54, 68);
     font-size: 0.95rem;
     font-weight: 400;
+    margin-top: 5px;
 }
 
 

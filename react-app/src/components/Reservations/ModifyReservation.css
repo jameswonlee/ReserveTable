@@ -142,6 +142,10 @@
     margin-bottom: -12px;
 }
 
+.modify-reservation-time-select-label {
+    padding-right: -10px;
+}
+
 .modify-reservation-new-date-input {
     border-radius: 2px;
     width: 150px;
