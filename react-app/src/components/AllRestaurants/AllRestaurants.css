@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items:stretch; */
-    /* margin-left: 105px; */
     margin-left: calc(5% - 0px);
     margin-right: calc(5% - 0px);
 }
@@ -14,14 +12,6 @@
 }
 
 .above-restaurant-cards {
-    /* margin-left: 126px; */
-    /* margin-right: 126px; */
-    /* margin-left: 60px; */
-    /* margin-right: 63px; */
-    /* width: 100%; */
-    /* max-width: 1200px; */
-    margin-left: calc(4%);
-    margin-right: calc(4%);
     margin-bottom: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -31,6 +21,21 @@
     flex-direction: row;
     align-items: center;
     color:rgb(45, 51, 63);
+    width: auto;
+}
+
+@media (max-width: 1520px) {
+    .above-restaurant-cards {
+        margin-left: calc(3.8%);
+        margin-right: calc(3.8%)
+    }
+}
+
+@media(min-width: 1521px) {
+    .above-restaurant-cards {
+        margin-left: calc(6.8%);
+        margin-right: calc(6.8%);
+    }
 }
 
 .verify-city {
