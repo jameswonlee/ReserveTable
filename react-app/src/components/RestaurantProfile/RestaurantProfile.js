@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { getOneRestaurant } from '../../store/restaurants';
+import { createSavedRestaurant, deleteSavedRestaurant, getAllSavedRestaurants } from '../../store/savedRestaurants';
 import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
 import Reviews from '../Reviews/Reviews'
@@ -13,7 +14,6 @@ import cuisineIcon from './icons/cuisine-icon.ico';
 import saveRestaurantIcon from '../../icons/save-restaurant.ico';
 import savedRestaurantIcon from '../../icons/saved-restaurant-icon.ico';
 import './RestaurantProfile.css'
-import { createSavedRestaurant, deleteSavedRestaurant, getAllSavedRestaurants } from '../../store/savedRestaurants';
 
 
 function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignInModal }) {

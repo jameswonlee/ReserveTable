@@ -2,8 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { editReview } from '../../store/reviews';
-
-import './UpdateReviewForm.css';
 import { getOneRestaurant } from "../../store/restaurants";
 
 function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
@@ -73,7 +71,7 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                                     setRating(e.target.value)
                                 }}
                                 value={rating}
-                                placeholder="Rating"
+                                placeholder="Rating 1 - 5"
                                 min="1"
                                 max="5"
                                 className="rating-input" />
@@ -89,10 +87,6 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                 </form>
             </div>
         </div>
-
-
-
-
     )
 }
 

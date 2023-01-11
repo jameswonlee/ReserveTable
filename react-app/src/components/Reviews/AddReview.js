@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createReview } from "../../store/reviews";
-import './AddReview.css';
 import { getOneRestaurant } from "../../store/restaurants";
+import './AddReview.css';
 
 
 function AddReviewForm({ restaurant, setShowAddModal }) {
@@ -56,15 +56,17 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                             )}
                     </div>
                     <div className="review-inputs">
-                        <input
-                            type="text"
-                            onChange={e => {
-                                setValidationErrors([]);
-                                setReview(e.target.value)
-                            }}
-                            value={review}
-                            placeholder="Review"
-                            className="review-text-input" />
+                        <div>
+                            <input
+                                type="text"
+                                onChange={e => {
+                                    setValidationErrors([]);
+                                    setReview(e.target.value)
+                                }}
+                                value={review}
+                                placeholder="Review"
+                                className="review-text-input" />
+                        </div>
                         <div>
                             <input
                                 type="number"
@@ -73,7 +75,7 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                                     setRating(e.target.value)
                                 }}
                                 value={rating}
-                                placeholder="Rating"
+                                placeholder="Rating 1 - 5"
                                 min="1"
                                 max="5"
                                 className="rating-input" />

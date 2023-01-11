@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import reservationDateIcon from '../../icons/upcoming-reservations-icon.ico';
 import magnifyingGlass from '../../icons/search-button.ico';
 import clockIcon from '../../icons/clock-icon.ico';
-import downCarrot from '../../icons/down-carrot.ico';
 import personIcon from '../../icons/person-icon.ico';
 import locationsIcon from '../../icons/search-location-icon.ico';
 import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
@@ -193,8 +192,7 @@ function SearchBar() {
                                 type="search"
                                 placeholder="Location, Restaurant, or Cuisine"
                                 value={searchInput}
-                                onChange={(e) => setSearchInput(e.target.value)}
-                            />
+                                onChange={(e) => setSearchInput(e.target.value)} />
                         </div>
                     </div>
                     <div>
