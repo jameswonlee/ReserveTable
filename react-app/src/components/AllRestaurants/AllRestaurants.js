@@ -4,7 +4,6 @@ import { getAllRestaurants } from '../../store/restaurants'
 import RestaurantCard from '../RestaurantCard/RestaurantCard'
 import getCurrentLocation from '../../icons/current-location-arrow.ico'
 import './AllRestaurants.css'
-import NavigationLocalCity from '../Navigation/NavigationLocalCity';
 
 
 function DisplayAllRestaurants({ setUserReservationTime }) {
