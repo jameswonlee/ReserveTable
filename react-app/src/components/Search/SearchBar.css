@@ -39,7 +39,7 @@
 .search-bar-reservation-date-icon {
     height: 32px;
     width: 34px;
-    margin-top: 5px;
+    margin-top: 4px;
     margin-left: -27px;
 }
 
@@ -63,6 +63,10 @@
     border: none;
     font-size: 1.05rem;
     width: 121px;
+    /* -webkit-appearance: none; */
+    /* appearance:initial; */
+    margin-top: 0px;
+
 }
 
 .search-bar-date-input {
@@ -100,6 +104,7 @@
     margin-top: 1px;
     padding-left: 8px;
     color: rgb(66, 65, 65);
+    -webkit-appearance: none;
 }
 
 .search-bar-party-size-container {
@@ -122,6 +127,10 @@
     color: rgb(66, 65, 65);
     margin-left: 5px;
     width: 100px;
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+
 }
 
 .search-bar-text-input-container {
