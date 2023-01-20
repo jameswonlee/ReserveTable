@@ -8,6 +8,7 @@ import personIcon from '../../icons/person-icon.ico';
 import locationsIcon from '../../icons/search-location-icon.ico';
 import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
 import cuisinesIcon from '../../icons/search-cuisines-icon.ico';
+// import downCaret from '../../icons/down-carrot.ico';
 import dayjs from 'dayjs';
 import './SearchBar.css'
 
@@ -16,7 +17,7 @@ function SearchBar() {
     const history = useHistory();
     const allRestaurants = useSelector(state => Object.values(state.restaurants));
 
-    const [date, setDate] = useState(dayjs().add(1, "day").format("MMM D, YYYY"));
+    const [date, setDate] = useState(dayjs().add(1, "day").format("YYYY-MM-DD"));
     const [time, setTime] = useState("18:00");
     const [partySize, setPartySize] = useState(2);
     const [searchInput, setSearchInput] = useState("");
@@ -99,30 +100,32 @@ function SearchBar() {
                             </div>
                             <div className="search-bar-reservation-date">
                                 <select value={date} onChange={e => setDate(e.target.value)} className="search-bar-reservation-date-select">
-                                    <option value={dayjs(date).subtract(1, 'day').format("MMM D, YYYY")}>{dayjs(date).subtract(1, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={date}>{date}</option>
-                                    <option value={dayjs(date).add(1, 'day').format("MMM D, YYYY")}>{dayjs(date).add(1, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(2, 'day').format("MMM D, YYYY")}>{dayjs(date).add(2, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(3, 'day').format("MMM D, YYYY")}>{dayjs(date).add(3, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(4, 'day').format("MMM D, YYYY")}>{dayjs(date).add(4, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(5, 'day').format("MMM D, YYYY")}>{dayjs(date).add(5, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(6, 'day').format("MMM D, YYYY")}>{dayjs(date).add(6, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(7, 'day').format("MMM D, YYYY")}>{dayjs(date).add(7, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(8, 'day').format("MMM D, YYYY")}>{dayjs(date).add(8, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(9, 'day').format("MMM D, YYYY")}>{dayjs(date).add(9, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(10, 'day').format("MMM D, YYYY")}>{dayjs(date).add(10, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(11, 'day').format("MMM D, YYYY")}>{dayjs(date).add(11, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(12, 'day').format("MMM D, YYYY")}>{dayjs(date).add(12, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(13, 'day').format("MMM D, YYYY")}>{dayjs(date).add(13, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(14, 'day').format("MMM D, YYYY")}>{dayjs(date).add(14, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(15, 'day').format("MMM D, YYYY")}>{dayjs(date).add(15, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(16, 'day').format("MMM D, YYYY")}>{dayjs(date).add(16, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(17, 'day').format("MMM D, YYYY")}>{dayjs(date).add(17, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(18, 'day').format("MMM D, YYYY")}>{dayjs(date).add(18, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(19, 'day').format("MMM D, YYYY")}>{dayjs(date).add(19, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(20, 'day').format("MMM D, YYYY")}>{dayjs(date).add(20, 'day').format("MMM D, YYYY")}</option>
-                                    <option value={dayjs(date).add(21, 'day').format("MMM D, YYYY")}>{dayjs(date).add(21, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().format("YYYY-MM-DD")}>{dayjs().format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(1, 'day').format("YYYY-MM-DD")}>{dayjs().add(1, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(2, 'day').format("YYYY-MM-DD")}>{dayjs().add(2, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(3, 'day').format("YYYY-MM-DD")}>{dayjs().add(3, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(4, 'day').format("YYYY-MM-DD")}>{dayjs().add(4, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(5, 'day').format("YYYY-MM-DD")}>{dayjs().add(5, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(6, 'day').format("YYYY-MM-DD")}>{dayjs().add(6, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(7, 'day').format("YYYY-MM-DD")}>{dayjs().add(7, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(8, 'day').format("YYYY-MM-DD")}>{dayjs().add(8, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(9, 'day').format("YYYY-MM-DD")}>{dayjs().add(9, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(10, 'day').format("YYYY-MM-DD")}>{dayjs().add(10, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(11, 'day').format("YYYY-MM-DD")}>{dayjs().add(11, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(12, 'day').format("YYYY-MM-DD")}>{dayjs().add(12, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(13, 'day').format("YYYY-MM-DD")}>{dayjs().add(13, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(14, 'day').format("YYYY-MM-DD")}>{dayjs().add(14, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(15, 'day').format("YYYY-MM-DD")}>{dayjs().add(15, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(16, 'day').format("YYYY-MM-DD")}>{dayjs().add(16, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(17, 'day').format("YYYY-MM-DD")}>{dayjs().add(17, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(18, 'day').format("YYYY-MM-DD")}>{dayjs().add(18, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(19, 'day').format("YYYY-MM-DD")}>{dayjs().add(19, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(20, 'day').format("YYYY-MM-DD")}>{dayjs().add(20, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(21, 'day').format("YYYY-MM-DD")}>{dayjs().add(21, 'day').format("MMM D, YYYY")}</option>
                                 </select>
+                                {/* <span className="search-bar-down-caret-container">
+                                    <img src={downCaret} className="search-bar-down-caret"/>
+                                </span> */}
                             </div>
                         </div>
                         <div className="search-bar-time-input-container">
@@ -211,7 +214,7 @@ function SearchBar() {
                         {locations.length > 0 &&
                             <div className="search-bar-locations-container">
                                 <div className="search-bar-locations-text-container">
-                                    <img src={locationsIcon} className="search-bar-locations-icon" />
+                                    <img src={locationsIcon} alt="" className="search-bar-locations-icon" />
                                     <div className="search-bar-locations-text">Locations</div>
                                 </div>
                                 <div className="search-bar-locations-results-container">
@@ -229,7 +232,7 @@ function SearchBar() {
                         {cuisines.length > 0 &&
                             <div className="search-bar-cuisines-container">
                                 <div className="search-bar-cuisines-text-container">
-                                    <img src={cuisinesIcon} className="search-bar-cuisines-icon" />
+                                    <img src={cuisinesIcon} alt="" className="search-bar-cuisines-icon" />
                                     <div className="search-bar-cuisines-text">Cuisines</div>
                                 </div>
                                 <div className="search-bar-cuisines-results-container">
@@ -247,7 +250,7 @@ function SearchBar() {
                         {restaurants.length > 0 &&
                             <div className="search-bar-restaurants-container">
                                 <div className="search-bar-restaurants-text-container">
-                                    <img src={restaurantsIcon} className="search-bar-restaurants-icon" />
+                                    <img src={restaurantsIcon} alt="" className="search-bar-restaurants-icon" />
                                     <div className="search-bar-restaurants-text">Restaurants</div>
                                 </div>
                                 <div className="search-bar-restaurants-results-container">

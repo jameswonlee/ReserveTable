@@ -28,8 +28,8 @@ function SearchResults() {
     const locationSearch = params.get('location');
     const cuisineSearch = params.get('cuisine');
 
-    const [date, setDate] = useState(searchDate);
-    const [time, setTime] = useState(searchTime);
+    const [date, setDate] = useState(dayjs(searchDate).format("YYYY-MM-DD") || dayjs().add(1, "day").format("MMM D, YYYY"));
+    const [time, setTime] = useState(searchTime || "18:00");
     const [partySize, setPartySize] = useState(searchPartySize);
     const [searchInput, setSearchInput] = useState("");
 
@@ -184,9 +184,29 @@ function SearchResults() {
                             <img src={reservationDateIcon} className="search-results-search-bar-reservation-date-icon" alt="" />
                         </div>
                         <div className="search-results-search-bar-reservation-date">
-                            <select className="search-results-search-bar-reservation-date-select">
-                                <option value={dayjs(date).format("YYYY-MM-DD")}>{dayjs(date).format("MMM D, YYYY")}</option>
-                            </select>
+                            <select value={date} onChange={e => setDate(e.target.value)} className="search-results-search-bar-reservation-date-select">
+                                <option value={dayjs().format("YYYY-MM-DD")}>{dayjs().format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(1, 'day').format("YYYY-MM-DD")}>{dayjs().add(1, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(2, 'day').format("YYYY-MM-DD")}>{dayjs().add(2, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(3, 'day').format("YYYY-MM-DD")}>{dayjs().add(3, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(4, 'day').format("YYYY-MM-DD")}>{dayjs().add(4, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(5, 'day').format("YYYY-MM-DD")}>{dayjs().add(5, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(6, 'day').format("YYYY-MM-DD")}>{dayjs().add(6, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(7, 'day').format("YYYY-MM-DD")}>{dayjs().add(7, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(8, 'day').format("YYYY-MM-DD")}>{dayjs().add(8, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(9, 'day').format("YYYY-MM-DD")}>{dayjs().add(9, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(10, 'day').format("YYYY-MM-DD")}>{dayjs().add(10, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(11, 'day').format("YYYY-MM-DD")}>{dayjs().add(11, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(12, 'day').format("YYYY-MM-DD")}>{dayjs().add(12, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(13, 'day').format("YYYY-MM-DD")}>{dayjs().add(13, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(14, 'day').format("YYYY-MM-DD")}>{dayjs().add(14, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(15, 'day').format("YYYY-MM-DD")}>{dayjs().add(15, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(16, 'day').format("YYYY-MM-DD")}>{dayjs().add(16, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(17, 'day').format("YYYY-MM-DD")}>{dayjs().add(17, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(18, 'day').format("YYYY-MM-DD")}>{dayjs().add(18, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(19, 'day').format("YYYY-MM-DD")}>{dayjs().add(19, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(20, 'day').format("YYYY-MM-DD")}>{dayjs().add(20, 'day').format("MMM D, YYYY")}</option>
+                                <option value={dayjs().add(21, 'day').format("YYYY-MM-DD")}>{dayjs().add(21, 'day').format("MMM D, YYYY")}</option>                        </select>
                         </div>
                     </div>
                     <div className="search-results-search-bar-time-input-container">
@@ -334,7 +354,6 @@ function SearchResults() {
                     </div>
                 </div>
             </div>
-
             <div className="search-results-restaurant-results-container">
                 <div className="search-results-restaurant-results-upper">
                     {search
@@ -349,7 +368,16 @@ function SearchResults() {
                         </div>
                         :
                         <div className="search-results-number-restaurants-available">
-                            {filteredRestaurants.length} restaurants available in Los Angeles
+                            {filteredRestaurants.length === 1
+                                ?
+                                <div>
+                                    {filteredRestaurants.length} restaurant available in Los Angeles
+                                </div>
+                                :
+                                <div>
+                                    {filteredRestaurants.length} restaurants available in Los Angeles
+                                </div>
+                            }
                         </div>
                     }
                 </div>

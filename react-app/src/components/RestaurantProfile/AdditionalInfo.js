@@ -23,7 +23,7 @@ function AdditionalInfo({ restaurant }) {
             <div className="additional-information">
                 <div className="cross-street-container">
                     <div className="cross-street-left">
-                        <img src={crossStreetIcon} className="cross-street-icon" />
+                        <img src={crossStreetIcon} alt="" className="cross-street-icon" />
                     </div>
                     <div className="cross-street-right">
                         <div className="cross-street-label">
@@ -36,7 +36,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="neighborhood-container">
                     <div className="neighborhood-left">
-                        <img src={neighborhoodIcon} className="neighborhood-icon" />
+                        <img src={neighborhoodIcon} alt="" className="neighborhood-icon" />
                     </div>
                     <div className="neighborhood-right">
                         <div className="neighborhood-label">
@@ -49,7 +49,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="operation-hours-container">
                     <div className="operation-hours-left">
-                        <img src={operationHoursIcon} className="operation-hours-icon" />
+                        <img src={operationHoursIcon} alt="" className="operation-hours-icon" />
                     </div>
                     <div className="operation-hours-right">
                         <div className="operation-hours-label">
@@ -62,7 +62,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="cuisines-container">
                     <div className="cuisines-left">
-                        <img src={cuisinesIcon} className="cuisines-icon" />
+                        <img src={cuisinesIcon} alt="" className="cuisines-icon" />
                     </div>
                     <div className="cuisines-right">
                         <div className="cuisines-label">
@@ -75,7 +75,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="dining-style-container">
                     <div className="dining-style-left">
-                        <img src={diningStyleIcon} className="dining-style-icon" />
+                        <img src={diningStyleIcon} alt="" className="dining-style-icon" />
                     </div>
                     <div className="dining-style-right">
                         <div className="dining-style-label">
@@ -88,7 +88,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="dress-code-container">
                     <div className="dress-code-left">
-                        <img src={dressCodeIcon} className="dress-code-icon" />
+                        <img src={dressCodeIcon} alt="" className="dress-code-icon" />
                     </div>
                     <div className="dress-code-right">
                         <div className="dress-code-label">
@@ -101,7 +101,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="parking-details-container">
                     <div className="parking-details-left">
-                        <img src={parkingDetailsIcon} className="parking-details-icon" />
+                        <img src={parkingDetailsIcon} alt="" className="parking-details-icon" />
                     </div>
                     <div className="parking-details-right">
                         <div className="parking-details-label">
@@ -114,7 +114,7 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="payment-options-container">
                     <div className="payment-options-left">
-                        <img src={paymentOptionsIcon} className="payment-options-icon" />
+                        <img src={paymentOptionsIcon} alt="" className="payment-options-icon" />
                     </div>
                     <div className="payment-options-right">
                         <div className="payment-options-label">
@@ -129,7 +129,7 @@ function AdditionalInfo({ restaurant }) {
                     {restaurant.executive_chef &&
                         <div className="executive-chef-container">
                             <div className="executive-chef-left">
-                                <img src={executiveChefIcon} className="executive-chef-icon" />
+                                <img src={executiveChefIcon} alt="" className="executive-chef-icon" />
                             </div>
                             <div className="executive-chef-right">
                                 <div className="executive-chef-label">
@@ -144,20 +144,20 @@ function AdditionalInfo({ restaurant }) {
                 </div>
                 <div className="website-container">
                     <div className="website-left">
-                        <img src={websiteIcon} className="website-icon" />
+                        <img src={websiteIcon} alt="" className="website-icon" />
                     </div>
                     <div className="website-right">
                         <div className="website-label">
                             Website
                         </div>
                         <div className="website-details">
-                            <a href={restaurant.website} target="_blank" className="website-details-font">{restaurant.website}</a> 
+                            <a href={restaurant.website} target="_blank" rel="noreferrer" className="website-details-font">{restaurant.website}</a>
                         </div>
                     </div>
                 </div>
                 <div className="phone-number-container">
                     <div className="phone-number-left">
-                        <img src={phoneNumberIcon} className="phone-number-icon" />
+                        <img src={phoneNumberIcon} alt="" className="phone-number-icon" />
                     </div>
                     <div className="phone-number-right">
                         <div className="phone-number-label">
@@ -169,9 +169,6 @@ function AdditionalInfo({ restaurant }) {
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     )
 }

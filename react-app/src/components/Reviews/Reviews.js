@@ -5,7 +5,6 @@ import { Modal } from '../../context/Modal';
 import AddReviewForm from "./AddReview";
 import UpdateReviewForm from "./UpdateReviewForm";
 import DeleteReview from "./DeleteReview";
-import dayjs from 'dayjs';
 import './Reviews.css';
 
 
@@ -13,7 +12,7 @@ function Reviews({ restaurant }) {
     const dispatch = useDispatch();
     const allReviews = restaurant.reviews;
     const sessionUser = useSelector(state => state.session.user);
-    const userReservations = useSelector(state => Object.values(state.reservations));
+    // const userReservations = useSelector(state => Object.values(state.reservations));
 
     const [showAddModal, setShowAddModal] = useState(false);
     const [showUpdateModal, setShowUpdateModal] = useState({ showModal: false, reviewId: 0 });
@@ -21,7 +20,7 @@ function Reviews({ restaurant }) {
 
     useEffect(() => {
         dispatch(getAllRestaurantReviews(restaurant.id));
-    }, [])
+    }, [dispatch, restaurant.id])
 
     const openAddReviewModal = () => {
         setShowAddModal(true);
@@ -35,11 +34,8 @@ function Reviews({ restaurant }) {
         setShowDeleteModal({ showModal: true, reviewId: review.id })
     }
 
-    // if (!sessionUser) return null;
-
-
-    const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
-    const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
+    // const currRestaurantReservations = userReservations.filter(reservation => reservation.restaurant_id === restaurant.id);
+    // const hasPreviousReservation = currRestaurantReservations.some(reservation => dayjs(reservation.reservation_time).isBefore(dayjs()))
     const hasPreviousReview = allReviews?.some(review => review.user_id === sessionUser?.id);
     // const shouldShowReviewButton = (hasPreviousReservation && !hasPreviousReview);
     const shouldShowReviewButton = (!hasPreviousReview);

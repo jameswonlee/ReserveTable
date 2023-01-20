@@ -57,17 +57,27 @@
 
 .search-bar-reservation-date {
     margin-top: 9px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .search-bar-reservation-date-select {
     border: none;
     font-size: 1.05rem;
-    width: 121px;
-    /* -webkit-appearance: none; */
-    /* appearance:initial; */
-    margin-top: 0px;
-
+    width: 122px;
+    /* appearance: none; */
+    margin-top: -9px;
 }
+
+/* .search-bar-down-caret-container {
+    margin-top: -5px;
+} */
+
+/* .search-bar-down-caret {
+    height: 14px;
+    width: 14px;
+} */
 
 .search-bar-date-input {
     width: 135px;
@@ -104,11 +114,12 @@
     margin-top: 1px;
     padding-left: 8px;
     color: rgb(66, 65, 65);
-    -webkit-appearance: none;
+    /* appearance: none; */
+    background-color: white;
 }
 
 .search-bar-party-size-container {
-    width: 115px;   
+    width: 115px;
     padding-left: 25px;
     display: flex;
     flex-direction: row;
@@ -121,13 +132,13 @@
 }
 
 .search-bar-party-size-select {
-    width: 152px;   
+    width: 152px;
     border: none;
     font-size: 1.05rem;
     color: rgb(66, 65, 65);
     margin-left: 5px;
     width: 100px;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     display: flex;
     align-items: center;
 

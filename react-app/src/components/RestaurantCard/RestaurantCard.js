@@ -18,7 +18,9 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
 
     const routeToReservations = ({ userReservationTime }) => {
         setUserReservationTime(userReservationTime);
-        history.push(`/restaurants/${restaurant.id}`);
+        debugger
+        history.push(`/restaurants/${restaurant.id}?view=reservations`);
+        debugger
     }
 
     return (
@@ -83,7 +85,7 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
                     <div className="booked-num">
                         <div className="booking-symbol-container">
                             {restaurant.total_num_reservations > 0 &&
-                                <img src={bookingSymbol} className="booking-symbol" />
+                                <img src={bookingSymbol} alt="" className="booking-symbol" />
                             }
                         </div>
                         <div>

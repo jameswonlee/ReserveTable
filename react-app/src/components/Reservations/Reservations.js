@@ -36,7 +36,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                 behavior: 'smooth'
             });
         }
-    }, [])
+    }, [params])
 
 
     const submitHandler = async (e) => {
@@ -176,7 +176,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                     )}
                     <div className="reservation-booking-total-num">
                         <span className="reservation-booking-align">
-                            <img src={bookingSymbol} className="reservation-booking-symbol" />
+                            <img src={bookingSymbol} alt="" className="reservation-booking-symbol" />
                             &nbsp;&nbsp;
                             {totalNumReservations === 1
                                 ?
