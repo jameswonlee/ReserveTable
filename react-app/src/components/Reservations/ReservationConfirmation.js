@@ -46,7 +46,7 @@ function ReservationConfirmation() {
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser?.id))
         dispatch(getUserReviews(sessionUser?.id))
-    }, [sessionUser?.id])
+    }, [dispatch, sessionUser?.id])
 
     if (!reservation) return null;
 
@@ -76,8 +76,7 @@ function ReservationConfirmation() {
     };
 
     window.scrollTo({
-        top: 100,
-        left: 100,
+        top: 0,
         behavior: 'smooth'
     });
 
@@ -89,7 +88,7 @@ function ReservationConfirmation() {
                 <div className="reservation-confirmation-details-left">
                     <div className="reservation-confirmation-details-left-upper">
                         <div className="reservation-restaurant-image">
-                            <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img" />
+                            <img src={reservation.restaurant.preview_img} alt="" className="reservation-confirmation-preview-img" />
                         </div>
                         <div className="reservation-restaurant-name-options">
                             <div onClick={routeToRestaurant} className="reservation-confirm-name-text">
@@ -97,24 +96,24 @@ function ReservationConfirmation() {
                             </div>
                             <div className="reservaton-confirm-check-container">
                                 <span>
-                                    <img src={confirmCheck} className="reservation-confirm-check-mark" />
+                                    <img src={confirmCheck} alt="" className="reservation-confirm-check-mark" />
                                     <span className="reservation-confirm-confirmed-text">Reservation confirmed</span>
                                 </span>
                             </div>
                             <div className="reservation-confirm-party-size-time-container">
-                                <img src={personIcon} className="reservation-confirm-person-icon" />
+                                <img src={personIcon} alt="" className="reservation-confirm-person-icon" />
                                 &nbsp;&nbsp;
                                 <div className="reservation-confirm-party-size-text">{reservation.party_size} (Standard seating)</div>
                                 &nbsp;&nbsp;
-                                <img src={upcomingReservationIcon} className="reservation-confirm-upcoming-icon" />
+                                <img src={upcomingReservationIcon} alt="" className="reservation-confirm-upcoming-icon" />
                                 <div className="reservation-confirmation-reservation-date-time">{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
                             </div>
                             <div className="modify-cancel-add-to-calendar-buttons reservation-confirm-space-to-left">
                                 <span>
                                     <button onClick={routeToModifyPage} className="reservation-confirm-buttons">Modify</button>
-                                    <img src={lineBreak} className="edit-reservation-line-break" />
+                                    <img src={lineBreak} alt="" className="edit-reservation-line-break" />
                                     <button onClick={routeToCancelReservationModal} className="reservation-confirm-buttons">Cancel</button>
-                                    <img src={lineBreak} className="edit-reservation-line-break" />
+                                    <img src={lineBreak} alt="" className="edit-reservation-line-break" />
                                     <button className="reservation-confirm-buttons add-to-calendar">Add to calendar</button>
                                 </span>
                             </div>
@@ -123,7 +122,7 @@ function ReservationConfirmation() {
                     <div className="reservation-confirmation-rate-menu-container-future">
                         <div onClick={routeToRestaurant} className="reservation-confirmation-browse-menu-container">
                             <div className="reservation-confirmation-browse-menu-left">
-                                <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
+                                <img src={browseMenuIcon} alt="" className="reservation-confirmation-browse-menu-icon" />
                             </div>
                             <div className="reservation-confirmation-browse-menu-right">
                                 <div className="reservation-confirmation-browse-menu-text">Browse menu</div>
@@ -132,7 +131,7 @@ function ReservationConfirmation() {
                         </div>
                         <div className="reservation-confirmation-get-directions-container">
                             <div className="reservation-confirmation-get-directions-left">
-                                <img src={getDirectionsIcon} className="reservation-confirmation-get-directions-icon" />
+                                <img src={getDirectionsIcon} alt="" className="reservation-confirmation-get-directions-icon" />
                             </div>
                             <div className="reservation-confirmation-get-directions-right">
                                 <div className="reservation-confirmation-get-directions-text">Get directions</div>
@@ -144,7 +143,7 @@ function ReservationConfirmation() {
                 <div className="reservation-confirmation-details-left">
                     <div className="reservation-confirmation-details-left-upper">
                         <div className="reservation-restaurant-image">
-                            <img src={reservation.restaurant.preview_img} className="reservation-confirmation-preview-img" />
+                            <img src={reservation.restaurant.preview_img} alt="" className="reservation-confirmation-preview-img" />
                         </div>
                         <div className="reservation-restaurant-name-options">
                             <div className="reservation-restaurant-name-book-again-container">
@@ -157,16 +156,16 @@ function ReservationConfirmation() {
                             </div>
                             <div className="reservaton-confirm-check-container">
                                 <span>
-                                    <img src={reservationCompletedIcon} className="reservation-confirm-check-mark" />
+                                    <img src={reservationCompletedIcon} alt="" className="reservation-confirm-check-mark" />
                                     <span className="reservation-confirm-confirmed-text">Reservation completed</span>
                                 </span>
                             </div>
                             <div className="reservation-confirm-past-party-size-time-container">
-                                <img src={personIcon} className="reservation-confirm-person-icon" />
+                                <img src={personIcon} alt="" className="reservation-confirm-person-icon" />
                                 &nbsp;&nbsp;
                                 <div className="reservation-confirm-party-size-text">{reservation.party_size} (Standard seating)</div>
                                 &nbsp;&nbsp;
-                                <img src={upcomingReservationIcon} className="reservation-confirm-upcoming-icon" />
+                                <img src={upcomingReservationIcon} alt="" className="reservation-confirm-upcoming-icon" />
                                 <div className="reservation-confirmation-reservation-date-time">{dayjs(reservation?.reservation_time).format("ddd, MMM D [at] h:mm A")}</div>
                             </div>
                         </div>
@@ -174,7 +173,7 @@ function ReservationConfirmation() {
                     <div className="reservation-confirmation-rate-menu-container-past">
                         <div onClick={routeToRateReview}className="reservation-confirmation-rate-review-container">
                             <div className="reservation-confirmation-rate-review-left">
-                                <img src={rateReviewIcon} className="reservation-confirmation-rate-review-icon" />
+                                <img src={rateReviewIcon} alt="" className="reservation-confirmation-rate-review-icon" />
                             </div>
                             <div className="reservation-confirmation-rate-review-right">
                                 <div className="reservation-confirmation-rate-review-text">Rate and review</div>
@@ -183,7 +182,7 @@ function ReservationConfirmation() {
                         </div>
                         <div onClick={routeToRestaurant} className="reservation-confirmation-browse-menu-container">
                             <div className="reservation-confirmation-browse-menu-left">
-                                <img src={browseMenuIcon} className="reservation-confirmation-browse-menu-icon" />
+                                <img src={browseMenuIcon} alt="" className="reservation-confirmation-browse-menu-icon" />
                             </div>
                             <div className="reservation-confirmation-browse-menu-right">
                                 <div className="reservation-confirmation-browse-menu-text">Browse menu</div>
@@ -202,7 +201,7 @@ function ReservationConfirmation() {
                 <div className="user-info-details-container">
                     <div className="reservation-confirmation-person-name">
                         <div>
-                            <img src={personIcon} className="reservation-confirm-user-person-icon" />
+                            <img src={personIcon} alt="" className="reservation-confirm-user-person-icon" />
                         </div>
                         <div className="reservation-confirm-person-name-text">
                             {sessionUser.first_name} {sessionUser.last_name}
@@ -212,12 +211,12 @@ function ReservationConfirmation() {
                         Joined in December 2022
                     </div>
                     <div className="reservation-confirm-location-icon-city">
-                        <img src={locationIcon} className="reservation-confirm-location-icon" />
+                        <img src={locationIcon} alt="" className="reservation-confirm-location-icon" />
                         <div className="reservation-confirm-city-text">Los Angeles</div>
                     </div>
                     {numReviews > 0 &&
                         <div className="reservation-confirm-num-reviews-container">
-                            <img src={numReviewsIcon} className="reservation-confirm-num-reviews-icon" />
+                            <img src={numReviewsIcon} alt="" className="reservation-confirm-num-reviews-icon" />
                             {numReviews === 1
                                 ?
                                 <div className="reservation-confirm-num-reviews-text">{numReviews} review</div>

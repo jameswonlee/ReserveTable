@@ -21,7 +21,7 @@
     flex-direction: row;
     align-items: center;
     color:rgb(45, 51, 63);
-    width: auto;
+    /* width: auto; */
 }
 
 @media (max-width: 1520px) {
@@ -67,7 +67,4 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* margin-left: 20px; */
-    /* padding-right: 20px; */
-    /* padding-left: 30px; */
 }

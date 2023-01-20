@@ -28,7 +28,7 @@ function UpcomingReservationsMenu() {
 
     useEffect(() => {
         dispatch(getAllUserReservations(sessionUser.id));
-    }, [sessionUser])
+    }, [dispatch, sessionUser])
 
     const routeToReservationConfirmation = () => {
         history.push(`/reservations/${nextReservation.id}`)
@@ -55,7 +55,7 @@ function UpcomingReservationsMenu() {
                         </div>
                         <div className="upcoming-reservation-menu-icon-name">
                             <div>
-                                <img src={upcomingRestaurantIcon} className="upcoming-restaurant-icon" />
+                                <img src={upcomingRestaurantIcon} alt="" className="upcoming-restaurant-icon" />
                             </div>
                             <div className="upcoming-reservation-menu-name">
                                 {nextReservation.restaurant?.name}
@@ -64,7 +64,7 @@ function UpcomingReservationsMenu() {
                         <div className="upcoming-reservation-menu-date-details">
                             <div className="upcoming-reservation-menu-party-size">
                                 <div>
-                                    <img src={personIcon} className="upcoming-reservation-menu-person-icon" />
+                                    <img src={personIcon} alt="" className="upcoming-reservation-menu-person-icon" />
                                 </div>
                                 <div className="upcoming-reservation-party-size-text">
                                     Table for {nextReservation.party_size} people
@@ -73,7 +73,7 @@ function UpcomingReservationsMenu() {
                             <div>
                                 <div className="upcoming-reservation-menu-time">
                                     <div>
-                                        <img src={clockIcon} className="upcoming-reservations-clock-icon" />
+                                        <img src={clockIcon} alt="" className="upcoming-reservations-clock-icon" />
                                     </div>
                                     <div className="upcoming-reservation-reservation-time">
                                         {dayjs(nextReservation.reservation_time).format("h:mm A")}
@@ -83,7 +83,7 @@ function UpcomingReservationsMenu() {
                             <div>
                                 <div className="upcoming-reservation-menu-time">
                                     <div>
-                                        <img src={upcomingReservationIcon} className="upcoming-reservation-menu-icon" />
+                                        <img src={upcomingReservationIcon} alt="" className="upcoming-reservation-menu-icon" />
                                     </div>
                                     <div>
                                         <div className="upcoming-reservation-menu-time-details">

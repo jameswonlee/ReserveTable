@@ -44,15 +44,19 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                 top: 500,
                 behavior: 'smooth'
             });
+        } else if (params.get("view") === 'reservations') {
+            window.scrollTo({
+                top: 500,
+                behavior: 'smooth'
+            });
         } else {
             window.scrollTo({
-                top: 100,
-                left: 100,
+                top: 0,
                 behavior: 'smooth'
             });
         }
 
-    }, [restaurantId, sessionUser])
+    }, [dispatch, restaurantId, sessionUser])
 
     if (!restaurant) return null;
 
@@ -95,14 +99,14 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                         {restaurantAlreadySaved
                             ?
                             <button onClick={() => saveRestaurant(restaurant.id)} className="restaurant-profile-save-restaurant-button">
-                                <img src={savedRestaurantIcon} className="restaurant-profile-saved-restaurant-icon" />
+                                <img src={savedRestaurantIcon} alt="" className="restaurant-profile-saved-restaurant-icon" />
                                 <div className="restaurant-profile-save-restaurant-text">
                                     Restaurant saved!
                                 </div>
                             </button>
                             :
                             <button onClick={() => saveRestaurant(restaurant.id)} className="restaurant-profile-save-restaurant-button">
-                                <img src={saveRestaurantIcon} className="restaurant-profile-save-restaurant-icon" />
+                                <img src={saveRestaurantIcon} alt="" className="restaurant-profile-save-restaurant-icon" />
                                 <div className="restaurant-profile-save-restaurant-text">
                                     Save this restaurant
                                 </div>
@@ -168,7 +172,7 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                 </div>
                                 <div className="space-to-left-22 review-icon-container">
                                     <div className="reviews-icon-div">
-                                        <img src={reviewsIcon} className="profile-reviews-icon" />
+                                        <img src={reviewsIcon} alt="" className="profile-reviews-icon" />
                                     </div>
                                     <div>
                                         {reviews &&
@@ -177,7 +181,7 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                 </div>
                                 <div className="space-to-left-22 cost-icon-container">
                                     <div className="cost-icon-div">
-                                        <img src={costIcon} className="profile-cost-icon" />
+                                        <img src={costIcon} alt="" className="profile-cost-icon" />
                                     </div>
                                     <div>
                                         {restaurant.cost === 1 && "$30 and under"}
@@ -185,11 +189,10 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                         {restaurant.cost === 3 && "$31 to $50"}
                                         {restaurant.cost === 4 && "$50 and over"}
                                     </div>
-
                                 </div>
                                 <div className="space-to-left-22 cuisine-icon-container">
                                     <div className="cuisine-icon-div">
-                                        <img src={cuisineIcon} className="profile-cuisine-icon" />
+                                        <img src={cuisineIcon} alt="" className="profile-cuisine-icon" />
                                     </div>
                                     <div>
                                         {restaurant.cuisines.split(',')[0]}

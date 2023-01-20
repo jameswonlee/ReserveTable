@@ -51,7 +51,7 @@ function DiningDashboardSavedRestaurants() {
     useEffect(() => {
         dispatch(getAllRestaurants())
         dispatch(getAllSavedRestaurants(sessionUser.id));
-    }, [sessionUser.id])
+    }, [dispatch, sessionUser.id])
 
 
 
@@ -68,7 +68,7 @@ function DiningDashboardSavedRestaurants() {
                             <div className="saved-restaurants-restaurant-left">
                                 <div className="saved-restaurants-restaurant-image-container"
                                     onClick={() => routeToReservations(restaurant.id)}>
-                                    <img src={restaurant.preview_img} className="saved-restaurants-restaurant-image" />
+                                    <img src={restaurant.preview_img} alt="" className="saved-restaurants-restaurant-image" />
                                 </div>
                                 <div className="saved-restaurants-restaurant-details-container">
                                     <div className="saved-restaurants-restaurant-name-text"
@@ -76,7 +76,7 @@ function DiningDashboardSavedRestaurants() {
                                         {restaurant.name}
                                     </div>
                                     <div className="saved-restaurants-icon-and-remove" onClick={() => removeSavedRestaurant(restaurant.id)}>
-                                        <img src={savedRestaurantIcon} className="saved-restaurants-saved-restaurant-icon" />
+                                        <img src={savedRestaurantIcon} alt="" className="saved-restaurants-saved-restaurant-icon" />
                                         <div className="saved-restaurants-remove-text">Remove from saved restaurants</div>
                                     </div>
                                     <div className="saved-restaurants-rating-stars-container">
