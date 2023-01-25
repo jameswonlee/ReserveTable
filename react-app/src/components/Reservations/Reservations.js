@@ -52,7 +52,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
 
         if (!partySize) errors.push("Please select party size");
         if (!date) errors.push("Please select a date");
-        if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future date");
+        if (dayjs(`${date} ${time}`).isBefore(dayjs())) errors.push("Please select a future time");
         if (!time) errors.push("Please select a time");
 
         setValidationErrors(errors);
@@ -125,6 +125,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                                     setDate(e.target.value)
                                 }}
                                 value={date}
+                                min = {dayjs().format("YYYY-MM-DD")}
                                 placeholder="Date"
                                 className="reservation-date-input" />
                         </div>
