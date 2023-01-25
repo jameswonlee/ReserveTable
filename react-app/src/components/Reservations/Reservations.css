@@ -97,11 +97,6 @@
     cursor: pointer;
 }
 
-.reservation-time-select-label {
-    /* width: 180px; */
-  
-}
-
 .reservation-time-select {
     width: 125px;
     font-size: 0.95rem;
