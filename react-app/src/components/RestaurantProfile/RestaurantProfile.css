@@ -163,7 +163,7 @@
 
 .reservations-component {
     width: 320px;
-    height: 340px;
+    height: auto;
     position: absolute;
     margin-top: -10px;
     margin-right: -675px;

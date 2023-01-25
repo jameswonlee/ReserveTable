@@ -8,12 +8,14 @@
     color: rgb(28, 28, 28);
 }
 
+.additional-information {
+    margin-top: -5px;
+}
+
 .additional-information > div {
     margin-top: 17px;
 }
 
-
-/* additional information containers */
 .cross-street-container {
     display: flex;
     flex-direction: row;

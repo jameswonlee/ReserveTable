@@ -20,7 +20,7 @@
 }
 
 .reservation-form-container {
-    height: 350px;
+    height: auto;
 }
 
 .reservation-heading-font {
@@ -158,8 +158,9 @@
 .reservation-booking-total-num {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
+    margin-top: 18px;
     margin-left: 13px;
+    padding-bottom: 18px;
 }
 
 .reservation-booking-text {
