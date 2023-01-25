@@ -30,7 +30,7 @@ function SearchResults() {
 
     const [date, setDate] = useState(dayjs(searchDate).format("YYYY-MM-DD") || dayjs().add(1, "day").format("MMM D, YYYY"));
     const [time, setTime] = useState(searchTime || "18:00");
-    const [partySize, setPartySize] = useState(searchPartySize);
+    const [partySize, setPartySize] = useState(searchPartySize || 2);
     const [searchInput, setSearchInput] = useState("");
 
 
