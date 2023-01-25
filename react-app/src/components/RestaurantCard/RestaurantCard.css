@@ -128,6 +128,7 @@
     border: none;
     font-weight: 600;
     font-size: .95rem;
+    z-index: 5;
 }
 
 .preview-time-buttons:hover {

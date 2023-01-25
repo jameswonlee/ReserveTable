@@ -16,11 +16,10 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
         return sum / reviews.length;
     }
 
-    const routeToReservations = ({ userReservationTime }) => {
+    const routeToReservations = (e, { userReservationTime }) => {
+        e.preventDefault();
         setUserReservationTime(userReservationTime);
-        debugger
-        history.push(`/restaurants/${restaurant.id}?view=reservations`);
-        debugger
+        history.push(`/restaurants/${restaurant.id}/?view=reservations`);
     }
 
     return (
@@ -104,17 +103,17 @@ function RestaurantCard({ restaurant, setUserReservationTime }) {
                     <div className="preview-time-buttons-continer">
                         <div className="preview-time-buttons-div">
                             <div>
-                                <button className="preview-time-buttons 6pm" onClick={() => routeToReservations({ userReservationTime: "18:00" })}>
+                                <button className="preview-time-buttons 6pm" onClick={(e) => routeToReservations(e, { userReservationTime: "18:00" })}>
                                     6:00 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons 630pm" onClick={() => routeToReservations({ userReservationTime: "18:30" })}>
+                                <button className="preview-time-buttons 630pm" onClick={(e) => routeToReservations(e, { userReservationTime: "18:30" })}>
                                     6:30 PM
                                 </button>
                             </div>
                             <div>
-                                <button className="preview-time-buttons 7pm" onClick={() => routeToReservations({ userReservationTime: "19:00" })}>
+                                <button className="preview-time-buttons 7pm" onClick={(e) => routeToReservations(e, { userReservationTime: "19:00" })}>
                                     7:00 PM
                                 </button>
                             </div>
