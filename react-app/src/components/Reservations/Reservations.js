@@ -125,14 +125,18 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                                     setDate(e.target.value)
                                 }}
                                 value={date}
-                                min = {dayjs().format("YYYY-MM-DD")}
+                                min={dayjs().format("YYYY-MM-DD")}
+                                max={dayjs().add(6, 'months').format("YYYY-MM-DD")}
                                 placeholder="Date"
                                 className="reservation-date-input" />
                         </div>
                         <div className="reservation-time-input-border">
                             <div className="reservation-time-text">Time</div>
                             <label className="reservation-time-select-label">
-                                <select value={time} onChange={e => setTime(e.target.value)} className="reservation-time-select">
+                                <select value={time} className="reservation-time-select" onChange={e => {
+                                    setValidationErrors([])
+                                    setTime(e.target.value)
+                                }}>
                                     <option value="10:00">10:00 AM</option>
                                     <option value="10:30">10:30 AM</option>
                                     <option value="11:00">11:00 AM</option>
