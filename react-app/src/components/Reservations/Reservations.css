@@ -21,6 +21,8 @@
 
 .reservation-form-container {
     height: auto;
+    position: sticky;
+    top: 80px;
 }
 
 .reservation-heading-font {

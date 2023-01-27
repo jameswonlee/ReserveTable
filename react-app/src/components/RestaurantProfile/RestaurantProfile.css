@@ -1,6 +1,6 @@
 .restaurant-profile-main-container {
     height: auto;
-    overflow: scroll;
+    padding-bottom: 1px;
 }
 
 .restaurant-profile-image {
@@ -59,7 +59,7 @@
 .overflow-into-image {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: -45px;
     margin-left: 2.5px;
     position: sticky;
@@ -116,7 +116,6 @@
 }
 
 .restaurant-profile-lower {
-    height: 1200px;
     height: auto;
     margin-left: 30px;
 }
@@ -147,26 +146,27 @@
 .restaurant-profile-left {
     width: 620px;
     margin-right: 50px;
-    /* overflow: scroll; */
     height: auto;
 }
 
-.restaurant-reviews-count-text {
-    margin-left: -12px;
+.restaurant-profile-reviews-clickable:hover {
+    cursor: pointer;
 }
 
 .restaurant-profile-right {
     width: 350px;
-    height: 800px;
+    min-height: 800px;
     margin-top: 350px;
 }
 
 .reservations-component {
     width: 320px;
     height: auto;
-    position: absolute;
+    position: sticky;
+    /* top: 80px; */
     margin-top: -10px;
-    margin-right: -675px;
+    margin-right: -360px;
+    margin-left: 45px;
     background-color: white;
     border-radius: 4px;
     box-shadow: 1px 1px 3px rgb(202, 202, 202);
@@ -175,7 +175,6 @@
 .restaurant-reviews-container {
     border-bottom: solid;
     border-color: rgb(216, 214, 214);
-    height: 50px;
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 40px;

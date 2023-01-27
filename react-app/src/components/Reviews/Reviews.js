@@ -8,7 +8,7 @@ import DeleteReview from "./DeleteReview";
 import './Reviews.css';
 
 
-function Reviews({ restaurant }) {
+function Reviews({ restaurant, reviews }) {
     const dispatch = useDispatch();
     const allReviews = restaurant.reviews;
     const sessionUser = useSelector(state => state.session.user);
@@ -43,11 +43,14 @@ function Reviews({ restaurant }) {
 
     return (
         <div className="reviews-main-outer-container">
+            <h2 className="restaurant-reviews-count-text">What {reviews?.length ? reviews.length : 0} people are saying</h2>
             <div>
                 {sessionUser && shouldShowReviewButton &&
-                    <button onClick={openAddReviewModal} className="leave-review-button">
-                        Leave a review
-                    </button>
+                    <div className="reviews-upper-border">
+                        <button onClick={openAddReviewModal} className="leave-review-button">
+                            Leave a review
+                        </button>
+                    </div>
                 }
                 {showAddModal && (
                     <Modal onClose={() => setShowAddModal(false)}>
