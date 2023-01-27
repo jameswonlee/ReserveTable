@@ -54,7 +54,7 @@ def user_reviews(user_id):
             review_obj = review.to_dict()
             response.append(review_obj)
         return response, 200
-    return { "Error": "No user/reviews found" }, 404
+    return { "Error": "No user/reviews found" }, 200
 
 
 # Get all user saved restaurants

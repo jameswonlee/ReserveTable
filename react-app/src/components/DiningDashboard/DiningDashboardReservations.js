@@ -19,6 +19,7 @@ function DiningDashboardReservations() {
     const allReservations = useSelector(state => Object.values(state.reservations));
     const userReviews = useSelector(state => Object.values(state.reviews));
 
+
     const futureReservations = allReservations
         .filter(reservation => dayjs().isBefore(reservation.reservation_time))
         .sort((reservationA, reservationB) => {
@@ -35,6 +36,9 @@ function DiningDashboardReservations() {
         dispatch(getAllUserReservations(sessionUser?.id));
         dispatch(getUserReviews(sessionUser?.id));
     }, [dispatch, sessionUser?.id]);
+
+    if (!userReviews) return null;
+
 
     const routeToReservationConfirmation = (reservationId) => {
         history.push(`/reservations/${reservationId}`)

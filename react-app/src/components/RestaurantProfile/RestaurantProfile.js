@@ -84,6 +84,13 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
         }
     }
 
+    const scrollToReviews = () => {
+        window.scrollTo({
+            top: 980,
+            behavior: 'smooth'
+        });
+    }
+
 
 
     return (
@@ -121,7 +128,7 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                 <div className="space-to-left-12">Popular dishes</div>
                                 <div className="space-to-left-12">Photos</div>
                                 <div className="space-to-left-12">Menu</div>
-                                <div className="space-to-left-12">Reviews</div>
+                                <div onClick={scrollToReviews} className="space-to-left-12 restaurant-profile-reviews-clickable">Reviews</div>
                             </div>
                             <div className="restaurant-profile-details-tab-border-bottom">
                                 <div className="restaurant-profile-details-tab-underscore"></div>
@@ -218,8 +225,7 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                             <p className="restaurant-profile-description">{restaurant.description}</p>
                         </div>
                         <div className="restaurant-reviews-container">
-                            <h2 className="restaurant-reviews-count-text">What {reviews?.length ? reviews.length : 0} people are saying</h2>
-                            <Reviews restaurant={restaurant} />
+                            <Reviews restaurant={restaurant} reviews={reviews} />
                         </div>
                     </div>
                     <div className="restaurant-profile-right">
