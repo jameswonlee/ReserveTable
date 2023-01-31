@@ -48,7 +48,7 @@
     border: none;
     font-size: 0.9rem;
     font-weight: 400;
-    color: rgb(106, 105, 105);
+    color: rgb(111, 111, 111);
 }
 
 .reservation-party-size-select:hover {
@@ -85,7 +85,7 @@
     margin-top: 15px;
     font-size: 0.95rem;
     font-weight: 400;
-    color: rgb(97, 96, 96);
+    color: rgb(111, 111, 111);
     margin-left: 1px;
 }
 
@@ -103,7 +103,7 @@
     width: 125px;
     font-size: 0.95rem;
     font-weight: 400;
-    color: rgb(97, 96, 96);
+    color: rgb(111, 111, 111);
     border: none;
     margin-left: 2px;
     margin-top: 15px;

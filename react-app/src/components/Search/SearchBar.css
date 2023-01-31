@@ -68,6 +68,7 @@
     width: 122px;
     /* appearance: none; */
     margin-top: -9px;
+    color: rgb(60, 60, 60);
 }
 
 /* .search-bar-down-caret-container {
@@ -84,7 +85,7 @@
     height: 48px;
     border: none;
     font-size: 1.05rem;
-    color: rgb(66, 65, 65);
+    color: rgb(60, 60, 60);
 }
 
 .search-bar-clock-icon {
@@ -135,7 +136,7 @@
     width: 152px;
     border: none;
     font-size: 1.05rem;
-    color: rgb(66, 65, 65);
+    color: rgb(60, 60, 60);
     margin-left: 5px;
     width: 100px;
     /* -webkit-appearance: none; */
