@@ -18,7 +18,7 @@ function SearchBar() {
     const allRestaurants = useSelector(state => Object.values(state.restaurants));
 
     const [date, setDate] = useState(dayjs().format("YYYY-MM-DD"));
-    const [time, setTime] = useState("18:00");
+    const [time, setTime] = useState("18:30");
     const [partySize, setPartySize] = useState(2);
     const [searchInput, setSearchInput] = useState("");
 

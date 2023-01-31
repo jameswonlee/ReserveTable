@@ -24,7 +24,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
     const sessionUser = useSelector(state => state.session.user);
     const totalNumReservations = useSelector(state => state.restaurants[restaurantId].total_num_reservations);
 
-    const [date, setDate] = useState(searchDate || dayjs().add(1, "day").format("YYYY-MM-DD"));
+    const [date, setDate] = useState(searchDate || dayjs().format("YYYY-MM-DD"));
     const [time, setTime] = useState(searchTime || userReservationTime || "17:00");
     const [partySize, setPartySize] = useState(searchPartySize || 2);
     const [validationErrors, setValidationErrors] = useState([]);
