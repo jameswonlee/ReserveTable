@@ -12,7 +12,7 @@ import './NavBar.css';
 const NavBar = ({ loaded, showSignInModal, setShowSignInModal }) => {
 
   return (
-    <div className="navigation">
+    <nav className="navigation">
       <div className="above-nav">
         <img src={aboveNav} className="above-nav-img" alt="" ></img>
       </div>
@@ -36,7 +36,7 @@ const NavBar = ({ loaded, showSignInModal, setShowSignInModal }) => {
         {loaded &&
           <NavigationMenu showSignInModal={showSignInModal} setShowSignInModal={setShowSignInModal}/>}
       </div>
-    </div>
+    </nav>
   );
 }
 
