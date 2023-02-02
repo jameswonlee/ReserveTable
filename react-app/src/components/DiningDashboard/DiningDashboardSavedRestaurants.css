@@ -157,6 +157,9 @@
     transition: background-color 300ms ease-out;
 }
 
+.saved-restaurants-no-rating {
+    height: 7px;
+}
 
 
 

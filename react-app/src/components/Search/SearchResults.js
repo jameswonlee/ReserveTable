@@ -423,7 +423,7 @@ function SearchResults() {
                                                         &nbsp;&nbsp;Exceptional&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-reviews-num">({restaurant.reviews.length})</span></span></span>}
                                             </span>
                                             :
-                                            <span className="gray-star search-results-star">★ ★ ★ ★ ★</span>
+                                            <span className="gray-star search-results-star">★ ★ ★ ★ ★&nbsp;&nbsp;<span onClick={() => routeToReviews(restaurant.id)} className="search-results-rating-text search-results-reviews-num">(0)</span></span>
                                         }
                                     </div>
                                     <div className="search-results-cuisine-cost-neighborhood">
