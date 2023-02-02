@@ -6,6 +6,7 @@ import { csrfFetch } from "./csrf";
 const LOAD_ALL_SAVED_RESTAURANTS = '/savedRestaurants/LOAD_ALL_SAVED_RESTAURANTS'
 const ADD_SAVED_RESTAURANT = '/savedRestaurants/ADD_SAVED_RESTAURANT'
 const REMOVE_SAVED_RESTAURANT = '/savedRestaurants/REMOVE_SAVED_RESTAURANT'
+const RESET_SAVED_RESTAURANTS = 'savedRestaurants/RESET_SAVED_RESTAURANTS'
 
 
 /* -------------------------- Action Creators ----------------------- */
@@ -28,6 +29,12 @@ const removeSavedRestaurant = (restaurantId) => {
     return {
         type: REMOVE_SAVED_RESTAURANT,
         restaurantId: restaurantId
+    }
+}
+
+export const resetSavedRestaurants = () => {
+    return {
+        type: RESET_SAVED_RESTAURANTS
     }
 }
 
@@ -94,6 +101,10 @@ const savedRestaurantsReducer = (state = initialState, action) => {
         case REMOVE_SAVED_RESTAURANT:
             newState = { ...state };
             delete newState[action.restaurantId];
+            return newState;
+
+        case RESET_SAVED_RESTAURANTS:
+            newState = {};
             return newState;
 
         default:

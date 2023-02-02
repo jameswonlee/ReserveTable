@@ -12,9 +12,9 @@ dayjs.extend(utc);
 
 
 function Reservations({ userReservationTime, showSignInModal, setShowSignInModal }) {
+    const { restaurantId } = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    const { restaurantId } = useParams();
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const searchDate = params.get('date');
