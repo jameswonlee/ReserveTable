@@ -52,6 +52,10 @@
     background-color: #f7f7f7;
 }
 
+.profile-drop-my-profile:hover {
+    cursor: not-allowed;
+}
+
 .profile-log-out-button {
     font-size: 1.05rem;
 }

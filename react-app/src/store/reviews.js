@@ -59,12 +59,16 @@ export const resetReviews = () => {
 
 
 export const getAllRestaurantReviews = (restaurantId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/restaurants/${restaurantId}/reviews`);
+    try {
+        const response = await csrfFetch(`/api/restaurants/${restaurantId}/reviews`);
 
-    if (response.ok) {
-        const reviews = await response.json();
-        dispatch(loadAllRestaurantReviews(reviews));
-        return reviews;
+        if (response.ok) {
+            const reviews = await response.json();
+            dispatch(loadAllRestaurantReviews(reviews));
+            return reviews;
+        }
+    } catch(e) {
+
     }
 }
 
@@ -77,8 +81,7 @@ export const getUserReviews = (userId) => async (dispatch) => {
             dispatch(loadAllUserReviews(reviews));
             return reviews;
         }
-
-    } catch (e) {
+    } catch(e) {
 
     }
 }
@@ -117,7 +120,6 @@ export const deleteReview = (reviewId) => async (dispatch) => {
     })
 
     if (response.ok) {
-        console.log('reviewId$$$$$$$', reviewId)
         const message = await response.json();
         dispatch(removeReview(reviewId));
         return message;

@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     margin-left: 260px;
-    height: 380px;
+    height: auto;
     width: 640px;
     margin-top: 20px;
+    padding-bottom: 80px;
 }
 
 .modify-reservation-header {

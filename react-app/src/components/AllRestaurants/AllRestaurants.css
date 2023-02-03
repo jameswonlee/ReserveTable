@@ -58,7 +58,7 @@
 }
 
 .get-current-location:hover {
-    cursor: text;
+    cursor: not-allowed;
 }
 
 .restaurant-cards {

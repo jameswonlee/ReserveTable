@@ -48,7 +48,7 @@ function ProfileButtonMenu({ setShowSignInModal }) {
                 <div className="learn-about-points">Learn more about points</div>
             </div>
             <div className="profile-drop-down-bottom">
-                <div className="profile-drop-button">
+                <div className="profile-drop-button profile-drop-my-profile">
                     <span className="spacing-down">My Profile</span>
                 </div>
                 <div className="profile-drop-button my-dining-history" onClick={routeToDiningDashboard}>
