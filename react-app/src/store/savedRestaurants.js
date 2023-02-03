@@ -58,7 +58,6 @@ export const createSavedRestaurant = (userId, restaurantId) => async (dispatch) 
 
     if (response.ok) {
         const restaurant = await response.json();
-        console.log('restaurant', restaurant)
         dispatch(addSavedRestaurant(restaurant));
         return restaurant;
     }
