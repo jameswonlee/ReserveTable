@@ -50,6 +50,10 @@
     width: 115px;
 }
 
+.search-results-search-bar-reservation-date-select:hover {
+    cursor: pointer;
+}
+
 .search-results-search-bar-time-input-container {
     display: flex;
     flex-direction: row;
@@ -72,6 +76,10 @@
     width: 100px;
 }
 
+.search-results-search-bar-time-select:hover {
+    cursor: pointer;
+}
+
 .search-results-search-bar-party-size-container {
     display: flex;
     flex-direction: row;
@@ -89,6 +97,10 @@
     font-size: 1.05rem;
     margin-left: 6px;
     width: 110px;
+}
+
+.search-results-search-bar-party-size-select:hover {
+    cursor: pointer;
 }
 
 .search-results-search-bar-text-input-and-results-container {

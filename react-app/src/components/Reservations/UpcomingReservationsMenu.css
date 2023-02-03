@@ -160,16 +160,20 @@
     cursor: pointer;
 }
 
-.upcoming-reservation-view-all-reservations-button {
+.upcoming-reservation-view-all-reservations {
     margin-left: 20px;
     font-size: 0.82rem;
     color: rgb(218, 54, 68);
 }
 
-.upcoming-reservation-view-all-reservations-button:hover {
-    cursor: pointer;
+.upcoming-reservation-view-all-reservations-container {
+    height: 20px;
+    width: 250px;
 }
 
+.upcoming-reservation-view-all-reservations-container:hover {
+    cursor: pointer;
+}
 
 .upcoming-reservation-menu-border-line {
     border-bottom: solid;

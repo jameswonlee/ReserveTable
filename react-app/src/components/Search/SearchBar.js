@@ -123,9 +123,6 @@ function SearchBar() {
                                     <option value={dayjs().add(20, 'day').format("YYYY-MM-DD")}>{dayjs().add(20, 'day').format("MMM D, YYYY")}</option>
                                     <option value={dayjs().add(21, 'day').format("YYYY-MM-DD")}>{dayjs().add(21, 'day').format("MMM D, YYYY")}</option>
                                 </select>
-                                {/* <span className="search-bar-down-caret-container">
-                                    <img src={downCaret} className="search-bar-down-caret"/>
-                                </span> */}
                             </div>
                         </div>
                         <div className="search-bar-time-input-container">

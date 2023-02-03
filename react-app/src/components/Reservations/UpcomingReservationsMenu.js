@@ -109,8 +109,8 @@ function UpcomingReservationsMenu() {
                             <div className="upcoming-reservation-menu-border-line">
                             </div>
                         </div>
-                        <div>
-                            <div onClick={routeToDiningDashboard} className="upcoming-reservation-view-all-reservations-button">
+                        <div onClick={routeToDiningDashboard} className="upcoming-reservation-view-all-reservations-container">
+                            <div className="upcoming-reservation-view-all-reservations">
                                 View all reservations
                             </div>
                         </div>
