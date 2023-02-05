@@ -227,7 +227,7 @@
 }
 
 .search-results-restaurant-results-border {
-    border-bottom: solid;
+    border-bottom: 1px solid;
     border-color: rgb(243, 242, 242);
     width: 810px;
     margin-bottom: 20px;
@@ -236,7 +236,7 @@
 .search-results-restaurant-result-container {
     display: flex;
     flex-direction: row;
-    border-bottom: solid;
+    border-bottom: 1.5px solid;
     border-color: rgb(233, 232, 232);
     padding-bottom: 20px;
     padding-top: 10px;

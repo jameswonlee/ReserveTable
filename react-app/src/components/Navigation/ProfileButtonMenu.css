@@ -4,17 +4,15 @@
     align-items: flex-start;
     background-color: white;
     height: 300px;
-    width: 325px;
+    width: 320px;
     position: absolute;
     background-color: white;
     margin-top: 351px;
-    margin-left: -285px;
-    /* border-style: solid; */
+    margin-left: -280px;
     border: 1px solid;
     border-color: rgb(235, 235, 235);
     border-radius: 2px;
     z-index: 9;
-    /* padding-right: 10px; */
 }
 
 .profile-drop-down-top {
@@ -45,7 +43,7 @@
     font-size: 1.05rem;
     font-weight: 400;
     color: rgb(80, 77, 77);
-    padding-left: 20px;
+    /* padding-left: 15px; */
     width: 320px;
     height: 33px;
 }
@@ -70,7 +68,7 @@
     font-size: 1.03rem;
     font-weight: bolder;
     padding-top: 22px;
-    padding-left: 22px;
+    padding-left: 15px;
     color: rgb(68, 66, 66);
     width: 320px;
     padding-bottom: 10px;
@@ -78,7 +76,7 @@
 }
 
 .learn-about-points {
-    padding-left: 22px;
+    padding-left: 15px;
     padding-bottom: 20px;
     width: 320px;
     margin-bottom: -5px;
@@ -92,13 +90,12 @@
 }
 
 .points-graph {
-    margin-left: 22px;
+    margin-left: 15px;
     width: 100%;
 }
 
 .profile-drop-down-points {
     width: 325px;
-    margin-left: 6px;
 }
 
 .points-earned-left {
@@ -153,4 +150,8 @@
 
 .my-saved-restaurants:hover {
     cursor: pointer;
+}
+
+.profiile-drop-button-left {
+    padding-left: 15px;
 }
