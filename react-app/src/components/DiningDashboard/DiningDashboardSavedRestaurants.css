@@ -3,7 +3,7 @@
 }
 
 .saved-restaurants-heading {
-    border-bottom: solid;
+    border-bottom: 1px solid;
     border-color: rgb(238, 237, 237);
     height: 73px;
     background: white;
@@ -75,7 +75,7 @@
     flex-direction: row;
     justify-content: space-between;
     height: 165px;
-    border-bottom: solid;
+    border-bottom: 1px solid;
     border-color: rgb(238, 237, 237);
 }
 
@@ -149,6 +149,7 @@
     background-color: rgb(218, 54, 68);
     color: white;
     border-radius: 4px;
+    font-size: 0.84rem;
 }
 
 .saved-restaurants-reserve-now-button:hover {
