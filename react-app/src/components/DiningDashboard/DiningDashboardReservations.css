@@ -14,6 +14,7 @@
     margin-left: -24px;
     margin-top: -20px;
     border-radius: 4px;
+    border-bottom: 0.0625rem solid #d8d9db
 }
 
 .dining-dashboard-points-text-container {
@@ -24,7 +25,7 @@
     width: 730px;
     height: 70px;
     margin-left: 22px;
-    border-bottom: solid;
+    border-bottom: 1.5px solid;
     border-color: rgb(226, 225, 225);
 }
 
@@ -108,7 +109,7 @@
 }
 
 .dining-dashboard-under-points-border-bottom-line {
-    border-bottom: solid;
+    border-bottom: 1.5px solid;
     border-color: rgb(231, 230, 230);
     height: 25px;
     border-width: thin;
@@ -218,7 +219,7 @@
 }
 
 .dining-dashboard-upcoming-border {
-    border: solid;
+    border: 1.5px solid;
     border-color: rgb(227, 227, 227);
     height: 160px;
     width: 730px;
@@ -271,7 +272,7 @@
 }
 
 .dining-dashboard-past-border {
-    border: solid;
+    border: 1.5px solid;
     border-color: rgb(227, 227, 227);
     height: 160px;
     width: 730px;

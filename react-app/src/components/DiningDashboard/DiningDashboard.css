@@ -8,22 +8,22 @@
 }
 
 .dining-dashboard-name {
-    border-bottom: solid;
+    border-bottom: 1.7px solid;
     border-color: rgb(234, 233, 233);
     height: 80px;
     margin-top: 20px;
-    margin-left: 18px;
+    /* margin-left: 18px; */
 }
 
 .dining-dashboard-name-text {
     font-size: 2rem;
     font-weight: 600;
-    margin-left: 240px;
+    margin-left: 258px;
 
 }
 
 .dining-dashboard-points-text {
-    margin-left: 242px;
+    margin-left: 260px;
     font-size: 1.05rem;
     font-weight: 500;
     color: rgb(170, 170, 170);

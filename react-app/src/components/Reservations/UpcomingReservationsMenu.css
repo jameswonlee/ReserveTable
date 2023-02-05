@@ -6,7 +6,7 @@
     display: flex;
     margin-left: -255px;
     margin-top: 330px;
-    border: solid;
+    border: 1px solid;
     border-color: rgb(235, 235, 235);
     border-radius: 4px;
     z-index: 9;
@@ -176,10 +176,12 @@
 }
 
 .upcoming-reservation-menu-border-line {
-    border-bottom: solid;
-    width: 317px;
+    border-bottom: 1px solid;
+    width: 307px;
     padding-top: 15px;
     border-color: rgb(226, 225, 225);
+    margin-left: 5px;
+
 }
 
 .upcoming-reservation-menu-none {
@@ -191,7 +193,7 @@
     flex-direction: column;
     margin-left: -258px;
     margin-top: 140px;
-    border: solid;
+    border: 1px solid;
     border-color: rgb(235, 235, 235);
     border-radius: 4px;
     z-index: 5;
