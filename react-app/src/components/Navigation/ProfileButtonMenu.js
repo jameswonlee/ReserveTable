@@ -49,13 +49,13 @@ function ProfileButtonMenu({ setShowSignInModal }) {
             </div>
             <div className="profile-drop-down-bottom">
                 <div className="profile-drop-button profile-drop-my-profile">
-                    <span className="spacing-down">My Profile</span>
+                    <span className="spacing-down profiile-drop-button-left">My Profile</span>
                 </div>
                 <div className="profile-drop-button my-dining-history" onClick={routeToDiningDashboard}>
-                    <span className="spacing-down">My Dining History</span>
+                    <span className="spacing-down profiile-drop-button-left">My Dining History</span>
                 </div>
                 <div className="profile-drop-button my-saved-restaurants" onClick={routeToSavedRestaurants}>
-                    <span className="spacing-down ">My Saved Restaurants</span>
+                    <span className="spacing-down profiile-drop-button-left">My Saved Restaurants</span>
                 </div>
                 <div className="profile-log-out-button"><LogoutButton setShowSignInModal={setShowSignInModal} /></div>
             </div>
