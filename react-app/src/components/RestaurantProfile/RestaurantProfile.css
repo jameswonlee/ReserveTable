@@ -94,7 +94,7 @@
 }
 
 .restaurant-profile-details-tab-border-bottom {
-    border-bottom: solid;
+    border-bottom: 1px solid;
     border-color: rgb(226, 226, 226);
     margin-left: 15px;
     margin-right: 15px;
@@ -104,7 +104,7 @@
 
 .restaurant-profile-details-tab-underscore {
     width: 58px;
-    border-bottom: solid;
+    border-bottom: 1.5px solid;
     border-color: rgb(209, 4, 4);
     margin-left: 0px;
     position: absolute;
@@ -190,7 +190,7 @@
     margin-right: 15px;
     margin-bottom: 5px;
     line-height: 3.5rem;
-    border-bottom: solid;
+    border-bottom: 1px solid;
     border-color: rgb(216, 217, 219);
 }
 
@@ -327,7 +327,7 @@
     width: 80px;
     text-align: center;
     line-height: 24px;
-    border: solid;
+    border: 1.4px solid;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -339,7 +339,7 @@
     width: 130px;
     text-align: center;
     line-height: 24px;
-    border: solid;
+    border: 1.4px solid;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -352,7 +352,7 @@
     width: 120px;
     text-align: center;
     line-height: 24px;
-    border: solid;
+    border: 1.4px solid;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 500;

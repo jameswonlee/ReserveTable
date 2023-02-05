@@ -23,17 +23,17 @@ function SearchBar() {
     const [searchInput, setSearchInput] = useState("");
 
 
-    const allLocations = () => {
-        let uniqueLocations = [];
+    const uniqueLocations = () => {
+        let locations = [];
 
         allRestaurants.forEach(restaurant => {
-            uniqueLocations.push(restaurant.neighborhood)
+            locations.push(restaurant.neighborhood)
         })
-        return [...new Set(uniqueLocations)];
+        return [...new Set(locations)];
     }
 
 
-    const locationsArr = allLocations();
+    const locationsArr = uniqueLocations();
     const locations = locationsArr
         .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
 
