@@ -13,7 +13,7 @@ import costIcon from './icons/cost-icon.ico';
 import cuisineIcon from './icons/cuisine-icon.ico';
 import saveRestaurantIcon from '../../icons/save-restaurant.ico';
 import savedRestaurantIcon from '../../icons/saved-restaurant-icon.ico';
-import './RestaurantProfile.css'
+import './RestaurantProfile.css';
 
 
 function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignInModal }) {

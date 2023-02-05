@@ -3,8 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid;
-    border-width: thin;
+    border-bottom: 1px solid;
     border-color: rgb(236, 235, 235);
     height: 53px;
 }

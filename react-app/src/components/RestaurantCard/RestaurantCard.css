@@ -1,7 +1,7 @@
 .restaurant-nav-card-container {
     text-decoration: none;
-    border-color: rgb(216, 217, 219);
-    border-style: solid;
+    border: 1.2px solid;
+    border-color: rgb(196, 196, 196);
     margin: 7px;
     height: 312px;
     width: 235px;
