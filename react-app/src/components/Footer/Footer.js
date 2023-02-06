@@ -85,19 +85,22 @@ function Footer() {
                         <div>
                             <div className="footer-other-sites">
                                 <div className="footer-other-sites-text">
-                                    Other work by James Lee
+                                    Other work by
+                                    <a id="portfolio" className="portfolio-link" href="https://jameswonlee.github.io/#" target="_blank" rel="noreferrer">
+                                        &nbsp;<span className="footer-name-text">James Lee</span>&nbsp;
+                                    </a>
                                 </div>
                                 <div className="footer-below-other-sites">
                                     <div className="footer-other-site">
                                         <a id="ayrbnb" className="ayrbnb-link" href="https://ayrbnb.herokuapp.com" target="_blank" rel="noreferrer">
                                             ayrbnb.herokuapp.com
-                                        <img src={rightArrow} className="footer-right-arrow ayrbnb-arrow"/>
+                                            <img src={rightArrow} className="footer-right-arrow ayrbnb-arrow" />
                                         </a>
                                     </div>
                                     <div className="footer-other-site">
                                         <a id="codebunny" className="codebunny-link" href="https://codebunny.onrender.com" target="_blank" rel="noreferrer">
                                             codebunny.onrender.com
-                                        <img src={rightArrow} className="footer-right-arrow codebunny-arrow"/>
+                                            <img src={rightArrow} className="footer-right-arrow codebunny-arrow" />
                                         </a>
                                     </div>
                                 </div>
@@ -139,9 +142,9 @@ function Footer() {
                             &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
                         </a>
                         clone by<span className="footer-name-text">
-                        <a id="portfolio" className="portfolio-link" href="https://jameswonlee.github.io/#" target="_blank" rel="noreferrer">
-                            &nbsp;<span className="footer-name-text">James Lee,</span>&nbsp;
-                        </a>
+                            <a id="portfolio" className="portfolio-link" href="https://jameswonlee.github.io/#" target="_blank" rel="noreferrer">
+                                &nbsp;<span className="footer-name-text">James Lee,</span>&nbsp;
+                            </a>
                         </span> Los Angeles CA 90048 - All rights reserved.
                     </div>
                 </div>
