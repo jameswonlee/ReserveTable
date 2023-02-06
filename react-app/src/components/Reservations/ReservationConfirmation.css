@@ -9,7 +9,7 @@
     width: 630px;
     background-color: white;
     border: 1.8px solid;
-    border-color: rgb(230, 230, 230);
+    border-color: rgb(228, 228, 228);
     height: 300px;
     margin-left: 260px;
     margin-top: 35px;
@@ -46,7 +46,6 @@
 .reservation-restaurant-image {
     margin-left: 28px;
     margin-top: 35px;
-    /* object-fit: cover; */
 }
 
 .reservation-confirmation-preview-img {
@@ -61,7 +60,7 @@
 }
 
 .reservation-confirm-name-text {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 3px;
 }
@@ -122,6 +121,7 @@
     width: 32px;
     margin-top: -3.5px;
     margin-bottom: 8px;
+    margin-left: -3px;
 }
 
 .reservation-confirmation-reservation-date-time {

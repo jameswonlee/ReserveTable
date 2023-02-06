@@ -37,11 +37,19 @@
 .ayrbnb-link {
     text-decoration: none;
     color: rgb(222, 217, 217);
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 2.44;
 }
 
 .codebunny-link {
     text-decoration: none;
     color: rgb(222, 217, 217);
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 2.43;
 }
 
 .opentable-link {
@@ -132,6 +140,28 @@
     display: flex;
     flex-direction: column;
     margin-left: 75px;
+}
+
+.footer-other-site {
+    background-color: rgb(111, 115, 123);
+    height: 35px;
+    width: 210px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-right-arrow {
+    height: 20px;
+}
+
+.ayrbnb-arrow {
+    margin-left: 26px;
+}
+
+.codebunny-arrow {
+    margin-left: 14px;
 }
 
 .footer-other-sites-text {
