@@ -147,6 +147,11 @@
     margin-bottom: 10px;
 }
 
+.footer-other-site:hover {
+    cursor: pointer;
+    background-color: rgb(117, 123, 133);
+}
+
 .footer-right-arrow {
     height: 20px;
 }
