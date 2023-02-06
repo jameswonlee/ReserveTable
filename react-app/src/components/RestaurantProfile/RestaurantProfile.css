@@ -163,17 +163,15 @@
     width: 320px;
     height: auto;
     position: sticky;
-    /* top: 80px; */
     margin-top: -10px;
     margin-right: -360px;
     margin-left: 45px;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 1px 1px 3px rgb(202, 202, 202);
+    box-shadow: 1px 1px 4px rgb(202, 202, 202);
 }
 
 .restaurant-reviews-container {
-    border-bottom: solid;
     border-color: rgb(216, 214, 214);
     padding-left: 15px;
     padding-right: 15px;

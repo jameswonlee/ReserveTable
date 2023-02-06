@@ -1,4 +1,5 @@
 import angelList from '../../icons/angellist.ico';
+import rightArrow from '../../icons/footer-right-arrow.ico';
 import './Footer.css';
 
 
@@ -87,14 +88,16 @@ function Footer() {
                                     Other work by James Lee
                                 </div>
                                 <div className="footer-below-other-sites">
-                                    <div>
+                                    <div className="footer-other-site">
                                         <a id="ayrbnb" className="ayrbnb-link" href="https://ayrbnb.herokuapp.com" target="_blank" rel="noreferrer">
-                                            https://ayrbnb.herokuapp.com
+                                            ayrbnb.herokuapp.com
+                                        <img src={rightArrow} className="footer-right-arrow ayrbnb-arrow"/>
                                         </a>
                                     </div>
-                                    <div>
+                                    <div className="footer-other-site">
                                         <a id="codebunny" className="codebunny-link" href="https://codebunny.onrender.com" target="_blank" rel="noreferrer">
-                                            https://codebunny.onrender.com
+                                            codebunny.onrender.com
+                                        <img src={rightArrow} className="footer-right-arrow codebunny-arrow"/>
                                         </a>
                                     </div>
                                 </div>
@@ -135,7 +138,11 @@ function Footer() {
                         <a id="opentable" className="opentable-link" href="https://www.opentable.com">
                             &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
                         </a>
-                        clone by <span className="footer-name-text">James Lee</span>, Los Angeles CA 90048 - All rights reserved.
+                        clone by<span className="footer-name-text">
+                        <a id="portfolio" className="portfolio-link" href="https://jameswonlee.github.io/#" target="_blank" rel="noreferrer">
+                            &nbsp;<span className="footer-name-text">James Lee,</span>&nbsp;
+                        </a>
+                        </span> Los Angeles CA 90048 - All rights reserved.
                     </div>
                 </div>
             </div>
