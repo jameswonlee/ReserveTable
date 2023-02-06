@@ -29,11 +29,38 @@
 }
 
 .above-nav {
-    height: 28px;
+    height: 27px;
     background-color: rgb(241, 242, 244);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    font-size: 0.85rem;
+    color: rgb(84, 84, 84);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.above-nav-en {
+    margin-right: 13px;
+}
+
+.above-nav-faqs {
+    margin-right: 47px;
+
+}
+
+.above-nav-mobile {
+    margin-right: 15px;
+}
+
+.above-nav-for-businesses {
+    margin-right: 20px;
+}
+
+.above-nav-down-caret {
+    height: 10px;
+    width: 14px;
+    margin-left: 2px;
 }
 
 .nav-bar-location-city-text {

@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import NavigationMenu from './NavigationMenu'
-
 import logo from '../../icons/logo.png';
-import aboveNav from '../../icons/above-nav.png';
 import locationIcon from '../../icons/location-icon.ico';
-import downCarrot from '../../icons/down-carrot.ico';
+import downCarrot from '../../icons/down-caret.ico';
+import aboveNavDownCaret from '../../icons/nav-bar-down-caret.ico';
 import './NavBar.css';
 
 
@@ -14,7 +13,10 @@ const NavBar = ({ loaded, showSignInModal, setShowSignInModal }) => {
   return (
     <nav className="navigation">
       <div className="above-nav">
-        <img src={aboveNav} className="above-nav-img" alt="" ></img>
+        <div className="above-nav-for-businesses">For Businesses</div>
+        <div className="above-nav-mobile"><span>Mobile<span><img src={aboveNavDownCaret} className="above-nav-down-caret"/></span></span></div>
+        <div className="above-nav-faqs">FAQs</div>
+        <div className="above-nav-en"><span>EN<span><img src={aboveNavDownCaret} className="above-nav-down-caret"/></span></span></div>
       </div>
       <div className="nav-bar">
         <div className="nav-bar-logo-location-container">
@@ -34,7 +36,7 @@ const NavBar = ({ loaded, showSignInModal, setShowSignInModal }) => {
           </div>
         </div>
         {loaded &&
-          <NavigationMenu showSignInModal={showSignInModal} setShowSignInModal={setShowSignInModal}/>}
+          <NavigationMenu showSignInModal={showSignInModal} setShowSignInModal={setShowSignInModal} />}
       </div>
     </nav>
   );
