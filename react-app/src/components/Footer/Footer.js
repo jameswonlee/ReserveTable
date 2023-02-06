@@ -138,7 +138,7 @@ function Footer() {
                     </div>
                     <div className="footer-copyright">
                         Copyright © 2023 ReserveTable, Inc, an
-                        <a id="opentable" className="opentable-link" href="https://www.opentable.com">
+                        <a id="opentable" className="opentable-link" href="https://www.opentable.com" target="_blank" rel="noreferrer">
                             &nbsp;<span className="footer-name-text">OpenTable</span>&nbsp;
                         </a>
                         clone by<span className="footer-name-text">
