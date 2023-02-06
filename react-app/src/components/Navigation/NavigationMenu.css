@@ -20,7 +20,7 @@
     height: 39px;
     width: 39px;
     margin-top: 4px;
-    margin-right: 5px;
+    margin-right: 10px;
     margin-left: -2px;
 }
 
@@ -40,9 +40,8 @@
     width: 35px;
     margin-bottom: 3px;
     margin-left: -12px;
-    margin-right: 15px;
+    margin-right: 14px;
 }
-
 
 .upcoming-reservations-menu-button:hover {
     cursor: pointer;
@@ -77,14 +76,13 @@
 .line-break {
     height: 36px;
     width: 17px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 15px;
 }
 
 .logged-in-search-button {
     height: 23px;
     width: 24px;
-    padding-right: 17px;
+    padding-right: 20px;
     margin-top: 2px;
 }
 
