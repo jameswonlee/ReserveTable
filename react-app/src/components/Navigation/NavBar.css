@@ -28,6 +28,10 @@
     border-width: thin;
 }
 
+.notifications-icon {
+    margin-right: 15px;
+}
+
 .above-nav {
     height: 27px;
     background-color: rgb(241, 242, 244);
@@ -41,20 +45,19 @@
 }
 
 .above-nav-en {
-    margin-right: 13px;
+    margin-right: 19px;
 }
 
 .above-nav-faqs {
-    margin-right: 47px;
-
+    margin-right: 50px;
 }
 
 .above-nav-mobile {
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .above-nav-for-businesses {
-    margin-right: 20px;
+    margin-right: 18px;
 }
 
 .above-nav-down-caret {
