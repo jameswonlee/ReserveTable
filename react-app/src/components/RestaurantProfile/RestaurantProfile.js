@@ -134,12 +134,6 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                 <div className="restaurant-profile-details-tab-underscore"></div>
                             </div>
                         </div>
-                        <div className="reservations-component">
-                            <Reservations
-                                userReservationTime={userReservationTime}
-                                showSignInModal={showSignInModal}
-                                setShowSignInModal={setShowSignInModal} />
-                        </div>
                     </div>
                 </div>
             </div>
@@ -229,6 +223,10 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                         </div>
                     </div>
                     <div className="restaurant-profile-right">
+                        <Reservations
+                            userReservationTime={userReservationTime}
+                            showSignInModal={showSignInModal}
+                            setShowSignInModal={setShowSignInModal} />
                         <div className="additional-info-container">
                             <AdditionalInfo restaurant={restaurant} />
                         </div>
