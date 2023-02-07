@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
-    z-index: 12;
     background-color: white;
     border-radius: 4px;
     border: 1px solid rgb(229, 229, 229);
@@ -29,7 +28,7 @@
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 12;
+    z-index: 9;
 }
 
 .reservation-heading-font {
