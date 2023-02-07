@@ -32,7 +32,6 @@ function SearchBar() {
         return [...new Set(locations)];
     }
 
-
     const locationsArr = uniqueLocations();
     const locations = locationsArr
         .filter(location => location.toLowerCase().includes(searchInput.toLowerCase()));
