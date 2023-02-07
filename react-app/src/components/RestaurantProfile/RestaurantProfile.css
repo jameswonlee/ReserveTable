@@ -3,6 +3,11 @@
     padding-bottom: 1px;
 }
 
+.restaurant-profile-image-container {
+    z-index: 2;
+    position: relative;
+}
+
 .restaurant-profile-image {
     width: 100%;
     height: 460px;
@@ -156,19 +161,7 @@
 .restaurant-profile-right {
     width: 350px;
     min-height: 800px;
-    margin-top: 350px;
-}
-
-.reservations-component {
-    width: 320px;
-    height: auto;
-    position: sticky;
-    margin-top: -10px;
-    margin-right: -360px;
-    margin-left: 45px;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 1px 1px 4px rgb(202, 202, 202);
+    margin-top: -55px;
 }
 
 .restaurant-reviews-container {
@@ -222,7 +215,7 @@
 }
 
 .additional-info-container {
-    margin-top: -20px;
+    margin-top: 420px;
     margin-left: 5px;
     width: 310px;
 }
