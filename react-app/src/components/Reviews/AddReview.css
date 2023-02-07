@@ -1,5 +1,5 @@
 .add-review-form-outer-container {
-    height: 400px;
+    height: 380px;
     width: 550px;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 40px;
 }
 
 .review-text-input {
@@ -27,6 +26,7 @@
     width: calc(100% - 16px);
     font-size: large;
     padding-left: 5px;
+    overflow-y: scroll;
 }
 
 .rating-input {
@@ -76,4 +76,13 @@
 .update-review-validation-errors {
     color: red;
     font-size: 0.9rem;
+}
+
+.create-review-select {
+    width: 542px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-color: rgb(164, 163, 163)
 }

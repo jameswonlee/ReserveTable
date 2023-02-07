@@ -10,8 +10,10 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
     const sessionUser = useSelector(state => state.session.user);
 
     const [reviewText, setReviewText] = useState(review.review);
-    const [rating, setRating] = useState(review.rating);
+    const [rating, setRating] = useState(review.rating.toString());
     const [validationErrors, setValidationErrors] = useState([]);
+
+    console.log('reviewRating', review.rating)
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -31,7 +33,6 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
             };
 
             await dispatch(editReview(reviewData, review.id));
-            alert("Review successfully updated");
             await dispatch(getOneRestaurant(restaurant.id));
             setShowUpdateModal({ showModal: false, reviewId: 0 });
             history.push(`/restaurants/${restaurant.id}`);
@@ -51,6 +52,20 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                                 <div key={error}>{error}</div>
                             )}
                     </div>
+                    <div>
+                        <select value={rating}
+                        onChange={e => {
+                            setValidationErrors([])
+                            setRating(e.target.value)
+                        }}
+                            className="create-review-select red-star">
+                            <option value="5">★ ★ ★ ★ ★</option>
+                            <option value="4">★ ★ ★ ★</option>
+                            <option value="3">★ ★ ★</option>
+                            <option value="2">★ ★</option>
+                            <option value="1">★</option>
+                        </select>
+                    </div>
                     <div className="review-inputs">
                         <div>
                             <textarea
@@ -62,19 +77,6 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                                 value={reviewText}
                                 placeholder="Review"
                                 className="review-text-input" />
-                        </div>
-                        <div>
-                            <input
-                                type="number"
-                                onChange={e => {
-                                    setValidationErrors([]);
-                                    setRating(e.target.value)
-                                }}
-                                value={rating}
-                                placeholder="Rating 1 - 5"
-                                min="1"
-                                max="5"
-                                className="rating-input" />
                         </div>
                         <div className="review-submit-button-container">
                             <button

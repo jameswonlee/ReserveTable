@@ -12,7 +12,7 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
     const sessionUser = useSelector(state => state.session.user);
 
     const [review, setReview] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(5);
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitHandler = async (e) => {
@@ -55,9 +55,23 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                                 <div key={error}>{error}</div>
                             )}
                     </div>
+                    <div>
+                        <select value={rating}
+                            onChange={e => {
+                                setValidationErrors([])
+                                setRating(e.target.value)
+                            }}
+                            className="create-review-select red-star">
+                            <option value="5">★ ★ ★ ★ ★</option>
+                            <option value="4">★ ★ ★ ★</option>
+                            <option value="3">★ ★ ★</option>
+                            <option value="2">★ ★</option>
+                            <option value="1">★</option>
+                        </select>
+                    </div>
                     <div className="review-inputs">
                         <div>
-                            <input
+                            <textarea
                                 type="text"
                                 onChange={e => {
                                     setValidationErrors([]);
@@ -66,19 +80,6 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                                 value={review}
                                 placeholder="Review"
                                 className="review-text-input" />
-                        </div>
-                        <div>
-                            <input
-                                type="number"
-                                onChange={e => {
-                                    setValidationErrors([]);
-                                    setRating(e.target.value)
-                                }}
-                                value={rating}
-                                placeholder="Rating 1 - 5"
-                                min="1"
-                                max="5"
-                                className="rating-input" />
                         </div>
                         <div className="review-submit-button-container">
                             <button
