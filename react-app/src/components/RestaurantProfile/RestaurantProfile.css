@@ -215,9 +215,11 @@
 }
 
 .additional-info-container {
-    margin-top: 420px;
+    margin-top: 380px;
     margin-left: 5px;
     width: 310px;
+    height: auto;
+    margin-bottom: 150px;
 }
 
 /* Spacing */
