@@ -14,11 +14,13 @@ ReserveTable is a pixel-perfect clone of the [OpenTable](http://www.opentable.co
 
 <br>
 
-<!-- # 🔗 Wiki Links
-* [API Documentation](https://github.com/jameswonlee/airbnb-clone/blob/main/backend/README-API-Docs.md#airbnb-clone)
-* [Database Schema](https://github.com/jameswonlee/airbnb-clone/wiki/Database-Schema)
-* [Features List](https://github.com/jameswonlee/airbnb-clone/wiki/Features-List)
-* [Redux State Shape](https://github.com/jameswonlee/airbnb-clone/wiki/Redux-Store-Shape) -->
+# 🔗 Wiki Links
+<!-- * [API Documentation](https://github.com/jameswonlee/airbnb-clone/blob/main/backend/README-API-Docs.md#airbnb-clone) -->
+* [Database Schema](https://github.com/jameswonlee/ReserveTable/wiki/Database-Schema)
+* [Features List](https://github.com/jameswonlee/ReserveTable/wiki/Features-List)
+* [User Stories](https://github.com/jameswonlee/ReserveTable/wiki/User-Stories)
+* [Wireframes](https://github.com/jameswonlee/ReserveTable/wiki/WireFrames)
+
 
 <br>
 
