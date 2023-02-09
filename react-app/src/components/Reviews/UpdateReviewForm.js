@@ -13,8 +13,6 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
     const [rating, setRating] = useState(review.rating.toString());
     const [validationErrors, setValidationErrors] = useState([]);
 
-    console.log('reviewRating', review.rating)
-
     const submitHandler = async (e) => {
         e.preventDefault();
         const errors = [];
@@ -53,11 +51,12 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                             )}
                     </div>
                     <div>
-                        <select value={rating}
-                        onChange={e => {
-                            setValidationErrors([])
-                            setRating(e.target.value)
-                        }}
+                        <select
+                            value={rating}
+                            onChange={e => {
+                                setValidationErrors([])
+                                setRating(e.target.value)
+                            }}
                             className="create-review-select red-star">
                             <option value="5">★ ★ ★ ★ ★</option>
                             <option value="4">★ ★ ★ ★</option>

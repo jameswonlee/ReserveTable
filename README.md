@@ -7,7 +7,7 @@
 <br>
 
 # About
-ReserveTable is a fullstack application clone of the [OpenTable](http://www.opentable.com) website. ReserveTable is a platform where users go to make reservations at their favorite local restaurants.
+ReserveTable is a pixel-perfect clone of the [OpenTable](http://www.opentable.com) website. ReserveTable is a platform where users can search and make reservations at their favorite local restaurants.
 
 <!-- ## Live site -->
 [**https://reservetable.onrender.com**](https://reservetable.onrender.com)
@@ -54,15 +54,26 @@ ReserveTable is a fullstack application clone of the [OpenTable](http://www.open
 
 # Sample Features
 
-- ### Log in as Demo User (desktop)
 
-<!-- ![desktop-login](/react-app/src/images/splash-page.png) -->
-![desktop-login](/react-app/src/images/splash-page.gif)
-<br>
+![splash](/assets/screenshots/splash-page.png)
 
-<!-- - ### Log in as Demo User (mobile)
+![restaurant-profile](/assets/screenshots/restaurant-profile.png)
 
-![mobile-login-large]() -->
+![dining-dashboard](/assets/screenshots/dining-dashboard.png)
+
+![reservations](/assets/screenshots/reservations.png)
+
+![reservation-confirmation](/assets/screenshots/reservation-confirmation.png)
+
+![modify-reservation](/assets/screenshots/modify-reservation.png)
+
+![cancel-reservation](/assets/screenshots/cancel-reservation.png)
+
+![saved-restaurants](/assets/screenshots/saved-restaurants.png)
+
+![reviews](/assets/screenshots/reviews.png)
+
+<!-- ![desktop-login](./assets/splash-page.gif) -->
 
 <br>
 
@@ -79,19 +90,15 @@ ReserveTable is a fullstack application clone of the [OpenTable](http://www.open
     - [x] Create a review
     - [x] Update a review
     - [x] Delete a review
-    - [ ] List all user reviews
-- [ ] User Profiles
-    - [ ] View user profile
-    - [ ] Create user profile
-    - [ ] Update user profile
-    - [ ] Delete user profile
-- [ ] Favorites
-    - [ ] View favorite restaurants
-    - [ ] Add favorite restaurant
-    - [ ] Delete favorite restaurant
-- [ ] Search
-    - [ ] Search for available reservations by date and time
-    - [ ] Search for available reservations by cuisine
+- [x] Favorites
+    - [x] View favorite restaurants
+    - [x] Add favorite restaurant
+    - [x] Delete favorite restaurant
+- [x] Search
+    - [x] Create search for restaurants by name, location, cuisine
+    - [x] View search results
+- [ ] GoogleMaps API
+    - [ ] View location of restaurants
 
 -------------------------------------------------------------------
 <br>
