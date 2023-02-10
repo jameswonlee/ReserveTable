@@ -12,14 +12,12 @@
     border-color: rgb(234, 233, 233);
     height: 80px;
     margin-top: 20px;
-    /* margin-left: 18px; */
 }
 
 .dining-dashboard-name-text {
     font-size: 2rem;
     font-weight: 600;
     margin-left: 258px;
-
 }
 
 .dining-dashboard-points-text {
@@ -59,10 +57,23 @@
 
 .not-first-item {
     color: rgb(16, 16, 16);
+    width: 136px;
+}
+
+.not-first-item:hover {
+    cursor: not-allowed;
+}
+
+.dining-dashboard-reservations {
+    width: 85px;
 }
 
 .dining-dashboard-reservations:hover {
     cursor: pointer;
+}
+
+.dining-dashboard-saved-restaurants {
+    width: 130px;
 }
 
 .dining-dashboard-saved-restaurants:hover {
