@@ -1,9 +1,10 @@
 .add-review-form-outer-container {
-    height: 380px;
+    height: auto;
     width: 550px;
     display: flex;
     flex-direction: column;
     border-radius: 4px;
+    padding-bottom: 50px;
 }
 
 .create-review-form {
@@ -42,7 +43,7 @@
 .review-form-heading {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
