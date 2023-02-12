@@ -155,6 +155,7 @@
     text-align: center;
     border: 1px solid rgb(199, 199, 199);
     padding-right: 10px;
+    -webkit-text-fill-color: black;
 }
 
 .modify-reservation-new-date-input:hover {

@@ -133,7 +133,7 @@ function ModifyReservation() {
                                     onChange={e => setDate(e.target.value)}
                                     value={date}
                                     min={dayjs().format("YYYY-MM-DD")}
-                                    // max={dayjs().add(6, 'month').format("YYYY-MM-DD")}
+                                    max={dayjs().add(6, 'month').format("YYYY-MM-DD")}
                                     placeholder="Date"
                                     className="modify-reservation-new-date-input"
                                 />
