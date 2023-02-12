@@ -120,21 +120,24 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                     <div className="reservation-date-time-inputs">
                         <div className="reservation-date-input-border">
                             <div className="reservation-date-text">Date</div>
-                            <input
-                                type="date"
-                                onChange={e => {
-                                    setValidationErrors([]);
-                                    setDate(e.target.value)
-                                }}
-                                value={date}
-                                min={dayjs().format("YYYY-MM-DD")}
-                                max={dayjs().add(6, 'months').format("YYYY-MM-DD")}
-                                placeholder="Date"
-                                className="reservation-date-input" />
+                            <div>
+                                <input
+                                    type="date"
+                                    onChange={e => {
+                                        setValidationErrors([]);
+                                        setDate(e.target.value)
+                                    }}
+                                    value={date}
+                                    min={dayjs().format("YYYY-MM-DD")}
+                                    max={dayjs().add(6, 'months').format("YYYY-MM-DD")}
+                                    placeholder="Date"
+                                    className="reservation-date-input" />
+                            </div>
                         </div>
                         <div className="reservation-time-input-border">
                             <div className="reservation-time-text">Time</div>
-                            <label className="reservation-time-select-label">
+                            <div className="reservation-time">
+                                <img src={downCaret} className="reservation-time-down-caret" />
                                 <select value={time} className="reservation-time-select" onChange={e => {
                                     setValidationErrors([])
                                     setTime(e.target.value)
@@ -165,7 +168,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                                     <option value="21:30">9:30 PM</option>
                                     <option value="22:00">10:00 PM</option>
                                 </select>
-                            </label>
+                            </div>
                         </div>
                     </div>
                     < div className="reservation-reserve-table-button-container">
