@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 166px;
+    width: 173px;
     border-right: 1.5px solid;
     border-color: rgb(237, 233, 233);
 }
@@ -39,15 +39,28 @@
 }
 
 .search-results-search-bar-reservation-date {
-    padding-right: 5px;
-    margin-left: -1px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .search-results-search-bar-reservation-date-select {
     border: none;
     font-size: 1.05rem;
     margin-right: 15px;
-    width: 115px;
+    width: 123px;
+    appearance: none;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.search-results-date-down-caret {
+    position: absolute;
+    right: 0;
+    height: 12px;
+    margin-right: 18px;
+    z-index: 5;
 }
 
 .search-results-search-bar-reservation-date-select:hover {
@@ -60,20 +73,40 @@
     align-items: center;
     border-right: 1.5px solid;
     border-color: rgb(237, 233, 233);
-    width: 150px;
+    width: 148px;
 }
 
 .search-results-search-bar-clock-icon {
     height: 21px;
     width: 25px;
-    margin-left: 9px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.search-results-search-bar-reservation-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-left: 6px;
+}
+
+.search-results-time-down-caret {
+    height: 12px;
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
 }
 
 .search-results-search-bar-time-select {
     border: none;
     font-size: 1.05rem;
     margin-left: 3px;
-    width: 100px;
+    width: 95px;
+    appearance: none;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .search-results-search-bar-time-select:hover {
@@ -89,14 +122,35 @@
 .search-results-search-bar-person-icon {
     height: 22px;
     width: 21px;
-    margin-left: 10px;
+    margin-left: 12px;
+    margin-top: 3px;
+}
+
+.search-results-search-bar-reservation-party-size {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-left: 2px;
+}
+
+.search-results-search-bar-party-size-down-caret {
+    height: 12px;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    margin-right: 6px;
 }
 
 .search-results-search-bar-party-size-select {
     border: none;
     font-size: 1.05rem;
     margin-left: 6px;
-    width: 110px;
+    width: 105px;
+    appearance: none;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0);
+
 }
 
 .search-results-search-bar-party-size-select:hover {
