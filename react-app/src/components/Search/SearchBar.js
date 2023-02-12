@@ -8,7 +8,7 @@ import personIcon from '../../icons/person-icon.ico';
 import locationsIcon from '../../icons/search-location-icon.ico';
 import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
 import cuisinesIcon from '../../icons/search-cuisines-icon.ico';
-// import downCaret from '../../icons/down-carrot.ico';
+import downCaret from '../../icons/down-caret.ico';
 import dayjs from 'dayjs';
 import './SearchBar.css'
 
@@ -98,6 +98,7 @@ function SearchBar() {
                                 <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
                             </div>
                             <div className="search-bar-reservation-date">
+                                <img src={downCaret} className="search-bar-date-down-caret" />
                                 <select value={date} onChange={e => setDate(e.target.value)} className="search-bar-reservation-date-select">
                                     <option value={dayjs().format("YYYY-MM-DD")}>{dayjs().format("MMM D, YYYY")}</option>
                                     <option value={dayjs().add(1, 'day').format("YYYY-MM-DD")}>{dayjs().add(1, 'day').format("MMM D, YYYY")}</option>
@@ -125,61 +126,71 @@ function SearchBar() {
                             </div>
                         </div>
                         <div className="search-bar-time-input-container">
-                            <img src={clockIcon} className="search-bar-clock-icon" alt="" />
-                            <select value={time} onChange={e => setTime(e.target.value)}
-                                className="search-bar-time-select">
-                                <option value="10:00">10:00 AM</option>
-                                <option value="10:30">10:30 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="11:30">11:30 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="12:30">12:30 PM</option>
-                                <option value="13:00">1:00 PM</option>
-                                <option value="13:30">1:30 PM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="14:30">2:30 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="15:30">3:30 PM</option>
-                                <option value="16:00">4:00 PM</option>
-                                <option value="16:30">4:30 PM</option>
-                                <option value="17:00">5:00 PM</option>
-                                <option value="17:30">5:30 PM</option>
-                                <option value="18:00">6:00 PM</option>
-                                <option value="18:30">6:30 PM</option>
-                                <option value="19:00">7:00 PM</option>
-                                <option value="19:30">7:30 PM</option>
-                                <option value="20:00">8:00 PM</option>
-                                <option value="20:30">8:30 PM</option>
-                                <option value="21:00">9:00 PM</option>
-                                <option value="21:30">9:30 PM</option>
-                                <option value="22:00">10:00 PM</option>
-                            </select>
+                            <div>
+                                <img src={clockIcon} className="search-bar-clock-icon" alt="" />
+                            </div>
+                            <div className="search-bar-reservation-time">
+                                <img src={downCaret} className="search-bar-time-down-caret" />
+                                <select value={time} onChange={e => setTime(e.target.value)}
+                                    className="search-bar-time-select">
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="13:30">1:30 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="14:30">2:30 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="15:30">3:30 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="16:30">4:30 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="21:30">9:30 PM</option>
+                                    <option value="22:00">10:00 PM</option>
+                                </select>
+                            </div>
                         </div>
                         <div className="search-bar-party-size-container">
-                            <img src={personIcon} className="search-bar-person-icon" alt="" />
-                            <select value={partySize} onChange={e => setPartySize(e.target.value)}
-                                className="search-bar-party-size-select">
-                                <option value="1">1 person</option>
-                                <option value="2">2 people</option>
-                                <option value="3">3 people</option>
-                                <option value="4">4 people</option>
-                                <option value="5">5 people</option>
-                                <option value="6">6 people</option>
-                                <option value="7">7 people</option>
-                                <option value="8">8 people</option>
-                                <option value="9">9 people</option>
-                                <option value="10">10 people</option>
-                                <option value="11">11 people</option>
-                                <option value="12">12 people</option>
-                                <option value="13">13 people</option>
-                                <option value="14">14 people</option>
-                                <option value="15">15 people</option>
-                                <option value="16">16 people</option>
-                                <option value="17">17 people</option>
-                                <option value="18">18 people</option>
-                                <option value="19">19 people</option>
-                                <option value="20">20 people</option>
-                            </select>
+                            <div>
+                                <img src={personIcon} className="search-bar-person-icon" alt="" />
+                            </div>
+                            <div className="search-bar-party-size">
+                                <img src={downCaret} className="search-bar-party-size-down-caret" />
+                                <select value={partySize} onChange={e => setPartySize(e.target.value)}
+                                    className="search-bar-party-size-select">
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6">6 people</option>
+                                    <option value="7">7 people</option>
+                                    <option value="8">8 people</option>
+                                    <option value="9">9 people</option>
+                                    <option value="10">10 people</option>
+                                    <option value="11">11 people</option>
+                                    <option value="12">12 people</option>
+                                    <option value="13">13 people</option>
+                                    <option value="14">14 people</option>
+                                    <option value="15">15 people</option>
+                                    <option value="16">16 people</option>
+                                    <option value="17">17 people</option>
+                                    <option value="18">18 people</option>
+                                    <option value="19">19 people</option>
+                                    <option value="20">20 people</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div className="search-bar-text-input-container">
