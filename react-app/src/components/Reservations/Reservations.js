@@ -5,6 +5,7 @@ import { createReservation } from '../../store/reservations';
 import { Modal } from '../../context/Modal';
 import LoginForm from '../_auth/LoginForm';
 import bookingSymbol from '../../icons/booking-symbol.ico';
+import downCaret from '../../icons/down-caret.ico';
 import './Reservations.css';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
@@ -86,7 +87,8 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                     <div className="reservation-party-size-label">
                         <div className="reservation-party-size-text">Party Size</div>
                         <div className="reservation-party-size-border-bottom">
-                            <label className="reservation-party-size-select">
+                            <div className="reservation-party-size-select">
+                                <img src={downCaret} className="reservation-down-caret" />
                                 <select value={partySize} onChange={e => {
                                     setValidationErrors([]);
                                     setPartySize(e.target.value)
@@ -112,7 +114,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                                     <option value="19">19 people</option>
                                     <option value="20">20 people</option>
                                 </select>
-                            </label>
+                            </div>
                         </div>
                     </div>
                     <div className="reservation-date-time-inputs">
