@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 170px;
+    width: 173px;
     border-right: 1.5px solid;
     border-color: rgb(237, 233, 233);
 }
@@ -49,7 +49,7 @@
     border: none;
     font-size: 1.05rem;
     margin-right: 15px;
-    width: 120px;
+    width: 123px;
     appearance: none;
     z-index: 7;
     background-color: rgba(0, 0, 0, 0);
@@ -59,7 +59,7 @@
     position: absolute;
     right: 0;
     height: 12px;
-    margin-right: 16px;
+    margin-right: 18px;
     z-index: 5;
 }
 
@@ -73,7 +73,7 @@
     align-items: center;
     border-right: 1.5px solid;
     border-color: rgb(237, 233, 233);
-    width: 150px;
+    width: 148px;
 }
 
 .search-results-search-bar-clock-icon {
@@ -96,14 +96,14 @@
     z-index: 5;
     position: absolute;
     right: 0;
-    margin-right: 6px;
+    margin-right: 5px;
 }
 
 .search-results-search-bar-time-select {
     border: none;
     font-size: 1.05rem;
     margin-left: 3px;
-    width: 100px;
+    width: 95px;
     appearance: none;
     z-index: 7;
     background-color: rgba(0, 0, 0, 0);
@@ -139,14 +139,14 @@
     position: absolute;
     right: 0;
     z-index: 5;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .search-results-search-bar-party-size-select {
     border: none;
     font-size: 1.05rem;
     margin-left: 6px;
-    width: 110px;
+    width: 105px;
     appearance: none;
     z-index: 7;
     background-color: rgba(0, 0, 0, 0);

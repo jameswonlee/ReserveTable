@@ -130,14 +130,14 @@
     z-index: 5;
     position: absolute;
     right: 0;
-    margin-right: 7px;
+    margin-right: 5px;
     margin-top: 1px;
 }
 
 .search-bar-time-select {
     border: none;
     font-size: 1.05rem;
-    width: 110px;
+    width: 105px;
     margin-top: 1px;
     padding-left: 8px;
     color: rgb(66, 65, 65);
