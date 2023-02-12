@@ -121,7 +121,7 @@ function Reservations({ userReservationTime, showSignInModal, setShowSignInModal
                         <div className="reservation-date-input-border">
                             <div className="reservation-date-text">Date</div>
                             <div className="reservation-date">
-                                <img src={downCaret} className="reservation-date-down-caret" />
+                                {/* <img src={downCaret} className="reservation-date-down-caret" /> */}
                                 <input
                                     type="date"
                                     onChange={e => {
