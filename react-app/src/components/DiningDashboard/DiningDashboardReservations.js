@@ -1,5 +1,5 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getAllUserReservations } from '../../store/reservations';
 import { getUserReviews } from '../../store/reviews';
@@ -8,9 +8,12 @@ import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationsIcon from '../../icons/upcoming-reservations-icon.ico';
 import reservationCompletedIcon from '../../icons/reservation-completed-icon.ico';
 import pointsGraph from '../../icons/points-graph-icon.ico';
-import dayjs from 'dayjs';
-
 import './DiningDashboardReservations.css';
+
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
+
 
 function DiningDashboardReservations() {
     const dispatch = useDispatch();

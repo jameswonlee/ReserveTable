@@ -8,7 +8,7 @@ import personIcon from '../../icons/person-icon.ico';
 import locationsIcon from '../../icons/search-location-icon.ico';
 import restaurantsIcon from '../../icons/search-restaurants-icon.ico';
 import cuisinesIcon from '../../icons/search-cuisines-icon.ico';
-// import downCaret from '../../icons/down-carrot.ico';
+import downCaret from '../../icons/down-caret.ico';
 import dayjs from 'dayjs';
 import './SearchBar.css'
 
@@ -98,6 +98,7 @@ function SearchBar() {
                                 <img src={reservationDateIcon} className="search-bar-reservation-date-icon" alt="" />
                             </div>
                             <div className="search-bar-reservation-date">
+                                <img src={downCaret} className="search-bar-down-caret" />
                                 <select value={date} onChange={e => setDate(e.target.value)} className="search-bar-reservation-date-select">
                                     <option value={dayjs().format("YYYY-MM-DD")}>{dayjs().format("MMM D, YYYY")}</option>
                                     <option value={dayjs().add(1, 'day').format("YYYY-MM-DD")}>{dayjs().add(1, 'day').format("MMM D, YYYY")}</option>
