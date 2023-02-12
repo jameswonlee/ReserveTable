@@ -41,7 +41,7 @@
     font-weight: 400;
     color: rgb(0, 0, 0);
     margin-top: 18px;
-    margin-left: 16px;
+    margin-left: 15px;
     margin-bottom: 5px;
 }
 
@@ -49,7 +49,7 @@
     width: 295px;
     margin-right: 7px;
     margin-left: 0.2px;
-    margin-top: 12px !important;
+    margin-top: 9px !important;
     margin-bottom: 1px;
     border: none;
     font-size: 0.9rem;
@@ -122,17 +122,6 @@
     cursor: pointer;
 }
 
-.reservation-time-select {
-    width: 125px;
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: rgb(111, 111, 111);
-    border: none;
-    margin-left: 2px;
-    margin-top: 15px;
-    margin-bottom: 9px;
-}
-
 .reservation-time-select:hover {
     cursor: pointer;
 }
@@ -146,13 +135,42 @@
     width: 125px;
 }
 
+.reservation-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.reservation-time-down-caret {
+    height: 12px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    margin-top: 7px;
+}
+
+.reservation-time-select {
+    width: 128px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgb(111, 111, 111);
+    border: none;
+    margin-left: 2px;
+    margin-top: 15px;
+    margin-bottom: 9px;
+    appearance: none;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
 .reservation-time-text {
     font-size: 0.9rem;
     color: rgb(0, 0, 0);
-    margin-left: 6px;
+    margin-left: 2px;
     font-weight: 400;
 }
-
 
 .reservation-reserve-table-button {
     width: 295px;
