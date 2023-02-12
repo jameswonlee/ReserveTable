@@ -172,12 +172,13 @@ function RestaurantProfile({ userReservationTime, showSignInModal, setShowSignIn
                                     }
                                 </div>
                                 <div className="space-to-left-22 review-icon-container">
-                                    <div className="reviews-icon-div">
-                                        <img src={reviewsIcon} alt="" className="profile-reviews-icon" />
-                                    </div>
+                                    {reviews?.length &&
+                                        <div className="reviews-icon-div">
+                                            <img src={reviewsIcon} alt="" className="profile-reviews-icon" />
+                                        </div>}
                                     <div>
-                                        {reviews &&
-                                            <div> {reviews.length} reviews</div>}
+                                        {reviews?.length &&
+                                            <div> {reviews.length} Reviews</div>}
                                     </div>
                                 </div>
                                 <div className="space-to-left-22 cost-icon-container">
