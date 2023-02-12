@@ -41,24 +41,40 @@
     font-weight: 400;
     color: rgb(0, 0, 0);
     margin-top: 18px;
-    margin-left: 17px;
+    margin-left: 16px;
     margin-bottom: 5px;
 }
 
 .reservation-party-size-select {
-    width: 292px;
+    width: 295px;
     margin-right: 7px;
-    margin-left: -1px;
+    margin-left: 0.2px;
     margin-top: 12px !important;
     margin-bottom: 1px;
     border: none;
     font-size: 0.9rem;
     font-weight: 400;
     color: rgb(111, 111, 111);
+    appearance: none;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
 }
 
 .reservation-party-size-select:hover {
     cursor: pointer;
+}
+
+.reservation-down-caret {
+    height: 12px;
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    margin-right: 7px;
+    margin-bottom: -14px;
 }
 
 .reservation-party-size-border-bottom {
