@@ -86,7 +86,7 @@
     z-index: 5;
     position: absolute;
     right: 0;
-    margin-right: 2px;
+    margin-right: 3.5px;
 }
 
 .search-bar-date-input {
@@ -130,7 +130,7 @@
     z-index: 5;
     right: 0;
     position: absolute;
-    margin-right: 2px;
+    margin-right: 2.5px;
     margin-bottom: -3px;
 }
 
