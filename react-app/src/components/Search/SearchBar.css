@@ -130,14 +130,14 @@
     z-index: 5;
     right: 0;
     position: absolute;
-    margin-right: 5px;
+    margin-right: 2px;
     margin-bottom: -3px;
 }
 
 .search-bar-time-select {
     border: none;
     font-size: 1.05rem;
-    width: 100px;
+    width: 105px;
     margin-top: 1px;
     padding-left: 8px;
     color: rgb(66, 65, 65);
@@ -170,7 +170,8 @@
     border: none;
     font-size: 1.05rem;
     color: rgb(60, 60, 60);
-    margin-left: 5px;
+    margin-left: 3px;
+    margin-top: 1px;
     width: 100px;
     appearance: none;
     display: flex;
@@ -191,8 +192,8 @@
     z-index: 5;
     position: absolute;
     right: 0;
-    margin-right: 4px;
-    margin-top: 1px;
+    margin-right: 2px;
+    margin-top: 4px;
 }
 
 .search-bar-party-size-select:hover {
