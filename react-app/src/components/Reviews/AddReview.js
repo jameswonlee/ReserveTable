@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createReview } from "../../store/reviews";
 import { getOneRestaurant } from "../../store/restaurants";
+import downCaret from '../../icons/down-caret.ico';
 import './AddReview.css';
 
 
@@ -55,7 +56,8 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                                 <div key={error}>{error}</div>
                             )}
                     </div>
-                    <div>
+                    <div className="create-review-rating-container">
+                        <img src={downCaret} className="create-review-down-caret"/>
                         <select value={rating}
                             onChange={e => {
                                 setValidationErrors([])

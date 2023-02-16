@@ -2,9 +2,11 @@ import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { changeReservation, getAllUserReservations } from "../../store/reservations";
-import personIcon from '../../icons/person-icon.ico';
 import upcomingReservationIcon from '../../icons/upcoming-reservations-icon.ico';
+import upcomingNewReservationIcon from '../../icons/upcoming-reservation-icon.png';
+import personIcon from '../../icons/person-icon.ico';
 import clockIcon from '../../icons/clock-icon.ico';
+import downCaret from '../../icons/down-caret.ico';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import './ModifyReservation.css';
@@ -124,85 +126,120 @@ function ModifyReservation() {
                             <div key={error}>{error}</div>
                         )}
                 </div>
-                <div className="modify-reservation-form-container">
-                    <form onSubmit={submitHandler} className="modify-reservation-form">
-                        <div className="modify-reservation-form-inputs">
-                            <div className="modify-reservation-new-date">
-                                <input
-                                    type="date"
-                                    onChange={e => setDate(e.target.value)}
-                                    value={date}
-                                    min={dayjs().format("YYYY-MM-DD")}
-                                    max={dayjs().add(6, 'month').format("YYYY-MM-DD")}
-                                    placeholder="Date"
-                                    className="modify-reservation-new-date-input"
-                                />
+                <div className="modify-reservation-lower">
+                    <div className="modify-reservation-form-container">
+                        <div className="modify-reservation-date-container">
+                            <div className="modify-reservation-new-date-icon-container">
+                                <img src={upcomingNewReservationIcon} className="modify-reservation-new-date-icon" />
                             </div>
-                            <div>
-                                <label className="modify-reservation-time-select-label">
-                                    <select value={time} onChange={e => setTime(e.target.value)} className="modify-reservation-new-time-input">
-                                        <option value="10:00">10:00 AM</option>
-                                        <option value="10:30">10:30 AM</option>
-                                        <option value="11:00">11:00 AM</option>
-                                        <option value="11:30">11:30 AM</option>
-                                        <option value="12:00">12:00 PM</option>
-                                        <option value="12:30">12:30 PM</option>
-                                        <option value="13:00">1:00 PM</option>
-                                        <option value="13:30">1:30 PM</option>
-                                        <option value="14:00">2:00 PM</option>
-                                        <option value="14:30">2:30 PM</option>
-                                        <option value="15:00">3:00 PM</option>
-                                        <option value="15:30">3:30 PM</option>
-                                        <option value="16:00">4:00 PM</option>
-                                        <option value="16:30">4:30 PM</option>
-                                        <option value="17:00">5:00 PM</option>
-                                        <option value="17:30">5:30 PM</option>
-                                        <option value="18:00">6:00 PM</option>
-                                        <option value="18:30">6:30 PM</option>
-                                        <option value="19:00">7:00 PM</option>
-                                        <option value="19:30">7:30 PM</option>
-                                        <option value="20:00">8:00 PM</option>
-                                        <option value="20:30">8:30 PM</option>
-                                        <option value="21:00">9:00 PM</option>
-                                        <option value="21:30">9:30 PM</option>
-                                        <option value="22:00">10:00 PM</option>
-                                    </select>
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    <select value={partySize} onChange={e => setPartySize(e.target.value)} className="modify-reservation-new-party-size">
-                                        <option value="1">1 person </option>
-                                        <option value="2">2 people</option>
-                                        <option value="3">3 people</option>
-                                        <option value="4">4 people</option>
-                                        <option value="5">5 people</option>
-                                        <option value="6">6 people</option>
-                                        <option value="7">7 people</option>
-                                        <option value="8">8 people</option>
-                                        <option value="9">9 people</option>
-                                        <option value="10">10 people</option>
-                                        <option value="11">11 people</option>
-                                        <option value="12">12 people</option>
-                                    </select>
-                                </label>
+                            <div className="modify-reservation-new-reservation-date-container">
+                                <img src={downCaret} className="modify-reservation-new-reservation-date-down-caret" />
+                                <select value={date} onChange={e => setDate(e.target.value)} className="modify-reservation-new-reservation-date-select">
+                                    <option value={dayjs().format("YYYY-MM-DD")}>{dayjs().format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(1, 'day').format("YYYY-MM-DD")}>{dayjs().add(1, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(2, 'day').format("YYYY-MM-DD")}>{dayjs().add(2, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(3, 'day').format("YYYY-MM-DD")}>{dayjs().add(3, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(4, 'day').format("YYYY-MM-DD")}>{dayjs().add(4, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(5, 'day').format("YYYY-MM-DD")}>{dayjs().add(5, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(6, 'day').format("YYYY-MM-DD")}>{dayjs().add(6, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(7, 'day').format("YYYY-MM-DD")}>{dayjs().add(7, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(8, 'day').format("YYYY-MM-DD")}>{dayjs().add(8, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(9, 'day').format("YYYY-MM-DD")}>{dayjs().add(9, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(10, 'day').format("YYYY-MM-DD")}>{dayjs().add(10, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(11, 'day').format("YYYY-MM-DD")}>{dayjs().add(11, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(12, 'day').format("YYYY-MM-DD")}>{dayjs().add(12, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(13, 'day').format("YYYY-MM-DD")}>{dayjs().add(13, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(14, 'day').format("YYYY-MM-DD")}>{dayjs().add(14, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(15, 'day').format("YYYY-MM-DD")}>{dayjs().add(15, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(16, 'day').format("YYYY-MM-DD")}>{dayjs().add(16, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(17, 'day').format("YYYY-MM-DD")}>{dayjs().add(17, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(18, 'day').format("YYYY-MM-DD")}>{dayjs().add(18, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(19, 'day').format("YYYY-MM-DD")}>{dayjs().add(19, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(20, 'day').format("YYYY-MM-DD")}>{dayjs().add(20, 'day').format("MMM D, YYYY")}</option>
+                                    <option value={dayjs().add(21, 'day').format("YYYY-MM-DD")}>{dayjs().add(21, 'day').format("MMM D, YYYY")}</option>
+                                </select>
                             </div>
                         </div>
-                        <div>
-                            <button
-                                type="submit"
-                                className="modify-reservation-new-reservation-submit-button"
-                            >
-                                Reserve new table
-                            </button>
+                        <div className="modify-reservation-time-container">
+                            <div className="modify-reservation-new-time-icon-container">
+                                <img src={clockIcon} className="modify-reservation-new-time-icon" />
+                            </div>
+                            <div>
+                                <img src={downCaret} className="modify-reservation-new-reservation-time-down-caret" />
+                                <select value={time} onChange={e => setTime(e.target.value)}
+                                    className="modify-reservation-new-time-select">
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="13:30">1:30 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="14:30">2:30 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="15:30">3:30 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="16:30">4:30 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="21:30">9:30 PM</option>
+                                    <option value="22:00">10:00 PM</option>
+                                </select>
+                            </div>
                         </div>
-                    </form>
+                        <div className="modify-reservation-party-size-container">
+                            <div className="modify-reservation-new-party-size-icon-container">
+                                <img src={personIcon} className="modify-reservation-new-party-size-icon" />
+                            </div>
+                            <div>
+                            <img src={downCaret} className="modify-reservation-new-reservation-party-size-down-caret" />
+                                <select value={partySize} onChange={e => setPartySize(e.target.value)}
+                                    className="modify-reservation-new-party-size-select">
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6">6 people</option>
+                                    <option value="7">7 people</option>
+                                    <option value="8">8 people</option>
+                                    <option value="9">9 people</option>
+                                    <option value="10">10 people</option>
+                                    <option value="11">11 people</option>
+                                    <option value="12">12 people</option>
+                                    <option value="13">13 people</option>
+                                    <option value="14">14 people</option>
+                                    <option value="15">15 people</option>
+                                    <option value="16">16 people</option>
+                                    <option value="17">17 people</option>
+                                    <option value="18">18 people</option>
+                                    <option value="19">19 people</option>
+                                    <option value="20">20 people</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="modify-reservation-submit-button-container">
+                        <button
+                            onClick={submitHandler}
+                            className="modify-reservation-new-reservation-submit-button">
+                            Reserve new table
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
-
 
 
 export default ModifyReservation;
