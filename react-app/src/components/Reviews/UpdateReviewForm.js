@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { editReview } from '../../store/reviews';
 import { getOneRestaurant } from "../../store/restaurants";
+import downCaret from '../../icons/down-caret.ico';
 
 function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
     const dispatch = useDispatch();
@@ -50,7 +51,9 @@ function UpdateReviewForm({ restaurant, review, setShowUpdateModal }) {
                                 <div key={error}>{error}</div>
                             )}
                     </div>
-                    <div>
+                    <div className="create-review-rating-container">
+                    <img src={downCaret} className="create-review-down-caret"/>
+
                         <select
                             value={rating}
                             onChange={e => {
