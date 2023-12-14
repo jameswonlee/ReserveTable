@@ -130,10 +130,10 @@ function ModifyReservation() {
                     <div className="modify-reservation-form-container">
                         <div className="modify-reservation-date-container">
                             <div className="modify-reservation-new-date-icon-container">
-                                <img src={upcomingNewReservationIcon} className="modify-reservation-new-date-icon" />
+                                <img src={upcomingNewReservationIcon} className="modify-reservation-new-date-icon" alt=""/>
                             </div>
                             <div className="modify-reservation-new-reservation-date-container">
-                                <img src={downCaret} className="modify-reservation-new-reservation-date-down-caret" />
+                                <img src={downCaret} className="modify-reservation-new-reservation-date-down-caret" alt=""/>
                                 <select value={date} onChange={e => setDate(e.target.value)} className="modify-reservation-new-reservation-date-select">
                                     <option value={dayjs().format("YYYY-MM-DD")}>{dayjs().format("MMM D, YYYY")}</option>
                                     <option value={dayjs().add(1, 'day').format("YYYY-MM-DD")}>{dayjs().add(1, 'day').format("MMM D, YYYY")}</option>
@@ -162,10 +162,10 @@ function ModifyReservation() {
                         </div>
                         <div className="modify-reservation-time-container">
                             <div className="modify-reservation-new-time-icon-container">
-                                <img src={clockIcon} className="modify-reservation-new-time-icon" />
+                                <img src={clockIcon} className="modify-reservation-new-time-icon" alt=""/>
                             </div>
                             <div>
-                                <img src={downCaret} className="modify-reservation-new-reservation-time-down-caret" />
+                                <img src={downCaret} className="modify-reservation-new-reservation-time-down-caret" alt=""/>
                                 <select value={time} onChange={e => setTime(e.target.value)}
                                     className="modify-reservation-new-time-select">
                                     <option value="10:00">10:00 AM</option>
@@ -198,10 +198,10 @@ function ModifyReservation() {
                         </div>
                         <div className="modify-reservation-party-size-container">
                             <div className="modify-reservation-new-party-size-icon-container">
-                                <img src={personIcon} className="modify-reservation-new-party-size-icon" />
+                                <img src={personIcon} className="modify-reservation-new-party-size-icon" alt=""/>
                             </div>
                             <div>
-                            <img src={downCaret} className="modify-reservation-new-reservation-party-size-down-caret" />
+                            <img src={downCaret} className="modify-reservation-new-reservation-party-size-down-caret" alt=""/>
                                 <select value={partySize} onChange={e => setPartySize(e.target.value)}
                                     className="modify-reservation-new-party-size-select">
                                     <option value="1">1 person</option>

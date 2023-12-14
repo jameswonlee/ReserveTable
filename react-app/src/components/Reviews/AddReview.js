@@ -57,7 +57,7 @@ function AddReviewForm({ restaurant, setShowAddModal }) {
                             )}
                     </div>
                     <div className="create-review-rating-container">
-                        <img src={downCaret} className="create-review-down-caret"/>
+                        <img src={downCaret} className="create-review-down-caret" alt=""/>
                         <select value={rating}
                             onChange={e => {
                                 setValidationErrors([])

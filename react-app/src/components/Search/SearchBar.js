@@ -84,7 +84,6 @@ function SearchBar() {
     }
 
 
-
     return (
         <div className="search-bar-container">
             <div className="search-bar-heading">
