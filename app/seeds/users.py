@@ -160,7 +160,7 @@ def seed_restaurants():
         parking_details="VALET: After 5pm $20 for the first 2 hours with validation and $10/hr after that with a $55 MAX.", payment_options="AMEX, Discover, MasterCard, Visa", cross_street="Le Conte Avenue", phone="(310) 659-3535", executive_chef="Executive Chef Dennis Cruz", description="""STK Steakhouse is “not your daddy's 
         steakhouse,” offering a high-energy dining experience that artfully combines the superior quality of a traditional steakhouse with a Vibe Dining atmosphere unlike any other. Delectable cuisine, upscale cocktails and an elevated Happy Hour, along with an in-house DJ and chic décor, all come together to offer a memorable 
         fine dining experience that keeps guests enjoying their evening from drinks to dinner to late night. STK's menu features reimagined classic American cuisine for lunch, brunch and dinner with unique local flair infused into each location's menu. The brand's beef program focuses on the highest quality, delicious and craveable 
-        steaks while emphasizing transparency and traceable sourcing practices.""", website="https://stksteakhouse.com/venues/los-angeles/", preview_img="https://stksteakhouse.com/wp-content/uploads/2018/10/STK-Main-Carpet_Blue-Horn-wall-1.jpg"
+        steaks while emphasizing transparency and traceable sourcing practices.""", website="https://stksteakhouse.com/venues/los-angeles/", preview_img="https://resizer.otstatic.com/v2/photos/xlarge/1/42272998.webp"
     )
 
     merois = Restaurant(
